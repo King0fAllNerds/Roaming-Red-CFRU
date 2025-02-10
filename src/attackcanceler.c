@@ -882,7 +882,7 @@ static u8 AtkCanceller_UnableToUseMove(void)
 			if (WEATHER_HAS_EFFECT && SPLIT(gCurrentMove) != SPLIT_STATUS) //Damaging moves only
 			{
 				if ((gBattleStruct->dynamicMoveType == TYPE_FIRE && gBattleWeather & WEATHER_RAIN_PRIMAL)
-				||  (gBattleStruct->dynamicMoveType == TYPE_WATER && gBattleWeather & WEATHER_SUN_PRIMAL))
+				||  (gBattleStruct->dynamicMoveType == TYPE_WATER && gCurrentMove != MOVE_HYDROSTEAM && gBattleWeather & WEATHER_SUN_PRIMAL))
 				{
 					CancelMultiTurnMoves(gBankAttacker);
 					gBattlescriptCurrInstr = BattleScript_MoveUsedFailedPrimalWeather;

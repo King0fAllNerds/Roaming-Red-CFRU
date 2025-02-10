@@ -747,8 +747,10 @@ SKIP_CHECK_TARGET:
 	//Primal Weather Check
 	if (gBattleWeather & WEATHER_SUN_PRIMAL && moveType == TYPE_WATER && moveSplit != SPLIT_STATUS && WEATHER_HAS_EFFECT)
 	{
-		DECREASE_VIABILITY(20);
-		return viability;
+		if(move != MOVE_HYDROSTEAM) {
+			DECREASE_VIABILITY(20);
+			return viability;
+		}
 	}
 	else if (gBattleWeather & WEATHER_RAIN_PRIMAL && moveType == TYPE_FIRE && moveSplit != SPLIT_STATUS && WEATHER_HAS_EFFECT)
 	{

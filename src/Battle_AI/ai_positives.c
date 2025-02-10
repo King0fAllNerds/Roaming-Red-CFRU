@@ -1675,6 +1675,7 @@ u8 AIScript_Positives(const u8 bankAtk, const u8 bankDef, const u16 originalMove
 			 || MoveEffectInMoveset(EFFECT_THUNDER, bankDef)
 			 || MoveInMoveset(MOVE_WEATHERBALL, bankAtk)
 			 || MoveInMoveset(MOVE_GROWTH, bankAtk)
+			 || MoveInMoveset(MOVE_HYDROSTEAM, bankAtk)
 			 || MoveTypeInMoveset(bankAtk, TYPE_FIRE)
 			 || MoveTypeInMoveset(bankDef, TYPE_WATER)
 			 || data->atkItemEffect == ITEM_EFFECT_HEAT_ROCK))
