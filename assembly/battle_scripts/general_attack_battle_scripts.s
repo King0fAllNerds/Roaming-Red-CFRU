@@ -5886,16 +5886,16 @@ PsychicNoiseBS:
 	jumpifbehindsubstitute BANK_TARGET 0x81D6927
 	accuracycheck BS_MOVE_MISSED 0x0
 	call STANDARD_DAMAGE
-	attackstring
-	ppreduce
-	attackanimation
-	waitanimation
+	prefaintmoveendeffects 0x0
+	faintpokemonaftermove
+	jumpiffainted BANK_TARGET BS_MOVE_END
+	jumpifabilitypresenttargetfield ABILITY_AROMAVEIL BattleScript_ProtectedByAromaVeil
 	callasm PSHealBlockTimer
 	setword BATTLE_STRING_LOADER HealBlockSetString
 	printstring 0x184
 	waitmessage DELAY_1SECOND
-	faintpokemonaftermove
 	goto BS_MOVE_END
+
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
