@@ -38,6 +38,7 @@ defines_battle.h
 #define SAVED_CONSUMED_ITEMS(bank) gNewBS->SavedConsumedItems[gBattlerPartyIndexes[bank]]
 #define CHOICED_MOVE(bank) gBattleStruct->choicedMove[bank]
 #define SECOND_OPPONENT (VarGet(VAR_SECOND_OPPONENT))
+#define PRIORITY(move) gBattleMoves[move].priority
 
 #define REALLY_SMART_AI //The vanilla FR AI memory system sucks so this should always be defined
 
