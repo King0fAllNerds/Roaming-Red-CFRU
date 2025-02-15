@@ -427,9 +427,9 @@ struct SaveBlock2 //0x2024588
 	/*0x0AE*/ u8 field_AE;
 	/*0x0AF*/ u8 field_AF;
 	/*0x0B0*/ u8 box25[0x6CC];
-	/*0x????*/ struct Pokemon fusedSpectrier;
-	/*0x????*/ struct Pokemon fusedGlastrier;
-        /*0x2B8*/ u8 filler_2B8[0x4C4];
+	/*0x77C*/ struct Pokemon fusedSpectrier;
+    	/*0x7E0*/ struct Pokemon fusedGlastrier;
+        /*0x844*/ u8 filler_77C[0x54];
 	/*0x898*/ u16 mapView[0x100];
 	/*0xA98*/ struct LinkBattleRecords linkBattleRecords;
 	/*0xAF0*/ struct BerryCrush berryCrush;
