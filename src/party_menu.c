@@ -2242,9 +2242,9 @@ static struct Pokemon* GetBaseMonForFusedSpecies(u16 species)
                 case SPECIES_NECROZMA_DAWN_WINGS:
                         return &gSaveBlock1->fusedLunala;
                 case SPECIES_CALYREX_ICE_RIDER:
-			return &gSaveBlock1->fusedGlastrier;
+			return &gSaveBlock2->fusedGlastrier;
 		case SPECIES_CALYREX_SHADOW_RIDER:
-			return &gSaveBlock1->fusedSpectrier;
+			return &gSaveBlock2->fusedSpectrier;
         }
 
         return NULL;
@@ -2282,11 +2282,11 @@ static bool8 AlreadyFused(u16 baseSpecies, u16 fuseSpecies)
                 case SPECIES_CALYREX:
 			switch (fuseSpecies) {
 				case SPECIES_SPECTRIER:
-					if (GetMonData(&gSaveBlock1->fusedSpectrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+					if (GetMonData(&gSaveBlock2->fusedSpectrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
 						alreadyFused = TRUE;
 					break;
 				case SPECIES_GLASTRIER:
-					if (GetMonData(&gSaveBlock1->fusedGlastrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
+					if (GetMonData(&gSaveBlock2->fusedGlastrier, MON_DATA_SPECIES, NULL) != SPECIES_NONE)
 						alreadyFused = TRUE;
 					break;
 			}
