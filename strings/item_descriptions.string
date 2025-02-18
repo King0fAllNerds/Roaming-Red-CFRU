@@ -1347,3 +1347,66 @@ This carved wooden mask is\nadorned with crystals. Changes\nOgerpon to Fire-type
 
 #org @DESC_CORNERSTONE_MASK
 This carved wooden mask is\nadorned with crystals. Changes\nOgerpon to Rock-type form.
+
+#org @DESC_LONELY_MINT
+When a Pokémon smells this mint,\nits Attack will grow easily, but\nits Defense will grow slowly. 
+
+#org @DESC_ADAMANT_MINT
+When a Pokémon smells this mint,\nits Attack will grow easily, but\nits Sp.Attack will grow slowly. 
+
+#org @DESC_NAUGHTY_MINT
+When a Pokémon smells this mint,\nits Attack will grow easily, but\nits Sp.Defense will grow slowly. 
+
+#org @DESC_BRAVE_MINT
+When a Pokémon smells this mint,\nits Attack will grow easily, but\nits Speed will grow slowly. 
+
+#org @DESC_BOLD_MINT
+When a Pokémon smells this mint,\nits Defense will grow easily, but\nits Attack will grow slowly. 
+
+#org @DESC_IMPISH_MINT
+When a Pokémon smells this mint,\nits Defense will grow easily, but\nits Sp.Attack will grow slowly.
+
+#org @DESC_LAX_MINT
+When a Pokémon smells this mint,\nits Defense will grow easily, but\nits Sp.Defense will grow slowly.
+
+#org @DESC_RELAXED_MINT
+When a Pokémon smells this mint,\nits Defense will grow easily, but\nits Speed will grow slowly.
+
+#org @DESC_MODEST_MINT
+When a Pokémon smells this mint,\nits Sp.Attack will grow easily,\nbut its Attack will grow slowly.
+
+#org @DESC_MILD_MINT
+When a Pokémon smells this mint,\nits Sp.Attack will grow easily,\nbut its Defense will grow slowly.
+
+#org @DESC_RASH_MINT
+When a Pokémon smells this mint,\nits Sp.Attack will grow easily,\nbut Sp.Defense will grow slowly.
+
+#org @DESC_QUIET_MINT
+When a Pokémon smells this mint,\nits Sp.Attack will grow easily,\nbut its Speed will grow slowly.
+
+#org @DESC_CALM_MINT
+When a Pokémon smells this mint,\nits Sp.Defense will grow easily,\nbut its Attack will grow slowly.
+
+#org @DESC_GENTLE_MINT
+When a Pokémon smells this mint,\nits Sp.Defense will grow easily,\nbut its Defense will grow slowly.
+
+#org @DESC_CAREFUL_MINT
+When a Pokémon smells this mint,\nits Sp.Defense will grow easily,\nbut Sp.Attack will grow slowly.
+
+#org @DESC_SASSY_MINT
+When a Pokémon smells this mint,\nits Sp.Defense will grow easily,\nbut its Speed will grow slowly.
+
+#org @DESC_TIMID_MINT
+When a Pokémon smells this mint,\nits Speed will grow easily, but\nits Attack will grow slowly.
+
+#org @DESC_HASTY_MINT
+When a Pokémon smells this mint,\nits Speed will grow easily, but\nits Defense will grow slowly.
+
+#org @DESC_JOLLY_MINT
+When a Pokémon smells this mint,\nits Speed will grow easily, but\nits Sp.Attack will grow slowly.
+
+#org @DESC_NAIVE_MINT
+When a Pokémon smells this mint,\nits Speed will grow easily, but\nits Sp.Defense will grow slowly.
+
+#org @DESC_SERIOUS_MINT
+When a Pokémon smells this mint, all of its stats will grow at an equal rate.

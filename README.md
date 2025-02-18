@@ -52,9 +52,6 @@ Join us on discord: https://discord.com/invite/axNX3rhR9K
 - [Modified Naming screen BW](https://github.com/Shiny-Miner/Naming-screen-BW)
 - Some music patches said in leon rombase + others...
 ###### Notes :
-- To expand the amount of items just change the number in the file "bytereplacement" to the amount you want +1.
-Ex: 800 items +1 in hex will be 0x321.
-Change word to new number of items for "21 03"
 - It is advised to use [DPE-gen-9](https://github.com/Shiny-Miner/Dynamic-Pokemon-Expansion-Gen-9) with it.
 - If you want to see how potential this expansion would have in future read [this](https://github.com/Shiny-Miner/CFRU-expansion/blob/Experiments/todo.md)
 - Please don't try to use leon rombase on it as it already contains items + more

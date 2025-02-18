@@ -2192,3 +2192,36 @@ gText_FrameType = 0x8419e52;
 
 /* Following Mon */
 FieldClearVBlankHBlankCallbacks = 0x80569BC | 1;
+
+/* Item Expansion */
+FieldUseFunc_OakStopsYou = 0x80A2238 | 1;
+BattleUseFunc_PokeBallEtc = 0x80A1E1C | 1;
+BattleUseFunc_Medicine = 0x80A1FBC | 1;
+FieldUseFunc_Medicine = 0x80A16E0 | 1;
+BattleUseFunc_Ether = 0x80A1FF4 | 1;
+FieldUseFunc_Ether = 0x80A16FC | 1;
+FieldUseFunc_BlackWhiteFlute = 0x80A1A94 | 1;
+FieldUseFunc_SacredAsh = 0x80A176C | 1;
+FieldUseFunc_RareCandy = 0x80A1734 | 1;
+FieldUseFunc_PpUp = 0x80A1718 | 1;
+BattleUseFunc_StatBooster = 0x80A1E7C | 1;
+FieldUseFunc_Repel = 0x80A1998 | 1;
+ItemUseOutOfBattle_EscapeRope = 0x80A1BAC | 1;
+FieldUseFunc_EvoItem = 0x80A1750 | 1;
+ItemUseOutOfBattle_EnigmaBerry = 0x80A2068 | 1;
+ItemUseInBattle_EnigmaBerry = 0x80A2194 | 1;
+FieldUseFunc_Bike = 0x80A122C | 1;
+FieldUseFunc_CoinCase = 0x80A1460 | 1;
+ItemUseOutOfBattle_Itemfinder = 0x80A1438 | 1;
+FieldUseFunc_Rod = 0x80A1338 | 1;
+FieldUseFunc_PokeFlute = 0x80A156C | 1;
+BattleUseFunc_PokeFlute = 0x80A1E64 | 1;
+FieldUseFunc_TownMap = 0x80A1C60 | 1;
+FieldUseFunc_VsSeeker = 0x80A1D9C | 1;
+FieldUseFunc_FameChecker = 0x80A1CF8 | 1;
+FieldUseFunc_TmCase = 0x80A1788 | 1;
+FieldUseFunc_BerryPouch = 0x80A1820 | 1;
+BattleUseFunc_BerryPouch = 0x80A18B8 | 1;
+FieldUseFunc_TeachyTv = 0x80A18EC | 1;
+FieldUseFunc_PowderJar = 0x80A14E8 | 1;
+FieldUseFunc_Mail = 0x80A11E8 | 1;

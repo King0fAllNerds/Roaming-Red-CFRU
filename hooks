@@ -791,3 +791,5 @@ LoadOptionMenuPalette 080886F0 0
 LoadOptionMenuItemNames 08088D8C 0
 OptionMenu_PickSwitchCancel 08088680 0
 StartMenuBagCallback 0806f480 0
+
+GetItemIconGfxPtr 08098974 2

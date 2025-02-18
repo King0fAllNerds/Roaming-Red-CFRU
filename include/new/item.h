@@ -207,3 +207,5 @@ enum ItemType //Sorted in this order
 	ITEM_TYPE_DRIVE,
 	ITEM_TYPE_MAIL,
 };
+
+extern const u32* gItemGraphicsTable[ITEMS_COUNT + 1][2];

@@ -144,7 +144,12 @@ static void CursorCb_Nickname(u8 taskId);
 static s8 *GetCurrentPartySlotPtr(void); 
 u16 PartyMenuButtonHandler(s8 *ptr); 
 void Task_HandleChooseMonInput(u8 taskId);
-static u8 uniTaskid; //added 
+static u8 uniTaskid; //added
+
+static void ItemUseCB_NatureMint(u8 taskId, TaskFunc func);
+static void Task_OfferNatureChange(u8 taskId);
+static void Task_HandleNatureChangeYesNoInput(u8 taskId);
+static void Task_ChangeNature(u8 taskId);
 
 //*highlightedMon = 0 is Player's Pokemon out
 //*highlightedMon = 1 is Link Partner's Pokemon out
@@ -2971,4 +2976,173 @@ void FieldUseFunc_ExpShare(u8 taskId)
 {
     sItemUseOnFieldCB = Task_ExpShareField;
     SetUpItemUseOnFieldCallback(taskId);
+}
+
+void FieldUseFunc_NatureMint(u8 taskId)
+{
+	gItemUseCB = ItemUseCB_NatureMint;
+	SetUpItemUseCallback(taskId);
+}
+
+static void ItemUseCB_NatureMint(u8 taskId, TaskFunc func)
+{
+	struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+	u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+
+	PlaySE(SE_SELECT);
+	if (species != SPECIES_EGG)
+	{
+		GetMonNickname(mon, gStringVar1);
+		StringExpandPlaceholders(gStringVar4, gText_MintOfferGive);
+		DisplayPartyMenuMessage(gStringVar4, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = Task_OfferNatureChange;
+	}
+	else //No Effect
+	{
+		gPartyMenuUseExitCallback = FALSE;
+		DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+		ScheduleBgCopyTilemapToVram(2);
+		gTasks[taskId].func = func;
+	}
+}
+
+static void Task_OfferNatureChange(u8 taskId)
+{
+	if (IsPartyMenuTextPrinterActive() != TRUE)
+	{
+		PartyMenuDisplayYesNoMenu();
+		gTasks[taskId].func = Task_HandleNatureChangeYesNoInput;
+	}
+}
+
+static void Task_HandleNatureChangeYesNoInput(u8 taskId)
+{
+	switch (Menu_ProcessInputNoWrapClearOnChoose())
+	{
+		case 0:
+			gTasks[taskId].func = Task_ChangeNature;
+			break;
+		case MENU_B_PRESSED:
+			PlaySE(SE_SELECT);
+			// Fallthrough
+		case 1:
+			gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+			break;
+	}
+}
+
+static void Task_ChangeNature(u8 taskId)
+{
+    u16 item = Var800E;
+    struct Pokemon* mon = &gPlayerParty[gPartyMenu.slotId];
+    u8 NatureType = ItemId_GetHoldEffectParam(item);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u8 wantedNature = NATURE_SERIOUS;
+    
+    PlaySE(SE_USE_ITEM);
+    GetMonNickname(mon, gStringVar1);
+
+    if (NatureType == 0) {
+        wantedNature = NATURE_LONELY;
+        StringCopy(gStringVar2, sText_Nature_Lonely);
+    } else if (NatureType == 1) {
+        wantedNature = NATURE_ADAMANT;
+        StringCopy(gStringVar2, sText_Nature_Adamant);
+    } else if (NatureType == 2) {
+        wantedNature = NATURE_NAUGHTY;
+        StringCopy(gStringVar2, sText_Nature_Naughty);
+    } else if (NatureType == 3) {
+        wantedNature = NATURE_BRAVE;
+        StringCopy(gStringVar2, sText_Nature_Brave);
+    } else if (NatureType == 4) {
+        wantedNature = NATURE_BOLD;
+        StringCopy(gStringVar2, sText_Nature_Bold);
+    } else if (NatureType == 5) {
+        wantedNature = NATURE_IMPISH;
+        StringCopy(gStringVar2, sText_Nature_Impish);
+    } else if (NatureType == 6) {
+        wantedNature = NATURE_LAX;
+        StringCopy(gStringVar2, sText_Nature_Lax);
+    } else if (NatureType == 7) {
+        wantedNature = NATURE_RELAXED;
+        StringCopy(gStringVar2, sText_Nature_Relaxed);
+    } else if (NatureType == 8) {
+        wantedNature = NATURE_MODEST;
+        StringCopy(gStringVar2, sText_Nature_Modest);
+    } else if (NatureType == 9) {
+        wantedNature = NATURE_MILD;
+        StringCopy(gStringVar2, sText_Nature_Mild);
+    } else if (NatureType == 10) {
+        wantedNature = NATURE_RASH;
+        StringCopy(gStringVar2, sText_Nature_Rash);
+    } else if (NatureType == 11) {
+        wantedNature = NATURE_QUIET;
+        StringCopy(gStringVar2, sText_Nature_Quiet);
+    } else if (NatureType == 12) {
+        wantedNature = NATURE_CALM;
+        StringCopy(gStringVar2, sText_Nature_Calm);
+    } else if (NatureType == 13) {
+        wantedNature = NATURE_GENTLE;
+        StringCopy(gStringVar2, sText_Nature_Gentle);
+    } else if (NatureType == 14) {
+        wantedNature = NATURE_CAREFUL;
+        StringCopy(gStringVar2, sText_Nature_Careful);
+    } else if (NatureType == 15) {
+        wantedNature = NATURE_SASSY;
+        StringCopy(gStringVar2, sText_Nature_Sassy);
+    } else if (NatureType == 16) {
+        wantedNature = NATURE_TIMID;
+        StringCopy(gStringVar2, sText_Nature_Timid);
+    } else if (NatureType == 17) {
+        wantedNature = NATURE_HASTY;
+        StringCopy(gStringVar2, sText_Nature_Hasty);
+    } else if (NatureType == 18) {
+        wantedNature = NATURE_JOLLY;
+        StringCopy(gStringVar2, sText_Nature_Jolly);
+    } else if (NatureType == 19) {
+        wantedNature = NATURE_NAIVE;
+        StringCopy(gStringVar2, sText_Nature_Naive);
+    } else if (NatureType == 20) {
+        wantedNature = NATURE_SERIOUS;
+        StringCopy(gStringVar2, sText_Nature_Serious);
+    }
+
+    if (species != SPECIES_EGG) {
+        u32 speciesPersonality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+        u8 abilityBit = speciesPersonality & 1;
+        u32 personality;
+        u8 gender = GetGenderFromSpeciesAndPersonality(species, speciesPersonality);
+        bool8 isShiny = IsMonShiny(mon);
+        u32 trainerId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+        u16 sid = HIHALF(trainerId);
+        u16 tid = LOHALF(trainerId);
+        
+        do
+        {
+            personality = Random32();
+            
+            if (isShiny) {
+                u8 shinyRange = 1;
+                personality = (((shinyRange ^ (sid ^ tid)) ^ LOHALF(personality)) << 16) | LOHALF(personality);
+            }
+            
+            personality &= ~(1);
+            personality |= abilityBit;
+            
+            if (wantedNature == GetNatureFromPersonality(personality)) {
+                if (GetGenderFromSpeciesAndPersonality(species, personality) == gender)
+                    break;
+            }
+        } while (TRUE);
+
+        SetMonData(mon, MON_DATA_PERSONALITY, &personality);
+        CalculateMonStats(mon);
+    }
+
+    StringExpandPlaceholders(gStringVar4, gText_MintUsed);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+    RemoveBagItem(Var800E, 1);
 }

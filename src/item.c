@@ -2169,3 +2169,10 @@ u16 GetBestBallInBag(void)
 
 	return bestBall;
 }
+
+const u32* GetItemIconGfxPtr(u16 itemId, u8 attrId)
+{
+    if (itemId > ITEMS_COUNT)
+        itemId = ITEM_NONE;
+    return gItemGraphicsTable[itemId][attrId];
+}
