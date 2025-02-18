@@ -1976,3 +1976,17 @@ map \map
 	callstd \type
 	callasm ClearMiniBox
 .endm
+
+.macro followerfaceplayer
+callasm FollowerMonFacePlayer
+.endm
+
+.macro hidefollowermon
+callasm CreateSparkleSprite
+callasm HideFollower
+.endm
+
+.macro showfollowermon
+callasm CreateSparkleSprite
+callasm ShowFollowerMon
+.endm

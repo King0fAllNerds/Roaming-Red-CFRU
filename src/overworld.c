@@ -16,6 +16,7 @@
 #include "../include/field_weather.h"
 #include "../include/fieldmap.h"
 #include "../include/fldeff_misc.h"
+#include "../include/follower_mon.h"
 #include "../include/item.h"
 #include "../include/link.h"
 #include "../include/list_menu.h"
@@ -3072,3 +3073,88 @@ const union AnimCmd gEventObjectImageAnim_RunEast[] =
 };
 #endif
 
+/*
+#define ReturnFieldOpenedMenu ((void*)0x0807E3BD)
+void CB2_ReturnToFieldWithOpenMenu(void)
+{
+    FieldClearVBlankHBlankCallbacks(); 
+    gFieldCallback2 = ReturnFieldOpenedMenu;
+	if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
+    	UpdateFollowerMonSprite();
+    CB2_ReturnToField();
+}
+static u16 GetTrainerAFlag(void)
+{
+    return FLAG_TRAINER_FLAG_START + gTrainerBattleOpponent_A;
+}
+static u16 GetTrainerBFlag(void)
+{
+    return FLAG_TRAINER_FLAG_START + gTrainerBattleOpponent_B;
+}
+static void SetBattledTrainersFlags(void)
+{
+    if (gTrainerBattleOpponent_B != 0)
+        FlagSet(GetTrainerBFlag());
+    FlagSet(GetTrainerAFlag());
+}
+static bool32 IsPlayerDefeated(u32 battleOutcome)
+{
+    switch (battleOutcome)
+    {
+    case B_OUTCOME_LOST:
+    case B_OUTCOME_DREW:
+        return TRUE;
+    case B_OUTCOME_WON:
+    case B_OUTCOME_RAN:
+    case B_OUTCOME_PLAYER_TELEPORTED:
+    case B_OUTCOME_MON_FLED:
+    case B_OUTCOME_CAUGHT:
+        return FALSE;
+    default:
+        return FALSE;
+    }
+}
+void CB2_EndTrainerBattle(void)
+{
+    if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
+    {
+        CB2_ReturnToFieldContinueScriptPlayMapMusic();
+    }
+    else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+    {
+        if (InBattleSands())
+            CB2_ReturnToFieldContinueScriptPlayMapMusic();
+        else
+            CB2_WhiteOut();
+    }
+    else
+    {
+        CB2_ReturnToFieldContinueScriptPlayMapMusic();
+		if (FlagGet(FLAG_FOLLOWER_POKEMON))
+		{
+			UpdateFollowerMonSprite();
+		}
+		if (!InBattleSands())
+        {
+            SetBattledTrainersFlags();
+        }
+    }
+}
+*/
+
+void CB2_ReturnToField(void)
+{
+    if (IsUpdateLinkStateCBActive() == TRUE)
+    {
+        SetMainCallback2(CB2_ReturnToFieldLink);
+    }
+    else
+    {
+        FieldClearVBlankHBlankCallbacks();
+        SetMainCallback2(CB2_ReturnToFieldLocal);
+    }
+	if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
+	{
+		UpdateFollowerMonSprite();
+	}
+}

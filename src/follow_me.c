@@ -8,6 +8,7 @@
 #include "../include/field_weather.h"
 #include "../include/fieldmap.h"
 #include "../include/fldeff_misc.h"
+#include "../include/follower_mon.h"
 #include "../include/item.h"
 #include "../include/metatile_behavior.h"
 #include "../include/overworld.h"
@@ -52,6 +53,8 @@ static void CalculateFollowerEscalatorTrajectoryUp(struct Task *task);
 static void CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
 static void SetFollowerSprite(u8 spriteIndex);
 static void TurnNPCIntoFollower(u8 localId, u8 followerFlags);
+
+extern u8 EventScript_FollowerMon[];
 
 #define MOVEMENT_INVALID 0xFE
 
@@ -294,6 +297,17 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 
 	*((u8*) 0x2023D6C) = newState;
 
+	#ifdef SIDEWAY_STAIRS_IMPLEMENTED
+	switch (newState) {
+		case MOVEMENT_ACTION_JUMP_2_DOWN ... MOVEMENT_ACTION_JUMP_2_RIGHT:
+		case 0x84 ... 0x87:
+		case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
+		case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_RUN_LEFT_UP_FACE_LEFT:
+			CreateTask(Task_ReallowPlayerMovement, 1); //Synchronize movements on stairs and ledges
+			gPlayerAvatar->preventStep = TRUE;
+	}
+	#else
+
 	switch (newState) {
 		case MOVEMENT_ACTION_JUMP_2_DOWN ... MOVEMENT_ACTION_JUMP_2_RIGHT:
 		case 0x84 ... 0x87:
@@ -303,6 +317,7 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 			CreateTask(Task_ReallowPlayerMovement, 1); //Synchronize movements on stairs and ledges
 			gPlayerAvatar->preventStep = TRUE;
 	}
+	#endif
 
 RESET:
 	EventObjectClearHeldMovementIfFinished(follower);
@@ -483,7 +498,7 @@ static u8 DetermineFollowerState(struct EventObject* follower, u8 state, u8 dire
 
 			gFollowerState.delayedState = MOVEMENT_ACTION_SPIN_PAD_DOWN;
 			RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction);
-
+	#ifndef SIDEWAY_STAIRS_IMPLEMENTED
 		case MOVEMENT_ACTION_WALK_SLOWEST_UP_BACKWARDS ... MOVEMENT_ACTION_WALK_SLOWEST_LEFT_BACKWARDS:
 			RETURN_STATE(MOVEMENT_ACTION_WALK_SLOWEST_UP_BACKWARDS, direction);
 
@@ -501,6 +516,41 @@ static u8 DetermineFollowerState(struct EventObject* follower, u8 state, u8 dire
 
 		case MOVEMENT_ACTION_JUMP_UP_BACKWARDS ... MOVEMENT_ACTION_JUMP_LEFT_BACKWARDS:
 			RETURN_STATE(MOVEMENT_ACTION_JUMP_UP_BACKWARDS, direction);
+	#endif
+
+	#ifdef SIDEWAY_STAIRS_IMPLEMENTED
+		case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
+			//Walk up/down side stairs
+			if (newState == state + direction) //Still walking up/down stairs same direction
+			{
+				newState = MOVEMENT_INVALID;
+				RETURN_STATE(state, 1); //Each is its own movement
+			}
+			else if (newState - direction >= MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT
+			&&  newState - direction <= MOVEMENT_ACTION_RUN_LEFT_UP_FACE_LEFT) //Change direction on stairs
+			{
+				gFollowerState.delayedState = state;
+
+				//Get new state but at different speed
+				newState -= direction;
+				u8 simpleState = MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT;
+				switch (newState) {
+					case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
+						state = (newState - MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT) + simpleState;
+						break;
+					case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_RUN_LEFT_UP_FACE_LEFT:
+						state = (newState - MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT) + simpleState;
+						break;
+				}
+
+				newState = MOVEMENT_INVALID;
+				RETURN_STATE(state, 1); //Each is its own movement
+			}
+
+			//Beginning on stairs
+			gFollowerState.delayedState = state;
+			RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction); //Each is its own movement
+		#else
 
 		case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
 			//Walk up/down side stairs
@@ -537,11 +587,31 @@ static u8 DetermineFollowerState(struct EventObject* follower, u8 state, u8 dire
 			gFollowerState.delayedState = state;
 			RETURN_STATE(MOVEMENT_ACTION_WALK_NORMAL_DOWN, direction); //Each is its own movement
 
-		case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT: ;
+			#endif
+			#ifdef SIDEWAY_STAIRS_IMPLEMENTED
+			case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_RUN_LEFT_UP_FACE_LEFT: ;
+			#else
+			case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT: ;
+		#endif
 			//Run up/down side stairs
 			u8 delayState;
 			u8 simpleState;
 			u8 action;
+
+			#ifdef SIDEWAY_STAIRS_IMPLEMENTED
+			if (gFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
+			{
+				delayState = state;
+				simpleState = MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT;
+				action = MOVEMENT_ACTION_SLIDE_RIGHT_FOOT_DOWN;
+			}
+			else
+			{
+				delayState = state;
+				simpleState = MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT;
+				action = MOVEMENT_ACTION_SLIDE_RIGHT_FOOT_DOWN;
+			}
+			#else
 
 			if (gFollowerState.flags & FOLLOWER_FLAG_HAS_RUNNING_FRAMES)
 			{
@@ -555,12 +625,30 @@ static u8 DetermineFollowerState(struct EventObject* follower, u8 state, u8 dire
 				simpleState = MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN;
 				action = MOVEMENT_ACTION_WALK_FAST_DOWN;
 			}
-
+			#endif
 			if (newState == state + direction)
 			{
 				newState = MOVEMENT_INVALID;
 				RETURN_STATE(delayState, 1); //Each is its own movement
 			}
+			#ifdef SIDEWAY_STAIRS_IMPLEMENTED
+			else if (newState - direction >= MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT
+			&&  newState - direction <= MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT)
+			{
+				newState -= direction;
+				switch (newState) {
+					case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
+						state = (newState - MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT) + simpleState;
+						break;
+					case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_RUN_LEFT_UP_FACE_LEFT:
+						state = (newState - MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT) + simpleState;
+						break;
+
+					gFollowerState.delayedState = delayState;
+					newState = MOVEMENT_INVALID;
+					RETURN_STATE(state, 1); //Each is its own movement
+				}
+			#else
 			else if (newState - direction >= MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN
 			&&  newState - direction <= MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT)
 			{
@@ -581,10 +669,11 @@ static u8 DetermineFollowerState(struct EventObject* follower, u8 state, u8 dire
 				newState = MOVEMENT_INVALID;
 				RETURN_STATE(state, 1); //Each is its own movement
 			}
-
+			#endif
 			gFollowerState.delayedState = delayState;
 			RETURN_STATE(action, direction); //Each is its own movement
 
+		#ifndef SIDEWAY_STAIRS_IMPLEMENTED
 		case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT: ;
 			//Bike up/down side stairs
 			if (newState == state + direction)
@@ -617,9 +706,10 @@ static u8 DetermineFollowerState(struct EventObject* follower, u8 state, u8 dire
 
 			gFollowerState.delayedState = state;
 			RETURN_STATE(MOVEMENT_ACTION_WALK_FAST_DOWN, direction); //Each is its own movement
-
+		#endif
 		default:
 			return MOVEMENT_INVALID;
+		}
 	}
 
 	return newState;
@@ -700,13 +790,21 @@ static u8 ReturnFollowerDelayedState(u8 direction)
 	u8 newState = gFollowerState.delayedState;
 	gFollowerState.delayedState = 0;
 
+	#ifdef SIDEWAY_STAIRS_IMPLEMENTED
+	switch (newState) {
+		case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
+		case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_LEFT ... MOVEMENT_ACTION_RUN_LEFT_UP_FACE_LEFT:
+			return newState; //Each its own movement, so don't modify direction
+	}
+	#else
+
 	switch (newState) {
 		case MOVEMENT_ACTION_WALK_NORMAL_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_NORMAL_RIGHT_UP_FACE_RIGHT:
 		case MOVEMENT_ACTION_RUN_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_RUN_RIGHT_UP_FACE_RIGHT:
 		case MOVEMENT_ACTION_WALK_FAST_LEFT_DOWN_FACE_DOWN ... MOVEMENT_ACTION_WALK_FAST_RIGHT_UP_FACE_RIGHT:
 			return newState; //Each its own movement, so don't modify direction
 	}
-
+#endif
 	return newState + direction;
 }
 
@@ -1486,6 +1584,9 @@ static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
 			gFollowerState.map.id = gEventObjects[eventObjId].localId;
 			gFollowerState.map.number = gSaveBlock1->location.mapNum;
 			gFollowerState.map.group = gSaveBlock1->location.mapGroup;
+			if (FlagGet(FLAG_FOLLOWER_POKEMON))
+			gFollowerState.script = EventScript_FollowerMon;
+			else
 			gFollowerState.script = script;
 			gFollowerState.flag = flag;
 			gFollowerState.flags = followerFlags;
@@ -1504,7 +1605,17 @@ static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
 //			Var8001 - Follower flags.
 void sp0D1_SetUpFollowerSprite(void)
 {
-	TurnNPCIntoFollower(VarGet(Var8000), Var8001);
+	if (FlagGet(FLAG_FOLLOWER_POKEMON))
+	{
+		CreateFollowerMonObject();
+		TurnNPCIntoFollower(30, Var8001);
+		TurnFollowerMonToPlayer();
+		CreateSparkleSprite();
+	}
+	else
+	{
+		TurnNPCIntoFollower(VarGet(Var8000), Var8001);
+	}
 }
 
 //@Details: Ends the follow me feature.
@@ -1581,4 +1692,36 @@ void TryAttachFollowerToPlayer(void)
 		struct EventObject* follower = &gEventObjects[GetFollowerMapObjId()];
 		MoveEventObjectToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
 	}
+}
+
+void UpdateFollowerMonSprite(void)
+{
+	u16 followerMonGfx = GetFollowerMonSprite();
+
+    if (followerMonGfx == 0)
+        return;
+
+    gFollowerState.gfxId = followerMonGfx;
+
+    struct EventObject* follower = &gEventObjects[GetFollowerMapObjId()];
+    u8 oldSpriteId = follower->spriteId;
+    u16 newGraphicsId = GetFollowerSprite();
+
+    struct EventObject backupFollower = *follower;
+    backupFollower.graphicsIdLowerByte = newGraphicsId & 0xFF;
+    backupFollower.graphicsIdUpperByte = newGraphicsId >> 8;
+    DestroySprite(&gSprites[oldSpriteId]);
+    RemoveEventObject(&gEventObjects[GetFollowerMapObjId()]);
+
+    struct EventObjectTemplate clone = *GetEventObjectTemplateByLocalIdAndMap(gFollowerState.map.id, gFollowerState.map.number, gFollowerState.map.group);
+    clone.graphicsIdLowerByte = newGraphicsId & 0xFF;
+    clone.graphicsIdUpperByte = newGraphicsId >> 8;
+    gFollowerState.objId = TrySpawnEventObjectTemplate(&clone, gSaveBlock1->location.mapNum, gSaveBlock1->location.mapGroup, clone.x, clone.y);
+
+    follower = &gEventObjects[GetFollowerMapObjId()];
+    u8 newSpriteId = follower->spriteId;
+    *follower = backupFollower;
+    follower->spriteId = newSpriteId;
+    MoveEventObjectToMapCoords(follower, follower->currentCoords.x, follower->currentCoords.y);
+    EventObjectTurn(follower, follower->facingDirection);
 }
