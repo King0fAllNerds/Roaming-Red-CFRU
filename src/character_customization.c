@@ -259,13 +259,115 @@ static const u16* sPlayerMarlonOutfitColours[] =
 	};
 
 #else //Modify this
+
+extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
+
+static NPCPtr sOverworldTable2[] =
+{
+	&gFollowerMonGfxTable0[0],
+	&gFollowerMonGfxTable0[1],
+	&gFollowerMonGfxTable0[2],
+	&gFollowerMonGfxTable0[3],
+	&gFollowerMonGfxTable0[4],
+};
+
 	// create 255 OW tables
 	const struct EventObjectGraphicsInfo** const gOverworldTableSwitcher[255] =
 	{
 		(NPCPtr*) 0x839FDB0,
-		(NPCPtr*) 0x0,
+		sOverworldTable2,
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
+	};
+	
+	static const struct SpritePalette gObjectEventSpritePalettes12[] = {
+		{gObjectEventPallete_1, 0x1100},
+		{gObjectEventPallete_2, 0x1101},
+		{gObjectEventPallete_3, 0x1102},
+		{gObjectEventPallete_4, 0x1103},
+		{gObjectEventPallete_5, 0x1104},
+		{gObjectEventPallete_6, 0x1105},
+		{gObjectEventPallete_7, 0x1106},
+		{gObjectEventPallete_8, 0x1107},
+		{gObjectEventPallete_9, 0x1108},
+		{gObjectEventPallete_10, 0x1109},
+		{gObjectEventPallete_11, 0x110A},
+		{gObjectEventPallete_12, 0x110B},
+		{gObjectEventPallete_13, 0x110C},
+		{gObjectEventPallete_14, 0x1110},
+		{gObjectEventPallete_15, 0x1111},
+		{gObjectEventPallete_16, 0x1113},
+		{gObjectEventPallete_17, 0x1115},
+		{gObjectEventPallete_18, 0x1114},
+		{gObjectEventPallete_19, 0x1116},
+		{gObjectEventPallete_20, 0x1117},
+		{gObjectEventPallete_21, 0x1118},
+		{gObjectEventPallete_22, 0x1119},
+		{gObjectEventPallete_23, 0x111A},
+		{gObjectEventPallete_24, 0x111B},
+		{gObjectEventPallete_25, 0x111C},
+		{gObjectEventPallete_26, 0x111D},
+		{gObjectEventPallete_27, 0x111E},
+		{gObjectEventPallete_28, 0x111F},
+		{gObjectEventPallete_29, 0x1120},
+		{gObjectEventPallete_30, 0x1121},
+		{gObjectEventPallete_31, 0x1122},
+		{gObjectEventPallete_32, 0x1123},
+		{gObjectEventPallete_33, 0x1124},
+		{gObjectEventPallete_34, 0x1125},
+		{gObjectEventPallete_35, 0x1126},
+		{gObjectEventPallete_36, 0x1127},
+		{gObjectEventPallete_37, 0x1128},
+		{gObjectEventPallete_38, 0x1129},
+		{gObjectEventPallete_39, 0x112A},
+		{gObjectEventPallete_40, 0x112B},
+		{gObjectEventPallete_41, 0x112C},
+		{gObjectEventPallete_42, 0x112D},
+		{gObjectEventPallete_43, 0x112E},
+		{gObjectEventPallete_44, 0x112F},
+		{gObjectEventPallete_45, 0x1130},
+		{gObjectEventPallete_46, 0x1131},
+		{gObjectEventPallete_47, 0x1132},
+		{gObjectEventPallete_48, 0x1133},
+		{gObjectEventPallete_49, 0x1134},
+		{gObjectEventPallete_50, 0x1135},
+		{gObjectEventPallete_51, 0x1136},
+		{gObjectEventPallete_52, 0x1137},
+		{gObjectEventPallete_53, 0x1138},
+		{gObjectEventPallete_54, 0x1139},
+		{gObjectEventPallete_55, 0x113A},
+		{gObjectEventPallete_56, 0x113B},
+		{gObjectEventPallete_57, 0x113C},
+		{gObjectEventPallete_58, 0x113D},
+		{gObjectEventPallete_59, 0x113E},
+		{gObjectEventPallete_60, 0x113F},
+		{gObjectEventPallete_61, 0x1140},
+		{gObjectEventPallete_62, 0x1141},
+		{gObjectEventPallete_63, 0x1142},
+		{gObjectEventPallete_64, 0x1143},
+		{gObjectEventPallete_65, 0x1144},
+		{gObjectEventPallete_66, 0x1145},
+		{gObjectEventPallete_67, 0x1146},
+		{gObjectEventPallete_68, 0x1147},
+		{gObjectEventPallete_69, 0x1148},
+		{gObjectEventPallete_70, 0x1149},
+		{gObjectEventPallete_71, 0x114A},
+		{gObjectEventPallete_72, 0x114B},
+		{gObjectEventPallete_73, 0x114C},
+		{gObjectEventPallete_74, 0x114D},
+		{gObjectEventPallete_75, 0x114E},
+		{gFollowerMonPic0001_BulbasaurPal, 0x1200},
+		{gFollowerMonPic0002_IvysaurPal, 0x1201},
+		{gFollowerMonPic0003_VenusaurPal, 0x1202},
+		{gFollowerMonPic0004_CharmanderPal, 0x1203},
+		{gFollowerMonPic0005_CharmeleonPal, 0x1204},
+		{NULL, 0x11FF} // Fim da lista
+	};
+	
+	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
+	{
+		[0x11] = (const struct SpritePalette*) 0x84097AC,
+		[0x12] = gObjectEventSpritePalettes12,
 	};
 #endif
 

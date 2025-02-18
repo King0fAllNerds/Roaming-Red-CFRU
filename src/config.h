@@ -355,6 +355,10 @@ enum //These vars need to be one after the other (hence the enum)
 #define VAR_WILD_LEVEL_SCALING 0x5153
 #define VAR_AUTO_SORT_BAG 0x5154
 
+/*Expansion specials!*/
+#define SIDEWAY_STAIRS_IMPLEMENTED //Uncomment if you're using Sideway Stairs patch.
+#define FLAG_FOLLOWER_POKEMON 0x4BD //0x4BD is an unused flag.
+
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 

@@ -1076,7 +1076,7 @@ SetMainCallback1 = 0x80565E0 | 1;
 CB2_NewGameOld = 0x8056644 | 1;
 CB2_WhiteOut = 0x80566A4 | 1;
 CB2_LoadMap = 0x805671C | 1;
-CB2_ReturnToField = 0x80567DC | 1;
+/*CB2_ReturnToField = 0x80567DC | 1;*/
 CB2_ReturnToFieldLocal = 0x8056808 | 1;
 CB2_ReturnToFieldLink = 0x8056854 | 1;
 CB2_ReturnToFieldFromMultiplayer = 0x8056854 | 1;
@@ -2189,3 +2189,6 @@ gText_ButtonTypeHelp = 0x8419e46;
 gText_ButtonTypeLEqualsA = 0x8419e4b;
 gText_ButtonTypeLR = 0x8419e4f;
 gText_FrameType = 0x8419e52;
+
+/* Following Mon */
+FieldClearVBlankHBlankCallbacks = 0x80569BC | 1;
