@@ -28,6 +28,7 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - Use HMs in field
 - Updated Z moves,Mega evo and dynamax/gmax trigger icons
 - Second page in options menu
+- Following Pokemon
 - And much more!
 
 ##### Introduction to the maintainers
@@ -58,3 +59,4 @@ Change word to new number of items for "21 03"
 - If you want to see how potential this expansion would have in future read [this](https://github.com/Shiny-Miner/CFRU-expansion/blob/Experiments/todo.md)
 - Please don't try to use leon rombase on it as it already contains items + more
 - Added convienience for compiling, now run a_makepy.bat to make the project (it executes "python scripts//make.py") and run b_cleanpy.bat to clean repo (it runs python scripts//clean.py)
+- Do not talk to Fat guy and Lady in pallet town unless if you're trying to test following pokemon code. Its in development and the bugs are still to be fixed!

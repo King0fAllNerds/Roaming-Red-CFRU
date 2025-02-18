@@ -34,11 +34,13 @@ EventScript_Pallet_Girl:
     compare LASTRESULT 0x1
     if YES _goto PalletGirl_ShowFollowerMon
     hidefollowermon
+    clearflag 0x4BD
     release
     end
 
 PalletGirl_ShowFollowerMon:
     showfollowermon
+    setflag 0x4BD
     release
     end
     
