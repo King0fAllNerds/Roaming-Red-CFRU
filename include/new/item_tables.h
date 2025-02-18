@@ -109,12 +109,12 @@
 #define gBag_GreenShardTiles ((u32*)0x08E88F50)
 #define gBag_GreenShardPal ((u32*)0x08E88FF4)
 
-extern const u8 gItemSprite_Rage_Candy_BarTiles[];
-extern const u8 gItemSprite_Rage_Candy_BarPal[];
-extern const u8 gItemSprite_Old_GateauTiles[];
-extern const u8 gItemSprite_Old_GateauPal[];
-extern const u8 gItemSprite_CasteliaconeTiles[];
-extern const u8 gItemSprite_CasteliaconePal[];
+extern const u32 gItemSprite_Rage_Candy_BarTiles[];
+extern const u32 gItemSprite_Rage_Candy_BarPal[];
+extern const u32 gItemSprite_Old_GateauTiles[];
+extern const u32 gItemSprite_Old_GateauPal[];
+extern const u32 gItemSprite_CasteliaconeTiles[];
+extern const u32 gItemSprite_CasteliaconePal[];
 extern const u32 gBag_LumioseGaletteTiles[];
 extern const u32 gBag_LumioseGalettePal[];
 extern const u32 gBag_ShalourSableTiles[];
@@ -1392,6 +1392,7 @@ void __attribute__((long_call)) FieldUseFunc_PowderJar(u8 taskId);
 void FieldUseFunc_FormChangeItem(u8 taskId);
 void FieldUseFunc_AbilityCapsule(u8 taskId);
 void FieldUseFunc_ExpShare(u8 taskId);
+void FieldUseFunc_NatureMint(u8 taskId);
 
 //Descriptions
 #define gText_ItemNone ((const u8 *)0x083DB020)

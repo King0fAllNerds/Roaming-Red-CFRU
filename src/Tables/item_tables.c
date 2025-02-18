@@ -1774,7 +1774,6 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
-	{NULL, NULL},
 };
 
 const struct Item gItemData[] =
@@ -14087,7 +14086,7 @@ const struct Item gItemData[] =
         .battleUsage = 0,
         .battleUseFunc = NULL,
         .secondaryId = 0
-    }
+    },
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
         .itemId = ITEM_FREE_SPACE1,
