@@ -347,10 +347,9 @@ bool8 StartCB_HandleInput(void)
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void; 
 		if (sStartMenuCursorPos==STARTMENU_EXIT)
-		RemoveTimeBox();
-	    DestroyHelpMessageWindow_();
-        CloseStartMenu();
-        return TRUE;
+	    	DestroyHelpMessageWindow_();
+        	CloseStartMenu();
+			RemoveTimeBox();
 		StartMenu_FadeScreenIfLeavingOverworld();
 		return FALSE;
 	}
