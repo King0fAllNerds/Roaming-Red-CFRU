@@ -54,7 +54,7 @@ extern u8 gFieldLinkPlayerCount;
 extern u8 gGlobalFieldTintMode;
 
 // Exported ROM declarations
-extern const struct UCoords32 gDirectionToVectors[];
+extern const struct Coords32 gDirectionToVectors[];
 
 struct MapHeader* __attribute__((long_call)) Overworld_GetMapHeaderByGroupAndId(u16 mapGroup, u16 mapNum);
 void __attribute__((long_call)) ResetInitialPlayerAvatarState(void);

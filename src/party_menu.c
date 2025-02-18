@@ -991,7 +991,9 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         #ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
         bool8 knowsFly = FALSE;
         bool8 knowsDig = FALSE;
+        #ifdef UNBOUND
         bool8 knowsCut = FALSE;
+        #endif
         #endif
 
         sPartyMenuInternal->numActions = 0;
@@ -1027,8 +1029,10 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
                                         knowsFly = TRUE; //No point in appending Fly if it is already there
                                 else if (gFieldMoves[j] == MOVE_DIG)
                                         knowsDig = TRUE;
+                                #ifdef UNBOUND
                                 else if (gFieldMoves[j] == MOVE_CUT)
                                         knowsCut = TRUE;
+                                #endif
                                 #endif
                         }
                 }
@@ -2869,7 +2873,6 @@ void Task_HandleChooseMonInput(u8 taskId)
 u16 PartyMenuButtonHandler(s8 *slotPtr) 
  { 
      s8 movementDir; 
-     u8 taskId; 
   
      switch (gMain.newAndRepeatedKeys) 
      { 
@@ -2901,20 +2904,20 @@ u16 PartyMenuButtonHandler(s8 *slotPtr)
          break; 
      } 
      if (JOY_NEW(START_BUTTON)) 
-         return 8; 
+         return 8;
      if (JOY_NEW(SELECT_BUTTON) && CalculatePlayerPartyCount() > 1) 
-     { 
+     {
          if(gPartyMenu.menuType != PARTY_MENU_TYPE_FIELD) 
              return 8; 
          if(*slotPtr == PARTY_SIZE + 1) 
              return 8; // do nothing if select is pressed on Cancel 
          if(gPartyMenu.action != PARTY_ACTION_SWITCH) 
-         { 
-             taskId = CreateTask(CursorCB_Switch, 1); 
-             return 9; 
-         } 
+         {
+             CreateTask(CursorCB_Switch, 1); 
+             return 9;
+         }
          return 1; //select acts as A button when in switch mode 
-     } 
+     }
      if (movementDir) 
      { 
          UpdateCurrentPartySelection(slotPtr, movementDir); 

@@ -131,6 +131,49 @@ void __attribute__((long_call)) DoShadowFieldEffect(struct EventObject*);
 void __attribute__((long_call)) DoGroundEffects_OnBeginStep(struct EventObject* eventObject, struct Sprite *sprite);
 void __attribute__((long_call)) DoGroundEffects_OnFinishStep(struct EventObject* eventObject, struct Sprite *sprite);
 
+//New Added
+u8 GetSidewaysStairsCollision(struct EventObject *eventObject, u8 dir, u8 currentBehavior, u8 nextBehavior, u8 collision);
+bool8 __attribute__((long_call)) DoesObjectCollideWithObjectAt(struct EventObject *, s16, s16);
+
+bool8 __attribute__((long_call)) MovementAction_WalkInPlace_Step1(struct EventObject *eventObject, struct Sprite *sprite);
+bool8 __attribute__((long_call)) MovementAction_RideWaterCurrentLeft_Step1(struct EventObject *eventObject, struct Sprite *sprite);
+bool8 __attribute__((long_call)) MovementAction_RideWaterCurrentRight_Step1(struct EventObject *eventObject, struct Sprite *sprite);
+bool8 __attribute__((long_call)) MovementAction_WalkFasterLeft_Step1(struct EventObject *eventObject, struct Sprite *sprite);
+bool8 __attribute__((long_call)) MovementAction_WalkFasterRight_Step1(struct EventObject *eventObject, struct Sprite *sprite);
+bool8 __attribute__((long_call)) MovementAction_SlideLeft_Step1(struct EventObject *eventObject, struct Sprite *sprite);
+bool8 __attribute__((long_call)) MovementAction_SlideRight_Step1(struct EventObject *eventObject, struct Sprite *sprite);
+
+void __attribute__((long_call)) GetGroundEffectFlags_Tracks(struct EventObject *objEvent, u32 *flags);
+void __attribute__((long_call)) SetObjectEventDirection(struct EventObject *eventObject, u8 direction);
+bool8 __attribute__((long_call)) UpdateWalkSlower(struct EventObject *eventObject, struct Sprite *sprite);
+void __attribute__((long_call)) InitWalkSlower(struct EventObject *eventObject, struct Sprite *sprite, u8 direction);
+void __attribute__((long_call)) ShiftEventObjectCoords(struct EventObject *, s16, s16);
+void __attribute__((long_call)) SetWalkSlowerSpriteData(struct Sprite *sprite, u8 direction);
+void __attribute__((long_call)) SetSpriteDataForNormalStep(struct Sprite *sprite, u8 direction, u8 speed);
+u8 __attribute__((long_call)) GetVanillaCollision(struct EventObject *eventObject, s16 x, s16 y, u32 dir);
+u8 __attribute__((long_call)) GetMoveDirectionFasterAnimNum(u8 direction);
+void __attribute__((long_call)) InitMoveInPlace(struct EventObject *eventObject, struct Sprite *sprite, u8 direction, u8 animNum, u16 duration);
+bool8 __attribute__((long_call)) UpdateWalkSlow(struct EventObject *eventObject, struct Sprite *sprite);
+void __attribute__((long_call)) SetWalkSlowSpriteData(struct Sprite *sprite, u8 direction);
+bool8 __attribute__((long_call)) DoJumpAnim(struct EventObject *eventObject, struct Sprite *sprite);
+void __attribute__((long_call)) MoveCoordsInDirection(u32 dir, s16 *x, s16 *y, s16 deltaX, s16 deltaY);
+void __attribute__((long_call)) SetJumpSpriteData(struct Sprite *sprite, u8 direction, u8 distance, u8 type);
+void __attribute__((long_call)) SetObjectEventDynamicGraphicsId(struct EventObject *);
+void __attribute__((long_call)) ClearEventObjectMovement(struct EventObject *, struct Sprite *);
+void __attribute__((long_call)) EventObjectSetSingleMovement(struct EventObject *, struct Sprite *, u8);
+bool8 __attribute__((long_call)) EventObjectExecSingleMovementAction(struct EventObject *, struct Sprite *);
+void __attribute__((long_call)) ShiftStillEventObjectCoords(struct EventObject *pObject);
+bool8 __attribute__((long_call)) NpcTakeStep(struct Sprite *sprite);
+u8 __attribute__((long_call)) DoJumpSpriteMovement(struct Sprite *sprite);
+void __attribute__((long_call)) InitJumpRegular(struct EventObject *objectEvent, struct Sprite *sprite, u8 direction, u8 distance, u8 type);
+void MovementType_FollowingPokemon(struct Sprite *);
+void __attribute__((long_call)) UpdateObjectEventCurrentMovement(struct EventObject *objectEvent, struct Sprite *sprite, bool8 (*callback)(struct EventObject *, struct Sprite *));
+void __attribute__((long_call)) OldStartRunningAnim(struct EventObject *objectEvent, struct Sprite *sprite, u8 direction);
+void __attribute__((long_call)) SetMovementDelay(struct Sprite *sprite, s16 delay);
+void __attribute__((long_call)) RemoveEventObjectIfOutsideView(struct EventObject *objectEvent);
+u8 __attribute__((long_call)) GetEventObjectIdByPosition(u16 x, u16 y, u8 elevation);
+u8 __attribute__((long_call)) GetPlayerFacingDirection(void);
+
 /*
 extern const struct SpriteFrameImage gEventObjectPicTable_PechaBerryTree[];
 extern const struct OamData gEventObjectBaseOam_32x8;

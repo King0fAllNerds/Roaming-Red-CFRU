@@ -3158,3 +3158,16 @@ void CB2_ReturnToField(void)
 		UpdateFollowerMonSprite();
 	}
 }
+
+const struct Coords32 gDirectionToVectors[] = 
+{
+    [DIR_NONE]      = { 0,  0},
+    [DIR_SOUTH]     = { 0,  1},
+    [DIR_NORTH]     = { 0, -1},
+    [DIR_WEST]      = {-1,  0},
+    [DIR_EAST]      = { 1,  0},
+    [DIR_SOUTHWEST] = {-1,  1},
+    [DIR_SOUTHEAST] = { 1,  1},
+    [DIR_NORTHWEST] = {-1, -1},
+    [DIR_NORTHEAST] = { 1, -1},
+};

@@ -21,3 +21,8 @@ gItemEffectTable2 0812504C
 
 ##New Palette Swapper
 gObjectEventSpritePalettes12 0805F5C8
+
+##New movement table
+sMovementActionFuncs 08064540
+sMovementTypeCallbacks 0805E95C
+gInitialMovementTypeFacingDirections2 0805E230

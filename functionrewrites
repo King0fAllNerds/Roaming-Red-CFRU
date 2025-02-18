@@ -1,3 +1,7 @@
 ##
 Task_HandleChooseMonInput 0x0811fb28 1 0
 PartyMenuButtonHandler 0x0811fefc 1 1
+GetEventObjectIdByLocalIdAndMap 0x0805df60 0 1
+DoJumpAnimStep 0x08065000 0 1
+RemoveEventObjectsOutsideView 0x0805ed10 0 1
+GetInteractedEventObjectScript 0x0806cff4 0 1
