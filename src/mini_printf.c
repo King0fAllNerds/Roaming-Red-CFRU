@@ -52,7 +52,7 @@
      char *buffer, *pbuffer;
      u32 buffer_len;
  };
- static s32 _puts(char *s, s32 len, void *buf)
+ static int _puts(char *s, s32 len, void *buf)
  {
      char *p0;
      s32 i;
@@ -86,11 +86,11 @@
      /* No support for unusual radixes. */
      if (radix > 16)
          return 0;
-     if (value < 0 && !unsig)
-     {
-         negative = 1;
-         value = -value;
-     }
+    if (!unsig && (s32)value < 0)
+    {
+        negative = 1;
+        value = -(s32)value;
+    }
      /* This builds the string back to front ... */
      do 
      {
