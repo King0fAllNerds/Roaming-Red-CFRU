@@ -45,7 +45,7 @@ static void MgbaPrintfBounded(s32 level, const char* ptr, ...);
  */
 static u32 MgbaConvertPStringToAsciiN(const char *src, char *dst, u32 n)
 {
-    s32 i;
+    u32 i;
 
     MGBA_ASSERT(dst != NULL);
     MGBA_ASSERT(src != NULL);

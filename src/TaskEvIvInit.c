@@ -264,7 +264,7 @@ static const struct SpritePalette sCursorSpritePalette = {(void*) 0x83CE7F0, SEL
 
 static void SpriteCB_SandboxCursor(struct Sprite* sprite)
 {
-
+    (void)sprite; // Prevents unused parameter warning
 }
 
 static void CreateSandboxCursor(void)
