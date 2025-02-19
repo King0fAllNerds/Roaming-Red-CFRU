@@ -280,7 +280,7 @@ static NPCPtr sOverworldTable2[] =
 		// please note that this method makes compatability with OW Manager challenging
 	};
 	
-	static const struct SpritePalette gObjectEventSpritePalettes12[] = {
+	static const struct SpritePalette gObjectEventSpritePalettes11[] = {
 		{gObjectEventPallete_1, 0x1100},
 		{gObjectEventPallete_2, 0x1101},
 		{gObjectEventPallete_3, 0x1102},
@@ -356,17 +356,21 @@ static NPCPtr sOverworldTable2[] =
 		{gObjectEventPallete_73, 0x114C},
 		{gObjectEventPallete_74, 0x114D},
 		{gObjectEventPallete_75, 0x114E},
+		{NULL, 0x11FF}
+	};
+
+	static const struct SpritePalette gObjectEventSpritePalettes12[] = {
 		{gFollowerMonPic0001_BulbasaurPal, 0x1200},
 		{gFollowerMonPic0002_IvysaurPal, 0x1201},
 		{gFollowerMonPic0003_VenusaurPal, 0x1202},
 		{gFollowerMonPic0004_CharmanderPal, 0x1203},
 		{gFollowerMonPic0005_CharmeleonPal, 0x1204},
-		{NULL, 0x11FF} // Fim da lista
+		{NULL, 0x11FF}
 	};
 	
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
 	{
-		[0x11] = (const struct SpritePalette*) 0x84097AC,
+		[0x11] = gObjectEventSpritePalettes11,
 		[0x12] = gObjectEventSpritePalettes12,
 	};
 #endif

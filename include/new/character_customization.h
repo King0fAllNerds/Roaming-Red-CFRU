@@ -31,7 +31,9 @@ void PlayerHandleDrawTrainerPic(void);
 void PlayerHandleTrainerSlide(void);
 void TryUpdateTrainerPicPalTrainerCard(u16 trainerPicId, u16 palOffset);
 
+#ifdef PALETTE_SWAPPER
 extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255];
+#endif
 #define gObjectEventPallete_1 ((void*)0x0835B968)
 #define gObjectEventPallete_2 ((void*)0x0835E968)
 #define gObjectEventPallete_3 ((void*)0x0835E988)

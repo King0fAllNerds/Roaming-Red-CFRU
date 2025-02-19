@@ -1822,10 +1822,11 @@ LoadCompressedSpriteSheetUsingHeap = 0x800F034 | 1;
 CreateHiddenSpriteWithCallback = 0x8044EF8 | 1;
 something_08050969 = 0x8050968 | 1;
 LoadSpriteSheetsForSummaryScreen = 0x8050DE0 | 1;
-PatchObjectPalette = 0x805F538 | 1;
+//PatchObjectPalette = 0x805F538 | 1;
 SetAffineData = 0x8075858 | 1;
 SpawnPokeOrTrainerPic = 0x810BDAC | 1;
-
+TryLoadObjectPalette = 0x805F510 | 1;
+ApplyGlobalFieldPaletteTint = 0x8083598 | 1;
 
 /* Palette Functions */
 BlendPalette = 0x8045274 | 1;
