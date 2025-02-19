@@ -991,9 +991,6 @@ void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
         #ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
         bool8 knowsFly = FALSE;
         bool8 knowsDig = FALSE;
-        #ifdef UNBOUND
-        bool8 knowsCut = FALSE;
-        #endif
         #endif
 
         sPartyMenuInternal->numActions = 0;
