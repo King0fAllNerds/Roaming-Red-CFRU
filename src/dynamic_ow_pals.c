@@ -1,4 +1,5 @@
 #include "defines.h"
+#include "../include/event_object_movement.h"
 #include "../include/field_weather.h"
 #include "../include/constants/field_effects.h"
 
