@@ -365,6 +365,7 @@ static NPCPtr sOverworldTable2[] =
 		{gFollowerMonPic0003_VenusaurPal, 0x1202},
 		{gFollowerMonPic0004_CharmanderPal, 0x1203},
 		{gFollowerMonPic0005_CharmeleonPal, 0x1204},
+		{gFollowerMonPic0006_CharizardPal, 0x1205},
 		{NULL, 0x11FF}
 	};
 	
