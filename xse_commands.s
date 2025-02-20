@@ -1990,3 +1990,7 @@ callasm HideFollower
 callasm CreateSparkleSprite
 callasm ShowFollowerMon
 .endm
+
+.macro storemonid
+callasm StoreFirstPartyPokemonInVar4004
+.endm
