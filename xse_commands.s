@@ -1992,5 +1992,5 @@ callasm ShowFollowerMon
 .endm
 
 .macro storemonid
-callasm StoreFirstPartyPokemonInVar4004
+callasm StoreFollowerMonInVar4004
 .endm

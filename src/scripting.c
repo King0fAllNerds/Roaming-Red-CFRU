@@ -3156,20 +3156,18 @@ void ClearMiniBox(void)
     RemoveWindow(sSafariZoneStatsWindowId);
 	CopyWindowToVram(sSafariZoneStatsWindowId, 2);
 }
-void StoreFirstPartyPokemonInVar4004(void)
+void StoreFollowerMonInVar4004(void)
 {
-    if (gPlayerPartyCount == 0) {
-        VarSet(0x4004, 0);
-        return;
+    u16 species = SPECIES_NONE;
+
+    for (int i = 0; i < gPlayerPartyCount; i++) {
+        struct Pokemon* mon = &gPlayerParty[i];
+
+        if (!GetMonData(mon, MON_DATA_IS_EGG, NULL) && GetMonData(mon, MON_DATA_HP, NULL) > 0) {
+            species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+            break;
+        }
     }
 
-    struct Pokemon* firstPokemon = &gPlayerParty[0];
-
-    // Verifica se o Pokémon não é um ovo e não está desmaiado
-    if (!GetMonData(firstPokemon, MON_DATA_IS_EGG, NULL) && GetMonData(firstPokemon, MON_DATA_HP, NULL) > 0) {
-        u16 species = GetMonData(firstPokemon, MON_DATA_SPECIES, NULL);
-        VarSet(0x4004, species);
-    } else {
-        VarSet(0x4004, 0);
-    }
+    VarSet(0x4004, species);
 }
