@@ -8,7 +8,7 @@ MON_OW_TEMPLATE_32x32_FRAMES(0003, Venusaur)
 MON_OW_TEMPLATE_32x32_FRAMES(0004, Charmander)
 MON_OW_TEMPLATE_32x32_FRAMES(0005, Charmeleon)
 MON_OW_TEMPLATE_32x32_FRAMES(0006, Charizard)
-MON_OW_TEMPLATE_32x32_FRAMES(0006, Squirtle)
+MON_OW_TEMPLATE_32x32_FRAMES(0007, Squirtle)
 
 //Add Followers Graphics Info Here
 const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[] =
