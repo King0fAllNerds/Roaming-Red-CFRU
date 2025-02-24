@@ -1994,3 +1994,7 @@ callasm ShowFollowerMon
 .macro storemonid
 callasm StoreFollowerMonInVar4004
 .endm
+
+.macro resetpokevial
+callasm ResetPokeVialUses
+.endm

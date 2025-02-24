@@ -1409,4 +1409,7 @@ When a Pokémon smells this mint,\nits Speed will grow easily, but\nits Sp.Attac
 When a Pokémon smells this mint,\nits Speed will grow easily, but\nits Sp.Defense will grow slowly.
 
 #org @DESC_SERIOUS_MINT
-When a Pokémon smells this mint, all of its stats will grow at an equal rate.
+When a Pokémon smells this mint, \nall of its stats will grow at an equal rate.
+
+#org @gItemDescription_PokeVial
+A special vial that fully restores \nall Pokémon in your party. One-time use \nuntil recharged.

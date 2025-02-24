@@ -1771,9 +1771,11 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_Green_MintTiles, gBagItem_Green_MintPal},
 	{gBagItem_Green_MintTiles, gBagItem_Green_MintPal},
 	{gBagItem_Yellow_MintTiles, gBagItem_Yellow_MintPal},
+	{gBagItem_PokevialTiles, gBagItem_PokevialPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
+	
 };
 
 const struct Item gItemData[] =
@@ -14087,6 +14089,23 @@ const struct Item gItemData[] =
         .battleUseFunc = NULL,
         .secondaryId = 0
     },
+	[ITEM_POKEVIAL]
+	{
+		.name = {_P, _o, _k, _e, _v, _i, _a, _l, _END},
+		.itemId = ITEM_POKEVIAL,  // No standard effect
+		.price = 0,  // Key Items have no price
+		.holdEffect = 0,  // Not a held item
+		.holdEffectParam = 0,
+		.description = gItemDescription_PokeVial,
+		.importance = 0,
+		.unk19 = 0,
+		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
+		.type = ITEM_USE_FIELD,  // Only usable in the overworld
+		.fieldUseFunc = ItemUseOutOfBattle_PokeVial,  // Define field behavior
+		.battleUsage = 0,  // Cannot be used in battle
+		.battleUseFunc = NULL,
+		.secondaryId = 0,
+	},
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
         .itemId = ITEM_FREE_SPACE1,
@@ -14134,6 +14153,6 @@ const struct Item gItemData[] =
         .battleUsage = 0,
         .battleUseFunc = NULL,
         .secondaryId = 0
-    }
+    },
 };
 #endif

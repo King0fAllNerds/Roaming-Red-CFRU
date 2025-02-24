@@ -1352,6 +1352,8 @@ extern const u32 gBagItem_Green_MintTiles[];
 extern const u32 gBagItem_Green_MintPal[];
 extern const u32 gBagItem_Yellow_MintTiles[];
 extern const u32 gBagItem_Yellow_MintPal[];
+extern const u32 gBagItem_PokevialTiles[];
+extern const u32 gBagItem_PokevialPal[];
 
 //Funcs
 void __attribute__((long_call)) FieldUseFunc_OakStopsYou(u8 taskId);
@@ -1393,6 +1395,9 @@ void FieldUseFunc_FormChangeItem(u8 taskId);
 void FieldUseFunc_AbilityCapsule(u8 taskId);
 void FieldUseFunc_ExpShare(u8 taskId);
 void FieldUseFunc_NatureMint(u8 taskId);
+void ItemUseOutOfBattle_PokeVial(u8 taskId);
+void ResetPokeVialUses(void);
+
 
 //Descriptions
 #define gText_ItemNone ((const u8 *)0x083DB020)
@@ -2147,4 +2152,5 @@ extern const u8 DESC_HASTY_MINT[];
 extern const u8 DESC_JOLLY_MINT[];
 extern const u8 DESC_NAIVE_MINT[];
 extern const u8 DESC_SERIOUS_MINT[];
+extern const u8 gItemDescription_PokeVial[];
 #endif

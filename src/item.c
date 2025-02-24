@@ -2176,3 +2176,54 @@ const u32* GetItemIconGfxPtr(u16 itemId, u8 attrId)
         itemId = ITEM_NONE;
     return gItemGraphicsTable[itemId][attrId];
 }
+
+#define MAX_POKEVIAL_USES 3  // Maximum uses before recharge
+#define VAR_POKEVIAL_USES 0x501A // Use a free variable ID to track uses
+extern const u8 gText_PokeVial_NoCharge[];
+extern const u8 gText_PokeVial_LowBattery[];
+extern const u8 gText_PokeVial_Used[];
+extern void HealPlayerParty(void);
+
+
+void ItemUseOutOfBattle_PokeVial(u8 taskId)
+{
+    u16 uses = VarGet(VAR_POKEVIAL_USES);
+
+    // Ensure the variable is in a valid range
+    if (uses > MAX_POKEVIAL_USES || uses == 0xFFFF)  // 0xFFFF indicates an uninitialized variable
+    {
+        VarSet(VAR_POKEVIAL_USES, 0);  // Reset if it has an invalid value
+        uses = 0;
+    }
+
+    if (uses >= MAX_POKEVIAL_USES) 
+    {
+        // If the PokéVial is out of charge
+        DisplayItemMessageInBag(taskId, POCKET_KEY_ITEMS, gText_PokeVial_NoCharge, (void (*)(u8))Task_ReturnToBagFromContextMenu);
+        return;
+    }
+
+    // Increase the use counter
+    VarSet(VAR_POKEVIAL_USES, uses + 1);
+
+    // Heal all Pokémon in the party
+    HealPlayerParty();  
+
+    if (uses + 1 == MAX_POKEVIAL_USES) 
+    {
+        // Display "Low Battery" warning when 1 use is left
+        DisplayItemMessageInBag(taskId, POCKET_KEY_ITEMS, gText_PokeVial_LowBattery, (void (*)(u8))Task_ReturnToBagFromContextMenu);
+    } 
+    else 
+    {
+        // Regular message
+        DisplayItemMessageInBag(taskId, POCKET_KEY_ITEMS, gText_PokeVial_Used, (void (*)(u8))Task_ReturnToBagFromContextMenu);
+    }
+}
+#include "../include/event_data.h"
+
+void ResetPokeVialUses(void)
+{
+    VarSet(VAR_POKEVIAL_USES, 0);  // Reset PokéVial usage counter
+}
+
