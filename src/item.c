@@ -2177,8 +2177,6 @@ const u32* GetItemIconGfxPtr(u16 itemId, u8 attrId)
     return gItemGraphicsTable[itemId][attrId];
 }
 
-#define MAX_POKEVIAL_USES 3  // Maximum uses before recharge
-#define VAR_POKEVIAL_USES 0x501A // Use a free variable ID to track uses
 extern const u8 gText_PokeVial_NoCharge[];
 extern const u8 gText_PokeVial_LowBattery[];
 extern const u8 gText_PokeVial_Used[];
