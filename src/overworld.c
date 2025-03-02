@@ -3176,10 +3176,10 @@ const struct Coords32 gDirectionToVectors[] =
 };
 
 #ifdef FOLLOWING_POKEMON
-extern const u8 gEventScript_Change_Follower_Shiny_Pal[];
+extern const u8 SystemScript_Change_Follower_Shiny_Pal[];
 void ForceFollowerPaletteUpdate(void)
 {
-    ScriptContext1_SetupScript(gEventScript_Change_Follower_Shiny_Pal);
+    ScriptContext1_SetupScript(SystemScript_Change_Follower_Shiny_Pal);
 }
 #endif
 

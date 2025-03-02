@@ -261,8 +261,7 @@ static const u16* sPlayerMarlonOutfitColours[] =
 
 #else //Modify this
 
-extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
-
+#endif
 static NPCPtr sOverworldTable2[] =
 {
 	&gFollowerMonGfxTable0[0],
@@ -1482,16 +1481,19 @@ static NPCPtr sOverworldTable6[] =
     &gFollowerMonGfxTable4[238],
     &gFollowerMonGfxTable4[239],
 };
+#endif
 
 	// create 255 OW tables
 	const struct EventObjectGraphicsInfo** const gOverworldTableSwitcher[255] =
 	{
 		(NPCPtr*) 0x839FDB0,
+		#ifdef FOLLOWING_POKEMON
 		sOverworldTable2,
 		sOverworldTable3,
 		sOverworldTable4,
 		sOverworldTable5,
 		sOverworldTable6,
+		#endif
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
 	};
