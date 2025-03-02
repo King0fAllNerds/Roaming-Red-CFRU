@@ -4,7 +4,6 @@
 #include "../include/event_object_movement.h"
 #include "../include/field_effect_helpers.h"
 #include "../include/field_player_avatar.h"
-#include "../include/follower_mon_sprites.h"
 #include "../include/link.h"
 #include "../include/random.h"
 #include "../include/sprite.h"
@@ -262,6 +261,8 @@ static const u16* sPlayerMarlonOutfitColours[] =
 #else //Modify this
 
 #endif
+
+#ifdef FOLLOWING_POKEMON
 static NPCPtr sOverworldTable2[] =
 {
 	&gFollowerMonGfxTable0[0],
@@ -3877,16 +3878,17 @@ static NPCPtr sOverworldTable6[] =
 	};
 	#endif
 
+#ifdef PALETTE_SWAPPER
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
 	{
 		[0x11] = gObjectEventSpritePalettes11,
-		#ifdef FOLLOWING_POKEMON
+        #ifdef FOLLOWING_POKEMON
 		[0x12] = gObjectEventSpritePalettes12,
 		[0x13] = gObjectEventSpritePalettes13,
 		[0x14] = gObjectEventSpritePalettes14,
 		[0x15] = gObjectEventSpritePalettes15,
 		[0x16] = gObjectEventSpritePalettes16,
-		#endif
+        #endif
 	};
 #endif
 

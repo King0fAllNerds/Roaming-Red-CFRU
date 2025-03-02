@@ -1,5 +1,6 @@
 #include "../defines.h"
 #include "../../include/follower_mon_sprites.h"
+#include "../../include/new/character_customization.h"
 
 #ifdef FOLLOWING_POKEMON
 
