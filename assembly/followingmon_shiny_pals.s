@@ -1,6 +1,6 @@
 #include "src\config.h"
 
-#ifdef ALL_FOLLOWINGMON_SPRITES
+#ifdef FOLLOWING_POKEMON
 .section .rodata
 .global gFollowingMonPic_AlcremieStrawberryShinyPal
 gFollowingMonPic_AlcremieStrawberryShinyPal:

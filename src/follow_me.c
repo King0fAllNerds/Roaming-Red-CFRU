@@ -1106,6 +1106,9 @@ void Task_PlayerExitDoor(u8 taskId)
 			}
 			break;
 		case 5:
+		#ifdef FOLLOWING_POKEMON
+			ForceFollowerPaletteUpdate();
+		#endif
 			FollowMe_SetIndicatorToComeOutDoor();
 			FollowMe_WarpSetEnd();
 			UnfreezeEventObjects();

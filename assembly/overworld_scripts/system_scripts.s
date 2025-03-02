@@ -1223,3 +1223,9 @@ SystemScript_Exp_Share_Off:
 	msgboxsign
 	msgbox gText_Exp_Share_Off MSG_SIGN
 	goto EndScript
+
+.global SystemScript_Change_Follower_Shiny_Pal
+SystemScript_Change_Follower_Shiny_Pal:
+    callasm ChangeFollowerPalette
+    release
+    end

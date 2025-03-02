@@ -3153,10 +3153,13 @@ void CB2_ReturnToField(void)
         FieldClearVBlankHBlankCallbacks();
         SetMainCallback2(CB2_ReturnToFieldLocal);
     }
+	#ifdef FOLLOWING_POKEMON
 	if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
 	{
 		UpdateFollowerMonSprite();
+		ForceFollowerPaletteUpdate();
 	}
+	#endif
 }
 
 const struct Coords32 gDirectionToVectors[] = 
@@ -3171,3 +3174,34 @@ const struct Coords32 gDirectionToVectors[] =
     [DIR_NORTHWEST] = {-1, -1},
     [DIR_NORTHEAST] = { 1, -1},
 };
+
+#ifdef FOLLOWING_POKEMON
+extern const u8 gEventScript_Change_Follower_Shiny_Pal[];
+void ForceFollowerPaletteUpdate(void)
+{
+    ScriptContext1_SetupScript(gEventScript_Change_Follower_Shiny_Pal);
+}
+#endif
+
+void Task_ExitNonDoor(u8 taskId)
+{
+    switch (gTasks[taskId].data[0])
+    {
+    case 0:
+        FreezeEventObjects();
+        ScriptContext2_Enable();
+        gTasks[taskId].data[0]++;
+        break;
+    case 1:
+        if (FieldFadeTransitionBackgroundEffectIsFinished())
+        {
+            UnfreezeEventObjects();
+            UnlockPlayerFieldControls();
+			#ifdef FOLLOWING_POKEMON
+			ForceFollowerPaletteUpdate();
+			#endif
+            DestroyTask(taskId);
+        }
+        break;
+    }
+}

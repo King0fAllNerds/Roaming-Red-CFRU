@@ -218,3 +218,77 @@ void ShowFollowerMon(void)
     if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
         gEventObjects[gFollowerState.objId].invisible = FALSE;
 }
+
+struct Pokemon* GetFirstValidPartyMon(void)
+{
+    for (int i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon* mon = &gPlayerParty[i];
+
+        if (GetMonData(mon, MON_DATA_SPECIES, NULL) != SPECIES_NONE
+            && !GetMonData(mon, MON_DATA_IS_EGG, NULL)
+            && GetMonData(mon, MON_DATA_HP, NULL) > 0)
+        {
+            return mon;
+        }
+    }
+    return NULL;
+}
+
+static u8 GetFollowerMapObjId(void)
+{
+	return gFollowerState.objId;
+}
+
+void ChangeFollowerPalette(void)
+{
+    u8 followerId = GetFollowerMapObjId();
+    if (followerId >= MAP_OBJECTS_COUNT)
+        return;
+
+    struct EventObject* follower = &gEventObjects[followerId];
+    if (!follower->active)
+        return;
+
+    u8 spriteId = follower->spriteId;
+    if (spriteId >= MAX_SPRITES)
+        return;
+
+    struct Pokemon* mon = GetFirstValidPartyMon();
+    if (mon == NULL)
+        return;
+
+    if (!IsMonShiny(mon))
+        return;
+
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    
+    u16 paletteTag = (species < ARRAY_COUNT(sSpeciesToPaletteTag)) ? sSpeciesToPaletteTag[species] : 0x0000;
+    if (paletteTag == 0x0000)
+        return;
+
+    const struct SpritePalette* paletteEntry = NULL;
+
+    for (size_t tableIndex = 0; tableIndex < ARRAY_COUNT(sObjectEventSpritePalettesTables); tableIndex++)
+    {
+        const struct SpritePalette* paletteTable = sObjectEventSpritePalettesTables[tableIndex];
+
+        for (int i = 0; paletteTable[i].data != NULL; i++)
+        {
+            if (paletteTable[i].tag == paletteTag)
+            {
+                paletteEntry = &paletteTable[i];
+                break;
+            }
+        }
+
+        if (paletteEntry != NULL)
+            break;
+    }
+
+    if (paletteEntry == NULL)
+        return;
+
+    LoadPalette(paletteEntry->data, 0x100 + (16 * gSprites[spriteId].oam.paletteNum), 0x20);
+    ApplyGlobalFieldPaletteTint(gSprites[spriteId].oam.paletteNum);
+}

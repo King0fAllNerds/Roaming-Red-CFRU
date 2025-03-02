@@ -357,6 +357,7 @@ enum //These vars need to be one after the other (hence the enum)
 
 /*Expansion specials!*/
 #define SIDEWAY_STAIRS_IMPLEMENTED //Uncomment if you're using Sideway Stairs patch.
+#define FOLLOWING_POKEMON //Uncomment if you want follower Pokémon.
 #define FLAG_FOLLOWER_POKEMON 0x4BD //0x4BD is an unused flag.
 #define MAX_POKEVIAL_USES 3  // Maximum uses before recharge
 #define VAR_POKEVIAL_USES 0x501A // Use a free variable ID to track uses
@@ -373,6 +374,3 @@ enum //These vars need to be one after the other (hence the enum)
 
 /* Palette Swapper*/
 #define PALETTE_SWAPPER
-
-/*Followingmon Sprites*/
-#define ALL_FOLLOWINGMON_SPRITES

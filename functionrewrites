@@ -5,3 +5,4 @@ GetEventObjectIdByLocalIdAndMap 0x0805df60 0 1
 DoJumpAnimStep 0x08065000 0 1
 RemoveEventObjectsOutsideView 0x0805ed10 0 1
 GetInteractedEventObjectScript 0x0806cff4 0 1
+Task_ExitNonDoor 0x0807e2cc 0 1

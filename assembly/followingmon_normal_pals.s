@@ -1,6 +1,6 @@
 #include "src\config.h"
 
-#ifdef ALL_FOLLOWINGMON_SPRITES
+#ifdef FOLLOWING_POKEMON
 .section .rodata
 .global gFollowingMonPic_AlcremieStrawberryNormalPal
 gFollowingMonPic_AlcremieStrawberryNormalPal:
@@ -6071,4 +6071,10 @@ gFollowingMonPic_Zygarde10_percentNormalPal:
 gFollowingMonPic_ZygardeCompleteNormalPal:
     .hword 0x530E, 0x14A5, 0x0421, 0x296B, 0x0843, 0x2F76, 0x1CE7, 0x7FFF
     .hword 0x224F, 0x39EF, 0x0422, 0x6E6A, 0x2D1D, 0x22DD, 0x7F52, 0x08C5
+
+.global gFollowingMonPic_Unfezant_FNormalPal
+gFollowingMonPic_Unfezant_FNormalPal:
+    .hword 0x5353, 0x1084, 0x2108, 0x0000, 0x4631, 0x6739, 0x0DF3, 0x12FE
+    .hword 0x35AD, 0x0C86, 0x0EFE, 0x7B9C, 0x1591, 0x0000, 0x0000, 0x0000
+    
 #endif
