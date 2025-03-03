@@ -1108,6 +1108,7 @@ void Task_PlayerExitDoor(u8 taskId)
 		case 5:
 		#ifdef FOLLOWING_POKEMON
 			ForceFollowerPaletteUpdate();
+			gEventObjects[gFollowerState.objId].localId = 30;
 		#endif
 			FollowMe_SetIndicatorToComeOutDoor();
 			FollowMe_WarpSetEnd();
