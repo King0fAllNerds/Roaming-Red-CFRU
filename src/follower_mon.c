@@ -1435,7 +1435,7 @@ u16 GetFollowerMonSprite(void)
         return 0;
 
     species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES, NULL);
-    return gFollowerMonSpriteIdTable[species];
+    return gFollowerMonSpriteIdTable[species] + 256;
 }
 
 void CreateFollowerMonObject(void)
