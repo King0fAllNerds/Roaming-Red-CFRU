@@ -3198,8 +3198,11 @@ void Task_ExitNonDoor(u8 taskId)
             UnfreezeEventObjects();
             UnlockPlayerFieldControls();
 			#ifdef FOLLOWING_POKEMON
-			ForceFollowerPaletteUpdate();
-			gEventObjects[gFollowerState.objId].localId = 30;
+			if (gFollowerState.inProgress && FLAG_FOLLOWER_POKEMON)
+			{
+				ForceFollowerPaletteUpdate();
+				gEventObjects[gFollowerState.objId].localId = 30;
+			}
 			#endif
             DestroyTask(taskId);
         }
