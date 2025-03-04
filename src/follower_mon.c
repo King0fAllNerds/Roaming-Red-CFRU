@@ -6,10 +6,108 @@
 #include "../include/event_object_movement.h"
 
 #ifdef FOLLOWING_POKEMON
+
 extern u8 SparkleTiles[];
 extern u16 SparklePal[];
 
 static void SpriteCB_Sparkle(struct Sprite *sprite);
+
+static const struct OamData sSparkleOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_NORMAL,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = 0,
+    .bpp = ST_OAM_4BPP,
+    .shape = ST_OAM_SQUARE,
+    .x = 0,
+    .matrixNum = 0,
+    .size = ST_OAM_SIZE_2,
+    .tileNum = 0,
+    .priority = 0,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const union AnimCmd sSparkleAnim0[] =
+{
+    ANIMCMD_FRAME(0, 5),
+    ANIMCMD_FRAME(16, 5),
+    ANIMCMD_FRAME(32, 5),
+    ANIMCMD_FRAME(48, 5),
+    ANIMCMD_FRAME(64, 5),
+    ANIMCMD_FRAME(80, 5),
+    ANIMCMD_END,
+};
+
+static const union AffineAnimCmd sSparkleAffineAnim0[] =
+{
+    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
+    AFFINEANIMCMD_FRAME(4, 4, 8, 30),
+    AFFINEANIMCMD_END,
+};
+
+static const union AnimCmd *const sSparkleAnimTable[] =
+{
+    sSparkleAnim0,
+};
+
+static const union AffineAnimCmd *const sSparkleAffineAnimTable[] =
+{
+    sSparkleAffineAnim0,
+};
+
+static struct SpriteSheet sSparkleTileData =
+{
+    .data = SparkleTiles,
+    .size = (192 * 32) / 2,
+    .tag = 12,
+};
+
+static struct SpritePalette sSparklePalData =
+{
+    .data = SparklePal,
+    .tag = 12,
+};
+
+static struct SpriteTemplate sSparkleTemplate =
+{
+    .tileTag = 12,
+    .paletteTag = 12,
+    .oam = &sSparkleOamData,
+    .anims = sSparkleAnimTable,
+    .images = NULL,
+    .affineAnims = sSparkleAffineAnimTable,
+    .callback = SpriteCB_Sparkle,
+};
+
+static void SpriteCB_Sparkle(struct Sprite *sprite)
+{
+    if (sprite->data[0] == 30)
+        DestroySprite(sprite);
+    else
+        sprite->data[0]++;
+}
+
+void CreateSparkleSprite(void)
+{
+    if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
+    {
+        struct Sprite *followerSprite = &gSprites[gEventObjects[gFollowerState.objId].spriteId];
+        s16 posX = followerSprite->pos1.x - 16;
+        s16 posY = followerSprite->pos1.y - 10;
+        u8 spriteId;
+
+        LoadSpriteSheet(&sSparkleTileData);
+        LoadSpritePalette(&sSparklePalData);
+        spriteId = CreateSprite(&sSparkleTemplate, posX, posY, 0);
+
+        gSprites[spriteId].data[0] = 0;
+        gSprites[spriteId].centerToCornerVecX = 0;
+        gSprites[spriteId].centerToCornerVecY = 0;
+        gSprites[spriteId].coordOffsetEnabled = TRUE;
+    }
+}
 
 // Link Species with Overworld Sprites
 static const u16 gFollowerMonSpriteIdTable[] =
@@ -1320,103 +1418,6 @@ static const u16 gFollowerMonSpriteIdTable[] =
     [SPECIES_PALKIA_ORIGIN] = EVENT_OBJ_GFX_PALKIA,
 };
 
-static const struct OamData sSparkleOamData =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_NORMAL,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = 0,
-    .bpp = ST_OAM_4BPP,
-    .shape = ST_OAM_SQUARE,
-    .x = 0,
-    .matrixNum = 0,
-    .size = ST_OAM_SIZE_2,
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 0,
-    .affineParam = 0,
-};
-
-static const union AnimCmd sSparkleAnim0[] =
-{
-    ANIMCMD_FRAME(0, 5),
-    ANIMCMD_FRAME(16, 5),
-    ANIMCMD_FRAME(32, 5),
-    ANIMCMD_FRAME(48, 5),
-    ANIMCMD_FRAME(64, 5),
-    ANIMCMD_FRAME(80, 5),
-    ANIMCMD_END,
-};
-
-static const union AffineAnimCmd sSparkleAffineAnim0[] =
-{
-    AFFINEANIMCMD_FRAME(256, 256, 0, 0),
-    AFFINEANIMCMD_FRAME(4, 4, 8, 30),
-    AFFINEANIMCMD_END,
-};
-
-static const union AnimCmd *const sSparkleAnimTable[] =
-{
-    sSparkleAnim0,
-};
-
-static const union AffineAnimCmd *const sSparkleAffineAnimTable[] =
-{
-    sSparkleAffineAnim0,
-};
-
-static struct SpriteSheet sSparkleTileData =
-{
-    .data = SparkleTiles,
-    .size = (192 * 32) / 2,
-    .tag = 12,
-};
-
-static struct SpritePalette sSparklePalData =
-{
-    .data = SparklePal,
-    .tag = 12,
-};
-
-static struct SpriteTemplate sSparkleTemplate =
-{
-    .tileTag = 12,
-    .paletteTag = 12,
-    .oam = &sSparkleOamData,
-    .anims = sSparkleAnimTable,
-    .images = NULL,
-    .affineAnims = sSparkleAffineAnimTable,
-    .callback = SpriteCB_Sparkle,
-};
-
-static void SpriteCB_Sparkle(struct Sprite *sprite)
-{
-    if (sprite->data[0] == 30)
-        DestroySprite(sprite);
-    else
-        sprite->data[0]++;
-}
-
-void CreateSparkleSprite(void)
-{
-    if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
-    {
-        struct Sprite *followerSprite = &gSprites[gEventObjects[gFollowerState.objId].spriteId];
-        s16 posX = followerSprite->pos1.x - 16;
-        s16 posY = followerSprite->pos1.y - 10;
-        u8 spriteId;
-
-        LoadSpriteSheet(&sSparkleTileData);
-        LoadSpritePalette(&sSparklePalData);
-        spriteId = CreateSprite(&sSparkleTemplate, posX, posY, 0);
-
-        gSprites[spriteId].data[0] = 0;
-        gSprites[spriteId].centerToCornerVecX = 0;
-        gSprites[spriteId].centerToCornerVecY = 0;
-        gSprites[spriteId].coordOffsetEnabled = TRUE;
-    }
-}
-
 u16 GetFollowerMonSprite(void)
 {
     u8 slotId = 7;
@@ -1441,23 +1442,28 @@ u16 GetFollowerMonSprite(void)
 void CreateFollowerMonObject(void)
 {
     u16 sprite = GetFollowerMonSprite();
-    s16 posX = gEventObjects[gPlayerAvatar->eventObjectId].currentCoords.x - 7;
-    s16 posY = gEventObjects[gPlayerAvatar->eventObjectId].currentCoords.y - 7;
+    if (sprite == 0)  // Se não houver um Pokémon válido, não cria o seguidor
+        return;
 
-    switch (gEventObjects[gPlayerAvatar->eventObjectId].facingDirection)
+    struct EventObject *playerObj = &gEventObjects[gPlayerAvatar->eventObjectId];
+
+    s16 posX = playerObj->currentCoords.x - 7;
+    s16 posY = playerObj->currentCoords.y - 7;
+
+    // Ajusta posição do seguidor com base na direção do jogador
+    switch (playerObj->facingDirection)
     {
-        case DIR_SOUTH:
-            posY -= 1;
-            break;
-        case DIR_NORTH:
-            posY += 1;
-            break;
-        case DIR_WEST:
-            posX += 1;
-            break;
-        case DIR_EAST:
-            posX -= 1;
-            break;
+        case DIR_SOUTH: posY -= 1; break;
+        case DIR_NORTH: posY += 1; break;
+        case DIR_WEST:  posX += 1; break;
+        case DIR_EAST:  posX -= 1; break;
+    }
+
+    // Verifica se o seguidor já existe antes de criar um novo
+    for (u8 i = 0; i < MAP_OBJECTS_COUNT; i++)
+    {
+        if (gEventObjects[i].localId == 30 && gEventObjects[i].active)
+            return;  // Já existe um seguidor, então não cria outro
     }
 
     struct EventObjectTemplate followerObj =
@@ -1474,7 +1480,7 @@ void CreateFollowerMonObject(void)
         .trainerType = 0,
         .trainerRange_berryTreeId = 0,
     };
-
+    
     SpawnSpecialEventObject(&followerObj);
 }
 
