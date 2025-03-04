@@ -3198,7 +3198,7 @@ void Task_ExitNonDoor(u8 taskId)
             UnfreezeEventObjects();
             UnlockPlayerFieldControls();
 			#ifdef FOLLOWING_POKEMON
-			if (gFollowerState.inProgress && FLAG_FOLLOWER_POKEMON)
+			if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
 			{
 				ForceFollowerPaletteUpdate();
 				gEventObjects[gFollowerState.objId].localId = 30;

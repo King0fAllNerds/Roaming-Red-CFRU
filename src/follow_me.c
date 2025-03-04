@@ -1107,7 +1107,7 @@ void Task_PlayerExitDoor(u8 taskId)
 			break;
 		case 5:
 		#ifdef FOLLOWING_POKEMON
-			if (gFollowerState.inProgress && FLAG_FOLLOWER_POKEMON)
+			if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
 			{
 				ForceFollowerPaletteUpdate();
 				gEventObjects[gFollowerState.objId].localId = 30;
