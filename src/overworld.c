@@ -3201,7 +3201,8 @@ void Task_ExitNonDoor(u8 taskId)
 			if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
 			{
 				ForceFollowerPaletteUpdate();
-				gEventObjects[gFollowerState.objId].localId = 30;
+				if (gFollowerState.objId < MAP_OBJECTS_COUNT)
+					gEventObjects[gFollowerState.objId].localId = 30;
 			}
 			#endif
             DestroyTask(taskId);
