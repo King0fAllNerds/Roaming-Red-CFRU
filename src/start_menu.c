@@ -346,7 +346,6 @@ bool8 StartCB_HandleInput(void)
 		if (!StartMenuPokedexSanityCheck())
 			return FALSE;
 		sStartMenuCallback = sStartMenuActionTable[sStartMenuOrder[sStartMenuCursorPos]].func.u8_void; 
-		if (sStartMenuCursorPos==STARTMENU_EXIT)
 		StartMenu_FadeScreenIfLeavingOverworld();
 		RemoveTimeBox();
 		return FALSE;
