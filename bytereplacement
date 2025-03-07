@@ -742,3 +742,7 @@
 
 ## Part 1 of Follower Mon Hook
 080567DC 10 B5 02 4C 00 F0 04 F8 10 BD 00 00 FF FF FF FF 20 47
+
+## Fix for bag animations
+08109252 00 00 00 00
+08109336 00 00 00 00
