@@ -2977,6 +2977,22 @@ void FieldUseFunc_ExpShare(u8 taskId)
     sItemUseOnFieldCB = Task_ExpShareField;
     SetUpItemUseOnFieldCallback(taskId);
 }
+extern void CB2_ShowEvIv(void);
+void Item_EVIV(u8 taskId)
+{
+    PlaySE(244);
+    QuestLog_CutRecording(); 
+    SetVBlankCallback(NULL);
+    SetMainCallback2(CB2_ShowEvIv);
+    ScriptContext2_Enable();
+    SetUpItemUseOnFieldCallback(taskId);
+}
+
+void FieldUseFunc_EVIV(u8 taskId)
+{
+    sItemUseOnFieldCB = Item_EVIV;
+    SetUpItemUseOnFieldCallback(taskId);
+}
 
 void FieldUseFunc_NatureMint(u8 taskId)
 {
