@@ -26,6 +26,15 @@
 #include "../include/new/set_z_effect.h"
 #include "../include/new/util.h"
 
+#include "../include/task.h"
+#include "../include/sound.h"
+#include "../include/string_util.h"
+#include "../include/main.h"
+#include "../include/constants/songs.h"
+#include "../include/item.h"
+#include "../include/constants/items.h"
+#include "../include/event_data.h"
+
 /*
 item.c
 	handles all item related functions, such as returning hold effects, tm/hm expansion, etc.
@@ -1002,41 +1011,111 @@ void NewTMReplaceMove(struct Pokemon* mon, u16 move)
 // Premier Ball Bonus
 #define tItemCount data[1]
 #define tItemId data[5]
+#define VAR_8000 0x8000
+#define VAR_8001 0x8001 
+
+typedef struct {
+    u16 purchasedItem;
+    u16 rewardItem;
+    u8 requiredAmount;
+    u8 rewardQty;
+} PurchaseReward;
+
+static const PurchaseReward sPurchaseRewards[] = {
+    // 🎯 Poké Balls
+    {ITEM_POKE_BALL,    ITEM_PREMIER_BALL,   10, 1},  // Standard Premier Ball bonus
+    {ITEM_GREAT_BALL,   ITEM_DUSK_BALL,      10, 1},  // Great Ball → Dusk Ball (good for caves)
+    {ITEM_ULTRA_BALL,   ITEM_LUXURY_BALL,    10, 1},  // Ultra Ball → Luxury Ball (friendship-based)
+
+    // ❤️ Healing Items → Status Cures  
+    {ITEM_POTION,       ITEM_ORAN_BERRY,      5, 1},  // Potion → Small healing berry
+    {ITEM_SUPER_POTION, ITEM_SITRUS_BERRY,    5, 1},  // Super Potion → Sitrus Berry (better healing)
+    {ITEM_HYPER_POTION, ITEM_MAX_REVIVE,     10, 1},  // Hyper Potion → Max Revive (rare but useful)
+    {ITEM_FULL_RESTORE, ITEM_REVIVAL_HERB,   10, 1},  // Full Restore → Revival Herb (strong but bitter)
+    
+    // 💊 Status Heals → Berries (same effect, but saves items)
+    {ITEM_ANTIDOTE,     ITEM_PECHA_BERRY,     3, 1},  // Antidote → Pecha Berry (poison cure)
+    {ITEM_PARALYZE_HEAL, ITEM_CHERI_BERRY,    3, 1},  // Paralyze Heal → Cheri Berry (paralysis cure)
+    {ITEM_BURN_HEAL,    ITEM_RAWST_BERRY,     3, 1},  // Burn Heal → Rawst Berry (burn cure)
+    {ITEM_ICE_HEAL,     ITEM_ASPEAR_BERRY,    3, 1},  // Ice Heal → Aspear Berry (freeze cure)
+    {ITEM_AWAKENING,    ITEM_CHESTO_BERRY,    3, 1},  // Awakening → Chesto Berry (sleep cure)
+    {ITEM_FULL_HEAL,    ITEM_LUM_BERRY,       5, 1},  // Full Heal → Lum Berry (cures all)
+
+    // ⛏️ Exploration Items
+    {ITEM_ESCAPE_ROPE,  ITEM_SUPER_REPEL,     3, 1},  // Escape Rope → Super Repel (helps with caves)
+    {ITEM_REPEL,        ITEM_ESCAPE_ROPE,     5, 1},  // Repel → Escape Rope (exploration combo)
+    {ITEM_SUPER_REPEL,  ITEM_MAX_REPEL,       5, 1},  // Super Repel → Max Repel (stronger version)
+    {ITEM_MAX_REPEL,    ITEM_NUGGET,         10, 1},  // Max Repel → Nugget (money reward)
+
+    // ⚔️ Battle Boosters  
+    {ITEM_X_ATTACK,     ITEM_X_DEFEND,       5, 1},  // X Attack → X Defense (strategic buffing)
+    {ITEM_X_SPEED,      ITEM_X_SP_DEF,        5, 1},  // X Speed → X Sp. Defense (balancing stats)
+};
+
+extern const u8 gText_ReceivedBonusItem[];
 void Task_ReturnToItemListAfterItemPurchase(u8 taskId)
 {
-	s16* data = gTasks[taskId].data;
+    s16* data = gTasks[taskId].data;
 
-	if (gMain.newKeys & (A_BUTTON | B_BUTTON))
-	{
-		PlaySE(SE_SELECT);
-		if (GetPocketByItemId(tItemId) == POCKET_POKE_BALLS)
-		{
-			#ifdef MULTIPLE_PREMIER_BALLS_AT_ONCE
-			u8 nPremier = tItemCount / 10;
-			#else
-			u8 nPremier = 1;
-			#endif
-			if (nPremier > 0 && AddBagItem(ITEM_PREMIER_BALL, nPremier))
-			{
-				ConvertIntToDecimalStringN(gStringVar1, nPremier, 2, 1);
-				StringCopy(gStringVar2, ItemId_GetName(ITEM_PREMIER_BALL));
+    if (gMain.newKeys & (A_BUTTON | B_BUTTON))
+    {
+        PlaySE(SE_SELECT);
+        u16 purchasedItem = tItemId;
+        u8 quantity = tItemCount;
 
-				if (nPremier == 1)
-					BuyMenuDisplayMessage(taskId, gText_ThrowInOnePremierBall, BuyMenuReturnToItemList);
-				else
-					BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBalls, BuyMenuReturnToItemList);
-			}
-			else
-			{
-				BuyMenuReturnToItemList(taskId);
-			}
-		}
-		else
-		{
-			BuyMenuReturnToItemList(taskId);
-		}
-	}
+        #ifdef ENABLE_MULTIPLE_PURCHASE_REWARDS
+        // Loop through custom reward table
+        for (u8 i = 0; i < ARRAY_COUNT(sPurchaseRewards); i++)
+        {
+            if (sPurchaseRewards[i].purchasedItem == purchasedItem && quantity >= sPurchaseRewards[i].requiredAmount)
+            {
+                u8 rewardCount = quantity / sPurchaseRewards[i].requiredAmount;
+                u16 rewardItem = sPurchaseRewards[i].rewardItem;
+                u8 rewardQty = rewardCount * sPurchaseRewards[i].rewardQty;
+
+                // Add the reward
+                if (AddBagItem(rewardItem, rewardQty))
+                {
+                    // Store values for script
+                    VarSet(VAR_8000, rewardItem);
+                    VarSet(VAR_8001, rewardQty);
+
+                    // Format message
+                    ConvertIntToDecimalStringN(gStringVar1, rewardQty, STR_CONV_MODE_LEFT_ALIGN, 2);
+                    CopyItemName(rewardItem, gStringVar2);
+
+                    // Show message
+                    BuyMenuDisplayMessage(taskId, gText_ReceivedBonusItem, BuyMenuReturnToItemList);
+                    return;
+                }
+            }
+        }
+        #endif
+
+        #ifdef MULTIPLE_PREMIER_BALLS_AT_ONCE
+        // Handle Premier Ball reward separately
+        if (GetPocketByItemId(purchasedItem) == POCKET_POKE_BALLS)
+        {
+            u8 nPremier = quantity / 10;
+            if (nPremier > 0 && AddBagItem(ITEM_PREMIER_BALL, nPremier))
+            {
+                ConvertIntToDecimalStringN(gStringVar1, nPremier, STR_CONV_MODE_LEFT_ALIGN, 2);
+                StringCopy(gStringVar2, ItemId_GetName(ITEM_PREMIER_BALL));
+
+                if (nPremier == 1)
+                    BuyMenuDisplayMessage(taskId, gText_ThrowInOnePremierBall, BuyMenuReturnToItemList);
+                else
+                    BuyMenuDisplayMessage(taskId, gText_ThrowInPremierBalls, BuyMenuReturnToItemList);
+                return;
+            }
+        }
+        #endif
+
+        // If no rewards, just return
+        BuyMenuReturnToItemList(taskId);
+    }
 }
+
 
 #define tItemCount data[1]
 #define tListTaskId data[7]

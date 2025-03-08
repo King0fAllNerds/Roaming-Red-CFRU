@@ -4,3 +4,6 @@ All Pokémon have been restored!
 The PokéVial's battery is running low. \nRecharge soon!
 #org @gText_PokeVial_NoCharge 
 The PokéVial is out of charge! \nRecharge it at a Pokémon Center.
+
+#org @gText_ReceivedBonusItem
+You received [BUFFER1] [BUFFER2]!
