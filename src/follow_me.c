@@ -1109,9 +1109,11 @@ void Task_PlayerExitDoor(u8 taskId)
 		#ifdef FOLLOWING_POKEMON
 			if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
 			{
-				ForceFollowerPaletteUpdate();
+				ChangeFollowerPalette();
 				if (gFollowerState.objId < MAP_OBJECTS_COUNT)
+				{
 					gEventObjects[gFollowerState.objId].localId = 30;
+				}
 			}
 		#endif
 			FollowMe_SetIndicatorToComeOutDoor();

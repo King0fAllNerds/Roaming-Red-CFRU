@@ -40,9 +40,9 @@ void sp0D2_DestroyFollowerSprite(void);
 //New Added
 u16 GetMiniStepCount(u8 speed);
 void RunMiniStep(struct Sprite *sprite, u8 speed, u8 currentFrame);
-void CreateSparkleSprite(void);
 #ifdef FOLLOWING_POKEMON
-void ForceFollowerPaletteUpdate(void);
+void CreateSparkleSprite(void);
+void ChangeFollowerPalette(void);
 #endif
 
 //Exported Data Structures

@@ -3157,7 +3157,7 @@ void CB2_ReturnToField(void)
 	if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
 	{
 		UpdateFollowerMonSprite();
-		ForceFollowerPaletteUpdate();
+		ChangeFollowerPalette();
 	}
 	#endif
 }
@@ -3175,14 +3175,6 @@ const struct Coords32 gDirectionToVectors[] =
     [DIR_NORTHEAST] = { 1, -1},
 };
 
-#ifdef FOLLOWING_POKEMON
-extern const u8 SystemScript_Change_Follower_Shiny_Pal[];
-void ForceFollowerPaletteUpdate(void)
-{
-    ScriptContext1_SetupScript(SystemScript_Change_Follower_Shiny_Pal);
-}
-#endif
-
 void Task_ExitNonDoor(u8 taskId)
 {
     switch (gTasks[taskId].data[0])
@@ -3197,16 +3189,18 @@ void Task_ExitNonDoor(u8 taskId)
         {
             UnfreezeEventObjects();
             UnlockPlayerFieldControls();
-			#ifdef FOLLOWING_POKEMON
-			if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
-			{
-				ForceFollowerPaletteUpdate();
-				if (gFollowerState.objId < MAP_OBJECTS_COUNT)
-					gEventObjects[gFollowerState.objId].localId = 30;
-			}
-			#endif
             DestroyTask(taskId);
         }
         break;
     }
+	#ifdef FOLLOWING_POKEMON
+	if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
+	{
+		ChangeFollowerPalette();
+		if (gFollowerState.objId < MAP_OBJECTS_COUNT)
+		{
+			gEventObjects[gFollowerState.objId].localId = 30;
+		}
+	}
+	#endif
 }
