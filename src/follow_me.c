@@ -1536,7 +1536,7 @@ void sp0D1_SetUpFollowerSprite(void)
 	if (FlagGet(FLAG_FOLLOWER_POKEMON))
 	{
 		CreateFollowerMonObject();
-		TurnNPCIntoFollower(30, (VarGet(Var8001));
+		TurnNPCIntoFollower(30, (VarGet(Var8001)));
 		TurnFollowerMonToPlayer();
 		CreateSparkleSprite();
 	}
