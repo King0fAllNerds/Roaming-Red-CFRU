@@ -1110,10 +1110,6 @@ void Task_PlayerExitDoor(u8 taskId)
 			if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
 			{
 				ChangeFollowerPalette();
-				if (gFollowerState.objId < MAP_OBJECTS_COUNT)
-				{
-					gEventObjects[gFollowerState.objId].localId = 30;
-				}
 			}
 		#endif
 			FollowMe_SetIndicatorToComeOutDoor();
@@ -1533,16 +1529,11 @@ static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
 //			Var8001 - Follower flags.
 void sp0D1_SetUpFollowerSprite(void)
 {
+	TurnNPCIntoFollower(VarGet(Var8000), Var8001);
 	if (FlagGet(FLAG_FOLLOWER_POKEMON))
 	{
-		CreateFollowerMonObject();
-		TurnNPCIntoFollower(30, (VarGet(Var8001)));
 		TurnFollowerMonToPlayer();
 		CreateSparkleSprite();
-	}
-	else
-	{
-		TurnNPCIntoFollower(VarGet(Var8000), Var8001);
 	}
 }
 

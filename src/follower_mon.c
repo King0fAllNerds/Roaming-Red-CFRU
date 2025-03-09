@@ -1442,7 +1442,7 @@ u16 GetFollowerMonSprite(void)
 void CreateFollowerMonObject(void)
 {
     u16 sprite = GetFollowerMonSprite();
-    if (sprite == 0)  // Se não houver um Pokémon válido, não cria o seguidor
+    if (sprite == 0)
         return;
 
     struct EventObject *playerObj = &gEventObjects[gPlayerAvatar->eventObjectId];
@@ -1450,29 +1450,29 @@ void CreateFollowerMonObject(void)
     s16 posX = playerObj->currentCoords.x - 7;
     s16 posY = playerObj->currentCoords.y - 7;
 
-    // Ajusta posição do seguidor com base na direção do jogador
-    switch (playerObj->facingDirection)
-    {
-        case DIR_SOUTH: posY -= 1; break;
-        case DIR_NORTH: posY += 1; break;
-        case DIR_WEST:  posX += 1; break;
-        case DIR_EAST:  posX -= 1; break;
-    }
+    //switch (playerObj->facingDirection)
+    //{
+        //case DIR_SOUTH: posY -= 1; break;
+        //case DIR_NORTH: posY += 1; break;
+        //case DIR_WEST:  posX += 1; break;
+        //case DIR_EAST:  posX -= 1; break;
+    //}
 
-    // Verifica se o seguidor já existe antes de criar um novo
     for (u8 i = 0; i < MAP_OBJECTS_COUNT; i++)
     {
         if (gEventObjects[i].localId == 30 && gEventObjects[i].active)
-            return;  // Já existe um seguidor, então não cria outro
+            return;
     }
 
     struct EventObjectTemplate followerObj =
     {
-        .localId = 30,
+        .localId = Var8000,
         .graphicsIdLowerByte = sprite & 0xFF,
         .graphicsIdUpperByte = sprite >> 8,
-        .x = posX,
-        .y = posY,
+        //.x = posX,
+        //.y = posY,
+        .x = 0,
+        .y = 0,
         .elevation = 3,
         .movementType = 1,
         .movementRangeX = 0,
@@ -1482,44 +1482,6 @@ void CreateFollowerMonObject(void)
     };
     
     SpawnSpecialEventObject(&followerObj);
-}
-
-void FollowerMonFacePlayer(void)
-{
-    u8 dir;
-
-    switch (gEventObjects[gPlayerAvatar->eventObjectId].facingDirection)
-    {
-        case DIR_SOUTH:
-            dir = DIR_NORTH;
-            break;
-        case DIR_NORTH:
-            dir = DIR_SOUTH;
-            break;
-        case DIR_WEST:
-            dir = DIR_EAST;
-            break;
-        case DIR_EAST:
-            dir = DIR_WEST;
-            break;
-        case DIR_SOUTHWEST:
-            dir = DIR_SOUTHEAST;
-            break;
-        case DIR_SOUTHEAST:
-            dir = DIR_SOUTHWEST;
-            break;
-        case DIR_NORTHWEST:
-            dir = DIR_NORTHEAST;
-            break;
-        case DIR_NORTHEAST:
-            dir = DIR_NORTHWEST;
-            break;
-        default:
-            dir = DIR_NORTH;
-            break;
-    }
-
-    EventObjectTurn(&gEventObjects[gFollowerState.objId], dir);
 }
 
 void TurnFollowerMonToPlayer(void)
@@ -2914,5 +2876,23 @@ void ChangeFollowerPalette(void)
 
     LoadPalette(paletteEntry->data, 0x100 + (16 * gSprites[spriteId].oam.paletteNum), 0x20);
     ApplyGlobalFieldPaletteTint(gSprites[spriteId].oam.paletteNum);
+}
+
+void MoveFollowerToPlayerPos(void)
+{
+    struct EventObject *playerObj = &gEventObjects[gPlayerAvatar->eventObjectId];
+    
+    s16 posX = playerObj->currentCoords.x - 7;
+    s16 posY = playerObj->currentCoords.y - 7;
+
+    switch (playerObj->facingDirection)
+    {
+        case DIR_SOUTH: posY -= 1; break;
+        case DIR_NORTH: posY += 1; break;
+        case DIR_WEST:  posX += 1; break;
+        case DIR_EAST:  posX -= 1; break;
+    }
+    Var8000 = posX;
+    Var8001 = posY;
 }
 #endif
