@@ -3,6 +3,11 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
+.equ SPECIES_ROWLET, 0x3AB
+.equ SPECIES_CYNDAQUIL, 0x9B
+.equ SPECIES_MUDKIP, 0x11B
+.equ SPECIES_SALAMENCE, 0x18D
+.equ SPECIES_ROOKIDEE, 0x459
 
 .global EventScript_Pallet_FatGuy
 
