@@ -1,3 +1,5 @@
+#include "src\config.h"
+
 @All scripting macros off of XSE and http://sphericalice.com/romhacking/documents/script/index.html
 
 @Message box types
@@ -1981,6 +1983,7 @@ map \map
  special 0xD3
 .endm
 
+#ifdef FOLLOWING_POKEMON
 .macro hidefollowermon
 	callasm CreateSparkleSprite
 	callasm HideFollower
@@ -1990,6 +1993,7 @@ map \map
 	callasm CreateSparkleSprite
 	callasm ShowFollowerMon
 .endm
+#endif
 
 .macro storemonid
 	callasm StoreFollowerMonInVar4004
@@ -2011,6 +2015,7 @@ map \map
     special 0xD2
 .endm
 
+#ifdef FOLLOWING_POKEMON
 .macro addfollower localId:req
 	setvar 0x8000 \localId
 	callasm CreateFollowerMonObject
@@ -2024,3 +2029,4 @@ map \map
 	callasm MoveFollowerToPlayerPos
 	movesprite \localId	0x8000 0x8001
 .endm
+#endif

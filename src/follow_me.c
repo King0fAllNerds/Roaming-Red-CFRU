@@ -134,13 +134,17 @@ void HideFollower(void)
 		gFollowerState.createSurfBlob = SURF_BLOB_STATE_HIDDEN_ON;
 	}
 
+	#ifdef FOLLOWING_POKEMON
 	CreateSparkleSprite();
+	#endif
 	gEventObjects[GetFollowerMapObjId()].invisible = TRUE;
 }
 
 void ShowFollower(void)
 {
+	#ifdef FOLLOWING_POKEMON
 	CreateSparkleSprite();
+	#endif
 	gEventObjects[gFollowerState.objId].invisible = FALSE;
 }
 
@@ -1530,11 +1534,13 @@ static void TurnNPCIntoFollower(u8 localId, u8 followerFlags)
 void sp0D1_SetUpFollowerSprite(void)
 {
 	TurnNPCIntoFollower(VarGet(Var8000), Var8001);
+	#ifdef FOLLOWING_POKEMON
 	if (FlagGet(FLAG_FOLLOWER_POKEMON))
 	{
 		TurnFollowerMonToPlayer();
 		CreateSparkleSprite();
 	}
+	#endif
 }
 
 //@Details: Ends the follow me feature.
@@ -1613,6 +1619,7 @@ void TryAttachFollowerToPlayer(void)
 	}
 }
 
+#ifdef FOLLOWING_POKEMON
 void UpdateFollowerMonSprite(void)
 {
 	u16 followerMonGfx = GetFollowerMonSprite();
@@ -1644,3 +1651,4 @@ void UpdateFollowerMonSprite(void)
     MoveEventObjectToMapCoords(follower, follower->currentCoords.x, follower->currentCoords.y);
     EventObjectTurn(follower, follower->facingDirection);
 }
+#endif
