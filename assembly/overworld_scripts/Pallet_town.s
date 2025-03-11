@@ -8,7 +8,7 @@
 .equ SPECIES_MUDKIP, 0x11B
 .equ SPECIES_SALAMENCE, 0x18D
 .equ SPECIES_ROOKIDEE, 0x459
-
+/*
 .global EventScript_Pallet_FatGuy
 
 EventScript_Pallet_FatGuy:
@@ -54,4 +54,4 @@ PalletGirl_ShowFollowerMon:
     setflag 0x4BD
     release
     end
-    
+*/
