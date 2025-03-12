@@ -799,3 +799,12 @@ LoadObjectEventPalette 0805F4B0 1
 PatchObjectPalette 0805F538 1
 FindObjectEventPaletteIndexByTag 0805F5A0 1
 #endif
+
+#ifdef SIDEWAY_STAIRS_IMPLEMENTED
+##SidewayStairs
+sideway_change_movement 0805BB5C 1
+sideway_walk 0805C104 1
+sideway_bike 0805C14C 1
+sideway_run 0805C17C 1
+sideway_change_movement_2 080BD3C8 1
+#endif
