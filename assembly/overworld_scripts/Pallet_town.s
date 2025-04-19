@@ -18,7 +18,7 @@ EventScript_Pallet_FatGuy:
     givepokemon 0x4 0x5 0x0 0x0 0x0 0x0
     givepokemon 0x6 0x5 0x0 0x0 0x0 0x0
     giveegg 0x1
-    setvar 0x8001 0x84
+    setvar 0x8001 0x1E
     special 0xD1
     msgbox gText_TestScript MSG_NORMAL
     release
@@ -33,13 +33,17 @@ EventScript_Pallet_Girl:
     msgbox gText_PalletGirl_Text1 MSG_YESNO
     compare LASTRESULT 0x1
     if YES _goto PalletGirl_ShowFollowerMon
+    setflag 0xa02
+    setflag 0xa03
     hidefollowermon
     clearflag 0x4BD
+    special 0xD2
     release
     end
 
 PalletGirl_ShowFollowerMon:
     showfollowermon
+    special 0xD1
     setflag 0x4BD
     release
     end
