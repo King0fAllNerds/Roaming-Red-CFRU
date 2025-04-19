@@ -10,7 +10,6 @@
 #include "../../include/new/item_effects.h"
 #include "../../include/new/pickup_items.h"
 #include "../../include/new/item_tables.h"
-#include "../../include/new/Vanilla_functions.h"
 /*
 item_tables.c
 	set up item data tables
@@ -1773,7 +1772,6 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_Green_MintTiles, gBagItem_Green_MintPal},
 	{gBagItem_Yellow_MintTiles, gBagItem_Yellow_MintPal},
 	{gBagItem_PokevialTiles, gBagItem_PokevialPal},
-	{gBag_FameCheckerTiles, gBag_TriPassPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
@@ -14104,23 +14102,6 @@ const struct Item gItemData[] =
 		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
 		.type = ITEM_USE_FIELD,  // Only usable in the overworld
 		.fieldUseFunc = ItemUseOutOfBattle_PokeVial,  // Define field behavior
-		.battleUsage = 0,  // Cannot be used in battle
-		.battleUseFunc = NULL,
-		.secondaryId = 0,
-	},
-	[ITEM_EVIV_DISPLAYER]
-	{
-		.name = {_E, _V, _HYPHEN, _I, _V, _SPACE, _V, _i, _e, _w, _e, _r, _END},
-		.itemId = ITEM_EVIV_DISPLAYER,  // No standard effect
-		.price = 0,  // Key Items have no price
-		.holdEffect = 0,  // Not a held item
-		.holdEffectParam = 0,
-		.description = DESC_EVIV_DISPLAYER,
-		.importance = 0,
-		.unk19 = 0,
-		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
-		.type = ITEM_USE_FIELD,  // Only usable in the overworld
-		.fieldUseFunc = FieldUseFunc_EVIV,  // Define field behavior
 		.battleUsage = 0,  // Cannot be used in battle
 		.battleUseFunc = NULL,
 		.secondaryId = 0,

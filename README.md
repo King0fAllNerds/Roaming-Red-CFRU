@@ -1,6 +1,6 @@
 # Welcome to Complete Fire Red Upgrade Expansion Version!
 This fork is made by Tha Code Mining hub to add many corresponding decomps , other fork and our own additions to CFRU , everything here can be used with credits to respective code makers.
-##### This is CFRU expansion project and not affiliated to the og CFRU, it is going to be levels higher than CFRU. It is adviced to read the wiki [here](https://github.com/Shiny-Miner/CFRU-expansion/wiki) before touching anything.
+##### This is CFRU expansion project and not affiliated to the og CFRU, it is going to be levels higher than CFRU. It is adviced to read the wiki [here](https://github.com/Shiny-Miner/CFRU-expansion/wiki/CFRU-expansion-mining) before touching anything.
 #### The new features (after CFRU dev branch):
 - Fixed bugs with dev branch (shiny odds , daycare nidoran breeding)
 - Last used pokeball by L button
@@ -50,7 +50,6 @@ Join us on discord: https://discord.com/invite/axNX3rhR9K
 - [Dynamic surf overworlds expansion](https://github.com/Shiny-Miner/dynamic_surf_ows_masters-expansion/tree/master)
 - [Option menu BW](https://github.com/Shiny-Miner/FR-OptionMenu)
 - [Modified Naming screen BW](https://github.com/Shiny-Miner/Naming-screen-BW)
-- [Follower Pokémon Sprites Patch](https://www.mediafire.com/file/2oepbx78lrnhvv9/FollowMonToRom.zip/file)
 - Some music patches said in leon rombase + others...
 ###### Notes :
 - It is advised to use [DPE-gen-9](https://github.com/Shiny-Miner/Dynamic-Pokemon-Expansion-Gen-9) with it.
@@ -58,17 +57,3 @@ Join us on discord: https://discord.com/invite/axNX3rhR9K
 - Please don't try to use leon rombase on it as it already contains items + more
 - Added convienience for compiling, now run a_makepy.bat to make the project (it executes "python scripts//make.py") and run b_cleanpy.bat to clean repo (it runs python scripts//clean.py)
 - Do not talk to Fat guy and Lady in pallet town unless if you're trying to test following pokemon code. Its in development and the bugs are still to be fixed!
-
-### Inserting Follower Pokémon Sprites into ROM :
-
-1. Download Follower Pokémon Sprites Patch.
-2. Extract content in a folder.
-3. Open the file **MonToRom.py** and change **OFFSET_START** to the offset you want to insert sprites and save.
-   - Obs: The Sprite pack need **0x39A800** free bytes.
-4. Run **MonToRom.bat** file.
-
-- It will generate **followingmon_sprites.bin** and **followingmon_sprites.ini**
-
-5. Copy the #define offsets in **followingmon_sprites.ini** and paste into file ***follower_mon_sprites.h***.
-6. Copy the bytes in **followingmon_sprites.bin** and paste in **BPRE0.gba** in the offset you choosed in **OFFSET_START**.
-7. Compile the ROM and enjoy!

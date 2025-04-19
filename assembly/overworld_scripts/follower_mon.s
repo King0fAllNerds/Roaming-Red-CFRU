@@ -7,7 +7,7 @@
 .global EventScript_FollowerMon
 
 EventScript_FollowerMon:
-    special 0xD3
+    followerfaceplayer
     lock
     storemonid
     bufferpokemon 0x0 0x4004

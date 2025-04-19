@@ -953,8 +953,7 @@
 	],
 
 	"gDoubleDamageOnStatus": [
-		"MOVE_HEX",
-		"MOVE_BARBBARRAGE"
+		"MOVE_HEX"
 	],
 
 	"gTwoToFiveStrikesMoves": [
@@ -973,12 +972,7 @@
 		"MOVE_SPIKECANNON",
 		"MOVE_SURGINGSTRIKES",
 		"MOVE_TAILSLAP",
-		"MOVE_WATERSHURIKEN",
-		"MOVE_TACHYONCUTTER"
-	],
-
-	"gTenStrikesMoves": [
-		"MOVE_POPULATIONBOMB"
+		"MOVE_WATERSHURIKEN"
 	],
 
 	"gTwoStrikesMoves": [
@@ -990,8 +984,7 @@
 		"MOVE_DUALCHOP",
 		"MOVE_DUALWINGBEAT",
 		"MOVE_GEARGRIND",
-		"MOVE_TWINEEDLE",
-		"MOVE_TWINBEAM"
+		"MOVE_TWINEEDLE"
 	],
 
 	"gPercent25RecoilMoves": [

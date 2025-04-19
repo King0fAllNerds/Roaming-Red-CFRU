@@ -962,7 +962,7 @@ static u8 AtkCanceller_UnableToUseMove(void)
 				{
 					gMultiHitCounter = 5;
 				}
-				else if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_LOADED_DICE &&  gCurrentMove != MOVE_TRIPLEKICK &&  gCurrentMove != MOVE_TRIPLEAXEL)
+				else if (ITEM_EFFECT(gBankAttacker) == ITEM_EFFECT_LOADED_DICE && gCurrentMove != MOVE_POPULATIONBOMB &&  gCurrentMove != MOVE_TRIPLEKICK &&  gCurrentMove != MOVE_TRIPLEAXEL)
 				{
 					gMultiHitCounter = 5;
 				}
@@ -972,6 +972,28 @@ static u8 AtkCanceller_UnableToUseMove(void)
 				&& SPECIES(gBankAttacker) == SPECIES_ASHGRENINJA)
 				{
 					gMultiHitCounter = 3;
+				}
+				#endif
+				#ifdef SPECIES_MAUSHOLD
+				else if (gCurrentMove == MOVE_POPULATIONBOMB
+				&& SPECIES(gBankAttacker) == SPECIES_MAUSHOLD)
+				{
+					gMultiHitCounter = Random() % 3; //Split into groups of 3
+					switch (gMultiHitCounter)
+					{
+						case 0: //33 %
+							gMultiHitCounter = 4;
+							break;
+						case 1: //33 %
+							gMultiHitCounter = 6;
+							break;
+						case 2: //33 %
+							if ((Random() & 1) == 0) //16.7 %
+								gMultiHitCounter = 8;
+							else //16.7 %
+								gMultiHitCounter = 10;
+							break;
+					}
 				}
 				else
 				#endif
@@ -1008,11 +1030,6 @@ static u8 AtkCanceller_UnableToUseMove(void)
 					//Smart target to partner
 					gBankTarget = PARTNER(gBankTarget);
 				}
-			}
-			else if (gSpecialMoveFlags[gCurrentMove].gTenStrikesMoves)
-			{
-				gMultiHitCounter = 10;
-				PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
 			}
 			else if (gBattleMoves[gCurrentMove].effect == EFFECT_TRIPLE_KICK)
 			{

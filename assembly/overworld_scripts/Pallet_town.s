@@ -3,12 +3,7 @@
 
 .include "../xse_commands.s"
 .include "../xse_defines.s"
-.equ SPECIES_ROWLET, 0x3AB
-.equ SPECIES_CYNDAQUIL, 0x9B
-.equ SPECIES_MUDKIP, 0x11B
-.equ SPECIES_SALAMENCE, 0x18D
-.equ SPECIES_ROOKIDEE, 0x459
-/*
+
 .global EventScript_Pallet_FatGuy
 
 EventScript_Pallet_FatGuy:
@@ -16,17 +11,15 @@ EventScript_Pallet_FatGuy:
     lock
     setflag 0x926
     setflag 0x828
-    setflag FLAG_FOLLOWER_POKEMON
-    givepokemon SPECIES_ROWLET 0x5 0x0 0x0 0x0 0x0
-    givepokemon SPECIES_CYNDAQUIL 0x5 0x0 0x0 0x0 0x0
-    givepokemon SPECIES_MUDKIP 0x5 0x0 0x0 0x0 0x0
-    givepokemon SPECIES_SALAMENCE 0x5 0x0 0x0 0x0 0x0
-    givepokemon SPECIES_ROOKIDEE 0x5 0x0 0x0 0x0 0x0
+    setflag 0x4BD
+    givepokemon 0x1 0x5 0x0 0x0 0x0 0x0
+    givepokemon 0x2 0x5 0x0 0x0 0x0 0x0
+    givepokemon 0x3 0x5 0x0 0x0 0x0 0x0
+    givepokemon 0x4 0x5 0x0 0x0 0x0 0x0
+    givepokemon 0x6 0x5 0x0 0x0 0x0 0x0
     giveegg 0x1
-    addfollower 30 //You can remove this if have already defined an object event in the map to be a follower
-    followerbehindplayer 30 //Change 30 to the object event Local Id.
-    setfollower 30 0x7E //Change 30 to the object event Local Id.
-    updatefollowerpokemonsprite
+    setvar 0x8001 0x84
+    special 0xD1
     msgbox gText_TestScript MSG_NORMAL
     release
     end
@@ -40,18 +33,14 @@ EventScript_Pallet_Girl:
     msgbox gText_PalletGirl_Text1 MSG_YESNO
     compare LASTRESULT 0x1
     if YES _goto PalletGirl_ShowFollowerMon
-    setflag 0xa02
-    setflag 0xa03
     hidefollowermon
     clearflag 0x4BD
-    special 0xD2
     release
     end
 
 PalletGirl_ShowFollowerMon:
-    special 0xd1
     showfollowermon
     setflag 0x4BD
     release
     end
-*/
+    

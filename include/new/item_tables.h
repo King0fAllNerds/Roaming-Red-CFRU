@@ -1396,7 +1396,6 @@ void FieldUseFunc_AbilityCapsule(u8 taskId);
 void FieldUseFunc_ExpShare(u8 taskId);
 void FieldUseFunc_NatureMint(u8 taskId);
 void ItemUseOutOfBattle_PokeVial(u8 taskId);
-void FieldUseFunc_EVIV(u8 taskId);
 void ResetPokeVialUses(void);
 
 
@@ -2154,5 +2153,4 @@ extern const u8 DESC_JOLLY_MINT[];
 extern const u8 DESC_NAIVE_MINT[];
 extern const u8 DESC_SERIOUS_MINT[];
 extern const u8 gItemDescription_PokeVial[];
-extern const u8 DESC_EVIV_DISPLAYER[];
 #endif

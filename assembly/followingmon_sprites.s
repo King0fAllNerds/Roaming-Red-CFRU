@@ -1,5 +1,0 @@
-#include "src\config.h"
-
-#ifdef FOLLOWING_POKEMON
-//You can delete this file
-#endif

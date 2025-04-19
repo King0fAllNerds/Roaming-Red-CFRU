@@ -1,5 +1,3 @@
-#include "src\config.h"
-
 @All scripting macros off of XSE and http://sphericalice.com/romhacking/documents/script/index.html
 
 @Message box types
@@ -1980,53 +1978,23 @@ map \map
 .endm
 
 .macro followerfaceplayer
- special 0xD3
+callasm FollowerMonFacePlayer
 .endm
 
-#ifdef FOLLOWING_POKEMON
 .macro hidefollowermon
-	callasm CreateSparkleSprite
-	callasm HideFollower
+callasm CreateSparkleSprite
+callasm HideFollower
 .endm
 
 .macro showfollowermon
-	callasm CreateSparkleSprite
-	callasm ShowFollowerMon
+callasm CreateSparkleSprite
+callasm ShowFollowerMon
 .endm
-#endif
 
 .macro storemonid
-	callasm StoreFollowerMonInVar4004
+callasm StoreFollowerMonInVar4004
 .endm
 
 .macro resetpokevial
-	callasm ResetPokeVialUses
+callasm ResetPokeVialUses
 .endm
-
-@ sets an NPC up to follow the player
-.macro setfollower localId:req, flags:req
-	setvar 0x8000 \localId
-	setvar 0x8001 \flags
-    special 0xD1
-.endm
-
-@ remove the following NPC (assumes there will only ever be one)
-.macro destroyfollower
-    special 0xD2
-.endm
-
-#ifdef FOLLOWING_POKEMON
-.macro addfollower localId:req
-	setvar 0x8000 \localId
-	callasm CreateFollowerMonObject
-.endm
-
-.macro updatefollowerpokemonsprite
-	callasm UpdateFollowerMonSprite
-.endm
-
-.macro followerbehindplayer localId:req
-	callasm MoveFollowerToPlayerPos
-	movesprite \localId	0x8000 0x8001
-.endm
-#endif
