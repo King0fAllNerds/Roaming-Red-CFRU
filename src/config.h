@@ -244,7 +244,6 @@ enum //These vars need to be one after the other (hence the enum)
 #define POISON_1_HP_SURVIVAL //Comment this line to allow Pokemon to faint from Poison in the overworld.
 #define BW_REPEL_SYSTEM  //Keep this uncommented if you want the game to ask the user to re-use another repel when it runs out
 #define AUTO_NAMING_SCREEN_SWAP  //Comment out if you don't want naming screens to auto-swap to lower-case after first upper-case letter
-#define MULTIPLE_PREMIER_BALLS_AT_ONCE //Comment out if you don't want the player received a Premier ball for every 10 Poke Balls purchased (only 1 no matter how many over 10 balls the player buys)
 #define NON_TRAINER_SPOTTING //Comment out if you don't want regular NPCs to be able to spot the player in the oveworld (vanilla only trainers can or the game will crash)
 #define BIKE_ON_ANY_NON_INSIDE_MAP //Uncomment if you still want to be able to bike on any non-inside map
 #define GEN_4_PLAYER_RUNNING_FIX //Uncomment to increase the lag between frames as the player OW runs, to simulate a more accurate Gen 4 running effect
@@ -344,10 +343,6 @@ enum //These vars need to be one after the other (hence the enum)
 //#define PAYDAY_MONEY_CAP //Pay Day and G-Max Gold Rush should cap at $99999 per battle
 #define QUICK_CLAW_PROCING_ALWAYS_ALLOWS_FLEEING //Fleeing from wild battles will never fail the turn a Quick Claw activates
 #define FROSTBITE //Replaces the Freeze status condition with the Frostbite status condition from PLA
-#define EXPANDED_NEW_ITEMS //Expands items table and add new items util gen 9.
-#define SHOWPOKEPIC_WITHOUT_UGLY_BOX //Fixes the ShowPokePic command to only show Pokemon sprite and not a box with it
-#define CHANGE_ITEM_STORAGE_GRAPHIC //if uncommented, will change pc item storage to Swsh style (background modificable)
-//#define REMOVE_CRITICAL_HITS //Uncomment this to remove critical hits.
 
 //Save stuff
 #define VAR_R_BUTTON_MODE 0x5150
@@ -360,6 +355,13 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_FOLLOWER_POKEMON 0x4BD //0x4BD is an unused flag.
 #define MAX_POKEVIAL_USES 3  // Maximum uses before recharge
 #define VAR_POKEVIAL_USES 0x501A // Use a free variable ID to track uses
+//#define REMOVE_CRITICAL_HITS //Uncomment this to remove critical hits.
+#define MULTIPLE_PREMIER_BALLS_AT_ONCE //Comment out if you don't want the player received a Premier ball for every 10 Poke Balls purchased (only 1 no matter how many over 10 balls the player buys)
+#define ENABLE_MULTIPLE_PURCHASE_REWARDS // Premium Quantity based rewards with a custom item : reward : quantity system (check src/item.c for table). Remeber the above line will not be useful now!
+#define EXPANDED_NEW_ITEMS //Expands items table and add new items util gen 9.
+#define SHOWPOKEPIC_WITHOUT_UGLY_BOX //Fixes the ShowPokePic command to only show Pokemon sprite and not a box with it
+#define CHANGE_ITEM_STORAGE_GRAPHIC //if uncommented, will change pc item storage to Swsh style (background modificable)
+
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 
