@@ -132,14 +132,14 @@ u16 GetFollowerMonSprite(void)
 void CreateFollowerMonObject(void)
 {
     u16 sprite = GetFollowerMonSprite();
-    if (sprite == 0)  // Se não houver um Pokémon válido, não cria o seguidor
+    if (sprite == 0)  // If there is no valid Pokémon, do not create the follower
         return;
     struct EventObject *playerObj = &gEventObjects[gPlayerAvatar->eventObjectId];
  
          s16 posX = playerObj->currentCoords.x - 7;
          s16 posY = playerObj->currentCoords.y - 7;
      
-         // Ajusta posição do seguidor com base na direção do jogador
+         // Adjusts follower position based on player direction
          switch (playerObj->facingDirection)
     {
         case DIR_SOUTH: posY -= 1; break;
@@ -148,11 +148,11 @@ void CreateFollowerMonObject(void)
          case DIR_EAST:  posX -= 1; break;
      }
  
-     // Verifica se o seguidor já existe antes de criar um novo
+     // Check if follower already exists before creating a new one
      for (u8 i = 0; i < MAP_OBJECTS_COUNT; i++)
      {
          if (gEventObjects[i].localId == 30 && gEventObjects[i].active)
-             return;  // Já existe um seguidor, então não cria outro
+             return;  // There is already a follower, so don't create another one
     }
 
     struct EventObjectTemplate followerObj =
