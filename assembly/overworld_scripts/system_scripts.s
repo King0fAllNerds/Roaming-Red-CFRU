@@ -625,6 +625,7 @@ EventScript_UseSurf_CheckAnswer:
 	if equal _goto EventScript_SurfEnd
 	lockall
 	msgbox 0x81BDFD7 MSG_KEEPOPEN
+	special 0xD2
 
 EventScript_UseSurf_SkipAsk:
 	lockall
