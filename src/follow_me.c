@@ -1663,3 +1663,22 @@ void FixFollowerMonLocalIdAfterWarp(void)
 	   }
 	}
 }
+void RemoveFollowerBeforeBattle(void)
+{
+    if (gFollowerState.inProgress)
+    {
+        HideFollower(); // handles sparkle/surf blob
+        gEventObjects[gFollowerState.objId].active = FALSE;
+        gFollowerState.inProgress = FALSE;
+    }
+}
+
+void RestoreFollowerAfterBattle(void)
+{
+    if (FlagGet(FLAG_FOLLOWER_POKEMON))
+    {
+        CreateFollowerMonObject();
+        FixFollowerMonLocalIdAfterWarp(); // just in case
+        gFollowerState.inProgress = TRUE;
+    }
+}

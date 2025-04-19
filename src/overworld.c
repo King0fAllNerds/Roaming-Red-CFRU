@@ -3141,7 +3141,7 @@ void CB2_EndTrainerBattle(void)
     }
 }
 */
-
+extern void RestoreFollowerAfterBattle(void);
 void CB2_ReturnToField(void)
 {
     if (IsUpdateLinkStateCBActive() == TRUE)
@@ -3157,6 +3157,7 @@ void CB2_ReturnToField(void)
 	{
 		UpdateFollowerMonSprite();
 	}
+	RestoreFollowerAfterBattle();
 }
 
 const struct Coords32 gDirectionToVectors[] = 
