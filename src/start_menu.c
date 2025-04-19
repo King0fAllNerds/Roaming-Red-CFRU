@@ -119,7 +119,8 @@ static bool8 CloseAndReloadStartMenu(void);
 static bool8 ReloadStartMenu(void);
 static bool8 ReloadStartMenuItems(void);
 void DestroySafariZoneStatsWindow();
-
+bool8 StartCB_SelectOption(u8 option);
+bool8 StartMenuHasOption(u8 option);
 void DrawTime(void);
 static void UpdateTimeText(void);
 //static void TryUpdateTimeText(u8 taskId);
@@ -357,9 +358,32 @@ bool8 StartCB_HandleInput(void)
 		CloseStartMenu();
 		return TRUE;
 	}
-
+	else if (JOY_NEW(R_BUTTON) && StartMenuHasOption(STARTMENU_SAVE))
+        return StartCB_SelectOption(STARTMENU_SAVE);
 	return FALSE;
 }
+
+bool8 StartMenuHasOption(u8 option)
+ {
+     int i;
+ 
+     for (i = 0; i < sNumStartMenuItems; ++i)
+     {
+         if (sStartMenuOrder[i] == option)
+             return TRUE;
+     }
+     return FALSE;
+ }
+ 
+ bool8 StartCB_SelectOption(u8 option)
+ {
+     PlaySE(SE_SELECT);
+     if (!StartMenuPokedexSanityCheck())
+         return FALSE;
+     sStartMenuCallback = sStartMenuActionTable[option].func.u8_void;
+     StartMenu_FadeScreenIfLeavingOverworld();
+     return FALSE;
+ }
 
 static bool8 CloseAndReloadStartMenu(void)
 {
