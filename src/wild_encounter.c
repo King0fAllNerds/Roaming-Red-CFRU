@@ -692,11 +692,8 @@ SKIP_INDEX_SEARCH:
 	else if (flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
 		return FALSE;
 
-	else if (area != WILD_AREA_LAND)
-		return FALSE;
-
 	#ifdef IgnoreWildPokemon
-	else if (!TryGenerateSwarmMon(level, wildMonIndex, TRUE))
+	else if (area != WILD_AREA_LAND || !TryGenerateSwarmMon(level, wildMonIndex, TRUE))
 	{
 		CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex, TRUE);
 		if (FlagGet(FLAG_ENABLE_WILD_PMN_PREBATTLE_SCREEN))
