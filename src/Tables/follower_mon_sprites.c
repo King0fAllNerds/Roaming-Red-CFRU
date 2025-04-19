@@ -9,6 +9,8 @@ MON_OW_TEMPLATE_32x32_FRAMES(0004, Charmander)
 MON_OW_TEMPLATE_32x32_FRAMES(0005, Charmeleon)
 MON_OW_TEMPLATE_32x32_FRAMES(0006, Charizard)
 MON_OW_TEMPLATE_32x32_FRAMES(0007, Squirtle)
+MON_OW_TEMPLATE_32x32_FRAMES(0008, Wartortle)
+MON_OW_TEMPLATE_32x32_FRAMES(0009, Blastoise)
 
 //Add Followers Graphics Info Here
 const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[] =
@@ -20,6 +22,8 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[] =
     MON_OW_OBJECT_GRAPHICS(1204, Charmeleon)
     MON_OW_OBJECT_GRAPHICS(1205, Charizard)
     MON_OW_OBJECT_GRAPHICS(1206, Squirtle)
+    MON_OW_OBJECT_GRAPHICS(1207, Wartortle)
+    MON_OW_OBJECT_GRAPHICS(1208, Blastoise)
 };
 
 // Link Species with Overworld Sprites
@@ -33,6 +37,8 @@ const u16 gFollowerMonSpriteIdTable[] =
     [SPECIES_CHARMELEON] = 0x0104,
     [SPECIES_CHARIZARD] = 0X0105,
     [SPECIES_SQUIRTLE] = 0X0106,
+    [SPECIES_WARTORTLE] = 0X0107,
+    [SPECIES_BLASTOISE] = 0x0108,
 };
 
 static const union AnimCmd sMonAnim_FaceSouth[] =

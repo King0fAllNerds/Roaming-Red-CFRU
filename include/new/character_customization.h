@@ -116,3 +116,5 @@ extern const u16 gFollowerMonPic0004_CharmanderPal[255];
 extern const u16 gFollowerMonPic0005_CharmeleonPal[255];
 extern const u16 gFollowerMonPic0006_CharizardPal[255];
 extern const u16 gFollowerMonPic0007_SquirtlePal[255];
+extern const u16 gFollowerMonPic0008_WartortlePal[255];
+extern const u16 gFollowerMonPic0009_BlastoisePal[255];

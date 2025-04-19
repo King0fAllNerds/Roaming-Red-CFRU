@@ -90,6 +90,8 @@ extern const u8 gFollowerMonPic0004_CharmanderTiles[];
 extern const u8 gFollowerMonPic0005_CharmeleonTiles[];
 extern const u8 gFollowerMonPic0006_CharizardTiles[];
 extern const u8 gFollowerMonPic0007_SquirtleTiles[];
+extern const u8 gFollowerMonPic0008_WartortleTiles[];
+extern const u8 gFollowerMonPic0009_BlastoiseTiles[];
 
 // Palettes declarations
 extern const u16 gFollowerMonPic0001_BulbasaurPal[];
@@ -99,5 +101,7 @@ extern const u16 gFollowerMonPic0004_CharmanderPal[];
 extern const u16 gFollowerMonPic0005_CharmeleonPal[];
 extern const u16 gFollowerMonPic0006_CharizardPal[];
 extern const u16 gFollowerMonPic0007_SquirtlePal[];
+extern const u16 gFollowerMonPic0008_WartortlePal[];
+extern const u16 gFollowerMonPic0009_BlastoisePal[];
 
 #endif
