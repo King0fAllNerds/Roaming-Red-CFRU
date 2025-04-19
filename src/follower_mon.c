@@ -126,15 +126,15 @@ u16 GetFollowerMonSprite(void)
         return 0;
 
     species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES, NULL);
-    return gFollowerMonSpriteIdTable[species] + 256;
+    return gFollowerMonSpriteIdTable[species] ;
 }
 
 void CreateFollowerMonObject(void)
 {
     u16 sprite = GetFollowerMonSprite();
     if (sprite == 0)  // Se não houver um Pokémon válido, não cria o seguidor
-         return;
-         struct EventObject *playerObj = &gEventObjects[gPlayerAvatar->eventObjectId];
+        return;
+    struct EventObject *playerObj = &gEventObjects[gPlayerAvatar->eventObjectId];
  
          s16 posX = playerObj->currentCoords.x - 7;
          s16 posY = playerObj->currentCoords.y - 7;

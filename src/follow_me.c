@@ -53,6 +53,7 @@ static void CalculateFollowerEscalatorTrajectoryUp(struct Task *task);
 static void CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
 static void SetFollowerSprite(u8 spriteIndex);
 static void TurnNPCIntoFollower(u8 localId, u8 followerFlags);
+void FixFollowerMonLocalIdAfterWarp(void);
 
 extern u8 EventScript_FollowerMon[];
 
@@ -261,7 +262,7 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 		follower->invisible = FALSE;
 		MoveEventObjectToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
 		EventObjectTurn(follower, player->facingDirection); //The follower should be facing the same direction as the player when it comes out of hiding
-
+		FixFollowerMonLocalIdAfterWarp(); 
 		if (gFollowerState.createSurfBlob == SURF_BLOB_STATE_ON || gFollowerState.createSurfBlob == SURF_BLOB_STATE_HIDDEN_ON) //Recreate surf blob
 		{
 			gFollowerState.createSurfBlob = SURF_BLOB_STATE_ON; //Get rid of hidden
@@ -1110,7 +1111,9 @@ void Task_PlayerExitDoor(u8 taskId)
 			if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
  			{
 				if (gFollowerState.objId < MAP_OBJECTS_COUNT)
+				{
 				gEventObjects[gFollowerState.objId].localId = 30;
+				}
  			}
 	        #endif
 			FollowMe_SetIndicatorToComeOutDoor();
@@ -1649,4 +1652,14 @@ void UpdateFollowerMonSprite(void)
     follower->spriteId = newSpriteId;
     MoveEventObjectToMapCoords(follower, follower->currentCoords.x, follower->currentCoords.y);
     EventObjectTurn(follower, follower->facingDirection);
+}
+void FixFollowerMonLocalIdAfterWarp(void)
+{
+	if (gFollowerState.inProgress && FlagGet(FLAG_FOLLOWER_POKEMON))
+	{
+	   if (gFollowerState.objId < MAP_OBJECTS_COUNT)
+	   {
+	   gEventObjects[gFollowerState.objId].localId = 30;
+	   }
+	}
 }
