@@ -56,4 +56,4 @@ Join us on discord: https://discord.com/invite/axNX3rhR9K
 - If you want to see how potential this expansion would have in future read [this](https://github.com/Shiny-Miner/CFRU-expansion/blob/Experiments/todo.md)
 - Please don't try to use leon rombase on it as it already contains items + more
 - Added convienience for compiling, now run a_makepy.bat to make the project (it executes "python scripts//make.py") and run b_cleanpy.bat to clean repo (it runs python scripts//clean.py)
-- Do not talk to Fat guy and Lady in pallet town unless if you're trying to test following pokemon code. Its in development and the bugs are still to be fixed!
+- Do not talk to Fat guy and Lady in pallet town unless if you're trying to test following pokemon code.
