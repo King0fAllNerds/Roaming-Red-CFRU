@@ -109,6 +109,8 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 #define gObjectEventPallete_73 ((void*)0x08F24A64)
 #define gObjectEventPallete_74 ((void*)0x08F24A84)
 #define gObjectEventPallete_75 ((void*)0x08F24B28)
+
+// Gen 1
 extern const u16 gFollowerMonPic0001_BulbasaurPal[255];
 extern const u16 gFollowerMonPic0002_IvysaurPal[255];
 extern const u16 gFollowerMonPic0003_VenusaurPal[255];
@@ -118,6 +120,7 @@ extern const u16 gFollowerMonPic0006_CharizardPal[255];
 extern const u16 gFollowerMonPic0007_SquirtlePal[255];
 extern const u16 gFollowerMonPic0008_WartortlePal[255];
 extern const u16 gFollowerMonPic0009_BlastoisePal[255];
+// Gen 2
 extern const u16 gFollowerMonPic0152_ChikoritaPal[255];
 extern const u16 gFollowerMonPic0153_BayleefPal[255];
 extern const u16 gFollowerMonPic0154_MeganiumPal[255];
@@ -127,6 +130,7 @@ extern const u16 gFollowerMonPic0157_TyphlosionPal[255];
 extern const u16 gFollowerMonPic0158_TotodilePal[255];
 extern const u16 gFollowerMonPic0159_CroconawPal[255];
 extern const u16 gFollowerMonPic0160_FeraligatrPal[255];
+//Gen 3
 extern const u16 gFollowerMonPic0252_TreeckoPal[255];
 extern const u16 gFollowerMonPic0253_GrovylePal[255];
 extern const u16 gFollowerMonPic0254_SceptilePal[255];
@@ -136,3 +140,14 @@ extern const u16 gFollowerMonPic0257_BlazikenPal[255];
 extern const u16 gFollowerMonPic0258_MudkipPal[255];
 extern const u16 gFollowerMonPic0259_MarshtompPal[255];
 extern const u16 gFollowerMonPic0260_SwampertPal[255];
+//Gen 4
+extern const u16 gFollowerMonPic0387_TurtwigPal[255];
+extern const u16 gFollowerMonPic0388_GrotlePal[255];
+extern const u16 gFollowerMonPic0389_TorterraPal[255];
+extern const u16 gFollowerMonPic0390_ChimcharPal[255];
+extern const u16 gFollowerMonPic0391_MonfernoPal[255];
+extern const u16 gFollowerMonPic0392_InfernapePal[255];
+extern const u16 gFollowerMonPic0393_PiplupPal[255];
+extern const u16 gFollowerMonPic0394_PrinplupPal[255];
+extern const u16 gFollowerMonPic0395_EmpoleonPal[255];
+

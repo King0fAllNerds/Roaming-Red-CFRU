@@ -110,6 +110,15 @@ extern const u8 gFollowerMonPic0257_BlazikenTiles[];
 extern const u8 gFollowerMonPic0258_MudkipTiles[];
 extern const u8 gFollowerMonPic0259_MarshtompTiles[];
 extern const u8 gFollowerMonPic0260_SwampertTiles[];
+extern const u8 gFollowerMonPic0387_TurtwigTiles[];
+extern const u8 gFollowerMonPic0388_GrotleTiles[];
+extern const u8 gFollowerMonPic0389_TorterraTiles[];
+extern const u8 gFollowerMonPic0390_ChimcharTiles[];
+extern const u8 gFollowerMonPic0391_MonfernoTiles[];
+extern const u8 gFollowerMonPic0392_InfernapeTiles[];
+extern const u8 gFollowerMonPic0393_PiplupTiles[];
+extern const u8 gFollowerMonPic0394_PrinplupTiles[];
+extern const u8 gFollowerMonPic0395_EmpoleonTiles[];
 
 // Palettes declarations
 extern const u16 gFollowerMonPic0001_BulbasaurPal[];
@@ -139,5 +148,15 @@ extern const u16 gFollowerMonPic0257_BlazikenPal[];
 extern const u16 gFollowerMonPic0258_MudkipPal[];
 extern const u16 gFollowerMonPic0259_MarshtompPal[];
 extern const u16 gFollowerMonPic0260_SwampertPal[];
+extern const u16 gFollowerMonPic0387_TurtwigPal[];
+extern const u16 gFollowerMonPic0388_GrotlePal[];
+extern const u16 gFollowerMonPic0389_TorterraPal[];
+extern const u16 gFollowerMonPic0390_ChimcharPal[];
+extern const u16 gFollowerMonPic0391_MonfernoPal[];
+extern const u16 gFollowerMonPic0392_InfernapePal[];
+extern const u16 gFollowerMonPic0393_PiplupPal[];
+extern const u16 gFollowerMonPic0394_PrinplupPal[];
+extern const u16 gFollowerMonPic0395_EmpoleonPal[];
+
 
 #endif
