@@ -180,4 +180,13 @@ extern const u16 gFollowerMonPic0727_IncineroarPal[255];
 extern const u16 gFollowerMonPic0728_PopplioPal[255];
 extern const u16 gFollowerMonPic0729_BrionnePal[255];
 extern const u16 gFollowerMonPic0730_PrimarinaPal[255];
-
+// Gen 8
+extern const u16 gFollowerMonPic0810_GrookeyPal[255];
+extern const u16 gFollowerMonPic0811_ThwackeyPal[255];
+extern const u16 gFollowerMonPic0812_RillaboomPal[255];
+extern const u16 gFollowerMonPic0813_ScorbunnyPal[255];
+extern const u16 gFollowerMonPic0814_RabootPal[255];
+extern const u16 gFollowerMonPic0815_CinderacePal[255];
+extern const u16 gFollowerMonPic0816_SobblePal[255];
+extern const u16 gFollowerMonPic0817_DrizzilePal[255];
+extern const u16 gFollowerMonPic0818_InteleonPal[255];
