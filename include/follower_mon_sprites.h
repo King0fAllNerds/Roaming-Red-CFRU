@@ -83,6 +83,7 @@ extern const union AnimCmd *const gFollowerMonAnimTable[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
 
 // Images declarations
+//Gen 1
 extern const u8 gFollowerMonPic0001_BulbasaurTiles[];
 extern const u8 gFollowerMonPic0002_IvysaurTiles[];
 extern const u8 gFollowerMonPic0003_VenusaurTiles[];
@@ -92,6 +93,7 @@ extern const u8 gFollowerMonPic0006_CharizardTiles[];
 extern const u8 gFollowerMonPic0007_SquirtleTiles[];
 extern const u8 gFollowerMonPic0008_WartortleTiles[];
 extern const u8 gFollowerMonPic0009_BlastoiseTiles[];
+// Gen 2
 extern const u8 gFollowerMonPic0152_ChikoritaTiles[];
 extern const u8 gFollowerMonPic0153_BayleefTiles[];
 extern const u8 gFollowerMonPic0154_MeganiumTiles[];
@@ -101,6 +103,7 @@ extern const u8 gFollowerMonPic0157_TyphlosionTiles[];
 extern const u8 gFollowerMonPic0158_TotodileTiles[];
 extern const u8 gFollowerMonPic0159_CroconawTiles[];
 extern const u8 gFollowerMonPic0160_FeraligatrTiles[];
+// Gen 3
 extern const u8 gFollowerMonPic0252_TreeckoTiles[];
 extern const u8 gFollowerMonPic0253_GrovyleTiles[];
 extern const u8 gFollowerMonPic0254_SceptileTiles[];
@@ -110,6 +113,7 @@ extern const u8 gFollowerMonPic0257_BlazikenTiles[];
 extern const u8 gFollowerMonPic0258_MudkipTiles[];
 extern const u8 gFollowerMonPic0259_MarshtompTiles[];
 extern const u8 gFollowerMonPic0260_SwampertTiles[];
+// Gen 4
 extern const u8 gFollowerMonPic0387_TurtwigTiles[];
 extern const u8 gFollowerMonPic0388_GrotleTiles[];
 extern const u8 gFollowerMonPic0389_TorterraTiles[];
@@ -119,8 +123,20 @@ extern const u8 gFollowerMonPic0392_InfernapeTiles[];
 extern const u8 gFollowerMonPic0393_PiplupTiles[];
 extern const u8 gFollowerMonPic0394_PrinplupTiles[];
 extern const u8 gFollowerMonPic0395_EmpoleonTiles[];
+// Gen 5
+extern const u8 gFollowerMonPic0495_SnivyTiles[];
+extern const u8 gFollowerMonPic0496_ServineTiles[];
+extern const u8 gFollowerMonPic0497_SerperiorTiles[];
+extern const u8 gFollowerMonPic0498_TepigTiles[];
+extern const u8 gFollowerMonPic0499_PigniteTiles[];
+extern const u8 gFollowerMonPic0500_EmboarTiles[];
+extern const u8 gFollowerMonPic0501_OshawottTiles[];
+extern const u8 gFollowerMonPic0502_DewottTiles[];
+extern const u8 gFollowerMonPic0503_SamurottTiles[];
+
 
 // Palettes declarations
+// Gen 1
 extern const u16 gFollowerMonPic0001_BulbasaurPal[];
 extern const u16 gFollowerMonPic0002_IvysaurPal[];
 extern const u16 gFollowerMonPic0003_VenusaurPal[];
@@ -130,6 +146,7 @@ extern const u16 gFollowerMonPic0006_CharizardPal[];
 extern const u16 gFollowerMonPic0007_SquirtlePal[];
 extern const u16 gFollowerMonPic0008_WartortlePal[];
 extern const u16 gFollowerMonPic0009_BlastoisePal[];
+// Gen 2
 extern const u16 gFollowerMonPic0152_ChikoritaPal[];
 extern const u16 gFollowerMonPic0153_BayleefPal[];
 extern const u16 gFollowerMonPic0154_MeganiumPal[];
@@ -139,6 +156,7 @@ extern const u16 gFollowerMonPic0157_TyphlosionPal[];
 extern const u16 gFollowerMonPic0158_TotodilePal[];
 extern const u16 gFollowerMonPic0159_CroconawPal[];
 extern const u16 gFollowerMonPic0160_FeraligatrPal[];
+// Gen 3
 extern const u16 gFollowerMonPic0252_TreeckoPal[];
 extern const u16 gFollowerMonPic0253_GrovylePal[];
 extern const u16 gFollowerMonPic0254_SceptilePal[];
@@ -148,6 +166,7 @@ extern const u16 gFollowerMonPic0257_BlazikenPal[];
 extern const u16 gFollowerMonPic0258_MudkipPal[];
 extern const u16 gFollowerMonPic0259_MarshtompPal[];
 extern const u16 gFollowerMonPic0260_SwampertPal[];
+// Gen 4
 extern const u16 gFollowerMonPic0387_TurtwigPal[];
 extern const u16 gFollowerMonPic0388_GrotlePal[];
 extern const u16 gFollowerMonPic0389_TorterraPal[];
@@ -157,6 +176,16 @@ extern const u16 gFollowerMonPic0392_InfernapePal[];
 extern const u16 gFollowerMonPic0393_PiplupPal[];
 extern const u16 gFollowerMonPic0394_PrinplupPal[];
 extern const u16 gFollowerMonPic0395_EmpoleonPal[];
+// Gen 5
+extern const u16 gFollowerMonPic0495_SnivyPal[];
+extern const u16 gFollowerMonPic0496_ServinePal[];
+extern const u16 gFollowerMonPic0497_SerperiorPal[];
+extern const u16 gFollowerMonPic0498_TepigPal[];
+extern const u16 gFollowerMonPic0499_PignitePal[];
+extern const u16 gFollowerMonPic0500_EmboarPal[];
+extern const u16 gFollowerMonPic0501_OshawottPal[];
+extern const u16 gFollowerMonPic0502_DewottPal[];
+extern const u16 gFollowerMonPic0503_SamurottPal[];
 
 
 #endif

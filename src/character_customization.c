@@ -300,6 +300,15 @@ static NPCPtr sOverworldTable2[] =
 	&gFollowerMonGfxTable0[33],
 	&gFollowerMonGfxTable0[34],
 	&gFollowerMonGfxTable0[35],
+	&gFollowerMonGfxTable0[36],
+	&gFollowerMonGfxTable0[37],
+	&gFollowerMonGfxTable0[38],
+	&gFollowerMonGfxTable0[39],
+	&gFollowerMonGfxTable0[40],
+	&gFollowerMonGfxTable0[41],
+	&gFollowerMonGfxTable0[42],
+	&gFollowerMonGfxTable0[43],
+	&gFollowerMonGfxTable0[44],
 };
 
 	// create 255 OW tables
@@ -430,6 +439,15 @@ static NPCPtr sOverworldTable2[] =
 		{gFollowerMonPic0393_PiplupPal,    0x1221},
 		{gFollowerMonPic0394_PrinplupPal,  0x1222},
 		{gFollowerMonPic0395_EmpoleonPal,  0x1223},
+		{gFollowerMonPic0495_SnivyPal,      0x1224},
+		{gFollowerMonPic0496_ServinePal,    0x1225},
+		{gFollowerMonPic0497_SerperiorPal,  0x1226},
+		{gFollowerMonPic0498_TepigPal,      0x1227},
+		{gFollowerMonPic0499_PignitePal,    0x1228},
+		{gFollowerMonPic0500_EmboarPal,     0x1229},
+		{gFollowerMonPic0501_OshawottPal,   0x122A},
+		{gFollowerMonPic0502_DewottPal,     0x122B},
+		{gFollowerMonPic0503_SamurottPal,   0x122C},
 		{NULL, 0x11FF}
 	};
 	

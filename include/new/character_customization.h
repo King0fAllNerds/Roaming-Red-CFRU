@@ -150,4 +150,14 @@ extern const u16 gFollowerMonPic0392_InfernapePal[255];
 extern const u16 gFollowerMonPic0393_PiplupPal[255];
 extern const u16 gFollowerMonPic0394_PrinplupPal[255];
 extern const u16 gFollowerMonPic0395_EmpoleonPal[255];
+//Gen 5
+extern const u16 gFollowerMonPic0495_SnivyPal[255];
+extern const u16 gFollowerMonPic0496_ServinePal[255];
+extern const u16 gFollowerMonPic0497_SerperiorPal[255];
+extern const u16 gFollowerMonPic0498_TepigPal[255];
+extern const u16 gFollowerMonPic0499_PignitePal[255];
+extern const u16 gFollowerMonPic0500_EmboarPal[255];
+extern const u16 gFollowerMonPic0501_OshawottPal[255];
+extern const u16 gFollowerMonPic0502_DewottPal[255];
+extern const u16 gFollowerMonPic0503_SamurottPal[255];
 
