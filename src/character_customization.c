@@ -271,6 +271,8 @@ static NPCPtr sOverworldTable2[] =
 	&gFollowerMonGfxTable0[4],
 	&gFollowerMonGfxTable0[5],
 	&gFollowerMonGfxTable0[6],
+	&gFollowerMonGfxTable0[7],
+	&gFollowerMonGfxTable0[8],
 };
 
 	// create 255 OW tables
