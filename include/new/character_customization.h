@@ -170,4 +170,14 @@ extern const u16 gFollowerMonPic0655_DelphoxPal[255];
 extern const u16 gFollowerMonPic0656_FroakiePal[255];
 extern const u16 gFollowerMonPic0657_FrogadierPal[255];
 extern const u16 gFollowerMonPic0658_GreninjaPal[255];
+// Gen 7
+extern const u16 gFollowerMonPic0722_RowletPal[255];
+extern const u16 gFollowerMonPic0723_DartrixPal[255];
+extern const u16 gFollowerMonPic0724_DecidueyePal[255];
+extern const u16 gFollowerMonPic0725_LittenPal[255];
+extern const u16 gFollowerMonPic0726_TorracatPal[255];
+extern const u16 gFollowerMonPic0727_IncineroarPal[255];
+extern const u16 gFollowerMonPic0728_PopplioPal[255];
+extern const u16 gFollowerMonPic0729_BrionnePal[255];
+extern const u16 gFollowerMonPic0730_PrimarinaPal[255];
 

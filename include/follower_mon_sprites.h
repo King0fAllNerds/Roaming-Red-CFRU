@@ -143,6 +143,17 @@ extern const u8 gFollowerMonPic0655_DelphoxTiles[];
 extern const u8 gFollowerMonPic0656_FroakieTiles[];
 extern const u8 gFollowerMonPic0657_FrogadierTiles[];
 extern const u8 gFollowerMonPic0658_GreninjaTiles[];
+// Gen 7
+extern const u8 gFollowerMonPic0722_RowletTiles[];
+extern const u8 gFollowerMonPic0723_DartrixTiles[];
+extern const u8 gFollowerMonPic0724_DecidueyeTiles[];
+extern const u8 gFollowerMonPic0725_LittenTiles[];
+extern const u8 gFollowerMonPic0726_TorracatTiles[];
+extern const u8 gFollowerMonPic0727_IncineroarTiles[];
+extern const u8 gFollowerMonPic0728_PopplioTiles[];
+extern const u8 gFollowerMonPic0729_BrionneTiles[];
+extern const u8 gFollowerMonPic0730_PrimarinaTiles[];
+
 
 // Palettes declarations
 // Gen 1
@@ -205,5 +216,15 @@ extern const u16 gFollowerMonPic0655_DelphoxPal[];
 extern const u16 gFollowerMonPic0656_FroakiePal[];
 extern const u16 gFollowerMonPic0657_FrogadierPal[];
 extern const u16 gFollowerMonPic0658_GreninjaPal[];
+// Gen 7
+extern const u16 gFollowerMonPic0722_RowletPal[];
+extern const u16 gFollowerMonPic0723_DartrixPal[];
+extern const u16 gFollowerMonPic0724_DecidueyePal[];
+extern const u16 gFollowerMonPic0725_LittenPal[];
+extern const u16 gFollowerMonPic0726_TorracatPal[];
+extern const u16 gFollowerMonPic0727_IncineroarPal[];
+extern const u16 gFollowerMonPic0728_PopplioPal[];
+extern const u16 gFollowerMonPic0729_BrionnePal[];
+extern const u16 gFollowerMonPic0730_PrimarinaPal[];
 
 #endif
