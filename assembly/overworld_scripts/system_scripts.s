@@ -1176,11 +1176,11 @@ SystemScript_DebugMenu_Custom:
 SystemScript_DebugMenu_Debug:
 	lockall
 	multichoiceoption gText_DebugMenu_Dex 0
-	multichoiceoption gText_DebugMenu_GiveItemById 1
+	multichoiceoption gText_DebugMenu_StartWildBattle 1
 	multichoice 0, 0, TWO_MULTICHOICE_OPTIONS, 0
 	switch LASTRESULT
 		case 0, SystemScript_DebugMenu_DebugPokedex
-		case 1, SystemScript_DebugMenu_GiveItemPrompt
+		case 1, SystemScript_DebugMenu_StartWildBattleNow
 	releaseall
 	end
 
@@ -1222,6 +1222,14 @@ SystemScript_DebugMenu_GiveItemPrompt:
 	callasm DebugMenu_GiveItemFromVar
 	giveitem 0x8000 0x1 MSG_OBTAIN
 	releaseall
+	end
+SystemScript_DebugMenu_StartWildBattleNow:
+	msgbox gText_DebugMenu_EnterSpecies MSG_NORMAL
+	special 0xB3
+	waitstate
+	copyvar 0x8000, LASTRESULT
+	setwildbattle 0x8000 0x20 0x0
+	dowildbattle
 	end
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

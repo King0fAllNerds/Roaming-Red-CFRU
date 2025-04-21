@@ -75,3 +75,6 @@ Enabled all pokemon to \nseen/caught in Pokedex.
 
 #org @gText_DebugMenu_Dex
 Debug Pokedex
+
+#org @gText_DebugMenu_StartWildBattle
+Custom Wild battle

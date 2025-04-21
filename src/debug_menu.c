@@ -217,3 +217,21 @@ void DebugMenu_Dex(void)
         Linker(i, 3);
     }
 }
+
+#define FUNC_FLY_UNLOCK    ((void *) (0x0806E680 + 1))
+#define FUNC_FINAL_CALL    ((void *) (0x08000544 + 1))
+#define FINAL_ARG          ((void *) (0x080C4EF8 + 1))
+
+typedef void (*FlyFunc)(u16 mapSec);
+typedef void (*FinalFunc)(void *ptr);
+
+void DebugMenu_Fly(void)
+{
+    FlyFunc UnlockFlySpot = (FlyFunc)FUNC_FLY_UNLOCK;
+    FinalFunc FinalCall = (FinalFunc)FUNC_FINAL_CALL;
+
+    for (u16 i = 0x890; i < 0x8C4; i++)
+        UnlockFlySpot(i);
+
+    FinalCall((void *)FINAL_ARG);
+}
