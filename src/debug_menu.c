@@ -174,3 +174,24 @@ void DebugMenu_ShinyTeam(void)
 			ForceMonShiny(&gPlayerParty[i]);
 	}
 }
+#include "../include/pokemon.h"
+#include "../include/constants/species.h"
+#include "../include/constants/pokemon.h"
+#include "../include/constants/vars.h"
+#define VAR_8000 0x8000
+
+void DebugMenu_GivePokemonFromVar(void)
+{
+	u16 species = VarGet(VAR_8000);
+	struct Pokemon mon;
+
+	if (species == 0 || species >= NUM_SPECIES)
+		return;
+
+	u8 slot = CalculatePlayerPartyCount();
+	if (slot >= PARTY_SIZE)
+		return;
+
+	CreateMon(&mon, species, 50, 32, TRUE, 0, OT_ID_PLAYER_ID, 0);
+	gPlayerParty[slot] = mon;
+}

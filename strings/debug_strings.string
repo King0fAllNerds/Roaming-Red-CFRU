@@ -45,3 +45,15 @@ TMs and HMs
 
 #org @gText_DebugMenu_AllItems
 All Items
+
+#org @gText_DebugMenu_GivePokemonById
+Give Pokémon by Dex ID
+
+#org @gText_DebugMenu_EnterSpecies
+Enter the Pokémon's National \nDex Number.
+
+#org @gText_Failed
+Invalid species or party full.
+
+#org @gText_ReceivedPokemon
+Received [BUFFER1]!

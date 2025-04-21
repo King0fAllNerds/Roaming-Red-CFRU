@@ -1108,13 +1108,15 @@ SystemScript_DebugMenu:
 	multichoiceoption gText_DebugMenu_Level100Team 2
 	multichoiceoption gText_DebugMenu_MaxCoinage 3
 	multichoiceoption gText_DebugMenu_ShinyTeam 4
-	multichoice 0x0 0x0 FIVE_MULTICHOICE_OPTIONS 0x0
+	multichoiceoption gText_DebugMenu_GivePokemonById 5
+	multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS 0x0
 	switch LASTRESULT
 	case 0, SystemScript_DebugMenu_SetFlag
 	case 1, SystemScript_DebugMenu_GiveItem
 	case 2, SystemScript_DebugMenu_Level100Team
 	case 3, SystemScript_DebugMenu_MaxCoinage
 	case 4, SystemScript_DebugMenu_ShinyTeam
+	case 5, SystemScript_DebugMenu_GivePokemonPrompt
 SystemScript_DebugMenu_End:
 	releaseall
 	end
@@ -1155,6 +1157,23 @@ SystemScript_DebugMenu_MaxCoinage:
 SystemScript_DebugMenu_ShinyTeam:
 	callasm DebugMenu_ShinyTeam
 	goto SystemScript_DebugMenu
+
+SystemScript_DebugMenu_GivePokemonPrompt:
+	msgbox gText_DebugMenu_EnterSpecies MSG_NORMAL
+	special 0xB3
+	waitstate
+	copyvar 0x8000, LASTRESULT
+	callasm DebugMenu_GivePokemonFromVar
+	bufferpokemon 0x0 0x8000
+	if equal _goto SuccessFul
+	msgbox gText_Failed MSG_NORMAL
+	end
+SuccessFul:
+	lock
+	msgbox gText_ReceivedPokemon MSG_NORMAL
+	setflag 0x829
+	release
+	end
 
 @;@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
