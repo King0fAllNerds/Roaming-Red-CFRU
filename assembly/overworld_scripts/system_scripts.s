@@ -1108,17 +1108,15 @@ SystemScript_DebugMenu:
 	multichoiceoption gText_DebugMenu_Level100Team 2
 	multichoiceoption gText_DebugMenu_MaxCoinage 3
 	multichoiceoption gText_DebugMenu_ShinyTeam 4
-	multichoiceoption gText_DebugMenu_GivePokemonById 5
-	multichoiceoption gText_DebugMenu_GiveItemById 6
-	multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS 0x0
+	multichoiceoption gText_DebugMenu_Give 5
+	multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS 0x0
 	switch LASTRESULT
 	case 0, SystemScript_DebugMenu_SetFlag
 	case 1, SystemScript_DebugMenu_GiveItem
 	case 2, SystemScript_DebugMenu_Level100Team
 	case 3, SystemScript_DebugMenu_MaxCoinage
 	case 4, SystemScript_DebugMenu_ShinyTeam
-	case 5, SystemScript_DebugMenu_GivePokemonPrompt
-	case 6, SystemScript_DebugMenu_GiveItemPrompt
+	case 5, SystemScript_DebugMenu_Custom
 SystemScript_DebugMenu_End:
 	releaseall
 	end
@@ -1160,6 +1158,19 @@ SystemScript_DebugMenu_ShinyTeam:
 	callasm DebugMenu_ShinyTeam
 	goto SystemScript_DebugMenu
 
+.global SystemScript_DebugMenu_GiveCustom
+SystemScript_DebugMenu_Custom:
+	lockall
+	multichoiceoption gText_DebugMenu_GivePokemonById 0
+	multichoiceoption gText_DebugMenu_GiveItemById 1
+	multichoice 0, 0, TWO_MULTICHOICE_OPTIONS, 0
+	switch LASTRESULT
+		case 0, SystemScript_DebugMenu_GivePokemonPrompt
+		case 1, SystemScript_DebugMenu_GiveItemPrompt
+	releaseall
+	end
+
+.global SystemScript_DebugMenu_GivePokemonPrompt
 SystemScript_DebugMenu_GivePokemonPrompt:
 	msgbox gText_DebugMenu_EnterSpecies MSG_NORMAL
 	special 0xB3
@@ -1176,6 +1187,8 @@ SuccessFul:
 	setflag 0x828
 	release
 	end
+
+.global SystemScript_DebugMenu_GiveItemPrompt
 SystemScript_DebugMenu_GiveItemPrompt:
 	lockall
 	msgbox Text_EnterItem MSG_NORMAL

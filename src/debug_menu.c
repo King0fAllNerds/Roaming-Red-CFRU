@@ -8,6 +8,7 @@
 #include "../include/new/build_pokemon.h"
 #include "../include/new/item.h"
 #include "../include/new/util.h"
+#include "../include/script.h"
 
 void DebugMenu_ProcessSetFlag(void)
 {
@@ -203,4 +204,3 @@ void DebugMenu_GiveItemFromVar(void)
 
     AddBagItem(item, 1);
 }
-

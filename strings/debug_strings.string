@@ -46,8 +46,11 @@ TMs and HMs
 #org @gText_DebugMenu_AllItems
 All Items
 
+#org @gText_DebugMenu_Give
+Give custom
+
 #org @gText_DebugMenu_GivePokemonById
-Give custom Pokémon
+Pokémon
 
 #org @gText_DebugMenu_EnterSpecies
 Enter the Pokémon's National \nDex Number.
@@ -62,4 +65,4 @@ Received [BUFFER1]!
 Enter the Item ID to receive.
 
 #org @gText_DebugMenu_GiveItemById
-Give custom item
+Item
