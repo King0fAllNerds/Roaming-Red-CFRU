@@ -195,3 +195,12 @@ void DebugMenu_GivePokemonFromVar(void)
 	CreateMon(&mon, species, 50, 32, TRUE, 0, OT_ID_PLAYER_ID, 0);
 	gPlayerParty[slot] = mon;
 }
+void DebugMenu_GiveItemFromVar(void)
+{
+    u16 item = VarGet(VAR_8000);
+    if (item == 0 || item >= ITEMS_COUNT)
+        return;
+
+    AddBagItem(item, 1);
+}
+

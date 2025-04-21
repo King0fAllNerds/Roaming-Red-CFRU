@@ -47,7 +47,7 @@ TMs and HMs
 All Items
 
 #org @gText_DebugMenu_GivePokemonById
-Give Pokémon by Dex ID
+Give custom Pokémon
 
 #org @gText_DebugMenu_EnterSpecies
 Enter the Pokémon's National \nDex Number.
@@ -57,3 +57,9 @@ Invalid species or party full.
 
 #org @gText_ReceivedPokemon
 Received [BUFFER1]!
+
+#org @Text_EnterItem
+Enter the Item ID to receive.
+
+#org @gText_DebugMenu_GiveItemById
+Give custom item
