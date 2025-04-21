@@ -204,3 +204,16 @@ void DebugMenu_GiveItemFromVar(void)
 
     AddBagItem(item, 1);
 }
+#define LINKER_FUNC_ADDR ((void *) (0x08088E74 + 1))
+typedef void (*LinkerFunc)(u16 species, u16 param);
+
+void DebugMenu_Dex(void)
+{
+    LinkerFunc Linker = (LinkerFunc)LINKER_FUNC_ADDR;
+
+    for (u16 i = 1; i <= 0x401; i++)
+    {
+        Linker(i, 2);
+        Linker(i, 3);
+    }
+}

@@ -66,3 +66,12 @@ Enter the Item ID to receive.
 
 #org @gText_DebugMenu_GiveItemById
 Item
+
+#org @gText_DebugMenu_Debug
+Debug more...
+
+#org @gText_DebugMenu_SuccessfulDex
+Enabled all pokemon to \nseen/caught in Pokedex.
+
+#org @gText_DebugMenu_Dex
+Debug Pokedex

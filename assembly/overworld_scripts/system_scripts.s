@@ -1109,7 +1109,8 @@ SystemScript_DebugMenu:
 	multichoiceoption gText_DebugMenu_MaxCoinage 3
 	multichoiceoption gText_DebugMenu_ShinyTeam 4
 	multichoiceoption gText_DebugMenu_Give 5
-	multichoice 0x0 0x0 SIX_MULTICHOICE_OPTIONS 0x0
+	multichoiceoption gText_DebugMenu_Debug 6
+	multichoice 0x0 0x0 SEVEN_MULTICHOICE_OPTIONS 0x0
 	switch LASTRESULT
 	case 0, SystemScript_DebugMenu_SetFlag
 	case 1, SystemScript_DebugMenu_GiveItem
@@ -1117,6 +1118,7 @@ SystemScript_DebugMenu:
 	case 3, SystemScript_DebugMenu_MaxCoinage
 	case 4, SystemScript_DebugMenu_ShinyTeam
 	case 5, SystemScript_DebugMenu_Custom
+	case 6, SystemScript_DebugMenu_Debug
 SystemScript_DebugMenu_End:
 	releaseall
 	end
@@ -1168,6 +1170,27 @@ SystemScript_DebugMenu_Custom:
 		case 0, SystemScript_DebugMenu_GivePokemonPrompt
 		case 1, SystemScript_DebugMenu_GiveItemPrompt
 	releaseall
+	end
+
+.global SystemScript_DebugMenu_Debug
+SystemScript_DebugMenu_Debug:
+	lockall
+	multichoiceoption gText_DebugMenu_Dex 0
+	multichoiceoption gText_DebugMenu_GiveItemById 1
+	multichoice 0, 0, TWO_MULTICHOICE_OPTIONS, 0
+	switch LASTRESULT
+		case 0, SystemScript_DebugMenu_DebugPokedex
+		case 1, SystemScript_DebugMenu_GiveItemPrompt
+	releaseall
+	end
+
+SystemScript_DebugMenu_DebugPokedex:
+	lock
+	callasm DebugMenu_Dex
+	setflag 0x829
+	special 0x16F
+	msgbox gText_DebugMenu_SuccessfulDex MSG_NORMAL
+	release
 	end
 
 .global SystemScript_DebugMenu_GivePokemonPrompt
