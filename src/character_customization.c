@@ -345,7 +345,9 @@ static NPCPtr sOverworldTable2[] =
 	&gFollowerMonGfxTable0[78],
 	&gFollowerMonGfxTable0[79],
 	&gFollowerMonGfxTable0[80],
+	&gFollowerMonGfxTable0[81],
 };
+
 
 	// create 255 OW tables
 	const struct EventObjectGraphicsInfo** const gOverworldTableSwitcher[255] =
@@ -520,6 +522,8 @@ static NPCPtr sOverworldTable2[] =
 		{gFollowerMonPic0912_QuaxlyPal,     0x124E},
 		{gFollowerMonPic0913_QuaxwellPal,   0x124F},
 		{gFollowerMonPic0914_QuaquavalPal,  0x1250},
+		// Shiny
+		{gFollowerMonPic0915_BulbasaurShinyPal, 0x1251},
 		{NULL, 0x11FF}
 	};
 	

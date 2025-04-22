@@ -115,18 +115,24 @@ u16 GetFollowerMonSprite(void)
 
     for (u8 i = 0; i < gPlayerPartyCount; ++i)
     {
-        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG, NULL) && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) > 0)
+        if (!GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG, NULL)
+         && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) > 0)
         {
             slotId = i;
             break;
         }
     }
 
-    if (slotId == 7) //No valid Pokémon found
+    if (slotId == 7)
         return 0;
 
-    species = GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES, NULL);
-    return gFollowerMonSpriteIdTable[species] ;
+    struct Pokemon* mon = &gPlayerParty[slotId];
+    species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+
+    if (IsMonShiny(mon))
+        return gFollowerMonShinySpriteIdTable[species]; // Shiny sprite offset
+    else
+        return gFollowerMonSpriteIdTable[species];
 }
 
 void CreateFollowerMonObject(void)

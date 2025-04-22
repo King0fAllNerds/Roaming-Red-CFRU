@@ -92,6 +92,7 @@ MON_OW_TEMPLATE_32x32_FRAMES(0911, Skeledirge)
 MON_OW_TEMPLATE_32x32_FRAMES(0912, Quaxly)
 MON_OW_TEMPLATE_32x32_FRAMES(0913, Quaxwell)
 MON_OW_TEMPLATE_32x32_FRAMES(0914, Quaquaval)
+MON_OW_TEMPLATE_32x32_FRAMES(0915, BulbasaurShiny)
 
 //Add Followers Graphics Info Here
 // Number should match with palette id in character_costumization.c
@@ -178,6 +179,7 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[] =
     MON_OW_OBJECT_GRAPHICS(124E, Quaxly)
     MON_OW_OBJECT_GRAPHICS(124F, Quaxwell)
     MON_OW_OBJECT_GRAPHICS(1250, Quaquaval)
+    MON_OW_OBJECT_GRAPHICS(1251, BulbasaurShiny)
 };
 
 // Link Species with Overworld Sprites
@@ -266,6 +268,11 @@ const u16 gFollowerMonSpriteIdTable[] =
     [SPECIES_QUAXWELL]    = 0x014F,
     [SPECIES_QUAQUAVAL]   = 0x0150,
 
+};
+
+const u16 gFollowerMonShinySpriteIdTable[] =
+{
+    [SPECIES_BULBASAUR] = 0x0151,
 };
 
 static const union AnimCmd sMonAnim_FaceSouth[] =
