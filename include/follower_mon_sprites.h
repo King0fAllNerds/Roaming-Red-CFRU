@@ -86,7 +86,7 @@ extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
 // Images declarations
 //Gen 1
 extern const u8 gFollowerMonPic0001_BulbasaurTiles[];
-extern const u8 gFollowerMonPic0915_BulbasaurShinyTiles[];
+extern const u8 gFollowerMonPic2000_BulbasaurShinyTiles[];
 extern const u8 gFollowerMonPic0002_IvysaurTiles[];
 extern const u8 gFollowerMonPic0003_VenusaurTiles[];
 extern const u8 gFollowerMonPic0004_CharmanderTiles[];
@@ -179,7 +179,7 @@ extern const u8 gFollowerMonPic0914_QuaquavalTiles[];
 // Palettes declarations
 // Gen 1
 extern const u16 gFollowerMonPic0001_BulbasaurPal[];
-extern const u16 gFollowerMonPic0915_BulbasaurShinyPal[];
+extern const u16 gFollowerMonPic2000_BulbasaurShinyPal[];
 extern const u16 gFollowerMonPic0002_IvysaurPal[];
 extern const u16 gFollowerMonPic0003_VenusaurPal[];
 extern const u16 gFollowerMonPic0004_CharmanderPal[];

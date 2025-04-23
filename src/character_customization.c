@@ -345,6 +345,9 @@ static NPCPtr sOverworldTable2[] =
 	&gFollowerMonGfxTable0[78],
 	&gFollowerMonGfxTable0[79],
 	&gFollowerMonGfxTable0[80],
+};
+static NPCPtr sOverworldTable3[] =
+{
 	&gFollowerMonGfxTable0[81],
 };
 
@@ -354,6 +357,7 @@ static NPCPtr sOverworldTable2[] =
 	{
 		(NPCPtr*) 0x839FDB0,
 		sOverworldTable2,
+		sOverworldTable3,
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
 	};
@@ -522,15 +526,18 @@ static NPCPtr sOverworldTable2[] =
 		{gFollowerMonPic0912_QuaxlyPal,     0x124E},
 		{gFollowerMonPic0913_QuaxwellPal,   0x124F},
 		{gFollowerMonPic0914_QuaquavalPal,  0x1250},
-		// Shiny
-		{gFollowerMonPic0915_BulbasaurShinyPal, 0x1251},
 		{NULL, 0x11FF}
+	};
+	static const struct SpritePalette gObjectEventSpritePalettes13[] = 	
+	{
+			{gFollowerMonPic2000_BulbasaurShinyPal, 0x1300},
 	};
 	
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
 	{
 		[0x11] = gObjectEventSpritePalettes11,
 		[0x12] = gObjectEventSpritePalettes12,
+		[0x13] = gObjectEventSpritePalettes13,
 	};
 #endif
 
