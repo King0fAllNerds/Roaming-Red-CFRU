@@ -350,6 +350,8 @@ static NPCPtr sOverworldTable3[] =
 {
 	&gFollowerMonGfxTable0[81],
 	&gFollowerMonGfxTable0[82],
+	&gFollowerMonGfxTable0[83],
+
 };
 
 
@@ -533,6 +535,7 @@ static NPCPtr sOverworldTable3[] =
 	{
 			{gFollowerMonPic2000_BulbasaurShinyPal, 0x1300},
 			{gFollowerMonPic2001_IvysaurShinyPal, 0x1301},
+			{gFollowerMonPic2002_VenusaurShinyPal, 0x1302},
 	};
 	
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
