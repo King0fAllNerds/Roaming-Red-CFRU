@@ -349,6 +349,7 @@ static NPCPtr sOverworldTable2[] =
 static NPCPtr sOverworldTable3[] =
 {
 	&gFollowerMonGfxTable0[81],
+	&gFollowerMonGfxTable0[82],
 };
 
 
@@ -531,6 +532,7 @@ static NPCPtr sOverworldTable3[] =
 	static const struct SpritePalette gObjectEventSpritePalettes13[] = 	
 	{
 			{gFollowerMonPic2000_BulbasaurShinyPal, 0x1300},
+			{gFollowerMonPic2001_IvysaurShinyPal, 0x1301},
 	};
 	
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =

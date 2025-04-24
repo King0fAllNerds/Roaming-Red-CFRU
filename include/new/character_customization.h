@@ -114,6 +114,7 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 extern const u16 gFollowerMonPic0001_BulbasaurPal[255];
 extern const u16 gFollowerMonPic2000_BulbasaurShinyPal[255];
 extern const u16 gFollowerMonPic0002_IvysaurPal[255];
+extern const u16 gFollowerMonPic2001_IvysaurShinyPal[255];
 extern const u16 gFollowerMonPic0003_VenusaurPal[255];
 extern const u16 gFollowerMonPic0004_CharmanderPal[255];
 extern const u16 gFollowerMonPic0005_CharmeleonPal[255];
