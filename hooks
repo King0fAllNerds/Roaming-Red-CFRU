@@ -155,7 +155,7 @@ Overworld_IsBikingAllowed 8055C9C 0
 apply_map_tileset_palette 80599C8 3
 MetatileBehavior_IsDiveable 8059FB0 1
 MetatileBehavior_IsUnableToEmerge 8059FCC 1
-#MetatileBehavior_IsCrackedFloor 805A1D8 1 Space isn't big enough for hooks
+#MetatileBehavior_IsCrackedFloor 805A1D8 1 Space isnt big enough for hooks
 #MetatileBehavior_IsBumpySlope 805A20C 1
 #MetatileBehavior_IsIsolatedVerticalRail 805A210 1
 #MetatileBehavior_IsIsolatedHorizontalRail 805A214 1
@@ -606,7 +606,7 @@ SetBoxMonNickAt 808BB2C 3
 GetAndCopyBoxMonDataAtHook 808BB70 2
 SetBoxMonAt 808BBB4 3
 CopyBoxMonAt 808BBF4 3
-#CreateBoxMonAt 808BC34 - Doesn't need to be hooked in. No vanilla funcs call.
+#CreateBoxMonAt 808BC34 - Doesnt need to be hooked in. No vanilla funcs call.
 ZeroBoxMonAt 808BCB4 2
 BoxMonAtToMon 808BCF0 3
 GetBoxedMonPtr 808BD30 2
