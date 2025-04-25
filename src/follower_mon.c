@@ -5,6 +5,10 @@
 #include "../include/new/follow_me.h"
 #include "../include/global.fieldmap.h"
 #include "../include/event_object_movement.h"
+#include "../include/script_menu.h"
+#include "../include/new_menu_helpers.h"
+#include "../include/script.h"
+
 
 extern u8 SparkleTiles[];
 extern u16 SparklePal[];
@@ -227,4 +231,85 @@ void ShowFollowerMon(void)
 {
     if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
         gEventObjects[gFollowerState.objId].invisible = FALSE;
+}
+extern void Task_ScriptShowMonPic(u8 taskId);
+#define gMonPaletteTable (*((struct CompressedSpritePalette**) 0x8000130))
+#define gMonShinyPaletteTable (*((struct CompressedSpritePalette**) 0x8000134))
+
+struct CompressedSpritePalette * GetSpritePalToUse(bool8 isShiny)
+{
+    if(isShiny)
+        return gMonShinyPaletteTable;
+    else
+        return gMonPaletteTable;
+}
+
+static u8 CreateMonSprite_MysteryGift(u16 species, s16 x, s16 y)
+{
+    u32 personality = 0xFFFFFFFF;
+    u32 otId = T1_READ_32(gSaveBlock2->playerTrainerId);
+    bool8 isShiny = Var8006;
+    const struct CompressedSpritePalette * spritePal = GetSpritePalToUse(isShiny);
+    u16 spriteId = CreateMonPicSprite_HandleDeoxys(species, otId, personality, 1, x, y, 0, spritePal[species].tag);
+    LoadCompressedSpritePalette(&spritePal[species]);
+    if(spriteId != 0xFFFF)
+    {
+        gSprites[spriteId].oam.paletteNum = IndexOfSpritePaletteTag(spritePal[species].tag);
+    }
+    if (spriteId == 0xFFFF)
+        return MAX_SPRITES;
+    else
+        return spriteId;
+}
+
+bool8 ScriptMenu_ShowMysteryPokemonPic(u16 species, u8 x, u8 y)
+{
+    u8 spriteId;
+    u8 taskId;
+    if (FindTaskIdByFunc(Task_ScriptShowMonPic) != 0xFF)
+        return FALSE;
+    spriteId = CreateMonSprite_MysteryGift(species, 8 * x + 40, 8 * y + 40);
+    taskId = CreateTask(Task_ScriptShowMonPic, 80);
+    gTasks[taskId].data[0] = 0;
+    gTasks[taskId].data[1] = species;
+    gTasks[taskId].data[2] = spriteId;
+    gSprites[spriteId].callback = SpriteCallbackDummy;
+    gSprites[spriteId].oam.priority = 0;
+    SetStandardWindowBorderStyle(gTasks[taskId].data[5], TRUE);
+    ScheduleBgCopyTilemapToVram(0);
+    return TRUE;
+}
+
+bool8 ShowMysteryGiftMon()
+{
+    u16 species = VarGet(0x4004);
+    u8 x = 0x1A;
+    u8 y = 0x2;
+
+    ScriptMenu_ShowMysteryPokemonPic(species, x, y);
+    return FALSE;
+}
+#define tState        data[0]
+#define tSpecies      data[1]
+#define tSpriteId     data[2]
+#define tWindowId     data[5]
+void Remove_PokemonPic(void)
+{
+    u8 taskId = FindTaskIdByFunc(Task_ScriptShowMonPic);
+    
+    if (taskId != 0xFF)
+    {
+        u8 spriteId = gTasks[taskId].tSpriteId;
+
+        if (spriteId < MAX_SPRITES)
+        {
+            struct Sprite *sprite = &gSprites[spriteId];
+
+            FreeSpriteOamMatrix(sprite);
+            DestroySprite(sprite);
+            FreeSpriteTiles(sprite);
+            FreeSpritePalette(sprite);
+        }
+        DestroyTask(taskId);
+    }
 }

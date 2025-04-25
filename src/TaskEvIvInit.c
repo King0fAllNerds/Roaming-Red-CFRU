@@ -79,7 +79,7 @@ static void Task_EvIvReturnToOverworld(u8);
 static void ShowSprite(struct Pokemon *mon);
 static void EvIvPrintText(struct Pokemon *mon);
 static void ShowPokemonPic2(u16 species, u32 otId, u32 personality, u8 x, u8 y);
-static void Task_ScriptShowMonPic(u8 taskId);
+void Task_ScriptShowMonPic(u8 taskId);
 static void HidePokemonPic2(u8 taskId);
 static void PrintGenderText(struct Pokemon *mon);
 static void SandboxChangeGender();
@@ -1210,7 +1210,7 @@ static void ShowPokemonPic2(u16 species, u32 otId, u32 personality, u8 x, u8 y)
     gSprites[spriteId].oam.priority = 0;
 }
 
-static void Task_ScriptShowMonPic(u8 taskId)
+void Task_ScriptShowMonPic(u8 taskId)
 {
     struct Task * task = &gTasks[taskId];
 
