@@ -36,7 +36,7 @@ wild_encounter.c
 */
 
 //Chain Fishing
-
+extern u8 GetCurrentLevelCap(void);
 #define NUM_TANOBY_CHAMBERS 7
 
 struct EncounterRate

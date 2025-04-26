@@ -361,8 +361,9 @@ enum //These vars need to be one after the other (hence the enum)
 #define EXPANDED_NEW_ITEMS //Expands items table and add new items util gen 9.
 #define SHOWPOKEPIC_WITHOUT_UGLY_BOX //Fixes the ShowPokePic command to only show Pokemon sprite and not a box with it
 #define CHANGE_ITEM_STORAGE_GRAPHIC //if uncommented, will change pc item storage to Swsh style (background modificable)
-#define FLAG_KEPT_LEVEL_CAP_ON 0xA04
-#define FLAG_HARD_LEVEL_CAP 0xA05
+#define FLAG_KEPT_LEVEL_CAP_ON 0xA04 // For level caps, to be used with FLAG_HARD_LEVEL_CAP
+#define FLAG_HARD_LEVEL_CAP 0xA05 // Enables level caps
+#define FLAG_NUZLOCKE 0xA06 //If set nuzlock mode will be turned on
 
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
