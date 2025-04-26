@@ -244,11 +244,12 @@ struct CompressedSpritePalette * GetSpritePalToUse(bool8 isShiny)
         return gMonPaletteTable;
 }
 
-static u8 CreateMonSprite_MysteryGift(u16 species, s16 x, s16 y)
+u8 CreateMonSprite_MysteryGift(u16 species, s16 x, s16 y)
 {
+    struct Pokemon* mon = &gPlayerParty[0];
     u32 personality = 0xFFFFFFFF;
     u32 otId = T1_READ_32(gSaveBlock2->playerTrainerId);
-    bool8 isShiny = Var8006;
+    u16 isShiny = IsMonShiny(mon);
     const struct CompressedSpritePalette * spritePal = GetSpritePalToUse(isShiny);
     u16 spriteId = CreateMonPicSprite_HandleDeoxys(species, otId, personality, 1, x, y, 0, spritePal[species].tag);
     LoadCompressedSpritePalette(&spritePal[species]);
