@@ -793,6 +793,7 @@ OptionMenu_PickSwitchCancel 08088680 0
 StartMenuBagCallback 0806f480 0
 
 GetItemIconGfxPtr 08098974 2
+Cmd_trygivecaughtmonnick 0802dd38 1
 
 #ifdef PALETTE_SWAPPER
 LoadObjectEventPalette 0805F4B0 1
