@@ -163,7 +163,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define MB_LOCKED_DOOR 0xA4 //The tile behaviour byte for doors that are locked and cannot be opened
 #define MB_ROCK_CLIMB_WALL 0xA5 //The tile behaviour byte that can be climbed up using Rock Climb
 #define MB_HEADBUTT_TREE 0xA6 //The tile behaviour byte for starting a wild encounter by headbutting a tree
-#define MB_UNDERGROUND_MINING 0xA7 //the tile behaviour byte for underground mining
+//#define MB_UNDERGROUND_MINING 0xA7 //the tile behaviour byte for underground mining (CAUTION: Needs you to define your maps in include/constants/maps.h)
 
 #define MAP_PLAYER_HOME ((4 << 8) | 0) //The map bank and map number of the player's home
 
