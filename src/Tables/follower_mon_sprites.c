@@ -278,7 +278,7 @@ const u16 gFollowerMonSpriteIdTable[] =
 const u16 gFollowerMonShinySpriteIdTable[] =
 {
     [SPECIES_BULBASAUR] = 0x0200,
-    [SPECIES_IVYSAUR] =0x0201,
+    [SPECIES_IVYSAUR] = 0x0201,
     [SPECIES_VENUSAUR] = 0X0202,
 };
 
