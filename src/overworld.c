@@ -2323,9 +2323,6 @@ void PrepMiningWarp(void)
 
 		if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
 		{
-			if (MAP_IS(UNDERWATER_VIVILL_TOWN))
-				gSpecialVar_LastResult = 0xFE;
-			else
 				gSpecialVar_LastResult = 0xFF;
 		}
 		else
