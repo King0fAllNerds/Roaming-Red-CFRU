@@ -126,4 +126,5 @@ void __attribute__((long_call)) UnlockPlayerFieldControls(void);
 void __attribute__((long_call)) DoMapLoadLoop(u8 *state);
 void __attribute__((long_call)) QuestLog_CutRecording(void);
 void __attribute__((long_call)) CB2_NewGameOld(void);
+void __attribute__((long_call)) SetFieldVBlankCallback(void);
 void Nuzlock_PokemonEraser(void);
