@@ -1671,6 +1671,15 @@ static bool8 IsUsePartyMenuItemHPEVModifier(struct Pokemon* mon, u16 oldHP, u16 
                 && GetItemEffectType(item) == ITEM_EFFECT_HP_EV;
 }
 
+static bool8 IsReviveItem(u16 item)
+{
+	if (item == ITEM_REVIVE || item == ITEM_MAX_REVIVE || item == ITEM_SACRED_ASH || item == ITEM_REVIVAL_HERB)
+	{
+		return TRUE;
+	}
+	return FALSE; 
+}
+
 #define gText_WontHaveEffect (const u8*) 0x84169DC
 void ItemUseCB_MedicineStep(u8 taskId, TaskFunc func)
 {
@@ -1678,6 +1687,10 @@ void ItemUseCB_MedicineStep(u8 taskId, TaskFunc func)
         struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
         u16 item = Var800E;
         bool8 canHeal;
+
+        if (FlagGet(FLAG_NUZLOCKE) && IsReviveItem(item)) {
+		goto WONT_HAVE_EFFECT;
+	}
 
         if (NotUsingHPEVItemOnShedinja(mon, item))
         {

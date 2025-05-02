@@ -3175,14 +3175,20 @@ void StoreFollowerMonInVar4004(void)
 void Nuzlock_PokemonEraser(void)
 {
     u8 i;
+    bool8 erased = FALSE;
+
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) == 0)
         {
             ZeroMonData(&gPlayerParty[i]);
-            CompactPartySlots();
-            CalculatePlayerPartyCount();
-            break;
+            erased = TRUE;
         }
+    }
+
+    if (erased)
+    {
+        CompactPartySlots();
+        CalculatePlayerPartyCount();
     }
 }
