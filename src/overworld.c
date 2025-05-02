@@ -32,6 +32,7 @@
 #include "../include/rtc.h"
 #include "../include/safari_zone.h"
 #include "../include/script.h"
+#include "../include/sprite.h"
 #include "../include/script_menu.h"
 #include "../include/sound.h"
 #include "../include/string_util.h"
@@ -3114,33 +3115,120 @@ static bool32 IsPlayerDefeated(u32 battleOutcome)
         return FALSE;
     }
 }
+*/
+
 void CB2_EndTrainerBattle(void)
 {
-    if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
+    if (sTrainerBattleMode == TRAINER_BATTLE_OAK_TUTORIAL)
     {
-        CB2_ReturnToFieldContinueScriptPlayMapMusic();
-    }
-    else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
-    {
-        if (InBattleSands())
-            CB2_ReturnToFieldContinueScriptPlayMapMusic();
+        if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        {
+            gSpecialVar_LastResult = TRUE;
+            if (sRivalBattleFlags & RIVAL_BATTLE_HEAL_AFTER)
+            {
+                HealPlayerParty();
+            }
+            else
+            {
+                SetMainCallback2(CB2_WhiteOut);
+                return;
+            }
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            SetBattledTrainerFlag();
+            QuestLogEvents_HandleEndTrainerBattle();
+        }
         else
-            CB2_WhiteOut();
+        {
+            gSpecialVar_LastResult = FALSE;
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+            SetBattledTrainerFlag();
+            QuestLogEvents_HandleEndTrainerBattle();
+        }
+
     }
     else
     {
-        CB2_ReturnToFieldContinueScriptPlayMapMusic();
-		if (FlagGet(FLAG_FOLLOWER_POKEMON))
-		{
-			UpdateFollowerMonSprite();
-		}
-		if (!InBattleSands())
+        if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
         {
-            SetBattledTrainersFlags();
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+        }
+        else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        {
+            SetMainCallback2(CB2_WhiteOut);
+        }
+        else
+        {
+            SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+			if (FlagGet(FLAG_NUZLOCKE))
+			{
+				Nuzlock_PokemonEraser();
+			}
+            SetBattledTrainerFlag();
+            QuestLogEvents_HandleEndTrainerBattle();
         }
     }
 }
-*/
+
+void CB2_EndWildBattle(void)
+{
+    CpuFill16(0, (void *)BG_PLTT, BG_PLTT_SIZE);
+    ResetOamRange(0, 128);
+    if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+    {
+        SetMainCallback2(CB2_WhiteOut);
+    }
+    else
+    {
+        SetMainCallback2(CB2_ReturnToField);
+        gFieldCallback = FieldCB_SafariZoneRanOutOfBalls;
+		if (FlagGet(FLAG_NUZLOCKE))
+		{
+			Nuzlock_PokemonEraser();
+		}
+    }
+}
+
+void CB2_EndScriptedWildBattle_2(void)
+{
+    CpuFill16(0, (void *)BG_PLTT, BG_PLTT_SIZE);
+    ResetOamRange(0, 128);
+    if (IsPlayerDefeated(gBattleOutcome) == TRUE)
+        SetMainCallback2(CB2_WhiteOut);
+    else
+        SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+		if (FlagGet(FLAG_NUZLOCKE))
+		{
+			Nuzlock_PokemonEraser();
+		}
+}
+
+void CB2_WhiteOut(void)
+{
+    u8 val;
+
+    if (++gMain.state >= 120)
+    {
+		if (FlagGet(FLAG_NUZLOCKE))
+		{
+			CB2_NewGameOld();
+		}
+        FieldClearVBlankHBlankCallbacks();
+        StopMapMusic();
+        ResetSafariZoneFlag_();
+        DoWhiteOut();
+        SetInitialPlayerAvatarStateWithDirection(DIR_NORTH);
+        ScriptContext_Init();
+        UnlockPlayerFieldControls();
+        gFieldCallback = FieldCB_RushInjuredPokemonToCenter;
+        val = 0;
+        DoMapLoadLoop(&val);
+        QuestLog_CutRecording();
+        SetFieldVBlankCallback();
+        SetMainCallback1(CB1_Overworld);
+        SetMainCallback2(CB2_Overworld);
+    }
+}
+
 extern void RestoreFollowerAfterBattle(void);
 void CB2_ReturnToField(void)
 {
