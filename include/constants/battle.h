@@ -81,7 +81,6 @@
 
 #define RIVAL_BATTLE_HEAL_AFTER  1
 #define RIVAL_BATTLE_TUTORIAL    3
-s
 // Battle Outcome defines
 #define B_OUTCOME_WON                  0x1
 #define B_OUTCOME_LOST                 0x2
