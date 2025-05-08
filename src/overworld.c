@@ -1640,6 +1640,18 @@ void RunOnTransitionMapScript(void)
 	ResetMiningSpots();
 	ForceClockUpdate();
 	MapHeaderRunScriptByTag(3);
+	if (FlagGet(FLAG_NUZLOCKE))
+	{
+		u16 sectionId = Overworld_GetMapHeaderByGroupAndId(
+							gSaveBlock1->location.mapGroup,
+							gSaveBlock1->location.mapNum)->regionMapSectionId;
+	
+		if (!FlagGet(FLAG_VISITED_AREA_START + sectionId)) // only clear if unvisited
+		{
+			FlagSet(FLAG_VISITED_AREA_START + sectionId);
+			FlagClear(FLAG_NO_CATCHING);
+		}
+	}	
 }
 
 void RunOnResumeMapScript(void)
@@ -3178,12 +3190,21 @@ void CB2_EndWildBattle(void)
         SetMainCallback2(CB2_WhiteOut);
     }
     else
-    {
+    {	
         SetMainCallback2(CB2_ReturnToField);
         gFieldCallback = FieldCB_SafariZoneRanOutOfBalls;
 		if (FlagGet(FLAG_NUZLOCKE))
 		{
 			Nuzlock_PokemonEraser();
+			u16 count = VarGet(VAR_WILD_BATTLE_COUNT);
+			count++;
+			VarSet(VAR_WILD_BATTLE_COUNT, count);
+
+			// Set flag on 2nd battle
+			if (count >= 1)
+			{
+				FlagSet(FLAG_NO_CATCHING);
+			}
 		}
     }
 }
