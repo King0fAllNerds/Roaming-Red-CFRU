@@ -43,9 +43,10 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - The shiny's team (actually not a team but collaborators)
 (FORK, NOT ORIGINAL MAKERS OF CFRU OBVIOUSLY)
 - Shiny hunter/Miner,
-- ansh860,
-- Zake,
-- grilokapu
+- ansh860, (Fixes, Tm case icons, continue screen icons, more)
+- Zake, (Battle backgrounds help and Following mon code)
+- grilokapu (item expansion, gen 9 moves+abilities, nuzlocke fainting, more)
+- 1RWT16KU1D (Tera in works)
 ##### For queries and support :
 Join us on discord: https://discord.com/invite/axNX3rhR9K
 ##### Useful and Optional Additions:
