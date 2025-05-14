@@ -3,6 +3,7 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 ##### This is CFRU expansion project and not affiliated to the og CFRU, it is going to be levels higher than CFRU. It is adviced to read the wiki [here](https://github.com/Shiny-Miner/CFRU-expansion/wiki) before touching anything.
 #### The new features (after CFRU dev branch):
 - Fixed bugs with dev branch (shiny odds , daycare nidoran breeding)
+- All known bugs fixed (Update April 2025!)
 - Last used pokeball by L button
 - Shows enemy team by L button
 - Auto trigger wild battles
@@ -29,6 +30,12 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - Updated Z moves,Mega evo and dynamax/gmax trigger icons
 - Second page in options menu
 - Following Pokemon
+- Nuzlocke mode
+- Fully costumized debug menu to give Pokemon and items customly (Girl in Oak's lab),
+- Premium Quantity Rewards (with custom table)
+- New item:
+-- EV-IV machine
+-- PokeVial
 - And much more!
 
 ##### Introduction to the maintainers

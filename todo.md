@@ -1,33 +1,22 @@
 This contains a list of items/features we want to add to this CFRU.:
-- Following pokemon
 - Mid-battle evolutions (https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-18#post-10464666)
-- New Mini games and Unbound's mining mini game
-- Option menu BW+ a second page
+- New Mini games
+- Option menu BW
 - Main menu/ Continue Screen BW
 - Costume box
 - ORAS style key item registeration wheel (or Register items in a list menu given here - https://www.pokecommunity.com/threads/simple-modifications-directory.416647/page-15#post-10380770)
 - Configurable INtro and titlescreen
-- Show pokemon team on Trainer card back
 - Done (100%), Overworld Expansion
 - Pokedex (HGSS or BW)
 - A pokenav or pokegear
 - Custom start menu (a menu with icons instead of text)
-- Done moves (abilities left 50%), Gen 9 moves and abilites
-- Done (100%), Make your own items (item expansion (removes need to use leon rombase))
-- Fast nurse joy
 - Done 100%, Wonder trades
-- 3D cutscenes
 - Sidequest menu
 - RSE Berry system
 - 16 badges (based on cmnt/uncmnt)
-- BW Badge popups
 - New bag pockets
-- PokeVial, PokePC
+- PokePC
 - Wild pokemon attacks in overworld before the wild battle
 - Maps previews/Pre warp mugshots
 - Craft menu/craft system
-- done 100%, Repeat item usage https://github.com/pret/pokeemerald/wiki/Repeated-Field-Medicine-Use
-- Nuzlocke and other modes
-- Namebox/mini textbox https://github.com/NotToDisturb/pokeemerald/tree/namebox
-- Terracrystlization! https://github.com/rh-hideout/pokeemerald-expansion/commit/84a9d4ffcfb5ac78803830dc7d25805f433fc415
 - ..........................................................................................................
