@@ -305,10 +305,10 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 			gPlayerAvatar->preventStep = TRUE;
 			SetSurfDismount();
 		}
-		else
+		else // Happens just after player runs 1 tile on land (after surf is over)
 		{
 			FixFollowerMonLocalIdAfterWarp();
-			
+
 		}
 
 		goto RESET;
