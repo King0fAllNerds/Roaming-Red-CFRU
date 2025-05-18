@@ -367,7 +367,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_NUZLOCKE 0xA06 //If set nuzlock mode will be turned on
 #define VAR_WILD_BATTLE_COUNT 0x5155 //Counts number of wild battles, if >1 then NO_CATCHING is enabled.
 #define FLAG_VISITED_AREA_START 0x1300 //Flag that is set in a nuzlocke for every visited area (Helpful in tracking)
-
+#define FLAG_FOLLOWER_WAS_SURFING 0xA07 //Flag that sets when following pokemon starts surfing to restore it after a warp is used!
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 

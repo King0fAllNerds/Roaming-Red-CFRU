@@ -127,12 +127,17 @@ void HideFollower(void)
 	if (!gFollowerState.inProgress)
 		return;
 
-	if (gFollowerState.createSurfBlob == SURF_BLOB_STATE_ON || gFollowerState.createSurfBlob == SURF_BLOB_STATE_GET_OFF)
+	if ((gFollowerState.createSurfBlob == SURF_BLOB_STATE_ON || gFollowerState.createSurfBlob == SURF_BLOB_STATE_GET_OFF)
+		&& !FlagGet(FLAG_FOLLOWER_POKEMON))
 	{
 		SetSurfBobState(gEventObjects[GetFollowerMapObjId()].fieldEffectSpriteId, 2);
 		DestroySprite(&gSprites[gEventObjects[GetFollowerMapObjId()].fieldEffectSpriteId]);
-		gEventObjects[GetFollowerMapObjId()].fieldEffectSpriteId = 0; //Unbind
+		gEventObjects[GetFollowerMapObjId()].fieldEffectSpriteId = 0;
 		gFollowerState.createSurfBlob = SURF_BLOB_STATE_HIDDEN_ON;
+	}
+	else if (FlagGet(FLAG_FOLLOWER_POKEMON))
+	{
+		gFollowerState.createSurfBlob = SURF_BLOB_STATE_NONE; // prevent mistaken respawn
 	}
 
 	CreateSparkleSprite();
@@ -291,11 +296,21 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 		SetSurfJump();
 		goto RESET;
 	}
-	else if (gFollowerState.createSurfBlob == SURF_BLOB_STATE_GET_OFF) //Get off Surf Blob
+	else if (gFollowerState.createSurfBlob == SURF_BLOB_STATE_GET_OFF)
 	{
 		gFollowerState.createSurfBlob = 0;
-		gPlayerAvatar->preventStep = TRUE; //Wait for finish
-		SetSurfDismount();
+	
+		if (!FlagGet(FLAG_FOLLOWER_POKEMON))
+		{
+			gPlayerAvatar->preventStep = TRUE;
+			SetSurfDismount();
+		}
+		else
+		{
+			FixFollowerMonLocalIdAfterWarp();
+			
+		}
+
 		goto RESET;
 	}
 
@@ -773,7 +788,12 @@ void FollowMe_FollowerToWater(void)
 {
 	if (!gFollowerState.inProgress)
 		return;
-
+    if (FlagGet(FLAG_FOLLOWER_POKEMON))
+    {
+        gFollowerState.createSurfBlob = SURF_BLOB_STATE_NONE; // Skip blob
+        gPlayerAvatar->preventStep = FALSE; // Make sure player can still move
+        return;
+    }
 	//Prepare for making the follower do the jump and spawn the surf head
 	//right in front of the follower's location.
 	FollowMe(&gEventObjects[gPlayerAvatar->eventObjectId], MOVEMENT_ACTION_JUMP_DOWN, TRUE);
@@ -786,6 +806,11 @@ void FollowMe_BindToSurbBlobOnReloadScreen(void)
 		return;
 
 	TryUpdateFollowerSpriteUnderwater();
+
+    if (FlagGet(FLAG_FOLLOWER_POKEMON))
+    {
+	  return; 
+	}
 
 	if (gFollowerState.createSurfBlob != SURF_BLOB_STATE_ON && gFollowerState.createSurfBlob != SURF_BLOB_STATE_GET_OFF)
 		return;
@@ -1662,6 +1687,11 @@ void FixFollowerMonLocalIdAfterWarp(void)
 	   gEventObjects[gFollowerState.objId].localId = 30;
 	   }
 	}
+	if (FlagGet(FLAG_FOLLOWER_WAS_SURFING))
+	{
+		FlagClear(FLAG_FOLLOWER_WAS_SURFING);
+		ShowFollower();
+	}
 }
 void RemoveFollowerBeforeBattle(void)
 {
@@ -1675,7 +1705,7 @@ void RemoveFollowerBeforeBattle(void)
 
 void RestoreFollowerAfterBattle(void)
 {
-    if (FlagGet(FLAG_FOLLOWER_POKEMON))
+    if (FlagGet(FLAG_FOLLOWER_POKEMON) && !FlagGet(FLAG_FOLLOWER_WAS_SURFING))
     {
         CreateFollowerMonObject();
         FixFollowerMonLocalIdAfterWarp(); // just in case
