@@ -34,6 +34,8 @@
 #include "../include/new/move_tables.h"
 #include "../include/new/set_z_effect.h"
 #include "../include/new/util.h"
+#include "../include/metatile_behavior.h"
+#include "../include/fieldmap.h"
 
 /*
 battle_start_turn_start.c
@@ -112,7 +114,17 @@ extern void RemoveFollowerBeforeBattle(void);
 
 void HandleNewBattleRamClearBeforeBattle(void)
 {
-	RemoveFollowerBeforeBattle();
+	if (MetatileBehavior_IsSurfableWaterOrUnderwater(MapGridGetMetatileBehaviorAt(
+		gEventObjects[gPlayerAvatar->eventObjectId].currentCoords.x,
+		gEventObjects[gPlayerAvatar->eventObjectId].currentCoords.y)))
+	{
+		// Player on water — surf encounter
+		FlagSet(FLAG_FOLLOWER_WAS_SURFING);         // Mark surf follower state
+	}
+	else
+	{
+		RemoveFollowerBeforeBattle();               // Land/normal battle
+	}
 	gNewBS = Calloc(sizeof(struct NewBattleStruct));
 	Memset(FIRST_NEW_BATTLE_RAM_LOC, 0, (u32) LAST_NEW_BATTLE_RAM_LOC - (u32) FIRST_NEW_BATTLE_RAM_LOC);
 	Memset(gBattleBufferA, 0x0, sizeof(gBattleBufferA)); //Clear both battle buffers
