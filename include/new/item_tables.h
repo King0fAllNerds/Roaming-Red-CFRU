@@ -1354,6 +1354,8 @@ extern const u32 gBagItem_Yellow_MintTiles[];
 extern const u32 gBagItem_Yellow_MintPal[];
 extern const u32 gBagItem_PokevialTiles[];
 extern const u32 gBagItem_PokevialPal[];
+extern const u32 tera_orbTiles[];
+extern const u32 tera_orbPal[];
 
 //Funcs
 void __attribute__((long_call)) FieldUseFunc_OakStopsYou(u8 taskId);
@@ -2154,5 +2156,6 @@ extern const u8 DESC_JOLLY_MINT[];
 extern const u8 DESC_NAIVE_MINT[];
 extern const u8 DESC_SERIOUS_MINT[];
 extern const u8 gItemDescription_PokeVial[];
+extern const u8 DESC_TERA_ORB[];
 extern const u8 DESC_EVIV_DISPLAYER[];
 #endif

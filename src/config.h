@@ -12,6 +12,7 @@
 //#define DEBUG_OBEDIENCE //Traded Pokemon never have obedience issues
 //#define DEBUG_DYNAMAX //Dynamax can be used in Dynamax battles without a Dynamax Band
 //#define DEBUG_AI_CHOICES //Removes the frame-based randomness of the AI's decisions
+//#define DEBUG_TERASTAL //Terastallization can be used in any battle without a Tera Orb
 
 /*===== EV-IV Screen =====*/
 #define FLAG_STAT_EDITOR_UNLOCKED 0x1203

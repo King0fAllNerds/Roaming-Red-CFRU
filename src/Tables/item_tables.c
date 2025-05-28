@@ -1774,6 +1774,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_Yellow_MintTiles, gBagItem_Yellow_MintPal},
 	{gBagItem_PokevialTiles, gBagItem_PokevialPal},
 	{gBag_FameCheckerTiles, gBag_TriPassPal},
+	{tera_orbTiles, tera_orbPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal}, //Free space 1
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
@@ -14145,6 +14146,23 @@ const struct Item gItemData[] =
  		.battleUseFunc = NULL,
  		.secondaryId = 0,
  	},
+	[ITEM_TERA_ORB]
+	{
+		.name = {_T, _e, _r, _a, _SPACE, _O, _r, _b, _END},
+		.itemId = ITEM_TERA_ORB,
+		.price = 0,
+		.holdEffect = 0,
+		.holdEffectParam = 0,
+		.description = DESC_TERA_ORB,
+		.importance = 1,
+		.unk19 = 0,
+		.pocket = POCKET_KEY_ITEMS,
+		.type = ITEM_USE_BAG_MENU,
+		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
         .itemId = ITEM_FREE_SPACE1,
