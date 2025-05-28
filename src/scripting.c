@@ -2940,68 +2940,54 @@ void ConvertCoinInt(u32 coinAmount)
 //special 0x158
 //waitstate
 
-//Text Declarations
-extern const u8 sExampleText_1[];
-extern const u8 sExampleText_2[];
-extern const u8 sExampleText_3[];
-extern const u8 sExampleText_4[];
-extern const u8 sExampleText_5[];
-extern const u8 sExampleText_6[];
-extern const u8 sExampleText_7[];
-extern const u8 sExampleText_8[];
-extern const u8 sExampleText_9[];
-extern const u8 sExampleText_10[];
+extern const u8 sText_Normal[];
+extern const u8 sText_Fighting[];
+extern const u8 sText_Flying[];
+extern const u8 sText_Poison[];
+extern const u8 sText_Ground[];
+extern const u8 sText_Rock[];
+extern const u8 sText_Bug[];
+extern const u8 sText_Ghost[];
+extern const u8 sText_Steel[];
+extern const u8 sText_Fire[];
+extern const u8 sText_Water[];
+extern const u8 sText_Grass[];
+extern const u8 sText_Electric[];
+extern const u8 sText_Psychic[];
+extern const u8 sText_Ice[];
+extern const u8 sText_Dragon[];
+extern const u8 sText_Dark[];
+extern const u8 sText_Fairy[];
+extern const u8 sText_Stellar[];
 
-extern const u8 sText_1[];
-extern const u8 sText_2[];
-extern const u8 sText_3[];
-extern const u8 sText_4[];
-extern const u8 sText_5[];
-extern const u8 sText_6[];
-extern const u8 sText_7[];
-extern const u8 sText_8[];
-extern const u8 sText_9[];
-extern const u8 sText_10[];
-extern const u8 sText_11[];
-extern const u8 sText_12[];
-extern const u8 sText_13[];
-extern const u8 sText_14[];
-extern const u8 sText_15[];
-
-//Scrolling Lists
+// Scrolling Lists
 static const u8* sMultichoiceSet1[] =
 {
-	sExampleText_1,
-	sExampleText_2,
-	sExampleText_3,
-	sExampleText_4,
-	sExampleText_5,
-	sExampleText_6,
-	sExampleText_7,
-	sExampleText_8,
-	sExampleText_9,
-	sExampleText_10,
-};
-
-static const u8* sMultichoiceSet2[] =
-{
-	sExampleText_1,
-	sExampleText_2,
-	sExampleText_3,
-	sExampleText_4,
-	sExampleText_5,
-	sExampleText_6,
-	sExampleText_7,
-	sExampleText_8,
-	sExampleText_9,
-	sExampleText_10,
+    sText_Normal,
+    sText_Fighting,
+    sText_Flying,
+    sText_Poison,
+    sText_Ground,
+    sText_Rock,
+    sText_Bug,
+    sText_Ghost,
+    sText_Steel,
+    sText_Fire,
+    sText_Water,
+    sText_Grass,
+    sText_Electric,
+    sText_Psychic,
+    sText_Ice,
+    sText_Dragon,
+    sText_Dark,
+    sText_Fairy,
+	sText_Stellar,
 };
 
 // Multichoice Lists
 const struct ScrollingMulti gScrollingSets[] =
 {
 	{sMultichoiceSet1, ARRAY_COUNT(sMultichoiceSet1)},
-	{sMultichoiceSet2, ARRAY_COUNT(sMultichoiceSet2)},
 };
 
 //Link number of opts shown at once to the box height

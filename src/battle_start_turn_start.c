@@ -36,6 +36,7 @@
 #include "../include/new/util.h"
 #include "../include/metatile_behavior.h"
 #include "../include/fieldmap.h"
+#include "../include/new/terastallization.h"
 
 /*
 battle_start_turn_start.c
@@ -76,6 +77,10 @@ enum SpeedWarResults
 	SecondMon,
 	SpeedTie,
 };
+
+// For Terastallization
+extern u8* DoTerastallize(u8 bank);
+extern bool8 IsTerastallized(u8 bank);
 
 extern void (* const sTurnActionsFuncsTable[])(void);
 extern void (* const sEndTurnFuncsTable[])(void);
@@ -1027,11 +1032,20 @@ enum MegaStates
 	Mega_End
 };
 
+// For Terastallization
+enum TeraStates
+{
+    Tera_Check,
+    Tera_CalcTurnOrder,
+    Tera_End
+};
+
 void RunTurnActionsFunctions(void)
 {
 	int i, j;
 	u8 effect, savedActionFuncId;
 	u8* megaBank = &(gNewBS->megaData.activeBank);
+	u8* teraBank = &(gNewBS->teraData.activeBank); // For Terastallization
 
 	if (gBattleOutcome != 0)
 		gCurrentActionFuncId = ACTION_FINISHED;
@@ -1208,6 +1222,79 @@ void RunTurnActionsFunctions(void)
 	}
 
 	*megaBank = 0;
+// For Terastallization
+	switch (gNewBS->teraData.state) 
+	{
+		case Tera_Check:
+			for (i = *teraBank; i < gBattlersCount; ++i, ++*teraBank)
+			{
+				u8 bank = gActiveBattler = gBanksByTurnOrder[i];
+				u8 side = GetBattlerSide(bank);
+
+				// Check if there is already a Terastallized Pokémon on the same side
+				bool8 sideHasTerastallized = FALSE;
+				for (u8 j = 0; j < PARTY_SIZE; j++)
+				{
+					if (gNewBS->teraData.done[side][j])
+					{
+						sideHasTerastallized = TRUE;
+						break;
+					}
+				}
+
+				if (gNewBS->teraData.chosen[bank]
+				&& !IsTerastallized(bank)
+				&& !sideHasTerastallized
+				&& gCurrentActionFuncId == ACTION_USE_MOVE)
+				{
+					const u8* script = DoTerastallize(bank);
+					if (script != NULL)
+					{
+						u8 partyId = gBattlerPartyIndexes[bank];
+
+						gNewBS->teraData.done[side][partyId] = TRUE;
+						gNewBS->teraData.chosen[bank] = 0;
+						gNewBS->teraData.teraInProgress = TRUE;
+
+						BattleScriptExecute(script);
+						gCurrentActionFuncId = savedActionFuncId;
+						return;
+					}
+				}
+			}
+			if (gNewBS->teraData.teraInProgress)
+				++gNewBS->teraData.state;
+			else
+			{	
+				gNewBS->teraData.state = Tera_End;
+				gNewBS->teraData.teraInProgress = FALSE;
+			}
+			return;
+
+		// Adjust turn order after Terastallization
+		case Tera_CalcTurnOrder:
+			for (i = 0; i < gBattlersCount - 1; ++i)
+			{
+				for (j = i + 1; j < gBattlersCount; ++j)
+				{
+					u8 bank1 = gBanksByTurnOrder[i];
+					u8 bank2 = gBanksByTurnOrder[j];
+					if (GetWhoStrikesFirst(bank1, bank2, FALSE))
+						SwapTurnOrder(i, j);
+				}
+			}
+			*teraBank = 0;
+			++gNewBS->teraData.state;
+
+			return;
+
+		case Tera_End:
+			gNewBS->teraData.state = 0;
+			gNewBS->teraData.teraInProgress = FALSE;
+	}
+
+	*teraBank = 0;
+
 
 	if (gCurrentActionFuncId == ACTION_USE_MOVE)
 	{

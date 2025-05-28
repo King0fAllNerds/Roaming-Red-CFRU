@@ -29,6 +29,7 @@
 #include "../include/new/switching.h"
 #include "../include/new/trainer_sliding.h"
 #include "../include/new/z_move_battle_scripts.h"
+#include "../include/new/terastallization.h"
 /*
 switching.c
 	handles battle switching logic
@@ -59,6 +60,7 @@ enum SwitchInStates
 	SwitchIn_TrainerMessage,
 	SwitchIn_PreEnd,
 	SwitchIn_EjectPack,
+	SwitchIn_ReactivateTera,
 	SwitchIn_End,
 };
 
@@ -1023,6 +1025,19 @@ void atk52_switchineffects(void)
 				if ((ITEM_EFFECT(i) == ITEM_EFFECT_EJECT_PACK || ITEM_EFFECT(i) == ITEM_EFFECT_RESTORE_STATS)
 				&& ItemBattleEffects(ItemEffects_SwitchIn, i, TRUE, FALSE))  //Try to trigger White Herbs or Eject Packs after Intimidate
 					return;
+			}
+		__attribute__ ((fallthrough));
+
+		case SwitchIn_ReactivateTera:
+			// Special Case - If Tera is chosen, and mon is switched, turn off Tera
+			if (gNewBS->teraData.chosen[gActiveBattler])
+				gNewBS->teraData.chosen[gActiveBattler] = FALSE;
+
+			// If user is already terastallized, bring back the effects
+			if (IsTerastallized(gActiveBattler))
+			{
+				if (GetTeraType(gActiveBattler) != TYPE_STELLAR)
+					SET_BATTLER_TYPE(gActiveBattler, GetTeraType(gActiveBattler));
 			}
 		__attribute__ ((fallthrough));
 

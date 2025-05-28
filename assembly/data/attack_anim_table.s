@@ -786,6 +786,7 @@ gMoveAnimations:
 .word ANIM_DRAGON_ENERGY
 .word ANIM_ASTRAL_BARRAGE
 .word ANIM_GLACIAL_LANCE
+.word ANIM_TERA_BLAST
 .word ANIM_DIRE_CLAW
 .word ANIM_PSYSHIELD_BASH
 .word ANIM_POWER_SHIFT
@@ -1012,7 +1013,6 @@ gMoveAnimations:
 .word ANIM_SNOWSCAPE
 .word ANIM_SPICYEXTRACT
 .word ANIM_SPINOUT
-.word ANIM_TERABLAST
 .word ANIM_TIDYUP
 .word ANIM_TORCHSONG
 .word ANIM_TRAILBLAZE
@@ -30030,9 +30030,9 @@ ANIM_SPINOUT:
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool
-@Credits to 
-ANIM_TERABLAST:
+ANIM_TERA_BLAST:
 	goto ANIM_AURASPHERE
+	endanimation
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 .pool

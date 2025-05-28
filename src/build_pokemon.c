@@ -1005,6 +1005,10 @@ static u8 CreateNPCTrainerParty(struct Pokemon* const party, const u16 trainerId
 						if (setCustomMoves)
 							SET_MOVES(trainer->party.ItemCustomMoves);
 						SetMonData(mon, MON_DATA_HELD_ITEM, &trainer->party.ItemCustomMoves[i].heldItem);
+						if (trainer->partyFlags & PARTY_FLAG_CUSTOM_MOVES) 
+						{
+    						mon->teraType = trainer->party.ItemCustomMoves[i].teraType;
+						}
 						break;
 				}
 			}
@@ -4036,6 +4040,10 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, unusedArg u32 unused1, unusedA
 		FlagClear(FLAG_GIGANTAMAXABLE);
 	}
 	#endif
+
+	// For Terastallization
+	u8 defaultTeraType = TYPE_BLANK;
+	mon.teraType = defaultTeraType;
 
 	#ifdef GIVEPOKEMON_CUSTOM_HACK
 	if (customGivePokemon != 0)

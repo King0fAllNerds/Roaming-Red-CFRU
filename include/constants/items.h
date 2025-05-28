@@ -843,6 +843,7 @@ enum
 };
 
 #define ITEMS_COUNT (ITEM_SHINY_SPACE20 + 1)
+#define ITEM_TERA_ORB ITEM_MASTER_BALL
 
 //For Pokemon Unbound
 #ifdef UNBOUND

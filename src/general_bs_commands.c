@@ -37,6 +37,7 @@
 #include "../include/new/switching.h"
 #include "../include/new/set_z_effect.h"
 #include "../include/new/util.h"
+#include "../include/new/terastallization.h"
 
 /*
 general_bs_commands.c
@@ -68,6 +69,9 @@ static bool8 IsDoubleSpreadMove(void);
 static bool8 DoesBankNegateDamage(u8 bank, u16 move);
 static void TryContraryChangeStatAnim(u8 bank, u16* argumentPtr);
 static item_t ChoosePickupItem(u8 level);
+
+// For Terastallization
+extern bool8 IsTerastallized(u8 bank);
 
 const u16 gMissStringIds[] =
 {
@@ -174,7 +178,8 @@ void atk02_attackstring(void)
 		{
 			if (ABILITY(gBankAttacker) == ABILITY_PROTEAN
 			&& !(gMoveResultFlags & MOVE_RESULT_FAILED)
-			&& !gSpecialMoveFlags[gCurrentMove].gMovesThatCallOtherMoves)
+			&& !gSpecialMoveFlags[gCurrentMove].gMovesThatCallOtherMoves
+			&& !IsTerastallized(gBankAttacker))
 			{
 				if (gBattleMons[gBankAttacker].type1 != moveType
 				||  gBattleMons[gBankAttacker].type2 != moveType

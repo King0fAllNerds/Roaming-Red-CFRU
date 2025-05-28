@@ -237,8 +237,8 @@ enum //These vars need to be one after the other (hence the enum)
 #define EXPAND_MOVESETS //Comment this out if you're using the Dynamic Pokemon Expansion repo to expand the movesets
 #define FATHER_PASSES_TMS //Uncomment this out if you want TMs the father knows to be passed through breeding
 //#define INHERIT_MASTER_CHERISH_BALL  //Uncomment this if you want Master and Cherish balls to be inherited by daycare offspring
-//#define GIVEPOKEMON_CUSTOM_HACK //Alows custom Pokemon to be given by setting the second last byte of the givepokemon scripting command
-//#define GIVEPOKEMON_BALL_HACK //Allows Pokemon to be given with a custom ball by setting the last byte of the givepokemon scripting command
+#define GIVEPOKEMON_CUSTOM_HACK //Alows custom Pokemon to be given by setting the second last byte of the givepokemon scripting command
+#define GIVEPOKEMON_BALL_HACK //Allows Pokemon to be given with a custom ball by setting the last byte of the givepokemon scripting command
 #define FRLG_ROAMING //When a roaming Pokemon is created, it will either be a Entei, Raikou, or Suicune, depending on the player's starter choice
 #define CAN_RUN_IN_BUILDINGS //Comment this line out to prevent the player from running indoors.
 //#define NO_POISON_IN_OW //Uncommenting this line will stop Pokemon from taking Poison damage in the overworld.
@@ -368,6 +368,10 @@ enum //These vars need to be one after the other (hence the enum)
 #define VAR_WILD_BATTLE_COUNT 0x5155 //Counts number of wild battles, if >1 then NO_CATCHING is enabled.
 #define FLAG_VISITED_AREA_START 0x1300 //Flag that is set in a nuzlocke for every visited area (Helpful in tracking)
 #define FLAG_FOLLOWER_WAS_SURFING 0xA07 //Flag that sets when following pokemon starts surfing to restore it after a warp is used!
+#define TERASTAL_FEATURE //Comment this line to remove Terastallization
+#define FLAG_TERA_BATTLE 0xA08 //Works like an half tera orb
+#define SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN //If you just want to show the tera type icon on the summary screen, uncomment this one
+
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 

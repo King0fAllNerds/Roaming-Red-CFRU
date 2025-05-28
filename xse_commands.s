@@ -1998,3 +1998,7 @@ callasm StoreFollowerMonInVar4004
 .macro resetpokevial
 callasm ResetPokeVialUses
 .endm
+
+.macro resetvar var:req
+	setvar \var 0
+.endm

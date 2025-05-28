@@ -18,6 +18,7 @@
 #include "../include/new/move_tables.h"
 #include "../include/new/multi.h"
 #include "../include/new/util.h"
+#include "../include/new/terastallization.h"
 
 /*
 battle_util.c
@@ -28,6 +29,9 @@ battle_util.c
 
 static void TryRemoveUnburdenBoost(u8 bank);
 static bool8 CanBeGeneralStatused(u8 bankDef, u8 defAbility, u8 atkAbility, bool8 checkFlowerVeil);
+// For Terastallization
+extern bool8 IsTerastallized(u8 bank);
+
 
 u8 GetBankForBattleScript(u8 caseId)
 {
@@ -1597,6 +1601,15 @@ u8 CalcMoveSplit(u16 move, u8 bankAtk, u8 bankDef)
 		
 		APPLY_QUICK_STAT_MOD(attack, STAT_STAGE(bankAtk, STAT_STAGE_ATK));
 		APPLY_QUICK_STAT_MOD(spAttack, STAT_STAGE(bankAtk, STAT_STAGE_SPATK));
+
+		// Added Tera Blast check
+		if (move == MOVE_TERABLAST) 
+		{
+			if (IsTerastallized(bankAtk))
+				return (attack >= spAttack) ? SPLIT_PHYSICAL : SPLIT_SPECIAL;
+			else
+				return SPLIT_SPECIAL; // Ensures it defaults to special when not terastallized
+		}
 
 		if (spAttack >= attack)
 			return SPLIT_SPECIAL;

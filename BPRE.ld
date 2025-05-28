@@ -349,6 +349,7 @@ sCreditsMgr = 0x203AB40;
 sMonSummaryScreen = 0x203B140;
 sSpritePaletteTags = 0x3000DE8;
 sEggHatchData = 0x3000E74;
+sEggHatchTimeTexts = 0x08463ec4;
 gKeypadInitialCountdown = 0x30030e0;
 gKeypadFollowUpCountdown = 0x300352c;
 gSoftResetDisabled = 0x3003530;
