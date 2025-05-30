@@ -14216,6 +14216,7 @@ const struct Item gItemData[] =
 		.battleUseFunc = NULL,
 		.secondaryId = 0
 	},
+ 	},
 	[ITEM_TERA_ORB]
 	{
 		.name = {_T, _e, _r, _a, _SPACE, _O, _r, _b, _END},
@@ -14227,11 +14228,11 @@ const struct Item gItemData[] =
 		.importance = 1,
 		.unk19 = 0,
 		.pocket = POCKET_KEY_ITEMS,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = FieldUseFunc_OakStopsYou,
-        .battleUsage = 0,
-        .battleUseFunc = NULL,
-        .secondaryId = 0
+		.type = ITEM_USE_BAG_MENU,
+		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
 	},
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
