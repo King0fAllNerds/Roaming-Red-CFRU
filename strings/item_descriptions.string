@@ -1423,3 +1423,9 @@ A charm that raises the chance \nof Critical Captures.
 
 #org @DESC_HISUI_ROCK
 An odd looking rock that makes \ncertain species to evolve in their\nHisuian forms.
+
+#org @DESC_MASTERPIECE_TEACUP
+A chipped teacup that makes \ncertain Pokémon evolve.
+
+#org @DESC_UNREMARKABLE_TEACUP
+A cracked teacup that makes \ncertain Pokémon evolve.

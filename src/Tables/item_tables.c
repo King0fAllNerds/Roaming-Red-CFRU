@@ -1776,6 +1776,8 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBag_FameCheckerTiles, gBag_TriPassPal},
 	{catching_charmTiles, catching_charmPal},
 	{gBag_Hisui_RockTiles, gBag_Hisui_RockPal},
+	{masterpiece_teacupTiles, masterpiece_teacupPal},
+	{unremarkable_teacupTiles, unremarkable_teacupPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal}, //Free space 1
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
@@ -14121,7 +14123,7 @@ const struct Item gItemData[] =
 		.holdEffect = 0,  // Not a held item
 		.holdEffectParam = 0,
 		.description = gItemDescription_PokeVial,
-		.importance = 0,
+		.importance = 1,
 		.unk19 = 0,
 		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
 		.type = ITEM_USE_FIELD,  // Only usable in the overworld
@@ -14138,7 +14140,7 @@ const struct Item gItemData[] =
  		.holdEffect = 0,  // Not a held item
  		.holdEffectParam = 0,
  		.description = DESC_EVIV_DISPLAYER,
- 		.importance = 0,
+ 		.importance = 1,
  		.unk19 = 0,
  		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
  		.type = ITEM_USE_FIELD,  // Only usable in the overworld
@@ -14170,11 +14172,45 @@ const struct Item gItemData[] =
 		.holdEffect = 0,
 		.holdEffectParam = 0,
 		.description = DESC_HISUI_ROCK,
-		.importance = 1,
+		.importance = 0,
 		.unk19 = 0,
 		.pocket = POCKET_ITEMS,
 		.type = ITEM_USE_BAG_MENU,
 		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_UNREMARKABLE_TEACUP]
+	{
+		.name = {_U, _n, _r, _PERIOD, _SPACE, _T, _e, _a, _c, _u, _p, _END},
+		.itemId = ITEM_UNREMARKABLE_TEACUP,
+		.price = 3000,
+		.holdEffect = 0,
+		.holdEffectParam = 0,
+		.description = DESC_UNREMARKABLE_TEACUP,
+		.importance = 0,
+		.unk19 = 0,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_PARTY_MENU,
+		.fieldUseFunc = FieldUseFunc_EvoItem,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_MASTERPIECE_TEACUP]
+	{
+		.name = {_M, _a, _s, _p, _PERIOD, _SPACE, _T, _e, _a, _c, _u, _p, _END},
+		.itemId = ITEM_MASTERPIECE_TEACUP,
+		.price = 3000,
+		.holdEffect = 0,
+		.holdEffectParam = 0,
+		.description = DESC_MASTERPIECE_TEACUP,
+		.importance = 0,
+		.unk19 = 0,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_PARTY_MENU,
+		.fieldUseFunc = FieldUseFunc_EvoItem,
 		.battleUsage = 0,
 		.battleUseFunc = NULL,
 		.secondaryId = 0
