@@ -135,12 +135,6 @@ void OpponentHandleChooseMove(void)
 					if (!ShouldAIDelayTerastallization(gActiveBattler, gBankTarget, chosenMove, FALSE, TRUE))
 						gNewBS->teraData.chosen[gActiveBattler] = TRUE;
 				}
-				else if (moveInfo->canTera) // For Terastallization
-				{
-					if (!ShouldAIDelayTerastallization(gActiveBattler, gBankTarget, chosenMove, FALSE, TRUE))
-						gNewBS->teraData.chosen[gActiveBattler] = TRUE;
-				}
-
 				//This is handled again later, but it's only here to help with the case of choosing Helping Hand when the partner is switching out.
 				gBattleStruct->chosenMovePositions[gActiveBattler] = chosenMovePos;
 				gBattleStruct->moveTarget[gActiveBattler] = gBankTarget;

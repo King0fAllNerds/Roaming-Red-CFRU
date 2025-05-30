@@ -366,8 +366,8 @@ static bool8 TriggerTerastallization(void)
 	if (!CanTerastallize(side) && !TerastalEnabled(side))
 		return FALSE;
 
-    // Retorna FALSE se não puder Terastallizar
-    if (!moveInfo->canTera || moveInfo->canMegaEvolve)
+    // Returns FALSE if can Mega Evolve
+    if (moveInfo->canMegaEvolve)
         return FALSE;
 
     for (u8 i = 0; i < PARTY_SIZE; i++)
@@ -376,7 +376,7 @@ static bool8 TriggerTerastallization(void)
             return FALSE;
     }
 
-    // Alterna o estado da Terastalização
+    //Toggle Terastallization state
     PlaySE(gNewBS->teraData.chosen[gActiveBattler] ? 3 : SE_PC_LOGON);
     gNewBS->teraData.chosen[gActiveBattler] ^= TRUE;
     MoveSelectionDisplayMoveEffectiveness();
