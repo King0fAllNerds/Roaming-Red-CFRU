@@ -1774,6 +1774,7 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_Yellow_MintTiles, gBagItem_Yellow_MintPal},
 	{gBagItem_PokevialTiles, gBagItem_PokevialPal},
 	{gBag_FameCheckerTiles, gBag_TriPassPal},
+	{catching_charmTiles, catching_charmPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal}, //Free space 1
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
@@ -14145,6 +14146,22 @@ const struct Item gItemData[] =
  		.battleUseFunc = NULL,
  		.secondaryId = 0,
  	},
+	[ITEM_CATCHING_CHARM]
+	    .name = {_C, _a, _t, _c, _h, _i, _n, _g, _C, _h, _a, _r, _m, _END},
+        .itemId = ITEM_CATCHING_CHARM,
+        .price = 0,
+        .holdEffect = 0,
+        .holdEffectParam = 0,
+        .description = DESC_CATCHING_CHARM,
+        .importance = 1,
+        .unk19 = 0,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = FieldUseFunc_OakStopsYou,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0
+    },
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},
         .itemId = ITEM_FREE_SPACE1,
