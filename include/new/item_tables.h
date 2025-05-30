@@ -1354,8 +1354,8 @@ extern const u32 gBagItem_Yellow_MintTiles[];
 extern const u32 gBagItem_Yellow_MintPal[];
 extern const u32 gBagItem_PokevialTiles[];
 extern const u32 gBagItem_PokevialPal[];
-extern const u32 catching_charm_tiles[];
-extern const u32 catching_charm_pal[];
+extern const u32 catching_charmTiles[];
+extern const u32 catching_charmPal[];
 
 //Funcs
 void __attribute__((long_call)) FieldUseFunc_OakStopsYou(u8 taskId);

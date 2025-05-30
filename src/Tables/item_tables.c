@@ -14147,7 +14147,7 @@ const struct Item gItemData[] =
  		.secondaryId = 0,
  	},
 	[ITEM_CATCHING_CHARM]
-	    .name = {_C, _a, _t, _c, _h, _i, _n, _g, _C, _h, _a, _r, _m, _END},
+	{    .name = {_C, _a, _t, _c, _h, _i, _n, _g, _C, _h, _a, _r, _m, _END},
         .itemId = ITEM_CATCHING_CHARM,
         .price = 0,
         .holdEffect = 0,
