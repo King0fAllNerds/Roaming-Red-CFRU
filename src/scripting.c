@@ -3273,8 +3273,16 @@ static const u8 * const sIVRankings_Images[] =
     [31] = sIVRankings_STiles,
 };
 
-extern struct Struct203B144 *sMonSkillsPrinterXpos;
-extern const u8 sLevelNickTextColors[][3];
+static const u8 sLevelNickTextColors[][3] =
+{
+    {0, 14, 10},
+    {0, 1, 2},
+    {0, 9, 8},
+    {0, 5, 4},
+    {0, 2, 3},
+    {0, 11, 10},
+};
+#define sMonSkillsPrinterXpos (*(struct Struct203B144 **)0x0203B144)
 #define FONT_NORMAL 1
 
 void PrintSkillsPage(void)
