@@ -13,6 +13,7 @@
 #include "../include/m4a.h"
 #include "../include/naming_screen.h"
 #include "../include/overworld.h"
+#include "../include/pokemon_summary_screen.h"
 #include "../include/pokemon_storage_system.h"
 #include "../include/region_map.h"
 #include "../include/script.h"
@@ -3191,4 +3192,115 @@ void Nuzlock_PokemonEraser(void)
         CompactPartySlots();
         CalculatePlayerPartyCount();
     }
+}
+
+#define POKESUM_WIN_RIGHT_PANE       3
+#define TEXT_SKIP_DRAW 0xFF
+
+static const u8 sNatureTextColors[][3] =
+{
+    {0, 14, 10},
+    {0, 1, 10},
+    {0, 7, 10},
+};
+
+extern const s8 sNatureStatTable[][5];
+
+u8 GetNatureTextColor(s8 natureMod)
+{
+    if (natureMod == 0)
+        return 0;
+    else if (natureMod > 0)
+        return 1;
+    else
+        return 2;
+}
+
+struct Struct203B144
+{
+    u16 unk00;
+    u16 curHpStr;
+    u16 atkStr;
+    u16 defStr;
+    u16 spAStr;
+    u16 spDStr;
+    u16 speStr;
+    u16 expStr;
+    u16 toNextLevel;
+
+    u16 curPp[5];
+    u16 maxPp[5];
+
+    u16 unk26;
+};
+
+extern const u16 sIVRankings_E_MinusPal[];
+extern const u8 sIVRankings_E_MinusTiles[];
+extern const u8 sIVRankings_ETiles[];
+extern const u8 sIVRankings_E_PlusTiles[];
+extern const u8 sIVRankings_D_MinusTiles[];
+extern const u8 sIVRankings_DTiles[];
+extern const u8 sIVRankings_D_PlusTiles[];
+extern const u8 sIVRankings_C_MinusTiles[];
+extern const u8 sIVRankings_CTiles[];
+extern const u8 sIVRankings_C_PlusTiles[];
+extern const u8 sIVRankings_B_MinusTiles[];
+extern const u8 sIVRankings_BTiles[];
+extern const u8 sIVRankings_B_PlusTiles[];
+extern const u8 sIVRankings_A_MinusTiles[];
+extern const u8 sIVRankings_ATiles[];
+extern const u8 sIVRankings_A_PlusTiles[];
+extern const u8 sIVRankings_STiles[];
+#define sIVRankingsPal sIVRankings_E_MinusPal
+
+static const u8 * const sIVRankings_Images[] = 
+{
+    [0 ... 2] = sIVRankings_E_MinusTiles,
+    [3 ... 4] = sIVRankings_ETiles,
+    [5 ... 6] = sIVRankings_E_PlusTiles,
+    [7 ... 8] = sIVRankings_D_MinusTiles,
+    [9 ... 10] = sIVRankings_DTiles,
+    [11 ... 12] = sIVRankings_D_PlusTiles,
+    [13 ... 14] = sIVRankings_C_MinusTiles,
+    [15 ... 16] = sIVRankings_CTiles,
+    [17 ... 18] = sIVRankings_C_PlusTiles,
+    [19 ... 20] = sIVRankings_B_MinusTiles,
+    [21 ... 22] = sIVRankings_BTiles,
+    [23 ... 24] = sIVRankings_B_PlusTiles,
+    [25 ... 26] = sIVRankings_A_MinusTiles,
+    [27 ... 28] = sIVRankings_ATiles,
+    [29 ... 30] = sIVRankings_A_PlusTiles,
+    [31] = sIVRankings_STiles,
+};
+
+extern struct Struct203B144 *sMonSkillsPrinterXpos;
+extern const u8 sLevelNickTextColors[][3];
+
+void PrintSkillsPage(void)
+{
+    const s8 *natureMod = sNatureStatTable[GetNature(&sMonSummaryScreen->currentMon)];
+
+	u8 hpIv, atkIv, defIv, spAtkIv, spDefIv, spdIv;
+    hpIv = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_HP_IV, NULL);
+    atkIv = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_ATK_IV, NULL);
+    defIv = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_DEF_IV, NULL);
+    spAtkIv = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPATK_IV, NULL);
+    spDefIv = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPDEF_IV, NULL);
+    spdIv = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_SPEED_IV, NULL);
+
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 14 + sMonSkillsPrinterXpos->curHpStr, 4, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.curHpStrBuf);
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 50 + sMonSkillsPrinterXpos->atkStr, 22, sNatureTextColors[GetNatureTextColor(natureMod[STAT_ATK - 1])], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.statValueStrBufs[PSS_STAT_ATK]);
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 50 + sMonSkillsPrinterXpos->defStr, 35, sNatureTextColors[GetNatureTextColor(natureMod[STAT_DEF - 1])], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.statValueStrBufs[PSS_STAT_DEF]);
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 50 + sMonSkillsPrinterXpos->spAStr, 48, sNatureTextColors[GetNatureTextColor(natureMod[STAT_SPATK - 1])], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.statValueStrBufs[PSS_STAT_SPA]);
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 50 + sMonSkillsPrinterXpos->spDStr, 61, sNatureTextColors[GetNatureTextColor(natureMod[STAT_SPDEF - 1])], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.statValueStrBufs[PSS_STAT_SPD]);
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 50 + sMonSkillsPrinterXpos->speStr, 74, sNatureTextColors[GetNatureTextColor(natureMod[STAT_SPEED - 1])], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.statValueStrBufs[PSS_STAT_SPE]);
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 15 + sMonSkillsPrinterXpos->expStr, 87, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.expPointsStrBuf);
+    AddTextPrinterParameterized3(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], FONT_NORMAL, 15 + sMonSkillsPrinterXpos->toNextLevel, 100, sLevelNickTextColors[0], TEXT_SKIP_DRAW, sMonSummaryScreen->summary.expToNextLevelStrBuf);
+
+	BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[hpIv], 0, 0, 8, 8, 15, 6, 16, 8);
+    BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[atkIv], 0, 0, 8, 8, 15, 23, 16, 8);
+    BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[defIv], 0, 0, 8, 8, 15, 36, 16, 8);
+    BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[spAtkIv], 0, 0, 8, 8, 15, 49, 16, 8);
+    BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[spDefIv], 0, 0, 8, 8, 15, 62, 16, 8);
+    BlitBitmapRectToWindow(sMonSummaryScreen->windowIds[POKESUM_WIN_RIGHT_PANE], sIVRankings_Images[spdIv], 0, 0, 8, 8, 15, 75, 16, 8);
 }
