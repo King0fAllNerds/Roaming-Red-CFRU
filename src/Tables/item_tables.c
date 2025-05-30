@@ -1774,6 +1774,10 @@ const u32 *const gItemGraphicsTable[ITEMS_COUNT + 1][2] =
 	{gBagItem_Yellow_MintTiles, gBagItem_Yellow_MintPal},
 	{gBagItem_PokevialTiles, gBagItem_PokevialPal},
 	{gBag_FameCheckerTiles, gBag_TriPassPal},
+	{catching_charmTiles, catching_charmPal},
+	{gBag_Hisui_RockTiles, gBag_Hisui_RockPal},
+	{masterpiece_teacupTiles, masterpiece_teacupPal},
+	{unremarkable_teacupTiles, unremarkable_teacupPal},
 	{tera_orbTiles, tera_orbPal},
 	{gBag_InterrogationTiles, gBag_InterrogationPal}, //Free space 1
 	{gBag_InterrogationTiles, gBag_InterrogationPal},
@@ -14120,7 +14124,7 @@ const struct Item gItemData[] =
 		.holdEffect = 0,  // Not a held item
 		.holdEffectParam = 0,
 		.description = gItemDescription_PokeVial,
-		.importance = 0,
+		.importance = 1,
 		.unk19 = 0,
 		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
 		.type = ITEM_USE_FIELD,  // Only usable in the overworld
@@ -14137,7 +14141,7 @@ const struct Item gItemData[] =
  		.holdEffect = 0,  // Not a held item
  		.holdEffectParam = 0,
  		.description = DESC_EVIV_DISPLAYER,
- 		.importance = 0,
+ 		.importance = 1,
  		.unk19 = 0,
  		.pocket = POCKET_KEY_ITEMS,  // Make it a key item
  		.type = ITEM_USE_FIELD,  // Only usable in the overworld
@@ -14146,6 +14150,72 @@ const struct Item gItemData[] =
  		.battleUseFunc = NULL,
  		.secondaryId = 0,
  	},
+	[ITEM_CATCHING_CHARM]
+	{    .name = {_C, _a, _t, _c, _h, _i, _n, _g, _C, _h, _a, _r, _m, _END},
+        .itemId = ITEM_CATCHING_CHARM,
+        .price = 0,
+        .holdEffect = 0,
+        .holdEffectParam = 0,
+        .description = DESC_CATCHING_CHARM,
+        .importance = 1,
+        .unk19 = 0,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = FieldUseFunc_OakStopsYou,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0
+    },
+	[ITEM_HISUI_ROCK]
+	{    .name = {_H, _i, _s, _u, _i, _SPACE, _R, _o, _c, _k, _END},
+		.itemId = ITEM_HISUI_ROCK,
+		.price = 10000,
+		.holdEffect = 0,
+		.holdEffectParam = 0,
+		.description = DESC_HISUI_ROCK,
+		.importance = 0,
+		.unk19 = 0,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_BAG_MENU,
+		.fieldUseFunc = FieldUseFunc_OakStopsYou,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_UNREMARKABLE_TEACUP]
+	{
+		.name = {_U, _n, _r, _PERIOD, _SPACE, _T, _e, _a, _c, _u, _p, _END},
+		.itemId = ITEM_UNREMARKABLE_TEACUP,
+		.price = 3000,
+		.holdEffect = 0,
+		.holdEffectParam = 0,
+		.description = DESC_UNREMARKABLE_TEACUP,
+		.importance = 0,
+		.unk19 = 0,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_PARTY_MENU,
+		.fieldUseFunc = FieldUseFunc_EvoItem,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
+	[ITEM_MASTERPIECE_TEACUP]
+	{
+		.name = {_M, _a, _s, _p, _PERIOD, _SPACE, _T, _e, _a, _c, _u, _p, _END},
+		.itemId = ITEM_MASTERPIECE_TEACUP,
+		.price = 3000,
+		.holdEffect = 0,
+		.holdEffectParam = 0,
+		.description = DESC_MASTERPIECE_TEACUP,
+		.importance = 0,
+		.unk19 = 0,
+		.pocket = POCKET_ITEMS,
+		.type = ITEM_USE_PARTY_MENU,
+		.fieldUseFunc = FieldUseFunc_EvoItem,
+		.battleUsage = 0,
+		.battleUseFunc = NULL,
+		.secondaryId = 0
+	},
 	[ITEM_TERA_ORB]
 	{
 		.name = {_T, _e, _r, _a, _SPACE, _O, _r, _b, _END},
@@ -14157,11 +14227,11 @@ const struct Item gItemData[] =
 		.importance = 1,
 		.unk19 = 0,
 		.pocket = POCKET_KEY_ITEMS,
-		.type = ITEM_USE_BAG_MENU,
-		.fieldUseFunc = FieldUseFunc_OakStopsYou,
-		.battleUsage = 0,
-		.battleUseFunc = NULL,
-		.secondaryId = 0
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = FieldUseFunc_OakStopsYou,
+        .battleUsage = 0,
+        .battleUseFunc = NULL,
+        .secondaryId = 0
 	},
 	{
         .name = {_F, _r, _e, _e, _SPACE, _S, _p, _a, _c, _e, _SPACE, _1, _END},

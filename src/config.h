@@ -373,6 +373,7 @@ enum //These vars need to be one after the other (hence the enum)
 #define FLAG_TERA_BATTLE 0xA08 //Works like an half tera orb
 #define SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN //If you just want to show the tera type icon on the summary screen, uncomment this one
 
+#define BW_SUMMARY_SCREEN_IMPLEMENTED
 /* DexNav Options */
 //See "include/new/dexnav_config.h"
 

@@ -22,6 +22,7 @@
 #include "../include/new/util.h"
 #include "../include/new/mega.h"
 #include "../include/new/pokemon_storage_system.h"
+#include "../include/constants/items.h"
 
 /*
 catching.c

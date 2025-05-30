@@ -2309,3 +2309,4 @@ SpriteCallbackDummy = 0x800760c | 1;
 CreateObjectGraphicsSprite = 0x805e978 | 1;
 gObjectEvents = 0x02036e38;
 gLinkPlayerEventObjects = 0x02031dec;
+sNatureStatTable = 0x8252b48;
