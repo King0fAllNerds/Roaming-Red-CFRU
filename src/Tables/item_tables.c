@@ -14216,7 +14216,6 @@ const struct Item gItemData[] =
 		.battleUseFunc = NULL,
 		.secondaryId = 0
 	},
- 	},
 	[ITEM_TERA_ORB]
 	{
 		.name = {_T, _e, _r, _a, _SPACE, _O, _r, _b, _END},
