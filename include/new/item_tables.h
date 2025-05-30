@@ -1356,6 +1356,8 @@ extern const u32 gBagItem_PokevialTiles[];
 extern const u32 gBagItem_PokevialPal[];
 extern const u32 catching_charmTiles[];
 extern const u32 catching_charmPal[];
+extern const u32 gBag_Hisui_RockTiles[];
+extern const u32 gBag_Hisui_RockPal[];
 
 //Funcs
 void __attribute__((long_call)) FieldUseFunc_OakStopsYou(u8 taskId);
@@ -2158,4 +2160,5 @@ extern const u8 DESC_SERIOUS_MINT[];
 extern const u8 gItemDescription_PokeVial[];
 extern const u8 DESC_EVIV_DISPLAYER[];
 extern const u8 DESC_CATCHING_CHARM[];
+extern const u8 DESC_HISUI_ROCK[];
 #endif
