@@ -32,7 +32,6 @@ if used.
 #include "../include/menu.h"
 #include "../include/party_menu.h"
 #include "../include/constants/species.h"
-#include "../include/base_stats.h"
 #include "../include/field_weather.h"
 #include "../include/text_window.h"
 #include "../include/new/build_pokemon.h"
@@ -1560,7 +1559,7 @@ static void EvIvPrintText(struct Pokemon *mon)
     //get pokémon stats
 
     //STAT_HP
-    gStats_bs[STAT_HP] = gBaseStats2[species].baseHP;
+    gStats_bs[STAT_HP] = GetMonData(mon, MON_DATA_HP, 0);
     gStats_ev[STAT_HP] = GetMonData(mon,MON_DATA_HP_EV, 0);
     gStats_iv[STAT_HP] = GetMonData(mon,MON_DATA_HP_IV, 0);
     //STAT_ATK

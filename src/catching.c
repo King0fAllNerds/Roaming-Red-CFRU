@@ -616,7 +616,16 @@ u8 GiveMonToPlayer(struct Pokemon* mon) //Hook in
 	if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
 		mon->teraType = type1;
 	else
-		mon->teraType = (Random() % 2==0) ? type1 : type2;
+	{
+		u8 roll = Random() % 100;
+
+		if (roll < 49)
+			mon->teraType = type1;
+		else if (roll < 98) // 49 + 49
+			mon->teraType = type2;
+		else
+			mon->teraType = Random() % NUMBER_OF_MON_TYPES; // 2% chance random type
+	}
 
 	u8 freeSlot = GetFreeSlotInPartyForMon();
 	if (freeSlot >= PARTY_SIZE) //Can't add mon

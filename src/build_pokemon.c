@@ -4041,7 +4041,7 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, unusedArg u32 unused1, unusedA
 	}
 	#endif
 
-	// For Terastallization
+	// // For Terastallization
 	u8 defaultTeraType = TYPE_BLANK;
 	mon.teraType = defaultTeraType;
 

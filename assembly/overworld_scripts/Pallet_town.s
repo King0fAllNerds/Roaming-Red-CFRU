@@ -324,7 +324,7 @@ EventScript_Pallet_AideGuy:
         setvar 0x8009 16
         setvar 0x800A 16
         setvar 0x800B 16
-        givepokemon SPECIES_GLASTRIER 3 ITEM_LEFTOVERS 0 1 10
+        givepokemon SPECIES_GARDEVOIR 3 ITEM_LEFTOVERS 0 1 10
         setvar 0x8000 MOVE_WEATHERBALL
         setvar 0x8001 MOVE_THUNDERSHOCK
         setvar 0x8002 MOVE_THUNDERWAVE
@@ -337,10 +337,10 @@ EventScript_Pallet_AideGuy:
         setvar 0x8009 16
         setvar 0x800A 16
         setvar 0x800B 16
-        givepokemon SPECIES_PIKACHU 2 ITEM_LEFTOVERS 0 1 10
+        givepokemon SPECIES_GALLADE 2 ITEM_LEFTOVERS 0 1 10
         setflag 0xA08
         setflag 0x828
-        additem 0x302 0x1
+        additem 0x306 0x1
         msgbox gText_TestScript2 MSG_NORMAL
         release
         end

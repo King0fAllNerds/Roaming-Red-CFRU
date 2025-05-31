@@ -809,6 +809,6 @@ sideway_run 0805C17C 1
 sideway_change_movement_2 080BD3C8 1
 #endif
 
-#ifndef SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN
+#ifdef SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN
 PrintInfoPage 08136fb0 1
 #endif
