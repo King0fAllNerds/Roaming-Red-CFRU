@@ -4811,70 +4811,67 @@ static void BoostMonDefensesForTotemBoost(struct DamageCalc* data, u8 bankDef, b
 		data->spDefBuff = min(data->spDefBuff + TotemRaiseAmountToStatMod(raiseAmount), STAT_STAGE_MAX);
 }
 
-// For Terastallization - Added STAB support
+// Apply STAB multipliers, including Stellar Tera mechanics
 static void ApplySTABMultipliers(void)
 {
     u8 moveType = gBattleStruct->dynamicMoveType & 0x3F;
     u8 atkAbility = ABILITY(gBankAttacker);
-
-    // Get original types from base stats
-    u8 originalType1 = gBaseStats[gBattleMons[gBankAttacker].species].type1;
-    u8 originalType2 = gBaseStats[gBattleMons[gBankAttacker].species].type2;
 
     // Current battle types (may be modified by effects like Forest's Curse / Trick-or-Treat / Soak)
     u8 atkType1 = gBattleMons[gBankAttacker].type1;
     u8 atkType2 = gBattleMons[gBankAttacker].type2;
     u8 atkType3 = gBattleMons[gBankAttacker].type3;
 
-    bool8 hasOriginalStab = FALSE;
-    bool8 hasTeraStab = FALSE;
-    bool8 hasDoubleTeraStab = FALSE;
+    // Get original types from base statsAdd commentMore actions
+    u8 originalType1 = gBaseStats[gBattleMons[gBankAttacker].species].type1;
+    u8 originalType2 = gBaseStats[gBattleMons[gBankAttacker].species].type2;
 
-	// Assign proper STAB multiplier
-    if (IsTerastallized(gBankAttacker))
-    {
-        u8 teraType = GetTeraType(gBankAttacker);
+   // For Stellar Tera BoostsAdd commentMore actions
+    u8 side = GetBattlerSide(gBankAttacker);
+    u8 partyId = gBattlerPartyIndexes[gBankAttacker];
+    u8 teraType = GetTeraType(gBankAttacker);
 
-        // Check for original type STAB
-        if (moveType == originalType1 || moveType == originalType2)
-            hasOriginalStab = TRUE;
+    // Damage boost trackers
+    bool8 hasNormalStab = ((moveType == atkType1) || (moveType == atkType2) || (moveType == atkType3) || (atkAbility == ABILITY_PROTEAN));
+    bool8 hasTeraStab = IsTerastallized(gBankAttacker) && moveType == teraType;
+    bool8 moveMatchesOriginalTypes = ((moveType == originalType1) || (moveType == originalType2));
+    bool8 hasDoubleTeraStab = (hasTeraStab && moveMatchesOriginalTypes);
+    bool8 isStellarTera = IsTerastallized(gBankAttacker) && teraType == TYPE_STELLAR;
+    bool8 isStellarBoostActive = !gNewBS->teraData.stellarBoostUsed[side][partyId][moveType];
+    bool8 hasStellarTeraOriginalStab = isStellarTera && moveMatchesOriginalTypes;
+    bool8 hasStellarTeraLesserStab = isStellarTera && !moveMatchesOriginalTypes;
 
-        // Check for Tera type STAB
-        if (moveType == teraType)
-        {
-            hasTeraStab = TRUE;
-
-            // Check for double STAB condition
-            if (teraType == originalType1 || teraType == originalType2)
-                hasDoubleTeraStab = TRUE;
-        }
-    }
-    else
-    {
-        // Normal STAB check
-        if (moveType == atkType1 || moveType == atkType2 || moveType == atkType3
-		|| atkAbility == ABILITY_PROTEAN)
-        {
-            hasOriginalStab = TRUE;
-        }
-    }
 
     // Apply STAB multipliers
-    if (hasOriginalStab || hasTeraStab)
+    if (hasNormalStab || hasTeraStab)
     {
-        if (hasDoubleTeraStab)
-        {
+        if (hasDoubleTeraStab || hasStellarTeraOriginalStab)
+        {   
+            // 2.0× Boost (like a matching Tera-type boost)
+            gBattleMoveDamage = (atkAbility == ABILITY_ADAPTABILITY) 
+                ? (gBattleMoveDamage * 266) / 100                // 2.66×
+                : (gBattleMoveDamage * 20) / 10;          	     // 2.0×
+
+            // Mark Stellar Boost as used
+            if (isStellarTera && isStellarBoostActive)
+                gNewBS->teraData.stellarBoostUsed[side][partyId][moveType] = TRUE; // **Fixed index**
+        }
+        else if (hasStellarTeraLesserStab && isStellarBoostActive)
+        {   
+            // 1.2× Boost for Non-STAB moves
             // Double STAB (Tera matches original type)
             gBattleMoveDamage = (atkAbility == ABILITY_ADAPTABILITY) 
-            ? (gBattleMoveDamage * 266) / 100                // 2.66x
-            : (gBattleMoveDamage * 20) / 10;          	     // 2.0x
+                ? (gBattleMoveDamage * 13) / 10                  // 1.3×Add commentMore actions
+                : (gBattleMoveDamage * 12) / 10;          	     // 1.2×
+
+            gNewBS->teraData.stellarBoostUsed[side][partyId][moveType] = TRUE; // **Fixed index**
         }
         else
         {
-            // Single STAB (Tera matches only one type or no Tera, simple STAB)
+            // Normal STAB (1.5× or 2.0× with Adaptability)
             gBattleMoveDamage = (atkAbility == ABILITY_ADAPTABILITY)
-            ? (gBattleMoveDamage * 20) / 10          	     // 2.0x
-            : (gBattleMoveDamage * 15) / 10;                 // 1.5x
+                ? (gBattleMoveDamage * 20) / 10          	     // 2.0×Add commentMore actions
+                : (gBattleMoveDamage * 15) / 10;                 // 1.5×
         }
     }
 }
