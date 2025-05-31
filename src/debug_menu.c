@@ -9,6 +9,7 @@
 #include "../include/new/item.h"
 #include "../include/new/util.h"
 #include "../include/script.h"
+#include "../include/random.h"
 
 void DebugMenu_ProcessSetFlag(void)
 {
@@ -198,17 +199,17 @@ void DebugMenu_GivePokemonFromVar(void)
 	u8 type2 = gBaseStats[species].type2;
 
 	if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
-		mon->teraType = type1;
+		mon.teraType = type1;
 	else
 	{
 		u8 roll = Random() % 100;
 
 		if (roll < 49)
-			mon->teraType = type1;
+			mon.teraType = type1;
 		else if (roll < 98) // 49 + 49
-			mon->teraType = type2;
+			mon.teraType = type2;
 		else
-			mon->teraType = Random() % NUMBER_OF_MON_TYPES; // 2% chance random type
+			mon.teraType = Random() % NUMBER_OF_MON_TYPES; // 2% chance random type
 	}
 	gPlayerParty[slot] = mon;
 }
