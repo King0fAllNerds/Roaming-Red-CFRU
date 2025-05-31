@@ -213,6 +213,7 @@ LoadHealthBoxesIndicatorHook:
 DynamaxPalFadeHook1_LoadOpponentGfx:
 	mov r0, r8
 	mov r1, r7
+	bl FadeBankPaletteForTera
 	bl TryFadeBankPaletteForDynamax
 	ldr r0, =0x8034468 | 1
 	bx r0
@@ -222,6 +223,7 @@ DynamaxPalFadeHook1_LoadOpponentGfx:
 DynamaxPalFadeHook2_LoadPlayerGfx:
 	mov r0, r8
 	mov r1, r7
+	bl FadeBankPaletteForTera
 	bl TryFadeBankPaletteForDynamax
 	ldr r0, =0x8034626 | 1
 	bx r0

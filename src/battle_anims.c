@@ -21,6 +21,7 @@
 #include "../include/new/dynamax.h"
 #include "../include/new/end_turn.h"
 #include "../include/new/mega.h"
+#include "../include/new/terastallization.h"
 
 /*
 battle_anims.c
@@ -6625,6 +6626,7 @@ void HandleSpeciesGfxDataChange(u8 bankAtk, u8 bankDef, u8 transformType)
 		lzPaletteData = GetMonSpritePalFromSpeciesAndPersonality(targetSpecies, otId, personality);
 		LZDecompressWram(lzPaletteData, gDecompressionBuffer);
 		LoadPalette(gDecompressionBuffer, paletteOffset, 32);
+		FadeBankPaletteForTera(bankAtk, paletteOffset);
 		TryFadeBankPaletteForDynamax(bankAtk, paletteOffset);
 		gSprites[gBattlerSpriteIds[bankAtk]].pos1.y = GetBattlerSpriteDefault_Y(bankAtk);
 		StartSpriteAnim(&gSprites[gBattlerSpriteIds[bankAtk]], gBattleMonForms[bankAtk]);
@@ -6666,7 +6668,7 @@ void HandleSpeciesGfxDataChange(u8 bankAtk, u8 bankDef, u8 transformType)
 			LZDecompressWram(lzPaletteData, gDecompressionBuffer);
 			LoadPalette(gDecompressionBuffer, paletteOffset, 32);
 		}
-
+		FadeBankPaletteForTera(bankAtk, paletteOffset);
 		TryFadeBankPaletteForDynamax(bankAtk, paletteOffset);
 		gSprites[gBattlerSpriteIds[bankAtk]].pos1.y = GetBattlerSpriteDefault_Y(bankAtk);
 		StartSpriteAnim(&gSprites[gBattlerSpriteIds[bankAtk]], gBattleMonForms[bankAtk]);
@@ -6677,6 +6679,7 @@ void HandleSpeciesGfxDataChange(u8 bankAtk, u8 bankDef, u8 transformType)
 		paletteOffset = 0x100 + bankAtk * 16;
 		LoadPalette(gBattleStruct->castformPalette[gBattleSpritesDataPtr->animationData->animArg], paletteOffset, 32);
 		gBattleMonForms[bankAtk] = gBattleSpritesDataPtr->animationData->animArg;
+		FadeBankPaletteForTera(bankAtk, paletteOffset);
 		TryFadeBankPaletteForDynamax(bankAtk, paletteOffset);
 		gSprites[gBattlerSpriteIds[bankAtk]].pos1.y = GetBattlerSpriteDefault_Y(bankAtk);
 	}
@@ -6716,7 +6719,7 @@ void HandleSpeciesGfxDataChange(u8 bankAtk, u8 bankDef, u8 transformType)
 			LZDecompressWram(lzPaletteData, gBattleStruct->castformPalette[0]);
 			LoadPalette(gBattleStruct->castformPalette[0] + gBattleMonForms[bankDef] * 16, paletteOffset, 32);
 		}
-
+		FadeBankPaletteForTera(bankAtk, paletteOffset);
 		TryFadeBankPaletteForDynamax(bankAtk, paletteOffset);
 		gBattleSpritesDataPtr->bankData[bankAtk].transformSpecies = targetSpecies;
 		gBattleMonForms[bankAtk] = gBattleMonForms[bankDef];

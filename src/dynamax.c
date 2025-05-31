@@ -27,6 +27,7 @@
 #include "../include/new/set_z_effect.h"
 #include "../include/new/stat_buffs.h"
 #include "../include/new/util.h"
+#include "../include/new/terastallization.h"
 
 /*
 dynamax.c
@@ -1561,6 +1562,9 @@ void CreateSummaryScreenGigantamaxIcon(void)
 	}
 	else
 		ballSprite->data[1] = MAX_SPRITES; //No icon
+	#endif
+	#ifdef SHOW_TERA_TYPE_ICON_ON_SUMMARY_SCREEN
+	TeraIconSummaryScreen();
 	#endif
 }
 

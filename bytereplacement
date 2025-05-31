@@ -746,3 +746,6 @@
 ## Fix for bag animations
 08109252 00 00 00 00
 08109336 00 00 00 00
+
+## Scrolling Multichoice Fix
+080CBB84 00 00 00 00

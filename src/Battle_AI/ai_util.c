@@ -35,7 +35,7 @@ ai_util.c
 //This file's functions:
 static u32 CalcPredictedDamageForCounterMoves(u16 move, u8 bankAtk, u8 bankDef);
 static bool8 CalculateMoveKnocksOutXHits(u16 move, u8 bankAtk, u8 bankDef, u8 numHits);
-static bool8 CalculateMoveKnocksOutXHitsFresh(u16 move, u8 bankAtk, u8 bankDef, u8 numHits);
+bool8 CalculateMoveKnocksOutXHitsFresh(u16 move, u8 bankAtk, u8 bankDef, u8 numHits);
 static bool8 ShouldUseHumanLikelyMove(u8 bankAtk, u8 bankDef);
 static bool8 CalcShouldAIUseZMove(u8 bankAtk, u8 bankDef, u16 move);
 static bool8 IsEffectivePursuit(u16 move, bool8 defCantSwitch, bool8 playerHasSwitchedBefore);
@@ -1190,7 +1190,7 @@ static bool8 CalculateMoveKnocksOutXHits(u16 move, u8 bankAtk, u8 bankDef, u8 nu
 	return FALSE;
 }
 
-static bool8 CalculateMoveKnocksOutXHitsFresh(u16 move, u8 bankAtk, u8 bankDef, u8 numHits)
+bool8 CalculateMoveKnocksOutXHitsFresh(u16 move, u8 bankAtk, u8 bankDef, u8 numHits)
 {
 	if (CalcFinalAIMoveDamage(move, bankAtk, bankDef, numHits, NULL) >= gBattleMons[bankDef].hp)
 		return TRUE;

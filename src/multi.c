@@ -19,6 +19,7 @@
 #include "../include/new/move_menu.h"
 #include "../include/new/multi.h"
 #include "../include/new/switching.h"
+#include "../include/new/terastallization.h"
 /*
 multi.c
 	handles partner battle logic
@@ -730,6 +731,11 @@ static void PlayerPartnerHandleChooseMove(void)
 		if (ShouldAIDynamax(gActiveBattler))
 			gNewBS->dynamaxData.toBeUsed[gActiveBattler] = TRUE;
 	}
+	else if (moveInfo->canTera) // For Terastallization
+	{
+		if (!ShouldAIDelayTerastallization(gActiveBattler, gBankTarget, chosenMove, FALSE, TRUE))
+			gNewBS->teraData.chosen[gActiveBattler] = TRUE;
+	}
 
 	//This is handled again later, but it's only here to help with the case of choosing Helping Hand when the partner is switching out.
 	gBattleStruct->chosenMovePositions[gActiveBattler] = chosenMovePos;
@@ -739,7 +745,7 @@ static void PlayerPartnerHandleChooseMove(void)
 	if (IsMockBattle())
 		TryRemovePartnerDoublesKillingScoreComplete(gActiveBattler, gBankTarget, chosenMove, moveTarget, FALSE); //Moves are chosen in order of bank
 
-	EmitMoveChosen(1, chosenMovePos, gBankTarget, gNewBS->megaData.chosen[gActiveBattler], gNewBS->ultraData.chosen[gActiveBattler], gNewBS->zMoveData.toBeUsed[gActiveBattler], FALSE);
+	EmitMoveChosen(1, chosenMovePos, gBankTarget, gNewBS->megaData.chosen[gActiveBattler], gNewBS->ultraData.chosen[gActiveBattler], gNewBS->zMoveData.toBeUsed[gActiveBattler], FALSE, gNewBS->teraData.chosen[gActiveBattler]); // For Terastallization
 	PlayerPartnerBufferExecComplete();
 }
 

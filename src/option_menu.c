@@ -42,7 +42,6 @@
 #include "../include/menu.h"
 #include "../include/new/battle_strings.h"
 #include "../include/pokedex.h"
-#include "../include/base_stats.h"
 #include "../include/menu_helpers.h"
 #include "../include/gba/m4a_internal.h"
 #include "../include/malloc.h"

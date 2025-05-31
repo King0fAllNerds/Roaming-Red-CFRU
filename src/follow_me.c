@@ -54,6 +54,7 @@ static void CalculateFollowerEscalatorTrajectoryDown(struct Task *task);
 static void SetFollowerSprite(u8 spriteIndex);
 static void TurnNPCIntoFollower(u8 localId, u8 followerFlags);
 void FixFollowerMonLocalIdAfterWarp(void);
+void RestoreFollowerAfterBattle(void);
 
 extern u8 EventScript_FollowerMon[];
 
@@ -267,7 +268,7 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 		follower->invisible = FALSE;
 		MoveEventObjectToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
 		EventObjectTurn(follower, player->facingDirection); //The follower should be facing the same direction as the player when it comes out of hiding
-		FixFollowerMonLocalIdAfterWarp(); 
+		FixFollowerMonLocalIdAfterWarp();
 		if (gFollowerState.createSurfBlob == SURF_BLOB_STATE_ON || gFollowerState.createSurfBlob == SURF_BLOB_STATE_HIDDEN_ON) //Recreate surf blob
 		{
 			gFollowerState.createSurfBlob = SURF_BLOB_STATE_ON; //Get rid of hidden
@@ -306,9 +307,8 @@ void FollowMe(struct EventObject* npc, u8 state, bool8 ignoreScriptActive)
 			SetSurfDismount();
 		}
 		else // Happens just after player runs 1 tile on land (after surf is over)
-		{
+		{    
 			FixFollowerMonLocalIdAfterWarp();
-
 		}
 
 		goto RESET;
@@ -792,6 +792,7 @@ void FollowMe_FollowerToWater(void)
     {
         gFollowerState.createSurfBlob = SURF_BLOB_STATE_NONE; // Skip blob
         gPlayerAvatar->preventStep = FALSE; // Make sure player can still move
+		FlagSet(FLAG_FOLLOWER_WAS_SURFING);
         return;
     }
 	//Prepare for making the follower do the jump and spawn the surf head
@@ -1686,10 +1687,18 @@ void FixFollowerMonLocalIdAfterWarp(void)
 	   {
 	   gEventObjects[gFollowerState.objId].localId = 30;
 	   }
-	}
-	if (FlagGet(FLAG_FOLLOWER_WAS_SURFING))
-	{
-		FlagClear(FLAG_FOLLOWER_WAS_SURFING);
+	   	struct EventObject* player = &gEventObjects[gPlayerAvatar->eventObjectId];
+		struct EventObject* follower = &gEventObjects[GetFollowerMapObjId()];
+
+		// Move follower right behind player
+		MoveEventObjectToMapCoords(follower, player->currentCoords.x, player->currentCoords.y);
+		follower->facingDirection = player->facingDirection;
+		follower->movementDirection = player->movementDirection;
+		EventObjectTurn(follower, player->facingDirection);
+
+		// Reset the follower state's log so no false delta
+		gFollowerState.log.x = player->currentCoords.x;
+		gFollowerState.log.y = player->currentCoords.y;
 		ShowFollower();
 	}
 }
@@ -1705,10 +1714,19 @@ void RemoveFollowerBeforeBattle(void)
 
 void RestoreFollowerAfterBattle(void)
 {
-    if (FlagGet(FLAG_FOLLOWER_POKEMON) && !FlagGet(FLAG_FOLLOWER_WAS_SURFING))
-    {
-        CreateFollowerMonObject();
-        FixFollowerMonLocalIdAfterWarp(); // just in case
-        gFollowerState.inProgress = TRUE;
-    }
+	if (FlagGet(FLAG_FOLLOWER_POKEMON))
+	{
+		if (MetatileBehavior_IsSurfableWaterOrUnderwater(MapGridGetMetatileBehaviorAt(
+            gEventObjects[gPlayerAvatar->eventObjectId].currentCoords.x,
+            gEventObjects[gPlayerAvatar->eventObjectId].currentCoords.y)))
+        {
+            // Player still on water, keep FLAG_FOLLOWER_WAS_SURFING set
+            return;
+        }
+		FlagClear(FLAG_FOLLOWER_WAS_SURFING);
+		CreateFollowerMonObject();
+		ShowFollower();
+		FixFollowerMonLocalIdAfterWarp(); // just in case
+		gFollowerState.inProgress = TRUE;
+	}
 }

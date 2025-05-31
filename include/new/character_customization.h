@@ -112,94 +112,23 @@ extern const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255]
 
 // Gen 1
 extern const u16 gFollowerMonPic0001_BulbasaurPal[255];
-extern const u16 gFollowerMonPic2000_BulbasaurShinyPal[255];
 extern const u16 gFollowerMonPic0002_IvysaurPal[255];
-extern const u16 gFollowerMonPic2001_IvysaurShinyPal[255];
 extern const u16 gFollowerMonPic0003_VenusaurPal[255];
-extern const u16 gFollowerMonPic2002_VenusaurShinyPal[255];
 extern const u16 gFollowerMonPic0004_CharmanderPal[255];
 extern const u16 gFollowerMonPic0005_CharmeleonPal[255];
 extern const u16 gFollowerMonPic0006_CharizardPal[255];
 extern const u16 gFollowerMonPic0007_SquirtlePal[255];
 extern const u16 gFollowerMonPic0008_WartortlePal[255];
 extern const u16 gFollowerMonPic0009_BlastoisePal[255];
-// Gen 2
-extern const u16 gFollowerMonPic0152_ChikoritaPal[255];
-extern const u16 gFollowerMonPic0153_BayleefPal[255];
-extern const u16 gFollowerMonPic0154_MeganiumPal[255];
-extern const u16 gFollowerMonPic0155_CyndaquilPal[255];
-extern const u16 gFollowerMonPic0156_QuilavaPal[255];
-extern const u16 gFollowerMonPic0157_TyphlosionPal[255];
-extern const u16 gFollowerMonPic0158_TotodilePal[255];
-extern const u16 gFollowerMonPic0159_CroconawPal[255];
-extern const u16 gFollowerMonPic0160_FeraligatrPal[255];
-//Gen 3
-extern const u16 gFollowerMonPic0252_TreeckoPal[255];
-extern const u16 gFollowerMonPic0253_GrovylePal[255];
-extern const u16 gFollowerMonPic0254_SceptilePal[255];
-extern const u16 gFollowerMonPic0255_TorchicPal[255];
-extern const u16 gFollowerMonPic0256_CombuskenPal[255];
-extern const u16 gFollowerMonPic0257_BlazikenPal[255];
-extern const u16 gFollowerMonPic0258_MudkipPal[255];
-extern const u16 gFollowerMonPic0259_MarshtompPal[255];
-extern const u16 gFollowerMonPic0260_SwampertPal[255];
-//Gen 4
-extern const u16 gFollowerMonPic0387_TurtwigPal[255];
-extern const u16 gFollowerMonPic0388_GrotlePal[255];
-extern const u16 gFollowerMonPic0389_TorterraPal[255];
-extern const u16 gFollowerMonPic0390_ChimcharPal[255];
-extern const u16 gFollowerMonPic0391_MonfernoPal[255];
-extern const u16 gFollowerMonPic0392_InfernapePal[255];
-extern const u16 gFollowerMonPic0393_PiplupPal[255];
-extern const u16 gFollowerMonPic0394_PrinplupPal[255];
-extern const u16 gFollowerMonPic0395_EmpoleonPal[255];
-//Gen 5
-extern const u16 gFollowerMonPic0495_SnivyPal[255];
-extern const u16 gFollowerMonPic0496_ServinePal[255];
-extern const u16 gFollowerMonPic0497_SerperiorPal[255];
-extern const u16 gFollowerMonPic0498_TepigPal[255];
-extern const u16 gFollowerMonPic0499_PignitePal[255];
-extern const u16 gFollowerMonPic0500_EmboarPal[255];
-extern const u16 gFollowerMonPic0501_OshawottPal[255];
-extern const u16 gFollowerMonPic0502_DewottPal[255];
-extern const u16 gFollowerMonPic0503_SamurottPal[255];
-// Gen 6
-extern const u16 gFollowerMonPic0650_ChespinPal[255];
-extern const u16 gFollowerMonPic0651_QuilladinPal[255];
-extern const u16 gFollowerMonPic0652_ChesnaughtPal[255];
-extern const u16 gFollowerMonPic0653_FennekinPal[255];
-extern const u16 gFollowerMonPic0654_BraixenPal[255];
-extern const u16 gFollowerMonPic0655_DelphoxPal[255];
-extern const u16 gFollowerMonPic0656_FroakiePal[255];
-extern const u16 gFollowerMonPic0657_FrogadierPal[255];
-extern const u16 gFollowerMonPic0658_GreninjaPal[255];
-// Gen 7
-extern const u16 gFollowerMonPic0722_RowletPal[255];
-extern const u16 gFollowerMonPic0723_DartrixPal[255];
-extern const u16 gFollowerMonPic0724_DecidueyePal[255];
-extern const u16 gFollowerMonPic0725_LittenPal[255];
-extern const u16 gFollowerMonPic0726_TorracatPal[255];
-extern const u16 gFollowerMonPic0727_IncineroarPal[255];
-extern const u16 gFollowerMonPic0728_PopplioPal[255];
-extern const u16 gFollowerMonPic0729_BrionnePal[255];
-extern const u16 gFollowerMonPic0730_PrimarinaPal[255];
-// Gen 8
-extern const u16 gFollowerMonPic0810_GrookeyPal[255];
-extern const u16 gFollowerMonPic0811_ThwackeyPal[255];
-extern const u16 gFollowerMonPic0812_RillaboomPal[255];
-extern const u16 gFollowerMonPic0813_ScorbunnyPal[255];
-extern const u16 gFollowerMonPic0814_RabootPal[255];
-extern const u16 gFollowerMonPic0815_CinderacePal[255];
-extern const u16 gFollowerMonPic0816_SobblePal[255];
-extern const u16 gFollowerMonPic0817_DrizzilePal[255];
-extern const u16 gFollowerMonPic0818_InteleonPal[255];
-// Gen 9
-extern const u16 gFollowerMonPic0906_SprigatitoPal[255];
-extern const u16 gFollowerMonPic0907_FloragatoPal[255];
-extern const u16 gFollowerMonPic0908_MeowscaradaPal[255];
-extern const u16 gFollowerMonPic0909_FuecocoPal[255];
-extern const u16 gFollowerMonPic0910_CrocalorPal[255];
-extern const u16 gFollowerMonPic0911_SkeledirgePal[255];
-extern const u16 gFollowerMonPic0912_QuaxlyPal[255];
-extern const u16 gFollowerMonPic0913_QuaxwellPal[255];
-extern const u16 gFollowerMonPic0914_QuaquavalPal[255];
+
+//Shiny
+extern const u16 gFollowerMonPic2001_BulbasaurShinyPal[255];
+extern const u16 gFollowerMonPic2002_IvysaurShinyPal[255];
+extern const u16 gFollowerMonPic2003_VenusaurShinyPal[255];
+extern const u16 gFollowerMonPic2004_CharmanderShinyPal[255];
+extern const u16 gFollowerMonPic2005_CharmeleonShinyPal[255];
+extern const u16 gFollowerMonPic2006_CharizardShinyPal[255];
+extern const u16 gFollowerMonPic2007_SquirtleShinyPal[255];
+extern const u16 gFollowerMonPic2008_WartortleShinyPal[255];
+extern const u16 gFollowerMonPic2009_BlastoiseShinyPal[255];
+

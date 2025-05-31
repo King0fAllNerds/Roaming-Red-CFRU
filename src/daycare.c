@@ -692,6 +692,23 @@ static void SetInitialEggData(struct Pokemon* mon, u16 species, u32 personality)
 	SetMonData(mon, MON_DATA_MET_LEVEL, &metLevel);
 	SetMonData(mon, MON_DATA_LANGUAGE, &language);
 	mon->hiddenAbility = hiddenAbility;
+		// For Terastallization
+	u8 type1 = gBaseStats[species].type1;
+	u8 type2 = gBaseStats[species].type2;
+
+	if (type1 == type2 || type2 == TYPE_MYSTERY || type2 == TYPE_BLANK)
+		mon->teraType = type1;
+	else
+	{
+		u8 roll = Random() % 100;
+
+		if (roll < 49)
+			mon->teraType = type1;
+		else if (roll < 98) // 49 + 49
+			mon->teraType = type2;
+		else
+			mon->teraType = Random() % NUMBER_OF_MON_TYPES; // 2% chance random type
+	}
 }
 
 void CreateEgg(struct Pokemon *mon, u16 species) //The function used by the giveegg scripting command

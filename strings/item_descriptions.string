@@ -1417,3 +1417,18 @@ A special vial that fully restores \nall Pokémon in your party. One-time use \n
 
 #org @DESC_EVIV_DISPLAYER
 Know the secrets of \nall your party pokemon!
+
+#org @DESC_TERA_ORB
+An orb that holds within it the\npower to crystallize. When charged \nwith energy, it can Terastallize mons.
+
+#org @DESC_CATCHING_CHARM
+A charm that raises the chance \nof Critical Captures.
+
+#org @DESC_HISUI_ROCK
+An odd looking rock that makes \ncertain species to evolve in their\nHisuian forms.
+
+#org @DESC_MASTERPIECE_TEACUP
+A chipped teacup that makes \ncertain Pokémon evolve.
+
+#org @DESC_UNREMARKABLE_TEACUP
+A cracked teacup that makes \ncertain Pokémon evolve.
