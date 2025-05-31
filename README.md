@@ -36,6 +36,11 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - New item:
 -- EV-IV machine
 -- PokeVial
+-- Hisui Rock
+- Terastallization
+- Stellar type
+- Nature coloured stats
+- IV rankings in summary
 - And much more!
 
 ##### Introduction to the maintainers
@@ -45,8 +50,8 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - Shiny hunter/Miner,
 - ansh860, (Fixes, Tm case icons, continue screen icons, more)
 - Zake, (Battle backgrounds help and Following mon code)
-- grilokapu (item expansion, gen 9 moves+abilities, nuzlocke fainting, more)
-- 1RWT16KU1D (Tera in works)
+- grilokapu (item expansion, gen 9 moves+abilities, nuzlocke fainting, Terastallization, more)
+- 1RWT16KU1D (Terastallization)
 ##### For queries and support :
 Join us on discord: https://discord.com/invite/axNX3rhR9K
 ##### Useful and Optional Additions:
