@@ -1184,6 +1184,14 @@ static u8 IsMonDisobedient(void)
 	#ifdef OBEDIENCE_BY_BADGE_AMOUNT
 		u8 badgeCount = 0;
 
+		if (FlagGet(FLAG_BADGE12_GET))
+			++badgeCount;
+		if (FlagGet(FLAG_BADGE11_GET))
+			++badgeCount;
+		if (FlagGet(FLAG_BADGE10_GET))
+			++badgeCount;
+		if (FlagGet(FLAG_BADGE09_GET))
+			++badgeCount;
 		if (FlagGet(FLAG_BADGE08_GET))
 			++badgeCount;
 		if (FlagGet(FLAG_BADGE07_GET))
@@ -1226,12 +1234,32 @@ static u8 IsMonDisobedient(void)
 			case 7:
 				obedienceLevel = BADGE_7_OBEDIENCE_LEVEL;
 				break;
+			case 8:
+				obedienceLevel = BADGE_8_OBEDIENCE_LEVEL;
+				break;
+			case 9:
+				obedienceLevel = BADGE_9_OBEDIENCE_LEVEL;
+				break;
+			case 10:
+				obedienceLevel = BADGE_10_OBEDIENCE_LEVEL;
+				break;
+			case 11:
+				obedienceLevel = BADGE_11_OBEDIENCE_LEVEL;
+				break;
 			default:
 				return 0;
 		}
 	#else
-		if (FlagGet(FLAG_BADGE08_GET))
+		if (FlagGet(FLAG_BADGE12_GET))
 			return 0;
+		else if (FlagGet(FLAG_BADGE11_GET))
+			obedienceLevel = BADGE_10_OBEDIENCE_LEVEL;
+		else if (FlagGet(FLAG_BADGE10_GET))
+			obedienceLevel = BADGE_10_OBEDIENCE_LEVEL;
+		else if (FlagGet(FLAG_BADGE09_GET))
+			obedienceLevel = BADGE_9_OBEDIENCE_LEVEL;
+		else if (FlagGet(FLAG_BADGE08_GET))
+			obedienceLevel = BADGE_8_OBEDIENCE_LEVEL;
 		else if (FlagGet(FLAG_BADGE07_GET))
 			obedienceLevel = BADGE_7_OBEDIENCE_LEVEL;
 		else if (FlagGet(FLAG_BADGE06_GET))

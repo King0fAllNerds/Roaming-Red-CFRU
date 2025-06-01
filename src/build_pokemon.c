@@ -3991,6 +3991,14 @@ u8 GetOpenWorldBadgeCount(void)
 	if (FlagGet(FLAG_SYS_GAME_CLEAR)) //0x82C
 		return 9;
 
+	if (FlagGet(FLAG_BADGE12_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE11_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE10_GET))
+		++badgeCount;
+	if (FlagGet(FLAG_BADGE09_GET))
+		++badgeCount;
 	if (FlagGet(FLAG_BADGE08_GET))
 		++badgeCount;
 	if (FlagGet(FLAG_BADGE07_GET))

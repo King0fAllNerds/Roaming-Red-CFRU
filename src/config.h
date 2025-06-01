@@ -172,14 +172,18 @@ enum //These vars need to be one after the other (hence the enum)
 #define MAX_COINS_DIGITS 9	//Max number of digits for game corner coins (eg. 4 = 9999, 9 = 999,999,999). maximum of 9
 
 /*===== Badge Obedience Options =====*/
-#define BASE_OBEDIENCE_LEVEL	10
-#define BADGE_1_OBEDIENCE_LEVEL	10
-#define BADGE_2_OBEDIENCE_LEVEL 30
+#define BASE_OBEDIENCE_LEVEL	15
+#define BADGE_1_OBEDIENCE_LEVEL	20
+#define BADGE_2_OBEDIENCE_LEVEL 25
 #define BADGE_3_OBEDIENCE_LEVEL 30
-#define BADGE_4_OBEDIENCE_LEVEL 50
-#define BADGE_5_OBEDIENCE_LEVEL 50
-#define BADGE_6_OBEDIENCE_LEVEL 70
-#define BADGE_7_OBEDIENCE_LEVEL 70
+#define BADGE_4_OBEDIENCE_LEVEL 40
+#define BADGE_5_OBEDIENCE_LEVEL 45
+#define BADGE_6_OBEDIENCE_LEVEL 50
+#define BADGE_7_OBEDIENCE_LEVEL 55
+#define BADGE_8_OBEDIENCE_LEVEL 60
+#define BADGE_9_OBEDIENCE_LEVEL 70
+#define BADGE_10_OBEDIENCE_LEVEL 80
+#define BADGE_11_OBEDIENCE_LEVEL 90
 
 /*===== OW Palette Options =====*/
 #define TREE_DISGUISE_PAL_ID 0x1105 //The NPC palette id of the tree disguise movement permission.

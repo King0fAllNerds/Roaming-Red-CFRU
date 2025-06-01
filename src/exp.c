@@ -83,7 +83,18 @@ u8 GetBadgeCount() {
 	if (FlagGet(FLAG_BADGE08_GET)) {
 		badgeCount++;
 	}
-
+	if (FlagGet(FLAG_BADGE09_GET)) {
+		badgeCount++;
+	}
+	if (FlagGet(FLAG_BADGE10_GET)) {
+		badgeCount++;
+	}
+	if (FlagGet(FLAG_BADGE11_GET)) {
+		badgeCount++;
+	}
+	if (FlagGet(FLAG_BADGE12_GET)) {
+		badgeCount++;
+	}
 	return badgeCount;
 }
 
