@@ -763,7 +763,11 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[] =
     MON_OW_OBJECT_GRAPHICS(12F3, Entei)
     MON_OW_OBJECT_GRAPHICS(12F4, Suicune)
     MON_OW_OBJECT_GRAPHICS(12F5, Larvitar)
-    MON_OW_OBJECT_GRAPHICS(12F6, Celebi)
+    MON_OW_OBJECT_GRAPHICS(12F6, Pupitar)
+    MON_OW_OBJECT_GRAPHICS(12F7, Tyranitar)
+    MON_OW_OBJECT_GRAPHICS(12F8, Lugia)
+    MON_OW_OBJECT_GRAPHICS(12F9, HoOh)
+    MON_OW_OBJECT_GRAPHICS(12FA, Celebi)
 
 };
 const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[] =
@@ -1015,7 +1019,11 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[] =
     MON_OW_OBJECT_GRAPHICS(13F3, EnteiShiny)
     MON_OW_OBJECT_GRAPHICS(13F4, SuicuneShiny)
     MON_OW_OBJECT_GRAPHICS(13F5, LarvitarShiny)
-    MON_OW_OBJECT_GRAPHICS(13F6, CelebiShiny)
+    MON_OW_OBJECT_GRAPHICS(13F6, PupitarShiny)
+    MON_OW_OBJECT_GRAPHICS(13F7, TyranitarShiny)
+    MON_OW_OBJECT_GRAPHICS(13F8, LugiaShiny)
+    MON_OW_OBJECT_GRAPHICS(13F9, HoOhShiny)
+    MON_OW_OBJECT_GRAPHICS(13FA, CelebiShiny)
 };
 
 // Link Species with Overworld Sprites
