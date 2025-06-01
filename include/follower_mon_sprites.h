@@ -76,6 +76,36 @@ static const struct SpriteFrameImage sMonPicTable_##name[] =          \
     .affineAnims = gDummySpriteAffineAnimTable,             \
 },
 
+#define MON_OW_TEMPLATE_64x64_FRAMES(id, name)                          \
+static const struct SpriteFrameImage sMonPicTable_##name[] = {             \
+    overworld_frame(gFollowerMonPic##id##_##name##Tiles, 8, 8, 0),    \
+    overworld_frame(gFollowerMonPic##id##_##name##Tiles, 8, 8, 1),    \
+    overworld_frame(gFollowerMonPic##id##_##name##Tiles, 8, 8, 2),    \
+    overworld_frame(gFollowerMonPic##id##_##name##Tiles, 8, 8, 3),    \
+    overworld_frame(gFollowerMonPic##id##_##name##Tiles, 8, 8, 4),    \
+    overworld_frame(gFollowerMonPic##id##_##name##Tiles, 8, 8, 5),    \
+};
+
+#define MON_OW_OBJECT_GRAPHICS_64(PalId, name)                          \
+{                                                                       \
+        .tileTag = 0xFFFF,                                              \
+        .paletteTag1 = 0x##PalId,                                           \
+        .paletteTag2 = EVENT_OBJ_PAL_TAG_NONE,                          \
+        .size = (64 * 64) / 2,                                          \
+        .width = 64,                                                    \
+        .height = 64,                                                   \
+        .shadowSize = SHADOW_SIZE_M,                                    \
+        .inanimate = FALSE,                                             \
+        .disableReflectionPaletteLoad = FALSE,                          \
+        .tracks = TRACKS_FOOT,                                          \
+        .gender = MALE,                                                 \
+        .oam = gEventObjectBaseOam_64x64,                               \
+        .subspriteTables = gEventObjectSpriteOamTables_64x64,           \
+        .anims = gFollowerMonAnimTable,                                \
+        .images = sMonPicTable_##name,                                     \
+        .affineAnims = gDummySpriteAffineAnimTable,                     \
+},
+
 extern const u16 gFollowerMonSpriteIdTable[];
 extern const u16 gFollowerMonShinySpriteIdTable[];
 extern const union AnimCmd *const gFollowerMonAnimTable[];
