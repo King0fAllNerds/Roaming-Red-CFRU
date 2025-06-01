@@ -756,18 +756,7 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[] =
     MON_OW_OBJECT_GRAPHICS(12EC, Hitmontop)
     MON_OW_OBJECT_GRAPHICS(12ED, Smoochum)
     MON_OW_OBJECT_GRAPHICS(12EE, Elekid)
-    MON_OW_OBJECT_GRAPHICS(12EF, Magby)
-    MON_OW_OBJECT_GRAPHICS(12F0, Miltank)
-    MON_OW_OBJECT_GRAPHICS(12F1, Blissey)
-    MON_OW_OBJECT_GRAPHICS(12F2, Raikou)
-    MON_OW_OBJECT_GRAPHICS(12F3, Entei)
-    MON_OW_OBJECT_GRAPHICS(12F4, Suicune)
-    MON_OW_OBJECT_GRAPHICS(12F5, Larvitar)
-    MON_OW_OBJECT_GRAPHICS(12F6, Pupitar)
-    MON_OW_OBJECT_GRAPHICS(12F7, Tyranitar)
-    MON_OW_OBJECT_GRAPHICS_64(12F8, Lugia)
-    MON_OW_OBJECT_GRAPHICS_64(12F9, HoOh)
-    MON_OW_OBJECT_GRAPHICS(12FA, Celebi)
+    MON_OW_OBJECT_GRAPHICS(12EF, Magby) //240th entry
 
 };
 const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[] =
@@ -1012,7 +1001,25 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[] =
     MON_OW_OBJECT_GRAPHICS(13EC, HitmontopShiny)
     MON_OW_OBJECT_GRAPHICS(13ED, SmoochumShiny)
     MON_OW_OBJECT_GRAPHICS(13EE, ElekidShiny)
-    MON_OW_OBJECT_GRAPHICS(13EF, MagbyShiny)
+    MON_OW_OBJECT_GRAPHICS(13EF, MagbyShiny) //240th entry
+};
+
+const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[] =
+{
+    MON_OW_OBJECT_GRAPHICS(12F0, Miltank)
+    MON_OW_OBJECT_GRAPHICS(12F1, Blissey)
+    MON_OW_OBJECT_GRAPHICS(12F2, Raikou)
+    MON_OW_OBJECT_GRAPHICS(12F3, Entei)
+    MON_OW_OBJECT_GRAPHICS(12F4, Suicune)
+    MON_OW_OBJECT_GRAPHICS(12F5, Larvitar)
+    MON_OW_OBJECT_GRAPHICS(12F6, Pupitar)
+    MON_OW_OBJECT_GRAPHICS(12F7, Tyranitar)
+    MON_OW_OBJECT_GRAPHICS_64(12F8, Lugia)
+    MON_OW_OBJECT_GRAPHICS_64(12F9, HoOh)
+    MON_OW_OBJECT_GRAPHICS(12FA, Celebi)
+};
+const struct EventObjectGraphicsInfo gFollowerMonGfxTable3[] =
+{
     MON_OW_OBJECT_GRAPHICS(13F0, MiltankShiny)
     MON_OW_OBJECT_GRAPHICS(13F1, BlisseyShiny)
     MON_OW_OBJECT_GRAPHICS(13F2, RaikouShiny)
@@ -1025,7 +1032,6 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[] =
     MON_OW_OBJECT_GRAPHICS_64(13F9, HoOhShiny)
     MON_OW_OBJECT_GRAPHICS(13FA, CelebiShiny)
 };
-
 // Link Species with Overworld Sprites
 const u16 gFollowerMonSpriteIdTable[] =
 {

@@ -262,6 +262,8 @@ static const u16* sPlayerMarlonOutfitColours[] =
 
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[];
+extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[];
+extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable3[];
 
 static NPCPtr sOverworldTable2[] =
 {
@@ -505,18 +507,6 @@ static NPCPtr sOverworldTable2[] =
     &gFollowerMonGfxTable0[237], // Smoochum
     &gFollowerMonGfxTable0[238], // Elekid
     &gFollowerMonGfxTable0[239], // Magby
-    &gFollowerMonGfxTable0[240], // Miltank
-    &gFollowerMonGfxTable0[241], // Blissey
-    &gFollowerMonGfxTable0[242], // Raikou
-    &gFollowerMonGfxTable0[243], // Entei
-    &gFollowerMonGfxTable0[244], // Suicune
-    &gFollowerMonGfxTable0[245], // Larvitar
-    &gFollowerMonGfxTable0[246], // Pupitar
-    &gFollowerMonGfxTable0[247], // Tyranitar
-    &gFollowerMonGfxTable0[248], // Lugia
-    &gFollowerMonGfxTable0[249], // Ho-Oh
-    &gFollowerMonGfxTable0[250], // Celebi
-
 };
 static NPCPtr sOverworldTable3[] =
 {
@@ -760,26 +750,43 @@ static NPCPtr sOverworldTable3[] =
     &gFollowerMonGfxTable1[237], // SmoochumShiny
     &gFollowerMonGfxTable1[238], // ElekidShiny
     &gFollowerMonGfxTable1[239], // MagbyShiny
-    &gFollowerMonGfxTable1[240], // MiltankShiny
-    &gFollowerMonGfxTable1[241], // BlisseyShiny
-    &gFollowerMonGfxTable1[242], // RaikouShiny
-    &gFollowerMonGfxTable1[243], // EnteiShiny
-    &gFollowerMonGfxTable1[244], // SuicuneShiny
-    &gFollowerMonGfxTable1[245], // LarvitarShiny
-    &gFollowerMonGfxTable1[246], // PupitarShiny
-    &gFollowerMonGfxTable1[247], // TyranitarShiny
-    &gFollowerMonGfxTable1[248], // LugiaShiny
-    &gFollowerMonGfxTable1[249], // Ho-OhShiny
-    &gFollowerMonGfxTable1[250], // CelebiShiny
 };
-
-
+static NPCPtr sOverworldTable4[] =
+{
+	&gFollowerMonGfxTable2[0], // Miltank
+    &gFollowerMonGfxTable2[1], // Blissey
+    &gFollowerMonGfxTable2[2], // Raikou
+    &gFollowerMonGfxTable2[3], // Entei
+    &gFollowerMonGfxTable2[4], // Suicune
+    &gFollowerMonGfxTable2[5], // Larvitar
+    &gFollowerMonGfxTable2[6], // Pupitar
+    &gFollowerMonGfxTable2[7], // Tyranitar
+    &gFollowerMonGfxTable2[8], // Lugia
+    &gFollowerMonGfxTable2[9], // Ho-Oh
+    &gFollowerMonGfxTable2[10], // Celebi
+};
+static NPCPtr sOverworldTable5[] =
+{
+    &gFollowerMonGfxTable3[0], // MiltankShiny
+    &gFollowerMonGfxTable3[1], // BlisseyShiny
+    &gFollowerMonGfxTable3[2], // RaikouShiny
+    &gFollowerMonGfxTable3[3], // EnteiShiny
+    &gFollowerMonGfxTable3[4], // SuicuneShiny
+    &gFollowerMonGfxTable3[5], // LarvitarShiny
+    &gFollowerMonGfxTable3[6], // PupitarShiny
+    &gFollowerMonGfxTable3[7], // TyranitarShiny
+    &gFollowerMonGfxTable3[8], // LugiaShiny
+    &gFollowerMonGfxTable3[9], // Ho-OhShiny
+    &gFollowerMonGfxTable3[10], // CelebiShiny
+};
 	// create 255 OW tables
 	const struct EventObjectGraphicsInfo** const gOverworldTableSwitcher[255] =
 	{
 		(NPCPtr*) 0x839FDB0,
 		sOverworldTable2,
 		sOverworldTable3,
+		sOverworldTable4,
+		sOverworldTable5,
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
 	};

@@ -113,6 +113,8 @@ extern const union AnimCmd *const gFollowerMonAnimTable[];
 // Overworld Tables
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[];
+extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[];
+extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable3[];
 
 // Images declarations
 //Gen 1
