@@ -108,11 +108,15 @@ u8 GetCurrentLevelCap(void)
 		case 1:  return 20;
 		case 2:  return 25;
 		case 3:  return 30;
-		case 4:  return 35;
-		case 5:  return 40;
-		case 6:  return 45;
-		case 7:  return 50;
-		case 8:  return 100; // After all badges
+		case 4:  return 40;
+		case 5:  return 45;
+		case 6:  return 50;
+		case 7:  return 55;
+		case 8:  return 60;
+		case 9:  return 70;
+		case 10:  return 80;
+		case 11:  return 90;
+		case 12:  return 100; // After all badges
 		default: return 100; // Just in case
 	}
 }
