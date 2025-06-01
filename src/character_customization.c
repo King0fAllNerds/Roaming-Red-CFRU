@@ -764,6 +764,143 @@ static NPCPtr sOverworldTable4[] =
     &gFollowerMonGfxTable2[8], // Lugia
     &gFollowerMonGfxTable2[9], // Ho-Oh
     &gFollowerMonGfxTable2[10], // Celebi
+	&gFollowerMonGfxTable2[11],  // Treecko
+	&gFollowerMonGfxTable2[12],  // Grovyle
+	&gFollowerMonGfxTable2[13],  // Sceptile
+	&gFollowerMonGfxTable2[14],  // Torchic
+	&gFollowerMonGfxTable2[15],  // Combusken
+	&gFollowerMonGfxTable2[16],  // Blaziken
+	&gFollowerMonGfxTable2[17],  // Mudkip
+	&gFollowerMonGfxTable2[18],  // Marshtomp
+	&gFollowerMonGfxTable2[19],  // Swampert
+	&gFollowerMonGfxTable2[20],  // Poochyena
+	&gFollowerMonGfxTable2[21],  // Mightyena
+	&gFollowerMonGfxTable2[22],  // Zigzagoon
+	&gFollowerMonGfxTable2[23],  // Linoone
+	&gFollowerMonGfxTable2[24],  // Wurmple
+	&gFollowerMonGfxTable2[25],  // Silcoon
+	&gFollowerMonGfxTable2[26],  // Beautifly
+	&gFollowerMonGfxTable2[27],  // Cascoon
+	&gFollowerMonGfxTable2[28],  // Dustox
+	&gFollowerMonGfxTable2[29],  // Lotad
+	&gFollowerMonGfxTable2[30],  // Lombre
+	&gFollowerMonGfxTable2[31],  // Ludicolo
+	&gFollowerMonGfxTable2[32],  // Seedot
+	&gFollowerMonGfxTable2[33],  // Nuzleaf
+	&gFollowerMonGfxTable2[34],  // Shiftry
+	&gFollowerMonGfxTable2[35],  // Nincada
+	&gFollowerMonGfxTable2[36],  // Ninjask
+	&gFollowerMonGfxTable2[37],  // Shedinja
+	&gFollowerMonGfxTable2[38],  // Taillow
+	&gFollowerMonGfxTable2[39],  // Swellow
+	&gFollowerMonGfxTable2[40],  // Shroomish
+	&gFollowerMonGfxTable2[41],  // Breloom
+	&gFollowerMonGfxTable2[42],  // Spinda
+	&gFollowerMonGfxTable2[43],  // Wingull
+	&gFollowerMonGfxTable2[44],  // Pelipper
+	&gFollowerMonGfxTable2[45],  // Surskit
+	&gFollowerMonGfxTable2[46],  // Masquerain
+	&gFollowerMonGfxTable2[47],  // Wailmer
+	&gFollowerMonGfxTable2[48],  // Wailord
+	&gFollowerMonGfxTable2[49],  // Skitty
+	&gFollowerMonGfxTable2[50],  // Delcatty
+	&gFollowerMonGfxTable2[51],  // Kecleon
+	&gFollowerMonGfxTable2[52],  // Baltoy
+	&gFollowerMonGfxTable2[53],  // Claydol
+	&gFollowerMonGfxTable2[54],  // Nosepass
+	&gFollowerMonGfxTable2[55],  // Torkoal
+	&gFollowerMonGfxTable2[56],  // Sableye
+	&gFollowerMonGfxTable2[57],  // Barboach
+	&gFollowerMonGfxTable2[58],  // Whiscash
+	&gFollowerMonGfxTable2[59],  // Luvdisc
+	&gFollowerMonGfxTable2[60],  // Corphish
+	&gFollowerMonGfxTable2[61],  // Crawdaunt
+	&gFollowerMonGfxTable2[62],  // Feebas
+	&gFollowerMonGfxTable2[63],  // Milotic
+	&gFollowerMonGfxTable2[64],  // Carvanha
+	&gFollowerMonGfxTable2[65],  // Sharpedo
+	&gFollowerMonGfxTable2[66],  // Trapinch
+	&gFollowerMonGfxTable2[67],  // Vibrava
+	&gFollowerMonGfxTable2[68],  // Flygon
+	&gFollowerMonGfxTable2[69],  // Makuhita
+	&gFollowerMonGfxTable2[70],  // Hariyama
+	&gFollowerMonGfxTable2[71],  // Electrike
+	&gFollowerMonGfxTable2[72],  // Manectric
+	&gFollowerMonGfxTable2[73],  // Numel
+	&gFollowerMonGfxTable2[74],  // Camerupt
+	&gFollowerMonGfxTable2[75],  // Spheal
+	&gFollowerMonGfxTable2[76],  // Sealeo
+	&gFollowerMonGfxTable2[77],  // Walrein
+	&gFollowerMonGfxTable2[78],  // Cacnea
+	&gFollowerMonGfxTable2[79],  // Cacturne
+	&gFollowerMonGfxTable2[80],  // Snorunt
+	&gFollowerMonGfxTable2[81],  // Glalie
+	&gFollowerMonGfxTable2[82],  // Lunatone
+	&gFollowerMonGfxTable2[83],  // Solrock
+	&gFollowerMonGfxTable2[84],  // Azurill
+	&gFollowerMonGfxTable2[85],  // Spoink
+	&gFollowerMonGfxTable2[86],  // Grumpig
+	&gFollowerMonGfxTable2[87],  // Plusle
+	&gFollowerMonGfxTable2[88],  // Minun
+	&gFollowerMonGfxTable2[89],  // Mawile
+	&gFollowerMonGfxTable2[90],  // Meditite
+	&gFollowerMonGfxTable2[91],  // Medicham
+	&gFollowerMonGfxTable2[92],  // Swablu
+	&gFollowerMonGfxTable2[93],  // Altaria
+	&gFollowerMonGfxTable2[94],  // Wynaut
+	&gFollowerMonGfxTable2[95],  // Duskull
+	&gFollowerMonGfxTable2[96],  // Dusclops
+	&gFollowerMonGfxTable2[97],  // Roselia
+	&gFollowerMonGfxTable2[98],  // Slakoth
+	&gFollowerMonGfxTable2[99],  // Vigoroth
+	&gFollowerMonGfxTable2[100], // Slaking
+	&gFollowerMonGfxTable2[101], // Gulpin
+	&gFollowerMonGfxTable2[102], // Swalot
+	&gFollowerMonGfxTable2[103], // Tropius
+	&gFollowerMonGfxTable2[104], // Whismur
+	&gFollowerMonGfxTable2[105], // Loudred
+	&gFollowerMonGfxTable2[106], // Exploud
+	&gFollowerMonGfxTable2[107], // Clamperl
+	&gFollowerMonGfxTable2[108], // Huntail
+	&gFollowerMonGfxTable2[109], // Gorebyss
+	&gFollowerMonGfxTable2[110], // Absol
+	&gFollowerMonGfxTable2[111], // Shuppet
+	&gFollowerMonGfxTable2[112], // Banette
+	&gFollowerMonGfxTable2[113], // Seviper
+	&gFollowerMonGfxTable2[114], // Zangoose
+	&gFollowerMonGfxTable2[115], // Relicanth
+	&gFollowerMonGfxTable2[116], // Aron
+	&gFollowerMonGfxTable2[117], // Lairon
+	&gFollowerMonGfxTable2[118], // Aggron
+	&gFollowerMonGfxTable2[119], // Castform
+	&gFollowerMonGfxTable2[120], // Volbeat
+	&gFollowerMonGfxTable2[121], // Illumise
+	&gFollowerMonGfxTable2[122], // Lileep
+	&gFollowerMonGfxTable2[123], // Cradily
+	&gFollowerMonGfxTable2[124], // Anorith
+	&gFollowerMonGfxTable2[125], // Armaldo
+	&gFollowerMonGfxTable2[126], // Ralts
+	&gFollowerMonGfxTable2[127], // Kirlia
+	&gFollowerMonGfxTable2[128], // Gardevoir
+	&gFollowerMonGfxTable2[129], // Bagon
+	&gFollowerMonGfxTable2[130], // Shelgon
+	&gFollowerMonGfxTable2[131], // Salamence
+	&gFollowerMonGfxTable2[132], // Beldum
+	&gFollowerMonGfxTable2[133], // Metang
+	&gFollowerMonGfxTable2[134], // Metagross
+	&gFollowerMonGfxTable2[135], // Regirock
+	&gFollowerMonGfxTable2[136], // Regice
+	&gFollowerMonGfxTable2[137], // Registeel
+	&gFollowerMonGfxTable2[138], // Kyogre
+	&gFollowerMonGfxTable2[139], // Groudon
+	&gFollowerMonGfxTable2[140], // Rayquaza
+	&gFollowerMonGfxTable2[141], // Latias
+	&gFollowerMonGfxTable2[142], // Latios
+	&gFollowerMonGfxTable2[143], // Jirachi
+	&gFollowerMonGfxTable2[144], // Deoxys
+	&gFollowerMonGfxTable2[145], // Chimecho
+
+
 };
 static NPCPtr sOverworldTable5[] =
 {
@@ -778,6 +915,141 @@ static NPCPtr sOverworldTable5[] =
     &gFollowerMonGfxTable3[8], // LugiaShiny
     &gFollowerMonGfxTable3[9], // Ho-OhShiny
     &gFollowerMonGfxTable3[10], // CelebiShiny
+	&gFollowerMonGfxTable3[11],  // TreeckoShiny
+    &gFollowerMonGfxTable3[12],  // GrovyleShiny
+    &gFollowerMonGfxTable3[13],  // SceptileShiny
+    &gFollowerMonGfxTable3[14],  // TorchicShiny
+    &gFollowerMonGfxTable3[15],  // CombuskenShiny
+    &gFollowerMonGfxTable3[16],  // BlazikenShiny
+    &gFollowerMonGfxTable3[17],  // MudkipShiny
+    &gFollowerMonGfxTable3[18],  // MarshtompShiny
+    &gFollowerMonGfxTable3[19],  // SwampertShiny
+    &gFollowerMonGfxTable3[20],  // PoochyenaShiny
+    &gFollowerMonGfxTable3[21],  // MightyenaShiny
+    &gFollowerMonGfxTable3[22],  // ZigzagoonShiny
+    &gFollowerMonGfxTable3[23],  // LinooneShiny
+    &gFollowerMonGfxTable3[24],  // WurmpleShiny
+    &gFollowerMonGfxTable3[25],  // SilcoonShiny
+    &gFollowerMonGfxTable3[26],  // BeautiflyShiny
+    &gFollowerMonGfxTable3[27],  // CascoonShiny
+    &gFollowerMonGfxTable3[28],  // DustoxShiny
+    &gFollowerMonGfxTable3[29],  // LotadShiny
+    &gFollowerMonGfxTable3[30],  // LombreShiny
+    &gFollowerMonGfxTable3[31],  // LudicoloShiny
+    &gFollowerMonGfxTable3[32],  // SeedotShiny
+    &gFollowerMonGfxTable3[33],  // NuzleafShiny
+    &gFollowerMonGfxTable3[34],  // ShiftryShiny
+    &gFollowerMonGfxTable3[35],  // NincadaShiny
+    &gFollowerMonGfxTable3[36],  // NinjaskShiny
+    &gFollowerMonGfxTable3[37],  // ShedinjaShiny
+    &gFollowerMonGfxTable3[38],  // TaillowShiny
+    &gFollowerMonGfxTable3[39],  // SwellowShiny
+    &gFollowerMonGfxTable3[40],  // ShroomishShiny
+    &gFollowerMonGfxTable3[41],  // BreloomShiny
+    &gFollowerMonGfxTable3[42],  // SpindaShiny
+    &gFollowerMonGfxTable3[43],  // WingullShiny
+    &gFollowerMonGfxTable3[44],  // PelipperShiny
+    &gFollowerMonGfxTable3[45],  // SurskitShiny
+    &gFollowerMonGfxTable3[46],  // MasquerainShiny
+    &gFollowerMonGfxTable3[47],  // WailmerShiny
+    &gFollowerMonGfxTable3[48],  // WailordShiny
+    &gFollowerMonGfxTable3[49],  // SkittyShiny
+    &gFollowerMonGfxTable3[50],  // DelcattyShiny
+    &gFollowerMonGfxTable3[51],  // KecleonShiny
+    &gFollowerMonGfxTable3[52],  // BaltoyShiny
+    &gFollowerMonGfxTable3[53],  // ClaydolShiny
+    &gFollowerMonGfxTable3[54],  // NosepassShiny
+    &gFollowerMonGfxTable3[55],  // TorkoalShiny
+    &gFollowerMonGfxTable3[56],  // SableyeShiny
+    &gFollowerMonGfxTable3[57],  // BarboachShiny
+    &gFollowerMonGfxTable3[58],  // WhiscashShiny
+    &gFollowerMonGfxTable3[59],  // LuvdiscShiny
+    &gFollowerMonGfxTable3[60],  // CorphishShiny
+    &gFollowerMonGfxTable3[61],  // CrawdauntShiny
+    &gFollowerMonGfxTable3[62],  // FeebasShiny
+    &gFollowerMonGfxTable3[63],  // MiloticShiny
+    &gFollowerMonGfxTable3[64],  // CarvanhaShiny
+    &gFollowerMonGfxTable3[65],  // SharpedoShiny
+    &gFollowerMonGfxTable3[66],  // TrapinchShiny
+    &gFollowerMonGfxTable3[67],  // VibravaShiny
+    &gFollowerMonGfxTable3[68],  // FlygonShiny
+    &gFollowerMonGfxTable3[69],  // MakuhitaShiny
+    &gFollowerMonGfxTable3[70],  // HariyamaShiny
+    &gFollowerMonGfxTable3[71],  // ElectrikeShiny
+    &gFollowerMonGfxTable3[72],  // ManectricShiny
+    &gFollowerMonGfxTable3[73],  // NumelShiny
+    &gFollowerMonGfxTable3[74],  // CameruptShiny
+    &gFollowerMonGfxTable3[75],  // SphealShiny
+    &gFollowerMonGfxTable3[76],  // SealeoShiny
+    &gFollowerMonGfxTable3[77],  // WalreinShiny
+    &gFollowerMonGfxTable3[78],  // CacneaShiny
+    &gFollowerMonGfxTable3[79],  // CacturneShiny
+    &gFollowerMonGfxTable3[80],  // SnoruntShiny
+    &gFollowerMonGfxTable3[81],  // GlalieShiny
+    &gFollowerMonGfxTable3[82],  // LunatoneShiny
+    &gFollowerMonGfxTable3[83],  // SolrockShiny
+    &gFollowerMonGfxTable3[84],  // AzurillShiny
+    &gFollowerMonGfxTable3[85],  // SpoinkShiny
+    &gFollowerMonGfxTable3[86],  // GrumpigShiny
+    &gFollowerMonGfxTable3[87],  // PlusleShiny
+    &gFollowerMonGfxTable3[88],  // MinunShiny
+    &gFollowerMonGfxTable3[89],  // MawileShiny
+    &gFollowerMonGfxTable3[90],  // MedititeShiny
+    &gFollowerMonGfxTable3[91],  // MedichamShiny
+    &gFollowerMonGfxTable3[92],  // SwabluShiny
+    &gFollowerMonGfxTable3[93],  // AltariaShiny
+    &gFollowerMonGfxTable3[94],  // WynautShiny
+    &gFollowerMonGfxTable3[95],  // DuskullShiny
+    &gFollowerMonGfxTable3[96],  // DusclopsShiny
+    &gFollowerMonGfxTable3[97],  // RoseliaShiny
+    &gFollowerMonGfxTable3[98],  // SlakothShiny
+    &gFollowerMonGfxTable3[99],  // VigorothShiny
+    &gFollowerMonGfxTable3[100], // SlakingShiny
+    &gFollowerMonGfxTable3[101], // GulpinShiny
+    &gFollowerMonGfxTable3[102], // SwalotShiny
+    &gFollowerMonGfxTable3[103], // TropiusShiny
+    &gFollowerMonGfxTable3[104], // WhismurShiny
+    &gFollowerMonGfxTable3[105], // LoudredShiny
+    &gFollowerMonGfxTable3[106], // ExploudShiny
+    &gFollowerMonGfxTable3[107], // ClamperlShiny
+    &gFollowerMonGfxTable3[108], // HuntailShiny
+    &gFollowerMonGfxTable3[109], // GorebyssShiny
+    &gFollowerMonGfxTable3[110], // AbsolShiny
+    &gFollowerMonGfxTable3[111], // ShuppetShiny
+    &gFollowerMonGfxTable3[112], // BanetteShiny
+    &gFollowerMonGfxTable3[113], // SeviperShiny
+    &gFollowerMonGfxTable3[114], // ZangooseShiny
+    &gFollowerMonGfxTable3[115], // RelicanthShiny
+    &gFollowerMonGfxTable3[116], // AronShiny
+    &gFollowerMonGfxTable3[117], // LaironShiny
+    &gFollowerMonGfxTable3[118], // AggronShiny
+    &gFollowerMonGfxTable3[119], // CastformShiny
+    &gFollowerMonGfxTable3[120], // VolbeatShiny
+    &gFollowerMonGfxTable3[121], // IllumiseShiny
+    &gFollowerMonGfxTable3[122], // LileepShiny
+    &gFollowerMonGfxTable3[123], // CradilyShiny
+    &gFollowerMonGfxTable3[124], // AnorithShiny
+    &gFollowerMonGfxTable3[125], // ArmaldoShiny
+    &gFollowerMonGfxTable3[126], // RaltsShiny
+    &gFollowerMonGfxTable3[127], // KirliaShiny
+    &gFollowerMonGfxTable3[128], // GardevoirShiny
+    &gFollowerMonGfxTable3[129], // BagonShiny
+    &gFollowerMonGfxTable3[130], // ShelgonShiny
+    &gFollowerMonGfxTable3[131], // SalamenceShiny
+    &gFollowerMonGfxTable3[132], // BeldumShiny
+    &gFollowerMonGfxTable3[133], // MetangShiny
+    &gFollowerMonGfxTable3[134], // MetagrossShiny
+    &gFollowerMonGfxTable3[135], // RegirockShiny
+    &gFollowerMonGfxTable3[136], // RegiceShiny
+    &gFollowerMonGfxTable3[137], // RegisteelShiny
+    &gFollowerMonGfxTable3[138], // KyogreShiny
+    &gFollowerMonGfxTable3[139], // GroudonShiny
+    &gFollowerMonGfxTable3[140], // RayquazaShiny
+    &gFollowerMonGfxTable3[141], // LatiasShiny
+    &gFollowerMonGfxTable3[142], // LatiosShiny
+    &gFollowerMonGfxTable3[143], // JirachiShiny
+    &gFollowerMonGfxTable3[144], // DeoxysShiny
+    &gFollowerMonGfxTable3[145], // ChimechoShiny
 };
 	// create 255 OW tables
 	const struct EventObjectGraphicsInfo** const gOverworldTableSwitcher[255] =
@@ -1378,12 +1650,294 @@ static NPCPtr sOverworldTable5[] =
         {gFollowerMonPic2251_CelebiShinyPal,   0x13FA},
 
 	};
-	
+
+	static const struct SpritePalette gObjectEventSpritePalettes14[] = 	
+	{
+		{gFollowerMonPic0277_TreeckoPal,  0x1400},
+		{gFollowerMonPic0278_GrovylePal,  0x1401},
+		{gFollowerMonPic0279_SceptilePal, 0x1402},
+		{gFollowerMonPic0280_TorchicPal,  0x1403},
+		{gFollowerMonPic0281_CombuskenPal, 0x1404},
+		{gFollowerMonPic0282_BlazikenPal, 0x1405},
+		{gFollowerMonPic0283_MudkipPal,   0x1406},
+		{gFollowerMonPic0284_MarshtompPal, 0x1407},
+		{gFollowerMonPic0285_SwampertPal, 0x1408},
+		{gFollowerMonPic0286_PoochyenaPal, 0x1409},
+		{gFollowerMonPic0287_MightyenaPal, 0x140A},
+		{gFollowerMonPic0288_ZigzagoonPal, 0x140B},
+		{gFollowerMonPic0289_LinoonePal,  0x140C},
+		{gFollowerMonPic0290_WurmplePal,  0x140D},
+		{gFollowerMonPic0291_SilcoonPal,  0x140E},
+		{gFollowerMonPic0292_BeautiflyPal, 0x140F},
+		{gFollowerMonPic0293_CascoonPal,  0x1410},
+		{gFollowerMonPic0294_DustoxPal,   0x1411},
+		{gFollowerMonPic0295_LotadPal,    0x1412},
+		{gFollowerMonPic0296_LombrePal,   0x1413},
+		{gFollowerMonPic0297_LudicoloPal, 0x1414},
+		{gFollowerMonPic0298_SeedotPal,   0x1415},
+		{gFollowerMonPic0299_NuzleafPal,  0x1416},
+		{gFollowerMonPic0300_ShiftryPal,  0x1417},
+		{gFollowerMonPic0301_NincadaPal,  0x1418},
+		{gFollowerMonPic0302_NinjaskPal,  0x1419},
+		{gFollowerMonPic0303_ShedinjaPal, 0x141A},
+		{gFollowerMonPic0304_TaillowPal,  0x141B},
+		{gFollowerMonPic0305_SwellowPal,  0x141C},
+		{gFollowerMonPic0306_ShroomishPal, 0x141D},
+		{gFollowerMonPic0307_BreloomPal,  0x141E},
+		{gFollowerMonPic0308_SpindaPal,   0x141F},
+		{gFollowerMonPic0309_WingullPal,  0x1420},
+		{gFollowerMonPic0310_PelipperPal, 0x1421},
+		{gFollowerMonPic0311_SurskitPal,  0x1422},
+		{gFollowerMonPic0312_MasquerainPal, 0x1423},
+		{gFollowerMonPic0313_WailmerPal,  0x1424},
+		{gFollowerMonPic0314_WailordPal,  0x1425},
+		{gFollowerMonPic0315_SkittyPal,   0x1426},
+		{gFollowerMonPic0316_DelcattyPal, 0x1427},
+		{gFollowerMonPic0317_KecleonPal,  0x1428},
+		{gFollowerMonPic0318_BaltoyPal,   0x1429},
+		{gFollowerMonPic0319_ClaydolPal,  0x142A},
+		{gFollowerMonPic0320_NosepassPal, 0x142B},
+		{gFollowerMonPic0321_TorkoalPal,  0x142C},
+		{gFollowerMonPic0322_SableyePal,  0x142D},
+		{gFollowerMonPic0323_BarboachPal, 0x142E},
+		{gFollowerMonPic0324_WhiscashPal, 0x142F},
+		{gFollowerMonPic0325_LuvdiscPal,  0x1430},
+		{gFollowerMonPic0326_CorphishPal, 0x1431},
+		{gFollowerMonPic0327_CrawdauntPal, 0x1432},
+		{gFollowerMonPic0328_FeebasPal,   0x1433},
+		{gFollowerMonPic0329_MiloticPal,  0x1434},
+		{gFollowerMonPic0330_CarvanhaPal, 0x1435},
+		{gFollowerMonPic0331_SharpedoPal, 0x1436},
+		{gFollowerMonPic0332_TrapinchPal, 0x1437},
+		{gFollowerMonPic0333_VibravaPal,  0x1438},
+		{gFollowerMonPic0334_FlygonPal,   0x1439},
+		{gFollowerMonPic0335_MakuhitaPal, 0x143A},
+		{gFollowerMonPic0336_HariyamaPal, 0x143B},
+		{gFollowerMonPic0337_ElectrikePal, 0x143C},
+		{gFollowerMonPic0338_ManectricPal, 0x143D},
+		{gFollowerMonPic0339_NumelPal,    0x143E},
+		{gFollowerMonPic0340_CameruptPal, 0x143F},
+		{gFollowerMonPic0341_SphealPal,   0x1440},
+		{gFollowerMonPic0342_SealeoPal,   0x1441},
+		{gFollowerMonPic0343_WalreinPal,  0x1442},
+		{gFollowerMonPic0344_CacneaPal,   0x1443},
+		{gFollowerMonPic0345_CacturnePal, 0x1444},
+		{gFollowerMonPic0346_SnoruntPal,  0x1445},
+		{gFollowerMonPic0347_GlaliePal,   0x1446},
+		{gFollowerMonPic0348_LunatonePal, 0x1447},
+		{gFollowerMonPic0349_SolrockPal,  0x1448},
+		{gFollowerMonPic0350_AzurillPal,  0x1449},
+		{gFollowerMonPic0351_SpoinkPal,   0x144A},
+		{gFollowerMonPic0352_GrumpigPal,  0x144B},
+		{gFollowerMonPic0353_PluslePal,   0x144C},
+		{gFollowerMonPic0354_MinunPal,    0x144D},
+		{gFollowerMonPic0355_MawilePal,   0x144E},
+		{gFollowerMonPic0356_MedititePal, 0x144F},
+		{gFollowerMonPic0357_MedichamPal, 0x1450},
+		{gFollowerMonPic0358_SwabluPal,   0x1451},
+		{gFollowerMonPic0359_AltariaPal,  0x1452},
+		{gFollowerMonPic0360_WynautPal,   0x1453},
+		{gFollowerMonPic0361_DuskullPal,  0x1454},
+		{gFollowerMonPic0362_DusclopsPal, 0x1455},
+		{gFollowerMonPic0363_RoseliaPal,  0x1456},
+		{gFollowerMonPic0364_SlakothPal,  0x1457},
+		{gFollowerMonPic0365_VigorothPal, 0x1458},
+		{gFollowerMonPic0366_SlakingPal,  0x1459},
+		{gFollowerMonPic0367_GulpinPal,   0x145A},
+		{gFollowerMonPic0368_SwalotPal,   0x145B},
+		{gFollowerMonPic0369_TropiusPal,  0x145C},
+		{gFollowerMonPic0370_WhismurPal,  0x145D},
+		{gFollowerMonPic0371_LoudredPal,  0x145E},
+		{gFollowerMonPic0372_ExploudPal,  0x145F},
+		{gFollowerMonPic0373_ClamperlPal, 0x1460},
+		{gFollowerMonPic0374_HuntailPal,  0x1461},
+		{gFollowerMonPic0375_GorebyssPal, 0x1462},
+		{gFollowerMonPic0376_AbsolPal,    0x1463},
+		{gFollowerMonPic0377_ShuppetPal,  0x1464},
+		{gFollowerMonPic0378_BanettePal,  0x1465},
+		{gFollowerMonPic0379_SeviperPal,  0x1466},
+		{gFollowerMonPic0380_ZangoosePal, 0x1467},
+		{gFollowerMonPic0381_RelicanthPal, 0x1468},
+		{gFollowerMonPic0382_AronPal,     0x1469},
+		{gFollowerMonPic0383_LaironPal,   0x146A},
+		{gFollowerMonPic0384_AggronPal,   0x146B},
+		{gFollowerMonPic0385_CastformPal, 0x146C},
+		{gFollowerMonPic0386_VolbeatPal,  0x146D},
+		{gFollowerMonPic0387_IllumisePal, 0x146E},
+		{gFollowerMonPic0388_LileepPal,   0x146F},
+		{gFollowerMonPic0389_CradilyPal,  0x1470},
+		{gFollowerMonPic0390_AnorithPal,  0x1471},
+		{gFollowerMonPic0391_ArmaldoPal,  0x1472},
+		{gFollowerMonPic0392_RaltsPal,    0x1473},
+		{gFollowerMonPic0393_KirliaPal,   0x1474},
+		{gFollowerMonPic0394_GardevoirPal, 0x1475},
+		{gFollowerMonPic0395_BagonPal,    0x1476},
+		{gFollowerMonPic0396_ShelgonPal,  0x1477},
+		{gFollowerMonPic0397_SalamencePal, 0x1478},
+		{gFollowerMonPic0398_BeldumPal,   0x1479},
+		{gFollowerMonPic0399_MetangPal,   0x147A},
+		{gFollowerMonPic0400_MetagrossPal, 0x147B},
+		{gFollowerMonPic0401_RegirockPal, 0x147C},
+		{gFollowerMonPic0402_RegicePal,   0x147D},
+		{gFollowerMonPic0403_RegisteelPal, 0x147E},
+		{gFollowerMonPic0404_KyogrePal,   0x147F},
+		{gFollowerMonPic0405_GroudonPal,  0x1480},
+		{gFollowerMonPic0406_RayquazaPal, 0x1481},
+		{gFollowerMonPic0407_LatiasPal,   0x1482},
+		{gFollowerMonPic0408_LatiosPal,   0x1483},
+		{gFollowerMonPic0409_JirachiPal,  0x1484},
+		{gFollowerMonPic0410_DeoxysPal,   0x1485},
+		{gFollowerMonPic0411_ChimechoPal, 0x1486},
+
+	};
+
+	static const struct SpritePalette gObjectEventSpritePalettes15[] = 	
+	{
+    {gFollowerMonPic2277_TreeckoShinyPal,  0x1500},
+    {gFollowerMonPic2278_GrovyleShinyPal,  0x1501},
+    {gFollowerMonPic2279_SceptileShinyPal, 0x1502},
+    {gFollowerMonPic2280_TorchicShinyPal,  0x1503},
+    {gFollowerMonPic2281_CombuskenShinyPal, 0x1504},
+    {gFollowerMonPic2282_BlazikenShinyPal, 0x1505},
+    {gFollowerMonPic2283_MudkipShinyPal,   0x1506},
+    {gFollowerMonPic2284_MarshtompShinyPal, 0x1507},
+    {gFollowerMonPic2285_SwampertShinyPal, 0x1508},
+    {gFollowerMonPic2286_PoochyenaShinyPal, 0x1509},
+    {gFollowerMonPic2287_MightyenaShinyPal, 0x150A},
+    {gFollowerMonPic2288_ZigzagoonShinyPal, 0x150B},
+    {gFollowerMonPic2289_LinooneShinyPal,  0x150C},
+    {gFollowerMonPic2290_WurmpleShinyPal,  0x150D},
+    {gFollowerMonPic2291_SilcoonShinyPal,  0x150E},
+    {gFollowerMonPic2292_BeautiflyShinyPal, 0x150F},
+    {gFollowerMonPic2293_CascoonShinyPal,  0x1510},
+    {gFollowerMonPic2294_DustoxShinyPal,   0x1511},
+    {gFollowerMonPic2295_LotadShinyPal,    0x1512},
+    {gFollowerMonPic2296_LombreShinyPal,   0x1513},
+    {gFollowerMonPic2297_LudicoloShinyPal, 0x1514},
+    {gFollowerMonPic2298_SeedotShinyPal,   0x1515},
+    {gFollowerMonPic2299_NuzleafShinyPal,  0x1516},
+    {gFollowerMonPic2300_ShiftryShinyPal,  0x1517},
+    {gFollowerMonPic2301_NincadaShinyPal,  0x1518},
+    {gFollowerMonPic2302_NinjaskShinyPal,  0x1519},
+    {gFollowerMonPic2303_ShedinjaShinyPal, 0x151A},
+    {gFollowerMonPic2304_TaillowShinyPal,  0x151B},
+    {gFollowerMonPic2305_SwellowShinyPal,  0x151C},
+    {gFollowerMonPic2306_ShroomishShinyPal, 0x151D},
+    {gFollowerMonPic2307_BreloomShinyPal,  0x151E},
+    {gFollowerMonPic2308_SpindaShinyPal,   0x151F},
+    {gFollowerMonPic2309_WingullShinyPal,  0x1520},
+    {gFollowerMonPic2310_PelipperShinyPal, 0x1521},
+    {gFollowerMonPic2311_SurskitShinyPal,  0x1522},
+    {gFollowerMonPic2312_MasquerainShinyPal, 0x1523},
+    {gFollowerMonPic2313_WailmerShinyPal,  0x1524},
+    {gFollowerMonPic2314_WailordShinyPal,  0x1525},
+    {gFollowerMonPic2315_SkittyShinyPal,   0x1526},
+    {gFollowerMonPic2316_DelcattyShinyPal, 0x1527},
+    {gFollowerMonPic2317_KecleonShinyPal,  0x1528},
+    {gFollowerMonPic2318_BaltoyShinyPal,   0x1529},
+    {gFollowerMonPic2319_ClaydolShinyPal,  0x152A},
+    {gFollowerMonPic2320_NosepassShinyPal, 0x152B},
+    {gFollowerMonPic2321_TorkoalShinyPal,  0x152C},
+    {gFollowerMonPic2322_SableyeShinyPal,  0x152D},
+    {gFollowerMonPic2323_BarboachShinyPal, 0x152E},
+    {gFollowerMonPic2324_WhiscashShinyPal, 0x152F},
+    {gFollowerMonPic2325_LuvdiscShinyPal,  0x1530},
+    {gFollowerMonPic2326_CorphishShinyPal, 0x1531},
+    {gFollowerMonPic2327_CrawdauntShinyPal, 0x1532},
+    {gFollowerMonPic2328_FeebasShinyPal,   0x1533},
+    {gFollowerMonPic2329_MiloticShinyPal,  0x1534},
+    {gFollowerMonPic2330_CarvanhaShinyPal, 0x1535},
+    {gFollowerMonPic2331_SharpedoShinyPal, 0x1536},
+    {gFollowerMonPic2332_TrapinchShinyPal, 0x1537},
+    {gFollowerMonPic2333_VibravaShinyPal,  0x1538},
+    {gFollowerMonPic2334_FlygonShinyPal,   0x1539},
+    {gFollowerMonPic2335_MakuhitaShinyPal, 0x153A},
+    {gFollowerMonPic2336_HariyamaShinyPal, 0x153B},
+    {gFollowerMonPic2337_ElectrikeShinyPal, 0x153C},
+    {gFollowerMonPic2338_ManectricShinyPal, 0x153D},
+    {gFollowerMonPic2339_NumelShinyPal,    0x153E},
+    {gFollowerMonPic2340_CameruptShinyPal, 0x153F},
+    {gFollowerMonPic2341_SphealShinyPal,   0x1540},
+    {gFollowerMonPic2342_SealeoShinyPal,   0x1541},
+    {gFollowerMonPic2343_WalreinShinyPal,  0x1542},
+    {gFollowerMonPic2344_CacneaShinyPal,   0x1543},
+    {gFollowerMonPic2345_CacturneShinyPal, 0x1544},
+    {gFollowerMonPic2346_SnoruntShinyPal,  0x1545},
+    {gFollowerMonPic2347_GlalieShinyPal,   0x1546},
+    {gFollowerMonPic2348_LunatoneShinyPal, 0x1547},
+    {gFollowerMonPic2349_SolrockShinyPal,  0x1548},
+    {gFollowerMonPic2350_AzurillShinyPal,  0x1549},
+    {gFollowerMonPic2351_SpoinkShinyPal,   0x154A},
+    {gFollowerMonPic2352_GrumpigShinyPal,  0x154B},
+    {gFollowerMonPic2353_PlusleShinyPal,   0x154C},
+    {gFollowerMonPic2354_MinunShinyPal,    0x154D},
+    {gFollowerMonPic2355_MawileShinyPal,   0x154E},
+    {gFollowerMonPic2356_MedititeShinyPal, 0x154F},
+    {gFollowerMonPic2357_MedichamShinyPal, 0x1550},
+    {gFollowerMonPic2358_SwabluShinyPal,   0x1551},
+    {gFollowerMonPic2359_AltariaShinyPal,  0x1552},
+    {gFollowerMonPic2360_WynautShinyPal,   0x1553},
+    {gFollowerMonPic2361_DuskullShinyPal,  0x1554},
+    {gFollowerMonPic2362_DusclopsShinyPal, 0x1555},
+    {gFollowerMonPic2363_RoseliaShinyPal,  0x1556},
+    {gFollowerMonPic2364_SlakothShinyPal,  0x1557},
+    {gFollowerMonPic2365_VigorothShinyPal, 0x1558},
+    {gFollowerMonPic2366_SlakingShinyPal,  0x1559},
+    {gFollowerMonPic2367_GulpinShinyPal,   0x155A},
+    {gFollowerMonPic2368_SwalotShinyPal,   0x155B},
+    {gFollowerMonPic2369_TropiusShinyPal,  0x155C},
+    {gFollowerMonPic2370_WhismurShinyPal,  0x155D},
+    {gFollowerMonPic2371_LoudredShinyPal,  0x155E},
+    {gFollowerMonPic2372_ExploudShinyPal,  0x155F},
+    {gFollowerMonPic2373_ClamperlShinyPal, 0x1560},
+    {gFollowerMonPic2374_HuntailShinyPal,  0x1561},
+    {gFollowerMonPic2375_GorebyssShinyPal, 0x1562},
+    {gFollowerMonPic2376_AbsolShinyPal,    0x1563},
+    {gFollowerMonPic2377_ShuppetShinyPal,  0x1564},
+    {gFollowerMonPic2378_BanetteShinyPal,  0x1565},
+    {gFollowerMonPic2379_SeviperShinyPal,  0x1566},
+    {gFollowerMonPic2380_ZangooseShinyPal, 0x1567},
+    {gFollowerMonPic2381_RelicanthShinyPal, 0x1568},
+    {gFollowerMonPic2382_AronShinyPal,     0x1569},
+    {gFollowerMonPic2383_LaironShinyPal,   0x156A},
+    {gFollowerMonPic2384_AggronShinyPal,   0x156B},
+    {gFollowerMonPic2385_CastformShinyPal, 0x156C},
+    {gFollowerMonPic2386_VolbeatShinyPal,  0x156D},
+    {gFollowerMonPic2387_IllumiseShinyPal, 0x156E},
+    {gFollowerMonPic2388_LileepShinyPal,   0x156F},
+    {gFollowerMonPic2389_CradilyShinyPal,  0x1570},
+    {gFollowerMonPic2390_AnorithShinyPal,  0x1571},
+    {gFollowerMonPic2391_ArmaldoShinyPal,  0x1572},
+    {gFollowerMonPic2392_RaltsShinyPal,    0x1573},
+    {gFollowerMonPic2393_KirliaShinyPal,   0x1574},
+    {gFollowerMonPic2394_GardevoirShinyPal, 0x1575},
+    {gFollowerMonPic2395_BagonShinyPal,    0x1576},
+    {gFollowerMonPic2396_ShelgonShinyPal,  0x1577},
+    {gFollowerMonPic2397_SalamenceShinyPal, 0x1578},
+    {gFollowerMonPic2398_BeldumShinyPal,   0x1579},
+    {gFollowerMonPic2399_MetangShinyPal,   0x157A},
+    {gFollowerMonPic2400_MetagrossShinyPal, 0x157B},
+    {gFollowerMonPic2401_RegirockShinyPal, 0x157C},
+    {gFollowerMonPic2402_RegiceShinyPal,   0x157D},
+    {gFollowerMonPic2403_RegisteelShinyPal, 0x157E},
+    {gFollowerMonPic2404_KyogreShinyPal,   0x157F},
+    {gFollowerMonPic2405_GroudonShinyPal,  0x1580},
+    {gFollowerMonPic2406_RayquazaShinyPal, 0x1581},
+    {gFollowerMonPic2407_LatiasShinyPal,   0x1582},
+    {gFollowerMonPic2408_LatiosShinyPal,   0x1583},
+    {gFollowerMonPic2409_JirachiShinyPal,  0x1584},
+    {gFollowerMonPic2410_DeoxysShinyPal,   0x1585},
+    {gFollowerMonPic2411_ChimechoShinyPal, 0x1586},
+	};
+
+
 	const struct SpritePalette* const gObjectEventSpritePalettesSwitcher[255] =
 	{
 		[0x11] = gObjectEventSpritePalettes11,
 		[0x12] = gObjectEventSpritePalettes12,
 		[0x13] = gObjectEventSpritePalettes13,
+		[0x14] = gObjectEventSpritePalettes14,
+		[0x15] = gObjectEventSpritePalettes15,
 	};
 #endif
 
