@@ -993,11 +993,11 @@ const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[] =
     MON_OW_OBJECT_GRAPHICS(14E1, Dusknoir)
     MON_OW_OBJECT_GRAPHICS(14E2, Froslass)
     MON_OW_OBJECT_GRAPHICS(14E3, Rotom)
+    MON_OW_OBJECT_GRAPHICS(14E4, Uxie)
 };
 
 const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[] =
 {
-    MON_OW_OBJECT_GRAPHICS(14E4, Uxie)
     MON_OW_OBJECT_GRAPHICS(14E5, Mesprit)
     MON_OW_OBJECT_GRAPHICS(14E6, Azelf)
     MON_OW_OBJECT_GRAPHICS_64(14E7, Dialga)

@@ -755,21 +755,20 @@ static NPCPtr sOverworldTable3[] =
 
 static NPCPtr sOverworldTable4[] =
 {
-	&gFollowerMonGfxTable2[0],  // Uxie
-	&gFollowerMonGfxTable2[1],  // Mesprit
-	&gFollowerMonGfxTable2[2],  // Azelf
-	&gFollowerMonGfxTable2[3],  // Dialga
-	&gFollowerMonGfxTable2[4],  // Palkia
-	&gFollowerMonGfxTable2[5],  // Heatran
-	&gFollowerMonGfxTable2[6],  // Regigigas
-	&gFollowerMonGfxTable2[7],  // Giratina
-	&gFollowerMonGfxTable2[8],  // Cresselia
-	&gFollowerMonGfxTable2[9],  // Phione
-	&gFollowerMonGfxTable2[10], // Manaphy
-	&gFollowerMonGfxTable2[11], // Darkrai
-	&gFollowerMonGfxTable2[12], // Shaymin
-	&gFollowerMonGfxTable2[13], // Arceus
-	&gFollowerMonGfxTable2[14], // Victini
+	&gFollowerMonGfxTable2[0], // Mesprit
+	&gFollowerMonGfxTable2[1], // Azelf
+	&gFollowerMonGfxTable2[2], // Dialga
+	&gFollowerMonGfxTable2[3], // Palkia
+	&gFollowerMonGfxTable2[4], // Heatran
+	&gFollowerMonGfxTable2[5], // Regigigas
+	&gFollowerMonGfxTable2[6], // Giratina
+	&gFollowerMonGfxTable2[7], // Cresselia
+	&gFollowerMonGfxTable2[8], // Phione
+	&gFollowerMonGfxTable2[9], // Manaphy
+	&gFollowerMonGfxTable2[10], // Darkrai
+	&gFollowerMonGfxTable2[11], // Shaymin
+	&gFollowerMonGfxTable2[12], // Arceus
+	&gFollowerMonGfxTable2[13], // Victini
 };
 
 	// create 255 OW tables
