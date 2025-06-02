@@ -1680,7 +1680,6 @@ void UpdateFollowerMonSprite(void)
     follower->spriteId = newSpriteId;
     MoveEventObjectToMapCoords(follower, follower->currentCoords.x, follower->currentCoords.y);
     EventObjectTurn(follower, follower->facingDirection);
-	ChangeFollowerPalette();
 }
 void FixFollowerMonLocalIdAfterWarp(void)
 {
