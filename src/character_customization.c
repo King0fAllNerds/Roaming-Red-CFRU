@@ -263,9 +263,6 @@ static const u16* sPlayerMarlonOutfitColours[] =
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable0[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable1[];
 extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable2[];
-extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable3[];
-extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable4[];
-extern const struct EventObjectGraphicsInfo gFollowerMonGfxTable5[];
 
 static NPCPtr sOverworldTable2[] =
 {
@@ -510,772 +507,268 @@ static NPCPtr sOverworldTable2[] =
     &gFollowerMonGfxTable0[238], // Elekid
     &gFollowerMonGfxTable0[239], // Magby
 };
+
 static NPCPtr sOverworldTable3[] =
 {
-	&gFollowerMonGfxTable1[0],
-	&gFollowerMonGfxTable1[1],
-	&gFollowerMonGfxTable1[2],
-	&gFollowerMonGfxTable1[3],
-	&gFollowerMonGfxTable1[4],
-	&gFollowerMonGfxTable1[5],
-	&gFollowerMonGfxTable1[6],
-	&gFollowerMonGfxTable1[7],
-	&gFollowerMonGfxTable1[8],
-	&gFollowerMonGfxTable1[9],
-	&gFollowerMonGfxTable1[10],
-	&gFollowerMonGfxTable1[11],
-	&gFollowerMonGfxTable1[12],
-	&gFollowerMonGfxTable1[13],
-	&gFollowerMonGfxTable1[14],
-	&gFollowerMonGfxTable1[15],
-	&gFollowerMonGfxTable1[16],
-	&gFollowerMonGfxTable1[17],
-	&gFollowerMonGfxTable1[18],
-	&gFollowerMonGfxTable1[19],
-	&gFollowerMonGfxTable1[20],
-	&gFollowerMonGfxTable1[21],
-	&gFollowerMonGfxTable1[22],
-	&gFollowerMonGfxTable1[23],
-	&gFollowerMonGfxTable1[24],
-	&gFollowerMonGfxTable1[25],
-	&gFollowerMonGfxTable1[26],
-	&gFollowerMonGfxTable1[27],
-	&gFollowerMonGfxTable1[28],
-	&gFollowerMonGfxTable1[29],
-	&gFollowerMonGfxTable1[30],
-	&gFollowerMonGfxTable1[31],
-	&gFollowerMonGfxTable1[32],
-	&gFollowerMonGfxTable1[33],
-	&gFollowerMonGfxTable1[34],
-	&gFollowerMonGfxTable1[35],
-	&gFollowerMonGfxTable1[36],
-	&gFollowerMonGfxTable1[37],
-	&gFollowerMonGfxTable1[38],
-	&gFollowerMonGfxTable1[39],
-	&gFollowerMonGfxTable1[40],
-	&gFollowerMonGfxTable1[41],
-	&gFollowerMonGfxTable1[42],
-	&gFollowerMonGfxTable1[43],
-	&gFollowerMonGfxTable1[44],
-	&gFollowerMonGfxTable1[45],
-	&gFollowerMonGfxTable1[46],
-	&gFollowerMonGfxTable1[47],
-	&gFollowerMonGfxTable1[48],
-	&gFollowerMonGfxTable1[49],
-	&gFollowerMonGfxTable1[50],
-	&gFollowerMonGfxTable1[51],
-	&gFollowerMonGfxTable1[52],
-	&gFollowerMonGfxTable1[53],
-	&gFollowerMonGfxTable1[54],
-	&gFollowerMonGfxTable1[55],
-	&gFollowerMonGfxTable1[56],
-	&gFollowerMonGfxTable1[57],
-	&gFollowerMonGfxTable1[58],
-	&gFollowerMonGfxTable1[59],
-	&gFollowerMonGfxTable1[60],
-	&gFollowerMonGfxTable1[61],
-	&gFollowerMonGfxTable1[62],
-	&gFollowerMonGfxTable1[63],
-	&gFollowerMonGfxTable1[64],
-	&gFollowerMonGfxTable1[65],
-	&gFollowerMonGfxTable1[66],
-	&gFollowerMonGfxTable1[67],
-	&gFollowerMonGfxTable1[68],
-	&gFollowerMonGfxTable1[69],
-	&gFollowerMonGfxTable1[70],
-	&gFollowerMonGfxTable1[71],
-	&gFollowerMonGfxTable1[72],
-	&gFollowerMonGfxTable1[73],
-	&gFollowerMonGfxTable1[74],
-	&gFollowerMonGfxTable1[75],
-	&gFollowerMonGfxTable1[76],
-	&gFollowerMonGfxTable1[77],
-	&gFollowerMonGfxTable1[78],
-	&gFollowerMonGfxTable1[79],
-	&gFollowerMonGfxTable1[80],
-	&gFollowerMonGfxTable1[81],
-	&gFollowerMonGfxTable1[82],
-	&gFollowerMonGfxTable1[83],
-	&gFollowerMonGfxTable1[84],
-	&gFollowerMonGfxTable1[85],
-	&gFollowerMonGfxTable1[86],
-	&gFollowerMonGfxTable1[87],
-	&gFollowerMonGfxTable1[88],
-	&gFollowerMonGfxTable1[89],
-	&gFollowerMonGfxTable1[90],
-	&gFollowerMonGfxTable1[91],
-	&gFollowerMonGfxTable1[92],
-	&gFollowerMonGfxTable1[93],
-	&gFollowerMonGfxTable1[94],
-	&gFollowerMonGfxTable1[95],
-	&gFollowerMonGfxTable1[96],
-	&gFollowerMonGfxTable1[97],
-	&gFollowerMonGfxTable1[98],
-	&gFollowerMonGfxTable1[99],
-	&gFollowerMonGfxTable1[100],
-	&gFollowerMonGfxTable1[101],
-	&gFollowerMonGfxTable1[102],
-	&gFollowerMonGfxTable1[103],
-	&gFollowerMonGfxTable1[104],
-	&gFollowerMonGfxTable1[105],
-	&gFollowerMonGfxTable1[106],
-	&gFollowerMonGfxTable1[107],
-	&gFollowerMonGfxTable1[108],
-	&gFollowerMonGfxTable1[109],
-	&gFollowerMonGfxTable1[110],
-	&gFollowerMonGfxTable1[111],
-	&gFollowerMonGfxTable1[112],
-	&gFollowerMonGfxTable1[113],
-	&gFollowerMonGfxTable1[114],
-	&gFollowerMonGfxTable1[115],
-	&gFollowerMonGfxTable1[116],
-	&gFollowerMonGfxTable1[117],
-	&gFollowerMonGfxTable1[118],
-	&gFollowerMonGfxTable1[119],
-	&gFollowerMonGfxTable1[120],
-	&gFollowerMonGfxTable1[121],
-	&gFollowerMonGfxTable1[122],
-	&gFollowerMonGfxTable1[123],
-	&gFollowerMonGfxTable1[124],
-	&gFollowerMonGfxTable1[125],
-	&gFollowerMonGfxTable1[126],
-	&gFollowerMonGfxTable1[127],
-	&gFollowerMonGfxTable1[128],
-	&gFollowerMonGfxTable1[129],
-	&gFollowerMonGfxTable1[130],
-	&gFollowerMonGfxTable1[131],
-	&gFollowerMonGfxTable1[132],
-	&gFollowerMonGfxTable1[133],
-	&gFollowerMonGfxTable1[134],
-	&gFollowerMonGfxTable1[135],
-	&gFollowerMonGfxTable1[136],
-	&gFollowerMonGfxTable1[137],
-	&gFollowerMonGfxTable1[138],
-	&gFollowerMonGfxTable1[139],
-	&gFollowerMonGfxTable1[140],
-	&gFollowerMonGfxTable1[141],
-	&gFollowerMonGfxTable1[142],
-	&gFollowerMonGfxTable1[143],
-	&gFollowerMonGfxTable1[144],
-	&gFollowerMonGfxTable1[145],
-	&gFollowerMonGfxTable1[146],
-	&gFollowerMonGfxTable1[147],
-	&gFollowerMonGfxTable1[148],
-	&gFollowerMonGfxTable1[149],
-	&gFollowerMonGfxTable1[150],
-    &gFollowerMonGfxTable1[151], // ChikoritaShiny
-    &gFollowerMonGfxTable1[152], // BayleefShiny
-    &gFollowerMonGfxTable1[153], // MeganiumShiny
-    &gFollowerMonGfxTable1[154], // CyndaquilShiny
-    &gFollowerMonGfxTable1[155], // QuilavaShiny
-    &gFollowerMonGfxTable1[156], // TyphlosionShiny
-    &gFollowerMonGfxTable1[157], // TotodileShiny
-    &gFollowerMonGfxTable1[158], // CroconawShiny
-    &gFollowerMonGfxTable1[159], // FeraligatrShiny
-    &gFollowerMonGfxTable1[160], // SentretShiny
-    &gFollowerMonGfxTable1[161], // FurretShiny
-    &gFollowerMonGfxTable1[162], // HoothootShiny
-    &gFollowerMonGfxTable1[163], // NoctowlShiny
-    &gFollowerMonGfxTable1[164], // LedybaShiny
-    &gFollowerMonGfxTable1[165], // LedianShiny
-    &gFollowerMonGfxTable1[166], // SpinarakShiny
-    &gFollowerMonGfxTable1[167], // AriadosShiny
-    &gFollowerMonGfxTable1[168], // CrobatShiny
-    &gFollowerMonGfxTable1[169], // ChinchouShiny
-    &gFollowerMonGfxTable1[170], // LanturnShiny
-    &gFollowerMonGfxTable1[171], // PichuShiny
-    &gFollowerMonGfxTable1[172], // CleffaShiny
-    &gFollowerMonGfxTable1[173], // IgglybuffShiny
-    &gFollowerMonGfxTable1[174], // TogepiShiny
-    &gFollowerMonGfxTable1[175], // TogeticShiny
-    &gFollowerMonGfxTable1[176], // NatuShiny
-    &gFollowerMonGfxTable1[177], // XatuShiny
-    &gFollowerMonGfxTable1[178], // MareepShiny
-    &gFollowerMonGfxTable1[179], // FlaaffyShiny
-    &gFollowerMonGfxTable1[180], // AmpharosShiny
-    &gFollowerMonGfxTable1[181], // BellossomShiny
-    &gFollowerMonGfxTable1[182], // MarillShiny
-    &gFollowerMonGfxTable1[183], // AzumarillShiny
-    &gFollowerMonGfxTable1[184], // SudowoodoShiny
-    &gFollowerMonGfxTable1[185], // PolitoedShiny
-    &gFollowerMonGfxTable1[186], // HoppipShiny
-    &gFollowerMonGfxTable1[187], // SkiploomShiny
-    &gFollowerMonGfxTable1[188], // JumpluffShiny
-    &gFollowerMonGfxTable1[189], // AipomShiny
-    &gFollowerMonGfxTable1[190], // SunkernShiny
-    &gFollowerMonGfxTable1[191], // SunfloraShiny
-    &gFollowerMonGfxTable1[192], // YanmaShiny
-    &gFollowerMonGfxTable1[193], // WooperShiny
-    &gFollowerMonGfxTable1[194], // QuagsireShiny
-    &gFollowerMonGfxTable1[195], // EspeonShiny
-    &gFollowerMonGfxTable1[196], // UmbreonShiny
-    &gFollowerMonGfxTable1[197], // MurkrowShiny
-    &gFollowerMonGfxTable1[198], // SlowkingShiny
-    &gFollowerMonGfxTable1[199], // MisdreavusShiny
-    &gFollowerMonGfxTable1[200], // UnownShiny
-    &gFollowerMonGfxTable1[201], // WobbuffetShiny
-    &gFollowerMonGfxTable1[202], // GirafarigShiny
-    &gFollowerMonGfxTable1[203], // PinecoShiny
-    &gFollowerMonGfxTable1[204], // ForretressShiny
-    &gFollowerMonGfxTable1[205], // DunsparceShiny
-    &gFollowerMonGfxTable1[206], // GligarShiny
-    &gFollowerMonGfxTable1[207], // SteelixShiny
-    &gFollowerMonGfxTable1[208], // SnubbullShiny
-    &gFollowerMonGfxTable1[209], // GranbullShiny
-    &gFollowerMonGfxTable1[210], // QwilfishShiny
-    &gFollowerMonGfxTable1[211], // ScizorShiny
-    &gFollowerMonGfxTable1[212], // ShuckleShiny
-    &gFollowerMonGfxTable1[213], // HeracrossShiny
-    &gFollowerMonGfxTable1[214], // SneaselShiny
-    &gFollowerMonGfxTable1[215], // TeddiursaShiny
-    &gFollowerMonGfxTable1[216], // UrsaringShiny
-    &gFollowerMonGfxTable1[217], // SlugmaShiny
-    &gFollowerMonGfxTable1[218], // MagcargoShiny
-    &gFollowerMonGfxTable1[219], // SwinubShiny
-    &gFollowerMonGfxTable1[220], // PiloswineShiny
-    &gFollowerMonGfxTable1[221], // CorsolaShiny
-    &gFollowerMonGfxTable1[222], // RemoraidShiny
-    &gFollowerMonGfxTable1[223], // OctilleryShiny
-    &gFollowerMonGfxTable1[224], // DelibirdShiny
-    &gFollowerMonGfxTable1[225], // MantineShiny
-    &gFollowerMonGfxTable1[226], // SkarmoryShiny
-    &gFollowerMonGfxTable1[227], // HoundourShiny
-    &gFollowerMonGfxTable1[228], // HoundoomShiny
-    &gFollowerMonGfxTable1[229], // KingdraShiny
-    &gFollowerMonGfxTable1[230], // PhanpyShiny
-    &gFollowerMonGfxTable1[231], // DonphanShiny
-    &gFollowerMonGfxTable1[232], // Porygon2Shiny
-    &gFollowerMonGfxTable1[233], // StantlerShiny
-    &gFollowerMonGfxTable1[234], // SmeargleShiny
-    &gFollowerMonGfxTable1[235], // TyrogueShiny
-    &gFollowerMonGfxTable1[236], // HitmontopShiny
-    &gFollowerMonGfxTable1[237], // SmoochumShiny
-    &gFollowerMonGfxTable1[238], // ElekidShiny
-    &gFollowerMonGfxTable1[239], // MagbyShiny
+	&gFollowerMonGfxTable1[0], // Miltank
+	&gFollowerMonGfxTable1[1], // Blissey
+	&gFollowerMonGfxTable1[2], // Raikou
+	&gFollowerMonGfxTable1[3], // Entei
+	&gFollowerMonGfxTable1[4], // Suicune
+	&gFollowerMonGfxTable1[5], // Larvitar
+	&gFollowerMonGfxTable1[6], // Pupitar
+	&gFollowerMonGfxTable1[7], // Tyranitar
+	&gFollowerMonGfxTable1[8], // Lugia
+	&gFollowerMonGfxTable1[9], // HoOh
+	&gFollowerMonGfxTable1[10], // Celebi
+	&gFollowerMonGfxTable1[12], // Treecko
+	&gFollowerMonGfxTable1[13], // Grovyle
+	&gFollowerMonGfxTable1[14], // Sceptile
+	&gFollowerMonGfxTable1[15], // Torchic
+	&gFollowerMonGfxTable1[16], // Combusken
+	&gFollowerMonGfxTable1[17], // Blaziken
+	&gFollowerMonGfxTable1[18], // Mudkip
+	&gFollowerMonGfxTable1[19], // Marshtomp
+	&gFollowerMonGfxTable1[20], // Swampert
+	&gFollowerMonGfxTable1[21], // Poochyena
+	&gFollowerMonGfxTable1[22], // Mightyena
+	&gFollowerMonGfxTable1[23], // Zigzagoon
+	&gFollowerMonGfxTable1[24], // Linoone
+	&gFollowerMonGfxTable1[25], // Wurmple
+	&gFollowerMonGfxTable1[26], // Silcoon
+	&gFollowerMonGfxTable1[27], // Beautifly
+	&gFollowerMonGfxTable1[28], // Cascoon
+	&gFollowerMonGfxTable1[29], // Dustox
+	&gFollowerMonGfxTable1[30], // Lotad
+	&gFollowerMonGfxTable1[31], // Lombre
+	&gFollowerMonGfxTable1[32], // Ludicolo
+	&gFollowerMonGfxTable1[33], // Seedot
+	&gFollowerMonGfxTable1[34], // Nuzleaf
+	&gFollowerMonGfxTable1[35], // Shiftry
+	&gFollowerMonGfxTable1[36], // Nincada
+	&gFollowerMonGfxTable1[37], // Ninjask
+	&gFollowerMonGfxTable1[38], // Shedinja
+	&gFollowerMonGfxTable1[39], // Taillow
+	&gFollowerMonGfxTable1[40], // Swellow
+	&gFollowerMonGfxTable1[41], // Shroomish
+	&gFollowerMonGfxTable1[42], // Breloom
+	&gFollowerMonGfxTable1[43], // Spinda
+	&gFollowerMonGfxTable1[44], // Wingull
+	&gFollowerMonGfxTable1[45], // Pelipper
+	&gFollowerMonGfxTable1[46], // Surskit
+	&gFollowerMonGfxTable1[47], // Masquerain
+	&gFollowerMonGfxTable1[48], // Wailmer
+	&gFollowerMonGfxTable1[49], // Wailord
+	&gFollowerMonGfxTable1[50], // Skitty
+	&gFollowerMonGfxTable1[51], // Delcatty
+	&gFollowerMonGfxTable1[52], // Kecleon
+	&gFollowerMonGfxTable1[53], // Baltoy
+	&gFollowerMonGfxTable1[54], // Claydol
+	&gFollowerMonGfxTable1[55], // Nosepass
+	&gFollowerMonGfxTable1[56], // Torkoal
+	&gFollowerMonGfxTable1[57], // Sableye
+	&gFollowerMonGfxTable1[58], // Barboach
+	&gFollowerMonGfxTable1[59], // Whiscash
+	&gFollowerMonGfxTable1[60], // Luvdisc
+	&gFollowerMonGfxTable1[61], // Corphish
+	&gFollowerMonGfxTable1[62], // Crawdaunt
+	&gFollowerMonGfxTable1[63], // Feebas
+	&gFollowerMonGfxTable1[64], // Milotic
+	&gFollowerMonGfxTable1[65], // Carvanha
+	&gFollowerMonGfxTable1[66], // Sharpedo
+	&gFollowerMonGfxTable1[67], // Trapinch
+	&gFollowerMonGfxTable1[68], // Vibrava
+	&gFollowerMonGfxTable1[69], // Flygon
+	&gFollowerMonGfxTable1[70], // Makuhita
+	&gFollowerMonGfxTable1[71], // Hariyama
+	&gFollowerMonGfxTable1[72], // Electrike
+	&gFollowerMonGfxTable1[73], // Manectric
+	&gFollowerMonGfxTable1[74], // Numel
+	&gFollowerMonGfxTable1[75], // Camerupt
+	&gFollowerMonGfxTable1[76], // Spheal
+	&gFollowerMonGfxTable1[77], // Sealeo
+	&gFollowerMonGfxTable1[78], // Walrein
+	&gFollowerMonGfxTable1[79], // Cacnea
+	&gFollowerMonGfxTable1[80], // Cacturne
+	&gFollowerMonGfxTable1[81], // Snorunt
+	&gFollowerMonGfxTable1[82], // Glalie
+	&gFollowerMonGfxTable1[83], // Lunatone
+	&gFollowerMonGfxTable1[84], // Solrock
+	&gFollowerMonGfxTable1[85], // Azurill
+	&gFollowerMonGfxTable1[86], // Spoink
+	&gFollowerMonGfxTable1[87], // Grumpig
+	&gFollowerMonGfxTable1[88], // Plusle
+	&gFollowerMonGfxTable1[89], // Minun
+	&gFollowerMonGfxTable1[90], // Mawile
+	&gFollowerMonGfxTable1[91], // Meditite
+	&gFollowerMonGfxTable1[92], // Medicham
+	&gFollowerMonGfxTable1[93], // Swablu
+	&gFollowerMonGfxTable1[94], // Altaria
+	&gFollowerMonGfxTable1[95], // Wynaut
+	&gFollowerMonGfxTable1[96], // Duskull
+	&gFollowerMonGfxTable1[97], // Dusclops
+	&gFollowerMonGfxTable1[98], // Roselia
+	&gFollowerMonGfxTable1[99], // Slakoth
+	&gFollowerMonGfxTable1[100], // Vigoroth
+	&gFollowerMonGfxTable1[101], // Slaking
+	&gFollowerMonGfxTable1[102], // Gulpin
+	&gFollowerMonGfxTable1[103], // Swalot
+	&gFollowerMonGfxTable1[104], // Tropius
+	&gFollowerMonGfxTable1[105], // Whismur
+	&gFollowerMonGfxTable1[106], // Loudred
+	&gFollowerMonGfxTable1[107], // Exploud
+	&gFollowerMonGfxTable1[108], // Clamperl
+	&gFollowerMonGfxTable1[109], // Huntail
+	&gFollowerMonGfxTable1[110], // Gorebyss
+	&gFollowerMonGfxTable1[111], // Absol
+	&gFollowerMonGfxTable1[112], // Shuppet
+	&gFollowerMonGfxTable1[113], // Banette
+	&gFollowerMonGfxTable1[114], // Seviper
+	&gFollowerMonGfxTable1[115], // Zangoose
+	&gFollowerMonGfxTable1[116], // Relicanth
+	&gFollowerMonGfxTable1[117], // Aron
+	&gFollowerMonGfxTable1[118], // Lairon
+	&gFollowerMonGfxTable1[119], // Aggron
+	&gFollowerMonGfxTable1[120], // Castform
+	&gFollowerMonGfxTable1[121], // Volbeat
+	&gFollowerMonGfxTable1[122], // Illumise
+	&gFollowerMonGfxTable1[123], // Lileep
+	&gFollowerMonGfxTable1[124], // Cradily
+	&gFollowerMonGfxTable1[125], // Anorith
+	&gFollowerMonGfxTable1[126], // Armaldo
+	&gFollowerMonGfxTable1[127], // Ralts
+	&gFollowerMonGfxTable1[128], // Kirlia
+	&gFollowerMonGfxTable1[129], // Gardevoir
+	&gFollowerMonGfxTable1[130], // Bagon
+	&gFollowerMonGfxTable1[131], // Shelgon
+	&gFollowerMonGfxTable1[132], // Salamence
+	&gFollowerMonGfxTable1[133], // Beldum
+	&gFollowerMonGfxTable1[134], // Metang
+	&gFollowerMonGfxTable1[135], // Metagross
+	&gFollowerMonGfxTable1[136], // Regirock
+	&gFollowerMonGfxTable1[137], // Regice
+	&gFollowerMonGfxTable1[138], // Registeel
+	&gFollowerMonGfxTable1[139], // Kyogre
+	&gFollowerMonGfxTable1[140], // Groudon
+	&gFollowerMonGfxTable1[141], // Rayquaza
+	&gFollowerMonGfxTable1[142], // Latias
+	&gFollowerMonGfxTable1[143], // Latios
+	&gFollowerMonGfxTable1[144], // Jirachi
+	&gFollowerMonGfxTable1[145], // Deoxys
+	&gFollowerMonGfxTable1[146], // Chimecho
+	// Gen 4
+	&gFollowerMonGfxTable1[147], // Turtwig
+	&gFollowerMonGfxTable1[148], // Grotle
+	&gFollowerMonGfxTable1[149], // Torterra
+	&gFollowerMonGfxTable1[150], // Chimchar
+	&gFollowerMonGfxTable1[151], // Monferno
+	&gFollowerMonGfxTable1[152], // Infernape
+	&gFollowerMonGfxTable1[153], // Piplup
+	&gFollowerMonGfxTable1[154], // Prinplup
+	&gFollowerMonGfxTable1[155], // Empoleon
+	&gFollowerMonGfxTable1[156], // Starly
+	&gFollowerMonGfxTable1[157], // Staravia
+	&gFollowerMonGfxTable1[158], // Staraptor
+	&gFollowerMonGfxTable1[159], // Bidoof
+	&gFollowerMonGfxTable1[160], // Bibarel
+	&gFollowerMonGfxTable1[161], // Kricketot
+	&gFollowerMonGfxTable1[162], // Kricketune
+	&gFollowerMonGfxTable1[163], // Shinx
+	&gFollowerMonGfxTable1[164], // Luxio
+	&gFollowerMonGfxTable1[165], // Luxray
+	&gFollowerMonGfxTable1[166], // Budew
+	&gFollowerMonGfxTable1[167], // Roserade
+	&gFollowerMonGfxTable1[168], // Cranidos
+	&gFollowerMonGfxTable1[169], // Rampardos
+	&gFollowerMonGfxTable1[170], // Shieldon
+	&gFollowerMonGfxTable1[171], // Bastiodon
+	&gFollowerMonGfxTable1[172], // Burmy
+	&gFollowerMonGfxTable1[173], // Wormadam
+	&gFollowerMonGfxTable1[174], // Mothim
+	&gFollowerMonGfxTable1[175], // Combee
+	&gFollowerMonGfxTable1[176], // Vespiquen
+	&gFollowerMonGfxTable1[177], // Pachirisu
+	&gFollowerMonGfxTable1[178], // Buizel
+	&gFollowerMonGfxTable1[179], // Floatzel
+	&gFollowerMonGfxTable1[180], // Cherubi
+	&gFollowerMonGfxTable1[181], // Cherrim
+	&gFollowerMonGfxTable1[182], // Shellos
+	&gFollowerMonGfxTable1[183], // Gastrodon
+	&gFollowerMonGfxTable1[184], // Ambipom
+	&gFollowerMonGfxTable1[185], // Drifloon
+	&gFollowerMonGfxTable1[186], // Drifblim
+	&gFollowerMonGfxTable1[187], // Buneary
+	&gFollowerMonGfxTable1[188], // Lopunny
+	&gFollowerMonGfxTable1[189], // Mismagius
+	&gFollowerMonGfxTable1[190], // Honchkrow
+	&gFollowerMonGfxTable1[191], // Glameow
+	&gFollowerMonGfxTable1[192], // Purugly
+	&gFollowerMonGfxTable1[193], // Chingling
+	&gFollowerMonGfxTable1[194], // Stunky
+	&gFollowerMonGfxTable1[195], // Skuntank
+	&gFollowerMonGfxTable1[196], // Bronzor
+	&gFollowerMonGfxTable1[197], // Bronzong
+	&gFollowerMonGfxTable1[198], // Bonsly
+	&gFollowerMonGfxTable1[199], // MimeJr
+	&gFollowerMonGfxTable1[200], // Happiny
+	&gFollowerMonGfxTable1[201], // Chatot
+	&gFollowerMonGfxTable1[202], // Spiritomb
+	&gFollowerMonGfxTable1[203], // Gible
+	&gFollowerMonGfxTable1[204], // Gabite
+	&gFollowerMonGfxTable1[205], // Garchomp
+	&gFollowerMonGfxTable1[206], // Munchlax
+	&gFollowerMonGfxTable1[207], // Riolu
+	&gFollowerMonGfxTable1[208], // Lucario
+	&gFollowerMonGfxTable1[209], // Hippopotas
+	&gFollowerMonGfxTable1[210], // Hippowdon
+	&gFollowerMonGfxTable1[211], // Skorupi
+	&gFollowerMonGfxTable1[212], // Drapion
+	&gFollowerMonGfxTable1[213], // Croagunk
+	&gFollowerMonGfxTable1[214], // Toxicroak
+	&gFollowerMonGfxTable1[215], // Carnivine
+	&gFollowerMonGfxTable1[216], // Finneon
+	&gFollowerMonGfxTable1[217], // Lumineon
+	&gFollowerMonGfxTable1[218], // Mantyke
+	&gFollowerMonGfxTable1[219], // Snover
+	&gFollowerMonGfxTable1[220], // Abomasnow
+	&gFollowerMonGfxTable1[221], // Weavile
+	&gFollowerMonGfxTable1[222], // Magnezone
+	&gFollowerMonGfxTable1[223], // Lickilicky
+	&gFollowerMonGfxTable1[224], // Rhyperior
+	&gFollowerMonGfxTable1[225], // Tangrowth
+	&gFollowerMonGfxTable1[226], // Electivire
+	&gFollowerMonGfxTable1[227], // Magmortar
+	&gFollowerMonGfxTable1[228], // Togekiss
+	&gFollowerMonGfxTable1[229], // Yanmega
+	&gFollowerMonGfxTable1[230], // Leafeon
+	&gFollowerMonGfxTable1[231], // Glaceon
+	&gFollowerMonGfxTable1[232], // Gliscor
+	&gFollowerMonGfxTable1[233], // Mamoswine
+	&gFollowerMonGfxTable1[234], // PorygonZ
+	&gFollowerMonGfxTable1[235], // Gallade
+	&gFollowerMonGfxTable1[236], // Probopass
+	&gFollowerMonGfxTable1[237], // Dusknoir
+	&gFollowerMonGfxTable1[238], // Froslass
+	&gFollowerMonGfxTable1[239], // Rotom
 };
+
 static NPCPtr sOverworldTable4[] =
 {
-	&gFollowerMonGfxTable2[0], // Miltank
-    &gFollowerMonGfxTable2[1], // Blissey
-    &gFollowerMonGfxTable2[2], // Raikou
-    &gFollowerMonGfxTable2[3], // Entei
-    &gFollowerMonGfxTable2[4], // Suicune
-    &gFollowerMonGfxTable2[5], // Larvitar
-    &gFollowerMonGfxTable2[6], // Pupitar
-    &gFollowerMonGfxTable2[7], // Tyranitar
-    &gFollowerMonGfxTable2[8], // Lugia
-    &gFollowerMonGfxTable2[9], // Ho-Oh
-    &gFollowerMonGfxTable2[10], // Celebi
-	&gFollowerMonGfxTable2[11],  // Treecko
-	&gFollowerMonGfxTable2[12],  // Grovyle
-	&gFollowerMonGfxTable2[13],  // Sceptile
-	&gFollowerMonGfxTable2[14],  // Torchic
-	&gFollowerMonGfxTable2[15],  // Combusken
-	&gFollowerMonGfxTable2[16],  // Blaziken
-	&gFollowerMonGfxTable2[17],  // Mudkip
-	&gFollowerMonGfxTable2[18],  // Marshtomp
-	&gFollowerMonGfxTable2[19],  // Swampert
-	&gFollowerMonGfxTable2[20],  // Poochyena
-	&gFollowerMonGfxTable2[21],  // Mightyena
-	&gFollowerMonGfxTable2[22],  // Zigzagoon
-	&gFollowerMonGfxTable2[23],  // Linoone
-	&gFollowerMonGfxTable2[24],  // Wurmple
-	&gFollowerMonGfxTable2[25],  // Silcoon
-	&gFollowerMonGfxTable2[26],  // Beautifly
-	&gFollowerMonGfxTable2[27],  // Cascoon
-	&gFollowerMonGfxTable2[28],  // Dustox
-	&gFollowerMonGfxTable2[29],  // Lotad
-	&gFollowerMonGfxTable2[30],  // Lombre
-	&gFollowerMonGfxTable2[31],  // Ludicolo
-	&gFollowerMonGfxTable2[32],  // Seedot
-	&gFollowerMonGfxTable2[33],  // Nuzleaf
-	&gFollowerMonGfxTable2[34],  // Shiftry
-	&gFollowerMonGfxTable2[35],  // Nincada
-	&gFollowerMonGfxTable2[36],  // Ninjask
-	&gFollowerMonGfxTable2[37],  // Shedinja
-	&gFollowerMonGfxTable2[38],  // Taillow
-	&gFollowerMonGfxTable2[39],  // Swellow
-	&gFollowerMonGfxTable2[40],  // Shroomish
-	&gFollowerMonGfxTable2[41],  // Breloom
-	&gFollowerMonGfxTable2[42],  // Spinda
-	&gFollowerMonGfxTable2[43],  // Wingull
-	&gFollowerMonGfxTable2[44],  // Pelipper
-	&gFollowerMonGfxTable2[45],  // Surskit
-	&gFollowerMonGfxTable2[46],  // Masquerain
-	&gFollowerMonGfxTable2[47],  // Wailmer
-	&gFollowerMonGfxTable2[48],  // Wailord
-	&gFollowerMonGfxTable2[49],  // Skitty
-	&gFollowerMonGfxTable2[50],  // Delcatty
-	&gFollowerMonGfxTable2[51],  // Kecleon
-	&gFollowerMonGfxTable2[52],  // Baltoy
-	&gFollowerMonGfxTable2[53],  // Claydol
-	&gFollowerMonGfxTable2[54],  // Nosepass
-	&gFollowerMonGfxTable2[55],  // Torkoal
-	&gFollowerMonGfxTable2[56],  // Sableye
-	&gFollowerMonGfxTable2[57],  // Barboach
-	&gFollowerMonGfxTable2[58],  // Whiscash
-	&gFollowerMonGfxTable2[59],  // Luvdisc
-	&gFollowerMonGfxTable2[60],  // Corphish
-	&gFollowerMonGfxTable2[61],  // Crawdaunt
-	&gFollowerMonGfxTable2[62],  // Feebas
-	&gFollowerMonGfxTable2[63],  // Milotic
-	&gFollowerMonGfxTable2[64],  // Carvanha
-	&gFollowerMonGfxTable2[65],  // Sharpedo
-	&gFollowerMonGfxTable2[66],  // Trapinch
-	&gFollowerMonGfxTable2[67],  // Vibrava
-	&gFollowerMonGfxTable2[68],  // Flygon
-	&gFollowerMonGfxTable2[69],  // Makuhita
-	&gFollowerMonGfxTable2[70],  // Hariyama
-	&gFollowerMonGfxTable2[71],  // Electrike
-	&gFollowerMonGfxTable2[72],  // Manectric
-	&gFollowerMonGfxTable2[73],  // Numel
-	&gFollowerMonGfxTable2[74],  // Camerupt
-	&gFollowerMonGfxTable2[75],  // Spheal
-	&gFollowerMonGfxTable2[76],  // Sealeo
-	&gFollowerMonGfxTable2[77],  // Walrein
-	&gFollowerMonGfxTable2[78],  // Cacnea
-	&gFollowerMonGfxTable2[79],  // Cacturne
-	&gFollowerMonGfxTable2[80],  // Snorunt
-	&gFollowerMonGfxTable2[81],  // Glalie
-	&gFollowerMonGfxTable2[82],  // Lunatone
-	&gFollowerMonGfxTable2[83],  // Solrock
-	&gFollowerMonGfxTable2[84],  // Azurill
-	&gFollowerMonGfxTable2[85],  // Spoink
-	&gFollowerMonGfxTable2[86],  // Grumpig
-	&gFollowerMonGfxTable2[87],  // Plusle
-	&gFollowerMonGfxTable2[88],  // Minun
-	&gFollowerMonGfxTable2[89],  // Mawile
-	&gFollowerMonGfxTable2[90],  // Meditite
-	&gFollowerMonGfxTable2[91],  // Medicham
-	&gFollowerMonGfxTable2[92],  // Swablu
-	&gFollowerMonGfxTable2[93],  // Altaria
-	&gFollowerMonGfxTable2[94],  // Wynaut
-	&gFollowerMonGfxTable2[95],  // Duskull
-	&gFollowerMonGfxTable2[96],  // Dusclops
-	&gFollowerMonGfxTable2[97],  // Roselia
-	&gFollowerMonGfxTable2[98],  // Slakoth
-	&gFollowerMonGfxTable2[99],  // Vigoroth
-	&gFollowerMonGfxTable2[100], // Slaking
-	&gFollowerMonGfxTable2[101], // Gulpin
-	&gFollowerMonGfxTable2[102], // Swalot
-	&gFollowerMonGfxTable2[103], // Tropius
-	&gFollowerMonGfxTable2[104], // Whismur
-	&gFollowerMonGfxTable2[105], // Loudred
-	&gFollowerMonGfxTable2[106], // Exploud
-	&gFollowerMonGfxTable2[107], // Clamperl
-	&gFollowerMonGfxTable2[108], // Huntail
-	&gFollowerMonGfxTable2[109], // Gorebyss
-	&gFollowerMonGfxTable2[110], // Absol
-	&gFollowerMonGfxTable2[111], // Shuppet
-	&gFollowerMonGfxTable2[112], // Banette
-	&gFollowerMonGfxTable2[113], // Seviper
-	&gFollowerMonGfxTable2[114], // Zangoose
-	&gFollowerMonGfxTable2[115], // Relicanth
-	&gFollowerMonGfxTable2[116], // Aron
-	&gFollowerMonGfxTable2[117], // Lairon
-	&gFollowerMonGfxTable2[118], // Aggron
-	&gFollowerMonGfxTable2[119], // Castform
-	&gFollowerMonGfxTable2[120], // Volbeat
-	&gFollowerMonGfxTable2[121], // Illumise
-	&gFollowerMonGfxTable2[122], // Lileep
-	&gFollowerMonGfxTable2[123], // Cradily
-	&gFollowerMonGfxTable2[124], // Anorith
-	&gFollowerMonGfxTable2[125], // Armaldo
-	&gFollowerMonGfxTable2[126], // Ralts
-	&gFollowerMonGfxTable2[127], // Kirlia
-	&gFollowerMonGfxTable2[128], // Gardevoir
-	&gFollowerMonGfxTable2[129], // Bagon
-	&gFollowerMonGfxTable2[130], // Shelgon
-	&gFollowerMonGfxTable2[131], // Salamence
-	&gFollowerMonGfxTable2[132], // Beldum
-	&gFollowerMonGfxTable2[133], // Metang
-	&gFollowerMonGfxTable2[134], // Metagross
-	&gFollowerMonGfxTable2[135], // Regirock
-	&gFollowerMonGfxTable2[136], // Regice
-	&gFollowerMonGfxTable2[137], // Registeel
-	&gFollowerMonGfxTable2[138], // Kyogre
-	&gFollowerMonGfxTable2[139], // Groudon
-	&gFollowerMonGfxTable2[140], // Rayquaza
-	&gFollowerMonGfxTable2[141], // Latias
-	&gFollowerMonGfxTable2[142], // Latios
-	&gFollowerMonGfxTable2[143], // Jirachi
-	&gFollowerMonGfxTable2[144], // Deoxys
-	&gFollowerMonGfxTable2[145], // Chimecho
-	// Gen 4
-	&gFollowerMonGfxTable2[146], // Turtwig
-	&gFollowerMonGfxTable2[147], // Grotle
-	&gFollowerMonGfxTable2[148], // Torterra
-	&gFollowerMonGfxTable2[149], // Chimchar
-	&gFollowerMonGfxTable2[150], // Monferno
-	&gFollowerMonGfxTable2[151], // Infernape
-	&gFollowerMonGfxTable2[152], // Piplup
-	&gFollowerMonGfxTable2[153], // Prinplup
-	&gFollowerMonGfxTable2[154], // Empoleon
-	&gFollowerMonGfxTable2[155], // Starly
-	&gFollowerMonGfxTable2[156], // Staravia
-	&gFollowerMonGfxTable2[157], // Staraptor
-	&gFollowerMonGfxTable2[158], // Bidoof
-	&gFollowerMonGfxTable2[159], // Bibarel
-	&gFollowerMonGfxTable2[160], // Kricketot
-	&gFollowerMonGfxTable2[161], // Kricketune
-	&gFollowerMonGfxTable2[162], // Shinx
-	&gFollowerMonGfxTable2[163], // Luxio
-	&gFollowerMonGfxTable2[164], // Luxray
-	&gFollowerMonGfxTable2[165], // Budew
-	&gFollowerMonGfxTable2[166], // Roserade
-	&gFollowerMonGfxTable2[167], // Cranidos
-	&gFollowerMonGfxTable2[168], // Rampardos
-	&gFollowerMonGfxTable2[169], // Shieldon
-	&gFollowerMonGfxTable2[170], // Bastiodon
-	&gFollowerMonGfxTable2[171], // Burmy
-	&gFollowerMonGfxTable2[172], // Wormadam
-	&gFollowerMonGfxTable2[173], // Mothim
-	&gFollowerMonGfxTable2[174], // Combee
-	&gFollowerMonGfxTable2[175], // Vespiquen
-	&gFollowerMonGfxTable2[176], // Pachirisu
-	&gFollowerMonGfxTable2[177], // Buizel
-	&gFollowerMonGfxTable2[178], // Floatzel
-	&gFollowerMonGfxTable2[179], // Cherubi
-	&gFollowerMonGfxTable2[180], // Cherrim
-	&gFollowerMonGfxTable2[181], // Shellos
-	&gFollowerMonGfxTable2[182], // Gastrodon
-	&gFollowerMonGfxTable2[183], // Ambipom
-	&gFollowerMonGfxTable2[184], // Drifloon
-	&gFollowerMonGfxTable2[185], // Drifblim
-	&gFollowerMonGfxTable2[186], // Buneary
-	&gFollowerMonGfxTable2[187], // Lopunny
-	&gFollowerMonGfxTable2[188], // Mismagius
-	&gFollowerMonGfxTable2[189], // Honchkrow
-	&gFollowerMonGfxTable2[190], // Glameow
-	&gFollowerMonGfxTable2[191], // Purugly
-	&gFollowerMonGfxTable2[192], // Chingling
-	&gFollowerMonGfxTable2[193], // Stunky
-	&gFollowerMonGfxTable2[194], // Skuntank
-	&gFollowerMonGfxTable2[195], // Bronzor
-	&gFollowerMonGfxTable2[196], // Bronzong
-	&gFollowerMonGfxTable2[197], // Bonsly
-	&gFollowerMonGfxTable2[198], // MimeJr
-	&gFollowerMonGfxTable2[199], // Happiny
-	&gFollowerMonGfxTable2[200], // Chatot
-	&gFollowerMonGfxTable2[201], // Spiritomb
-	&gFollowerMonGfxTable2[202], // Gible
-	&gFollowerMonGfxTable2[203], // Gabite
-	&gFollowerMonGfxTable2[204], // Garchomp
-	&gFollowerMonGfxTable2[205], // Munchlax
-	&gFollowerMonGfxTable2[206], // Riolu
-	&gFollowerMonGfxTable2[207], // Lucario
-	&gFollowerMonGfxTable2[208], // Hippopotas
-	&gFollowerMonGfxTable2[209], // Hippowdon
-	&gFollowerMonGfxTable2[210], // Skorupi
-	&gFollowerMonGfxTable2[211], // Drapion
-	&gFollowerMonGfxTable2[212], // Croagunk
-	&gFollowerMonGfxTable2[213], // Toxicroak
-	&gFollowerMonGfxTable2[214], // Carnivine
-	&gFollowerMonGfxTable2[215], // Finneon
-	&gFollowerMonGfxTable2[216], // Lumineon
-	&gFollowerMonGfxTable2[217], // Mantyke
-	&gFollowerMonGfxTable2[218], // Snover
-	&gFollowerMonGfxTable2[219], // Abomasnow
-	&gFollowerMonGfxTable2[220], // Weavile
-	&gFollowerMonGfxTable2[221], // Magnezone
-	&gFollowerMonGfxTable2[222], // Lickilicky
-	&gFollowerMonGfxTable2[223], // Rhyperior
-	&gFollowerMonGfxTable2[224], // Tangrowth
-	&gFollowerMonGfxTable2[225], // Electivire
-	&gFollowerMonGfxTable2[226], // Magmortar
-	&gFollowerMonGfxTable2[227], // Togekiss
-	&gFollowerMonGfxTable2[228], // Yanmega
-	&gFollowerMonGfxTable2[229], // Leafeon
-	&gFollowerMonGfxTable2[230], // Glaceon
-	&gFollowerMonGfxTable2[231], // Gliscor
-	&gFollowerMonGfxTable2[232], // Mamoswine
-	&gFollowerMonGfxTable2[233], // PorygonZ
-	&gFollowerMonGfxTable2[234], // Gallade
-	&gFollowerMonGfxTable2[235], // Probopass
-	&gFollowerMonGfxTable2[236], // Dusknoir
-	&gFollowerMonGfxTable2[237], // Froslass
-	&gFollowerMonGfxTable2[238], // Rotom
-	&gFollowerMonGfxTable2[239], // Uxie ,end entry
-};
-static NPCPtr sOverworldTable5[] =
-{
-    &gFollowerMonGfxTable3[0], // MiltankShiny
-    &gFollowerMonGfxTable3[1], // BlisseyShiny
-    &gFollowerMonGfxTable3[2], // RaikouShiny
-    &gFollowerMonGfxTable3[3], // EnteiShiny
-    &gFollowerMonGfxTable3[4], // SuicuneShiny
-    &gFollowerMonGfxTable3[5], // LarvitarShiny
-    &gFollowerMonGfxTable3[6], // PupitarShiny
-    &gFollowerMonGfxTable3[7], // TyranitarShiny
-    &gFollowerMonGfxTable3[8], // LugiaShiny
-    &gFollowerMonGfxTable3[9], // Ho-OhShiny
-    &gFollowerMonGfxTable3[10], // CelebiShiny
-	&gFollowerMonGfxTable3[11],  // TreeckoShiny
-    &gFollowerMonGfxTable3[12],  // GrovyleShiny
-    &gFollowerMonGfxTable3[13],  // SceptileShiny
-    &gFollowerMonGfxTable3[14],  // TorchicShiny
-    &gFollowerMonGfxTable3[15],  // CombuskenShiny
-    &gFollowerMonGfxTable3[16],  // BlazikenShiny
-    &gFollowerMonGfxTable3[17],  // MudkipShiny
-    &gFollowerMonGfxTable3[18],  // MarshtompShiny
-    &gFollowerMonGfxTable3[19],  // SwampertShiny
-    &gFollowerMonGfxTable3[20],  // PoochyenaShiny
-    &gFollowerMonGfxTable3[21],  // MightyenaShiny
-    &gFollowerMonGfxTable3[22],  // ZigzagoonShiny
-    &gFollowerMonGfxTable3[23],  // LinooneShiny
-    &gFollowerMonGfxTable3[24],  // WurmpleShiny
-    &gFollowerMonGfxTable3[25],  // SilcoonShiny
-    &gFollowerMonGfxTable3[26],  // BeautiflyShiny
-    &gFollowerMonGfxTable3[27],  // CascoonShiny
-    &gFollowerMonGfxTable3[28],  // DustoxShiny
-    &gFollowerMonGfxTable3[29],  // LotadShiny
-    &gFollowerMonGfxTable3[30],  // LombreShiny
-    &gFollowerMonGfxTable3[31],  // LudicoloShiny
-    &gFollowerMonGfxTable3[32],  // SeedotShiny
-    &gFollowerMonGfxTable3[33],  // NuzleafShiny
-    &gFollowerMonGfxTable3[34],  // ShiftryShiny
-    &gFollowerMonGfxTable3[35],  // NincadaShiny
-    &gFollowerMonGfxTable3[36],  // NinjaskShiny
-    &gFollowerMonGfxTable3[37],  // ShedinjaShiny
-    &gFollowerMonGfxTable3[38],  // TaillowShiny
-    &gFollowerMonGfxTable3[39],  // SwellowShiny
-    &gFollowerMonGfxTable3[40],  // ShroomishShiny
-    &gFollowerMonGfxTable3[41],  // BreloomShiny
-    &gFollowerMonGfxTable3[42],  // SpindaShiny
-    &gFollowerMonGfxTable3[43],  // WingullShiny
-    &gFollowerMonGfxTable3[44],  // PelipperShiny
-    &gFollowerMonGfxTable3[45],  // SurskitShiny
-    &gFollowerMonGfxTable3[46],  // MasquerainShiny
-    &gFollowerMonGfxTable3[47],  // WailmerShiny
-    &gFollowerMonGfxTable3[48],  // WailordShiny
-    &gFollowerMonGfxTable3[49],  // SkittyShiny
-    &gFollowerMonGfxTable3[50],  // DelcattyShiny
-    &gFollowerMonGfxTable3[51],  // KecleonShiny
-    &gFollowerMonGfxTable3[52],  // BaltoyShiny
-    &gFollowerMonGfxTable3[53],  // ClaydolShiny
-    &gFollowerMonGfxTable3[54],  // NosepassShiny
-    &gFollowerMonGfxTable3[55],  // TorkoalShiny
-    &gFollowerMonGfxTable3[56],  // SableyeShiny
-    &gFollowerMonGfxTable3[57],  // BarboachShiny
-    &gFollowerMonGfxTable3[58],  // WhiscashShiny
-    &gFollowerMonGfxTable3[59],  // LuvdiscShiny
-    &gFollowerMonGfxTable3[60],  // CorphishShiny
-    &gFollowerMonGfxTable3[61],  // CrawdauntShiny
-    &gFollowerMonGfxTable3[62],  // FeebasShiny
-    &gFollowerMonGfxTable3[63],  // MiloticShiny
-    &gFollowerMonGfxTable3[64],  // CarvanhaShiny
-    &gFollowerMonGfxTable3[65],  // SharpedoShiny
-    &gFollowerMonGfxTable3[66],  // TrapinchShiny
-    &gFollowerMonGfxTable3[67],  // VibravaShiny
-    &gFollowerMonGfxTable3[68],  // FlygonShiny
-    &gFollowerMonGfxTable3[69],  // MakuhitaShiny
-    &gFollowerMonGfxTable3[70],  // HariyamaShiny
-    &gFollowerMonGfxTable3[71],  // ElectrikeShiny
-    &gFollowerMonGfxTable3[72],  // ManectricShiny
-    &gFollowerMonGfxTable3[73],  // NumelShiny
-    &gFollowerMonGfxTable3[74],  // CameruptShiny
-    &gFollowerMonGfxTable3[75],  // SphealShiny
-    &gFollowerMonGfxTable3[76],  // SealeoShiny
-    &gFollowerMonGfxTable3[77],  // WalreinShiny
-    &gFollowerMonGfxTable3[78],  // CacneaShiny
-    &gFollowerMonGfxTable3[79],  // CacturneShiny
-    &gFollowerMonGfxTable3[80],  // SnoruntShiny
-    &gFollowerMonGfxTable3[81],  // GlalieShiny
-    &gFollowerMonGfxTable3[82],  // LunatoneShiny
-    &gFollowerMonGfxTable3[83],  // SolrockShiny
-    &gFollowerMonGfxTable3[84],  // AzurillShiny
-    &gFollowerMonGfxTable3[85],  // SpoinkShiny
-    &gFollowerMonGfxTable3[86],  // GrumpigShiny
-    &gFollowerMonGfxTable3[87],  // PlusleShiny
-    &gFollowerMonGfxTable3[88],  // MinunShiny
-    &gFollowerMonGfxTable3[89],  // MawileShiny
-    &gFollowerMonGfxTable3[90],  // MedititeShiny
-    &gFollowerMonGfxTable3[91],  // MedichamShiny
-    &gFollowerMonGfxTable3[92],  // SwabluShiny
-    &gFollowerMonGfxTable3[93],  // AltariaShiny
-    &gFollowerMonGfxTable3[94],  // WynautShiny
-    &gFollowerMonGfxTable3[95],  // DuskullShiny
-    &gFollowerMonGfxTable3[96],  // DusclopsShiny
-    &gFollowerMonGfxTable3[97],  // RoseliaShiny
-    &gFollowerMonGfxTable3[98],  // SlakothShiny
-    &gFollowerMonGfxTable3[99],  // VigorothShiny
-    &gFollowerMonGfxTable3[100], // SlakingShiny
-    &gFollowerMonGfxTable3[101], // GulpinShiny
-    &gFollowerMonGfxTable3[102], // SwalotShiny
-    &gFollowerMonGfxTable3[103], // TropiusShiny
-    &gFollowerMonGfxTable3[104], // WhismurShiny
-    &gFollowerMonGfxTable3[105], // LoudredShiny
-    &gFollowerMonGfxTable3[106], // ExploudShiny
-    &gFollowerMonGfxTable3[107], // ClamperlShiny
-    &gFollowerMonGfxTable3[108], // HuntailShiny
-    &gFollowerMonGfxTable3[109], // GorebyssShiny
-    &gFollowerMonGfxTable3[110], // AbsolShiny
-    &gFollowerMonGfxTable3[111], // ShuppetShiny
-    &gFollowerMonGfxTable3[112], // BanetteShiny
-    &gFollowerMonGfxTable3[113], // SeviperShiny
-    &gFollowerMonGfxTable3[114], // ZangooseShiny
-    &gFollowerMonGfxTable3[115], // RelicanthShiny
-    &gFollowerMonGfxTable3[116], // AronShiny
-    &gFollowerMonGfxTable3[117], // LaironShiny
-    &gFollowerMonGfxTable3[118], // AggronShiny
-    &gFollowerMonGfxTable3[119], // CastformShiny
-    &gFollowerMonGfxTable3[120], // VolbeatShiny
-    &gFollowerMonGfxTable3[121], // IllumiseShiny
-    &gFollowerMonGfxTable3[122], // LileepShiny
-    &gFollowerMonGfxTable3[123], // CradilyShiny
-    &gFollowerMonGfxTable3[124], // AnorithShiny
-    &gFollowerMonGfxTable3[125], // ArmaldoShiny
-    &gFollowerMonGfxTable3[126], // RaltsShiny
-    &gFollowerMonGfxTable3[127], // KirliaShiny
-    &gFollowerMonGfxTable3[128], // GardevoirShiny
-    &gFollowerMonGfxTable3[129], // BagonShiny
-    &gFollowerMonGfxTable3[130], // ShelgonShiny
-    &gFollowerMonGfxTable3[131], // SalamenceShiny
-    &gFollowerMonGfxTable3[132], // BeldumShiny
-    &gFollowerMonGfxTable3[133], // MetangShiny
-    &gFollowerMonGfxTable3[134], // MetagrossShiny
-    &gFollowerMonGfxTable3[135], // RegirockShiny
-    &gFollowerMonGfxTable3[136], // RegiceShiny
-    &gFollowerMonGfxTable3[137], // RegisteelShiny
-    &gFollowerMonGfxTable3[138], // KyogreShiny
-    &gFollowerMonGfxTable3[139], // GroudonShiny
-    &gFollowerMonGfxTable3[140], // RayquazaShiny
-    &gFollowerMonGfxTable3[141], // LatiasShiny
-    &gFollowerMonGfxTable3[142], // LatiosShiny
-    &gFollowerMonGfxTable3[143], // JirachiShiny
-    &gFollowerMonGfxTable3[144], // DeoxysShiny
-    &gFollowerMonGfxTable3[145], // ChimechoShiny
-	// Gen 4
-	&gFollowerMonGfxTable3[146], // TurtwigShiny
-	&gFollowerMonGfxTable3[147], // GrotleShiny
-	&gFollowerMonGfxTable3[148], // TorterraShiny
-	&gFollowerMonGfxTable3[149], // ChimcharShiny
-	&gFollowerMonGfxTable3[150], // MonfernoShiny
-	&gFollowerMonGfxTable3[151], // InfernapeShiny
-	&gFollowerMonGfxTable3[152], // PiplupShiny
-	&gFollowerMonGfxTable3[153], // PrinplupShiny
-	&gFollowerMonGfxTable3[154], // EmpoleonShiny
-	&gFollowerMonGfxTable3[155], // StarlyShiny
-	&gFollowerMonGfxTable3[156], // StaraviaShiny
-	&gFollowerMonGfxTable3[157], // StaraptorShiny
-	&gFollowerMonGfxTable3[158], // BidoofShiny
-	&gFollowerMonGfxTable3[159], // BibarelShiny
-	&gFollowerMonGfxTable3[160], // KricketotShiny
-	&gFollowerMonGfxTable3[161], // KricketuneShiny
-	&gFollowerMonGfxTable3[162], // ShinxShiny
-	&gFollowerMonGfxTable3[163], // LuxioShiny
-	&gFollowerMonGfxTable3[164], // LuxrayShiny
-	&gFollowerMonGfxTable3[165], // BudewShiny
-	&gFollowerMonGfxTable3[166], // RoseradeShiny
-	&gFollowerMonGfxTable3[167], // CranidosShiny
-	&gFollowerMonGfxTable3[168], // RampardosShiny
-	&gFollowerMonGfxTable3[169], // ShieldonShiny
-	&gFollowerMonGfxTable3[170], // BastiodonShiny
-	&gFollowerMonGfxTable3[171], // BurmyShiny
-	&gFollowerMonGfxTable3[172], // WormadamShiny
-	&gFollowerMonGfxTable3[173], // MothimShiny
-	&gFollowerMonGfxTable3[174], // CombeeShiny
-	&gFollowerMonGfxTable3[175], // VespiquenShiny
-	&gFollowerMonGfxTable3[176], // PachirisuShiny
-	&gFollowerMonGfxTable3[177], // BuizelShiny
-	&gFollowerMonGfxTable3[178], // FloatzelShiny
-	&gFollowerMonGfxTable3[179], // CherubiShiny
-	&gFollowerMonGfxTable3[180], // CherrimShiny
-	&gFollowerMonGfxTable3[181], // ShellosShiny
-	&gFollowerMonGfxTable3[182], // GastrodonShiny
-	&gFollowerMonGfxTable3[183], // AmbipomShiny
-	&gFollowerMonGfxTable3[184], // DrifloonShiny
-	&gFollowerMonGfxTable3[185], // DrifblimShiny
-	&gFollowerMonGfxTable3[186], // BunearyShiny
-	&gFollowerMonGfxTable3[187], // LopunnyShiny
-	&gFollowerMonGfxTable3[188], // MismagiusShiny
-	&gFollowerMonGfxTable3[189], // HonchkrowShiny
-	&gFollowerMonGfxTable3[190], // GlameowShiny
-	&gFollowerMonGfxTable3[191], // PuruglyShiny
-	&gFollowerMonGfxTable3[192], // ChinglingShiny
-	&gFollowerMonGfxTable3[193], // StunkyShiny
-	&gFollowerMonGfxTable3[194], // SkuntankShiny
-	&gFollowerMonGfxTable3[195], // BronzorShiny
-	&gFollowerMonGfxTable3[196], // BronzongShiny
-	&gFollowerMonGfxTable3[197], // BonslyShiny
-	&gFollowerMonGfxTable3[198], // MimeJrShiny
-	&gFollowerMonGfxTable3[199], // HappinyShiny
-	&gFollowerMonGfxTable3[200], // ChatotShiny
-	&gFollowerMonGfxTable3[201], // SpiritombShiny
-	&gFollowerMonGfxTable3[202], // GibleShiny
-	&gFollowerMonGfxTable3[203], // GabiteShiny
-	&gFollowerMonGfxTable3[204], // GarchompShiny
-	&gFollowerMonGfxTable3[205], // MunchlaxShiny
-	&gFollowerMonGfxTable3[206], // RioluShiny
-	&gFollowerMonGfxTable3[207], // LucarioShiny
-	&gFollowerMonGfxTable3[208], // HippopotasShiny
-	&gFollowerMonGfxTable3[209], // HippowdonShiny
-	&gFollowerMonGfxTable3[210], // SkorupiShiny
-	&gFollowerMonGfxTable3[211], // DrapionShiny
-	&gFollowerMonGfxTable3[212], // CroagunkShiny
-	&gFollowerMonGfxTable3[213], // ToxicroakShiny
-	&gFollowerMonGfxTable3[214], // CarnivineShiny
-	&gFollowerMonGfxTable3[215], // FinneonShiny
-	&gFollowerMonGfxTable3[216], // LumineonShiny
-	&gFollowerMonGfxTable3[217], // MantykeShiny
-	&gFollowerMonGfxTable3[218], // SnoverShiny
-	&gFollowerMonGfxTable3[219], // AbomasnowShiny
-	&gFollowerMonGfxTable3[220], // WeavileShiny
-	&gFollowerMonGfxTable3[221], // MagnezoneShiny
-	&gFollowerMonGfxTable3[222], // LickilickyShiny
-	&gFollowerMonGfxTable3[223], // RhyperiorShiny
-	&gFollowerMonGfxTable3[224], // TangrowthShiny
-	&gFollowerMonGfxTable3[225], // ElectivireShiny
-	&gFollowerMonGfxTable3[226], // MagmortarShiny
-	&gFollowerMonGfxTable3[227], // TogekissShiny
-	&gFollowerMonGfxTable3[228], // YanmegaShiny
-	&gFollowerMonGfxTable3[229], // LeafeonShiny
-	&gFollowerMonGfxTable3[230], // GlaceonShiny
-	&gFollowerMonGfxTable3[231], // GliscorShiny
-	&gFollowerMonGfxTable3[232], // MamoswineShiny
-	&gFollowerMonGfxTable3[233], // PorygonZShiny
-	&gFollowerMonGfxTable3[234], // GalladeShiny
-	&gFollowerMonGfxTable3[235], // ProbopassShiny
-	&gFollowerMonGfxTable3[236], // DusknoirShiny
-	&gFollowerMonGfxTable3[237], // FroslassShiny
-	&gFollowerMonGfxTable3[238], // RotomShiny
-	&gFollowerMonGfxTable3[239], // UxieShiny , end entry
-};
-
-static NPCPtr sOverworldTable6[] =
-{
-	&gFollowerMonGfxTable4[0], // Mesprit
-	&gFollowerMonGfxTable4[1], // Azelf
-	&gFollowerMonGfxTable4[2], // Dialga
-	&gFollowerMonGfxTable4[3], // Palkia
-	&gFollowerMonGfxTable4[4], // Heatran
-	&gFollowerMonGfxTable4[5], // Regigigas
-	&gFollowerMonGfxTable4[6], // Giratina
-	&gFollowerMonGfxTable4[7], // Cresselia
-	&gFollowerMonGfxTable4[8], // Phione
-	&gFollowerMonGfxTable4[9], // Manaphy
-	&gFollowerMonGfxTable4[10], // Darkrai
-	&gFollowerMonGfxTable4[11], // Shaymin
-	&gFollowerMonGfxTable4[12], // Arceus
-	&gFollowerMonGfxTable4[13], // Victini
-};
-
-static NPCPtr sOverworldTable7[] =
-{
-	&gFollowerMonGfxTable5[0], // MespritShiny
-	&gFollowerMonGfxTable5[1], // AzelfShiny
-	&gFollowerMonGfxTable5[2], // DialgaShiny
-	&gFollowerMonGfxTable5[3], // PalkiaShiny
-	&gFollowerMonGfxTable5[4], // HeatranShiny
-	&gFollowerMonGfxTable5[5], // RegigigasShiny
-	&gFollowerMonGfxTable5[6], // GiratinaShiny
-	&gFollowerMonGfxTable5[7], // CresseliaShiny
-	&gFollowerMonGfxTable5[8], // PhioneShiny
-	&gFollowerMonGfxTable5[9], // ManaphyShiny
-	&gFollowerMonGfxTable5[10], // DarkraiShiny
-	&gFollowerMonGfxTable5[11], // ShayminShiny
-	&gFollowerMonGfxTable5[12], // ArceusShiny
-	&gFollowerMonGfxTable5[13], // VictiniShiny
+	&gFollowerMonGfxTable2[0], // Uxie
+	&gFollowerMonGfxTable2[1], // Mesprit
+	&gFollowerMonGfxTable2[2], // Azelf
+	&gFollowerMonGfxTable2[3], // Dialga
+	&gFollowerMonGfxTable2[4], // Palkia
+	&gFollowerMonGfxTable2[5], // Heatran
+	&gFollowerMonGfxTable2[6], // Regigigas
+	&gFollowerMonGfxTable2[7], // Giratina
+	&gFollowerMonGfxTable2[8], // Cresselia
+	&gFollowerMonGfxTable2[9], // Phione
+	&gFollowerMonGfxTable2[10], // Manaphy
+	&gFollowerMonGfxTable2[11], // Darkrai
+	&gFollowerMonGfxTable2[12], // Shaymin
+	&gFollowerMonGfxTable2[13], // Arceus
+	&gFollowerMonGfxTable2[14], // Victini
 };
 
 	// create 255 OW tables
@@ -1285,14 +778,11 @@ static NPCPtr sOverworldTable7[] =
 		sOverworldTable2,
 		sOverworldTable3,
 		sOverworldTable4,
-		sOverworldTable5,
-		sOverworldTable6,
-		sOverworldTable7,
 		// etc...
 		// please note that this method makes compatability with OW Manager challenging
 	};
 	
-	static const struct SpritePalette gObjectEventSpritePalettes11[] = {
+	const struct SpritePalette gObjectEventSpritePalettes11[] = {
 		{gObjectEventPallete_1, 0x1100},
 		{gObjectEventPallete_2, 0x1101},
 		{gObjectEventPallete_3, 0x1102},
@@ -1371,7 +861,7 @@ static NPCPtr sOverworldTable7[] =
 		{NULL, 0x11FF}
 	};
 
-	static const struct SpritePalette gObjectEventSpritePalettes12[] = {
+	const struct SpritePalette gObjectEventSpritePalettes12[] = {
 		{gFollowerMonPic0001_BulbasaurPal, 0x1200},
 		{gFollowerMonPic0002_IvysaurPal, 0x1201},
 		{gFollowerMonPic0003_VenusaurPal, 0x1202},
@@ -1624,7 +1114,7 @@ static NPCPtr sOverworldTable7[] =
         {gFollowerMonPic0250_HoOhPal,     0x12F9},
         {gFollowerMonPic0251_CelebiPal,   0x12FA},
 	};
-	static const struct SpritePalette gObjectEventSpritePalettes13[] = 	
+	const struct SpritePalette gObjectEventSpritePalettes13[] = 	
 	{
 		{gFollowerMonPic2001_BulbasaurShinyPal, 0x1300},
 		{gFollowerMonPic2002_IvysaurShinyPal, 0x1301},
@@ -2129,7 +1619,7 @@ static NPCPtr sOverworldTable7[] =
 
 	};
 
-	static const struct SpritePalette gObjectEventSpritePalettes15[] = 	
+	const struct SpritePalette gObjectEventSpritePalettes15[] = 	
 	{
     {gFollowerMonPic2277_TreeckoShinyPal,  0x1500},
     {gFollowerMonPic2278_GrovyleShinyPal,  0x1501},
