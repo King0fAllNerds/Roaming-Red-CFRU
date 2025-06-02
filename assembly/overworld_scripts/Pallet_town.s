@@ -43,6 +43,7 @@ EventScript_Pallet_Girl:
     end
 
 PalletGirl_ShowFollowerMon:
+    callasm ChangeFollowerPalette
     showfollowermon
     special 0xD1
     setflag 0x4BD

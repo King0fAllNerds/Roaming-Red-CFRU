@@ -26,7 +26,7 @@
 #include "../include/new/em_mining.h"
 #include "../include/new/util.h"
 
-//#define FLAG_EXPLAINED_MINING_RULES 0x1 //UNCOMMENT AND CHANGE THIS IF YOU WANT
+
 
 #define NUM_ROWS 8
 #define NUM_COLS 12

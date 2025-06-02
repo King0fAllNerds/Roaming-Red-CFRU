@@ -55,6 +55,7 @@ static void SetFollowerSprite(u8 spriteIndex);
 static void TurnNPCIntoFollower(u8 localId, u8 followerFlags);
 void FixFollowerMonLocalIdAfterWarp(void);
 void RestoreFollowerAfterBattle(void);
+extern void ChangeFollowerPalette(void);
 
 extern u8 EventScript_FollowerMon[];
 
@@ -148,6 +149,7 @@ void HideFollower(void)
 void ShowFollower(void)
 {
 	CreateSparkleSprite();
+	ChangeFollowerPalette();
 	gEventObjects[gFollowerState.objId].invisible = FALSE;
 }
 
@@ -1138,7 +1140,8 @@ void Task_PlayerExitDoor(u8 taskId)
  			{
 				if (gFollowerState.objId < MAP_OBJECTS_COUNT)
 				{
-				gEventObjects[gFollowerState.objId].localId = 30;
+					gEventObjects[gFollowerState.objId].localId = 30;
+					UpdateFollowerMonSprite();
 				}
  			}
 	        #endif
@@ -1656,7 +1659,6 @@ void UpdateFollowerMonSprite(void)
         return;
 
     gFollowerState.gfxId = followerMonGfx;
-
     struct EventObject* follower = &gEventObjects[GetFollowerMapObjId()];
     u8 oldSpriteId = follower->spriteId;
     u16 newGraphicsId = GetFollowerSprite();

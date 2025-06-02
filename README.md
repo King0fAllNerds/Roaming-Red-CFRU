@@ -43,6 +43,13 @@ This fork is made by Tha Code Mining hub to add many corresponding decomps , oth
 - IV rankings in summary
 - And much more!
 
+##### Current count:
+- Moves : 991
+- Pokedex : 1025
+- Species : 1439
+- Items : 797
+- Abilities : 288 (254 abilties and 34 Duplicate abilities)
+
 ##### Introduction to the maintainers
 This fork is made by Tha Code Mining hub to add many corresponding decomps , other fork and our own additions to CFRU , everything here can be used with credits to respective code makers.
 - The shiny's team (actually not a team but collaborators)

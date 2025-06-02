@@ -1760,7 +1760,7 @@ extern const u8 DESC_MEGA_RING[];
 #define DESC_DOME_FOSSIL ((const u8 *)0x083DAABD)
 #define DESC_SILPH_SCOPE ((const u8 *)0x083DAB13)
 #define DESC_BICYCLE ((const u8 *)0x083DAB59)
-#define DESC_TOWN_MAP ((const u8 *)0x083DAB59)
+#define DESC_TOWN_MAP ((const u8 *)0x083DAB9F)
 #define DESC_VS_SEEKER ((const u8 *)0x083DABF7)
 #define DESC_FAME_CHECKER ((const u8 *)0x083DAC51)
 #define DESC_TM_CASE ((const u8 *)0x083DACA5)

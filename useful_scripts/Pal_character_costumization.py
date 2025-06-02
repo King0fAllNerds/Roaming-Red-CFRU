@@ -1,0 +1,133 @@
+import re
+
+# Starting hex ID (user-defined)
+start_hex_id = 0x1587
+start_hex_id_poke = 0x1B8
+
+# Input species list
+input_species_block = """
+#define SPECIES_TURTWIG 0x1B8
+#define SPECIES_GROTLE 0x1B9
+#define SPECIES_TORTERRA 0x1BA
+#define SPECIES_CHIMCHAR 0x1BB
+#define SPECIES_MONFERNO 0x1BC
+#define SPECIES_INFERNAPE 0x1BD
+#define SPECIES_PIPLUP 0x1BE
+#define SPECIES_PRINPLUP 0x1BF
+#define SPECIES_EMPOLEON 0x1C0
+#define SPECIES_STARLY 0x1C1
+#define SPECIES_STARAVIA 0x1C2
+#define SPECIES_STARAPTOR 0x1C3
+#define SPECIES_BIDOOF 0x1C4
+#define SPECIES_BIBAREL 0x1C5
+#define SPECIES_KRICKETOT 0x1C6
+#define SPECIES_KRICKETUNE 0x1C7
+#define SPECIES_SHINX 0x1C8
+#define SPECIES_LUXIO 0x1C9
+#define SPECIES_LUXRAY 0x1CA
+#define SPECIES_BUDEW 0x1CB
+#define SPECIES_ROSERADE 0x1CC
+#define SPECIES_CRANIDOS 0x1CD
+#define SPECIES_RAMPARDOS 0x1CE
+#define SPECIES_SHIELDON 0x1CF
+#define SPECIES_BASTIODON 0x1D0
+#define SPECIES_BURMY 0x1D1
+#define SPECIES_WORMADAM 0x1D2
+#define SPECIES_MOTHIM 0x1D3
+#define SPECIES_COMBEE 0x1D4
+#define SPECIES_VESPIQUEN 0x1D5
+#define SPECIES_PACHIRISU 0x1D6
+#define SPECIES_BUIZEL 0x1D7
+#define SPECIES_FLOATZEL 0x1D8
+#define SPECIES_CHERUBI 0x1D9
+#define SPECIES_CHERRIM 0x1DA
+#define SPECIES_SHELLOS 0x1DB
+#define SPECIES_GASTRODON 0x1DC
+#define SPECIES_AMBIPOM 0x1DD
+#define SPECIES_DRIFLOON 0x1DE
+#define SPECIES_DRIFBLIM 0x1DF
+#define SPECIES_BUNEARY 0x1E0
+#define SPECIES_LOPUNNY 0x1E1
+#define SPECIES_MISMAGIUS 0x1E2
+#define SPECIES_HONCHKROW 0x1E3
+#define SPECIES_GLAMEOW 0x1E4
+#define SPECIES_PURUGLY 0x1E5
+#define SPECIES_CHINGLING 0x1E6
+#define SPECIES_STUNKY 0x1E7
+#define SPECIES_SKUNTANK 0x1E8
+#define SPECIES_BRONZOR 0x1E9
+#define SPECIES_BRONZONG 0x1EA
+#define SPECIES_BONSLY 0x1EB
+#define SPECIES_MIME_JR 0x1EC
+#define SPECIES_HAPPINY 0x1ED
+#define SPECIES_CHATOT 0x1EE
+#define SPECIES_SPIRITOMB 0x1EF
+#define SPECIES_GIBLE 0x1F0
+#define SPECIES_GABITE 0x1F1
+#define SPECIES_GARCHOMP 0x1F2
+#define SPECIES_MUNCHLAX 0x1F3
+#define SPECIES_RIOLU 0x1F4
+#define SPECIES_LUCARIO 0x1F5
+#define SPECIES_HIPPOPOTAS 0x1F6
+#define SPECIES_HIPPOWDON 0x1F7
+#define SPECIES_SKORUPI 0x1F8
+#define SPECIES_DRAPION 0x1F9
+#define SPECIES_CROAGUNK 0x1FA
+#define SPECIES_TOXICROAK 0x1FB
+#define SPECIES_CARNIVINE 0x1FC
+#define SPECIES_FINNEON 0x1FD
+#define SPECIES_LUMINEON 0x1FE
+#define SPECIES_MANTYKE 0x1FF
+#define SPECIES_SNOVER 0x200
+#define SPECIES_ABOMASNOW 0x201
+#define SPECIES_WEAVILE 0x202
+#define SPECIES_MAGNEZONE 0x203
+#define SPECIES_LICKILICKY 0x204
+#define SPECIES_RHYPERIOR 0x205
+#define SPECIES_TANGROWTH 0x206
+#define SPECIES_ELECTIVIRE 0x207
+#define SPECIES_MAGMORTAR 0x208
+#define SPECIES_TOGEKISS 0x209
+#define SPECIES_YANMEGA 0x20A
+#define SPECIES_LEAFEON 0x20B
+#define SPECIES_GLACEON 0x20C
+#define SPECIES_GLISCOR 0x20D
+#define SPECIES_MAMOSWINE 0x20E
+#define SPECIES_PORYGON_Z 0x20F
+#define SPECIES_GALLADE 0x210
+#define SPECIES_PROBOPASS 0x211
+#define SPECIES_DUSKNOIR 0x212
+#define SPECIES_FROSLASS 0x213
+#define SPECIES_ROTOM 0x214
+#define SPECIES_UXIE 0x215
+#define SPECIES_MESPRIT 0x216
+#define SPECIES_AZELF 0x217
+#define SPECIES_DIALGA 0x218
+#define SPECIES_PALKIA 0x219
+#define SPECIES_HEATRAN 0x21A
+#define SPECIES_REGIGIGAS 0x21B
+#define SPECIES_GIRATINA 0x21C
+#define SPECIES_CRESSELIA 0x21D
+#define SPECIES_PHIONE 0x21E
+#define SPECIES_MANAPHY 0x21F
+#define SPECIES_DARKRAI 0x220
+#define SPECIES_SHAYMIN 0x221
+#define SPECIES_ARCEUS 0x222
+#define SPECIES_VICTINI 0x223
+"""
+
+# Regex to extract species names
+pattern = re.compile(r"#define SPECIES_([A-Z0-9_]+)")
+
+# Process each line
+species_names = []
+for line in input_species_block.strip().splitlines():
+    match = pattern.search(line)
+    if match:
+        species_names.append(match.group(1))
+
+# Output lines with incremented hex IDs
+for i, species in enumerate(species_names):
+    hex_id = start_hex_id + i
+    hex_id_2 = start_hex_id_poke + i
+    print(f"        {{gFollowerMonPic2{hex_id_2}_{species.title()}ShinyPal, 0x{hex_id:04X}}},")

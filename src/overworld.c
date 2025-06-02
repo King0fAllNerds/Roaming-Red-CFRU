@@ -100,6 +100,7 @@ static bool8 SafariZoneTakeStep(void);
 static bool8 IsRunningDisabledByFlag(void);
 static bool8 IsPlayerFacingSea(void);
 static bool8 UseRegisteredKeyItemOnField(void);
+extern void ChangeFollowerPalette(void);
 
 #if (defined VAR_DEFAULT_WALKING_SCRIPT && !defined UNBOUND)
 //Table full of pointers to custom walking scripts
@@ -3265,6 +3266,7 @@ void CB2_ReturnToField(void)
 	if (FlagGet(FLAG_FOLLOWER_POKEMON) && gFollowerState.inProgress)
 	{
 		UpdateFollowerMonSprite();
+		ChangeFollowerPalette();
 	}
 	RestoreFollowerAfterBattle();
 }
