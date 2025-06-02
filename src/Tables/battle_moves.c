@@ -3517,7 +3517,7 @@ const struct BattleMove gBattleMoves[] =
 	[MOVE_RETURN] =
 	{
 		.effect = EFFECT_HIT,
-		.power = 1,
+		.power = 102,
 		.type = TYPE_NORMAL,
 		.accuracy = 100,
 		.pp = 20,
@@ -3549,7 +3549,7 @@ const struct BattleMove gBattleMoves[] =
 	[MOVE_FRUSTRATION] =
 	{
 		.effect = EFFECT_HIT,
-		.power = 1,
+		.power = 102,
 		.type = TYPE_NORMAL,
 		.accuracy = 100,
 		.pp = 20,

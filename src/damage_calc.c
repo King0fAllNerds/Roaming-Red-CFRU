@@ -3902,34 +3902,6 @@ static u16 GetBasePower(struct DamageCalc* data)
 				power *= gBattleScripting.dmgMultiplier;
 			break;
 
-		case MOVE_RETURN:
-			if ((gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER_TOWER | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_EREADER_TRAINER))
-			|| IsFrontierRaidBattle()
-			#ifdef FLAG_SANDBOX_MODE
-			|| FlagGet(FLAG_SANDBOX_MODE)
-			#endif
-			)
-				power = (10 * 255) / 25;
-			else if (useMonAtk)
-				power = (10 * (data->monAtk->friendship)) / 25;
-			else
-				power = (10 * (gBattleMons[bankAtk].friendship)) / 25;
-			break;
-
-		case MOVE_FRUSTRATION:
-			if ((gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_TRAINER_TOWER | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_EREADER_TRAINER))
-			|| IsFrontierRaidBattle()
-			#ifdef FLAG_SANDBOX_MODE
-			|| FlagGet(FLAG_SANDBOX_MODE)
-			#endif
-			)
-				power = (10 * 255) / 25; //Always max damage
-			else if (useMonAtk)
-				power = (10 * (255 - data->monAtk->friendship)) / 25;
-			else
-				power = (10 * (255 - gBattleMons[bankAtk].friendship)) / 25;
-			break;
-
 		case MOVE_BEATUP:
 			if (useMonAtk || (data->specialFlags & (FLAG_CHECKING_FROM_MENU | FLAG_AI_CALC)))
 				power = (gBaseStats[data->atkSpecies].baseAttack / 10) + 5;
